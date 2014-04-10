@@ -1,0 +1,5 @@
+name: www.michael-schaefer.org
+markdown: redcarpet
+pygments: true
+default_locale: "de"
+authorized_locales: ["de", "en"]

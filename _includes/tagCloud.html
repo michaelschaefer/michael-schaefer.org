@@ -1,0 +1,84 @@
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+{% unless site.authorized_locales contains locale %}
+{% assign locale = site.default_locale %}
+{% endunless %}
+
+{% if locale == "de" %}
+	{% assign subdir = "" %}
+{% else %}
+	{% capture subdir %}/{{ locale }}{% endcapture %}
+{% endif %}
+
+
+{% assign tagList = site.tags %}
+{% capture tagNames %}{% for tag in tagList %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tagWords = tagNames | split:',' | sort %}
+
+
+{% assign tagCounts = "dummy," %}
+{% for tag in tagWords %}
+	{% assign item = site.tags[tag] %}
+	{% assign itemCount = 0 %}
+	{% for post in item %}
+	{% assign category = post.url | truncate: 3, "" | remove: "/" %}
+	{% if category == locale %}{% assign itemCount = itemCount | plus: 1 %}{% endif %}
+	{% endfor %}
+	{% assign tagCounts = tagCounts | append: itemCount %}
+	{% unless forloop.last %}{% assign tagCounts = tagCounts | append: ',' %}{% endunless %}
+{% endfor %}
+{% assign tagCounts = tagCounts | split:',' %}
+
+
+{% if include.type == "short" %}
+
+{% capture tagString %}
+{% for tag in tagWords %}
+	{% assign count = tagCounts[forloop.index] %}
+	{% if count != "0" %},&nbsp;<a href="{{ subdir }}/tags/#{{ tag | cgi_escape }}">{{ tag }}</a>&nbsp;<span class="super">({{ count }})</span>{% endif %}
+{% endfor %}
+{% endcapture %}
+{{ tagString | remove_first: "," }}
+
+{% else %}
+
+<p>	
+	{% capture tagString %}
+	{% for tag in tagWords %}
+	{% assign count = tagCounts[forloop.index] %}
+	{% if count != "0" %},&nbsp;<a href="#{{ tag | cgi_escape }}">{{ tag }}</a>&nbsp;<span class="super">({{ count }})</span>{% endif %}
+	{% endfor %}	
+	{% endcapture %}
+	{{ tagString | remove_first: "," }}
+</p>
+
+<ul>
+{% for tag in tagWords %}	
+	{% if tagCounts[forloop.index] != "0" %}
+	<li><a class="anchor" name="{{ tag | cgi_escape }}"><em>{{ tag }}:</em></a>
+		<ul>
+			{% assign tagStruct = tagList[tag] %}
+			{% for post in tagStruct %}
+
+			{% assign category = post.url | truncate: 3, "" | remove: "/" %}
+
+			{% if category == locale %}
+			{% if locale == "de" %}
+			{% assign date = post.date | date: '%d.%m.%Y' %}
+			{% else %}
+			{% assign date = post.date | date: '%d/%m/%Y' %}
+			{% endif %}			
+			<li>
+				<div class="articleList">
+					<span class="left">{{ date }}:</span>
+					<span class="headline"><a href="{{ post.url }}">{{ post.title }}</a></span>
+				</div>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+{% endif %}

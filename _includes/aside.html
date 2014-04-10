@@ -1,0 +1,41 @@
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+{% unless site.authorized_locales contains locale %}
+{% assign locale = site.default_locale %}
+{% endunless %}
+{% assign data = site.data.i18n[locale].aside %}
+
+<h1>{{ data[0].headline }}</h1>
+<div class="underline">
+  <img class="aperture left" src="/media/portrait_square.png" />
+  <p>
+    {{ data[0].description }}
+  </p>
+  {% for item in data[0].links %}  
+  <span class="symbol">{{ item.symbol }}</span><a href="{{ item.url }}">{{ item.text }}</a>{% unless forloop.last %}<br/>{% endunless %}
+  {% endfor %}
+</div>
+
+
+<h1>{{ data[1].headline }}</h1>
+<div class="underline">
+{% for item in site.authorized_locales %}
+	{% assign text = site.data.i18n[item].aside[1].text %}
+	{% if item == locale %}
+	{{ text }}{% unless forloop.last %}, {% endunless %}
+	{% else %}
+	{% assign url = site.data.i18n[item].aside[1].url %}	
+	<a href="{{ url }}">{{ text }}</a>{% unless forloop.last %}, {% endunless %}
+	{% endif %}	
+{% endfor %}
+</div>
+
+
+<h1>{{ data[2].headline }}</h1>
+<div class="underline">
+  {% include tagCloud.html type="short" %}
+</div>
+
+
+<h1>{{ data[3].headline }}</h1>
+{% include articleList.html type="archive" %}
+

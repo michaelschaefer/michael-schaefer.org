@@ -1,0 +1,21 @@
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+{% unless site.authorized_locales contains locale %}
+{% assign locale = site.default_locale %}
+{% endunless %}
+
+<label for="menuTrigger">
+  <span id="menuButton" class="menuItem symbol left">&#xf419;</span>
+</label>
+
+{% for item in site.data.i18n[locale].navigation %}
+
+{% if page.type == item.type %}
+<input type="radio" name="navigation" id="entry{{ forloop.index }}" checked="checked" />
+{% else %}
+<input type="radio" name="navigation" id="entry{{ forloop.index }}" />
+{% endif %}
+
+<a href="{{ item.url }}">
+	<span class="menuItem symbol big left">{{ item.text }}</span>
+</a>
+{% endfor %}
