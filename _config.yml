@@ -1,5 +1,9 @@
+exclude: [CNAME, deploy, michael-schaefer.org.sublime-project, michael-schaefer.org.sublime-workspace]
 name: www.michael-schaefer.org
 markdown: redcarpet
 pygments: true
 default_locale: "de"
 authorized_locales: ["de", "en"]
+ftp_host: "m-schaefer.info"
+ftp_dir: "/blog"
+ftp_passive: false
