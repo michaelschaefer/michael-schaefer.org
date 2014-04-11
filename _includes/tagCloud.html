@@ -51,11 +51,11 @@
 	{{ tagString | remove_first: "," }}
 </p>
 
-<ul>
+<ul class="noBullet">
 {% for tag in tagWords %}	
 	{% if tagCounts[forloop.index] != "0" %}
 	<li><a class="anchor" name="{{ tag | cgi_escape }}"><em>{{ tag }}:</em></a>
-		<ul>
+		<ul class="noBullet">
 			{% assign tagStruct = tagList[tag] %}
 			{% for post in tagStruct %}
 

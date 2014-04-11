@@ -108,6 +108,9 @@ input, select {
 .left {
   float: left; }
 
+.normal {
+  font-weight: normal !important; }
+
 .right {
   float: right; }
 
@@ -117,7 +120,7 @@ input, select {
 
 .symbol {
   font-family: Genericons;
-  margin-right: 0.5em;
+  padding-right: 0.5em;
   vertical-align: bottom; }
 
 .underline {
@@ -220,8 +223,12 @@ p:last-child {
 textarea {
   font-size: 1em; }
 
+.noBullet {
+  list-style: none;
+  margin: 0; }
+
 ul {
-  list-style: none; }
+  margin-left: 1.5em; }
   ul li li {
     margin-left: 1em; }
     ul li li:last-child {
@@ -231,7 +238,6 @@ ul {
 	basic layout
 */
 aside {
-  bottom: 5em;
   display: block;
   left: -500px;
   overflow-y: auto;
@@ -393,8 +399,7 @@ aside {
 
 #container {
   background-color: ivory;
-  line-height: 1.5em;
-  text-align: justify; }
+  line-height: 1.5em; }
 
 footer, nav {
   background-color: lightslategrey;
@@ -484,13 +489,14 @@ nav {
     display: block;
     height: 100%;
     margin: 0;
-    padding: 0 1em; }
+    padding: 0 1em;
+    text-align: center; }
     nav .menuItem:hover {
       background-color: #d6dbd6;
       color: black; }
   nav .big {
     font-size: 2em;
-    padding: 0 0.5em; }
+    padding: 0; }
 
 /*
 	responsive design

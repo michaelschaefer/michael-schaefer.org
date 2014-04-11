@@ -17,25 +17,21 @@
 
 
 <h1>{{ data[1].headline }}</h1>
-<div class="underline">
-{% for item in site.authorized_locales %}
-	{% assign text = site.data.i18n[item].aside[1].text %}
-	{% if item == locale %}
-	{{ text }}{% unless forloop.last %}, {% endunless %}
-	{% else %}
-	{% assign url = site.data.i18n[item].aside[1].url %}	
-	<a href="{{ url }}">{{ text }}</a>{% unless forloop.last %}, {% endunless %}
-	{% endif %}	
-{% endfor %}
-</div>
+<p>
+  {{ data[1].explanation }}
+</p>
 
+<p>
+  {% for item in site.authorized_locales %}
+  {% assign text = site.data.i18n[item].aside[1].text %}
+  {% if item == locale %}
+  {{ text }} ({{ site.data.i18n[item].aside[1].selected }}){% unless forloop.last %}, {% endunless %}
+  {% else %}
+  {% assign url = site.data.i18n[item].aside[1].url %}	
+  <a href="{{ url }}">{{ text }}</a>{% unless forloop.last %}, {% endunless %}
+  {% endif %}	
+  {% endfor %}
+</p>
 
-<h1>{{ data[2].headline }}</h1>
-<div class="underline">
-  {% include tagCloud.html type="short" %}
-</div>
-
-
-<h1>{{ data[3].headline }}</h1>
-{% include articleList.html type="archive" %}
+<p></p>
 

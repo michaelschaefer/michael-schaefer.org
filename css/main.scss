@@ -81,6 +81,7 @@ $menuSlideDuration: 1s;
 
 .disabled { opacity: 0.25; }
 .left { float: left; }
+.normal { font-weight: normal !important; }
 .right { float: right; }
 .super {
     font-size: 0.75em;
@@ -88,7 +89,7 @@ $menuSlideDuration: 1s;
 }
 .symbol {            
     font-family: Genericons;
-    margin-right: 0.5em;
+    padding-right: 0.5em;
     vertical-align: bottom;
 }
 .underline {
@@ -200,8 +201,14 @@ p:last-child { margin-bottom: 0; }
 
 textarea { font-size: 1em; }
 
-ul { 
-    list-style: none;     
+.noBullet { 
+    list-style: none; 
+    margin: 0;
+}
+
+ul {
+
+    margin-left: 1.5em;    
 
     li li {
         margin-left: 1em;
@@ -218,12 +225,11 @@ ul {
 */
 
 aside {    
-	bottom: 5em;
+	
     display: block;    
     left: -500px;        
     overflow-y: auto;
-    padding: 1em;
-    //padding-bottom: 2em;
+    padding: 1em;    
     position: absolute;    
     top: 5em;    
     width: 500px;
@@ -411,7 +417,7 @@ aside {
 #container {
 	background-color: $colBackground;
     line-height: 1.5em;
-    text-align: justify;
+    
 }
 
 footer, nav {
@@ -522,16 +528,17 @@ nav {
         height: 100%;
         margin: 0;
         padding: 0 1em;
+        text-align: center;
 
         &:hover {
             background-color: $colLight;
             color: $colTextDark;            
-        }
+        }        
     }
 
     .big {
-        font-size: 2em;        
-        padding: 0 0.5em;
+        font-size: 2em;      
+        padding: 0;
     }
 }
 
