@@ -10,8 +10,13 @@
   <p>
     {{ data[0].description }}
   </p>
-  {% for item in data[0].links %}  
-  <span class="symbol">{{ item.symbol }}</span><a href="{{ item.url }}">{{ item.text }}</a>{% unless forloop.last %}<br/>{% endunless %}
+  {% for item in data[0].links %} 
+  <span class="symbolizedText">
+    <span class="symbol left">{{ item.symbol }}</span>
+    <span>
+      <a href="{{ item.url }}">{{ item.text }}</a>{% unless forloop.last %}{% endunless %}
+    </span>
+  </span>
   {% endfor %}
 </div>
 

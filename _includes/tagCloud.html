@@ -45,10 +45,10 @@
 	{% capture tagString %}
 	{% for tag in tagWords %}
 	{% assign count = tagCounts[forloop.index] %}
-	{% if count != "0" %},&nbsp;<a href="#{{ tag | cgi_escape }}">{{ tag }}</a>&nbsp;<span class="super">({{ count }})</span>{% endif %}
+	{% if count != "0" %}<a href="#{{ tag | cgi_escape }}">{{ tag }}</a>&nbsp;<span class="super">({{ count }})</span>&nbsp;{% endif %}
 	{% endfor %}	
 	{% endcapture %}
-	{{ tagString | remove_first: "," }}
+	{{ tagString | remove_last: "," }}
 </p>
 
 <ul class="noBullet">
@@ -66,7 +66,7 @@
 			{% assign date = post.date | date: '%d.%m.%Y' %}
 			{% else %}
 			{% assign date = post.date | date: '%d/%m/%Y' %}
-			{% endif %}			
+			{% endif %}				
 			<li>
 				<div class="articleList">
 					<span class="left">{{ date }}:</span>

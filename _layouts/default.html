@@ -28,32 +28,33 @@
 
 <body>
 
-  <div id="container">
+  <input type="checkbox" id="menuTrigger" />    
 
-    <input type="checkbox" id="menuTrigger" />
-    <nav>
-     {% include navigation.html %}
-   </nav>
+  <nav>
+    {% include navigation.html %}
+  </nav>
 
-   <header>
-     {% include header.html %}	
-   </header>
+  <aside>
+    {% include aside.html %}
+  </aside>
 
-   <aside>
-     {% include aside.html %}
-   </aside>
+  <div id="container">            
 
-   <div id="center">
-     <main>
-       {{ content }}
-     </main>
-   </div>
+    <header>   
+      {% include header.html %}	
+    </header>   
 
-   <footer>
-     &copy; 2014 Michael Schaefer
-   </footer>
+    <div id="center">
+      <main>
+        {{ content }}
+      </main>
 
- </div>
+      <footer>
+        &copy; 2014 Michael Schaefer
+      </footer>
+    </div>    
+
+  </div>    
 
 </body>
 </html>

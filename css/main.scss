@@ -81,20 +81,24 @@ $menuSlideDuration: 1s;
 
 .disabled { opacity: 0.25; }
 .left { float: left; }
+.narrow { padding-left: 4em !important; }
 .normal { font-weight: normal !important; }
 .right { float: right; }
+
 .super {
     font-size: 0.75em;
     vertical-align: super;
 }
+
 .symbol {            
     font-family: Genericons;
     padding-right: 0.5em;
     vertical-align: bottom;
 }
+
 .underline {
     border-bottom: 1px dotted $colDark;
-    padding-bottom: 2em;
+    padding-bottom: 1.5em;
     margin-bottom: 1em;
 }
 
@@ -179,27 +183,24 @@ img.left {
     margin-bottom: 0.5em;
 }
 
-input {
-    background: none;
-    font-size: 1em;
-    margin: 0;
-    outline: none;
-    padding: 0;
-    vertical-align: baseline;
-}
-
 input[type="radio"], input[type="checkbox"] { display: none; }
-
-input[type="text"], textarea {
-    background-color: $colBackground;
-    border: 1px solid $colDark;
-    padding: 0.2em;
-}
 
 p { margin-bottom: 1em; }
 p:last-child { margin-bottom: 0; }
 
-textarea { font-size: 1em; }
+span.symbolizedText {     
+    display: block;    
+    &:after {
+        clear: both;
+        content: "";
+        display: block;        
+    }
+
+    span:nth-child(2) {
+        display: block;
+        padding-left: 1.5em;
+    }
+}
 
 .noBullet { 
     list-style: none; 
@@ -207,16 +208,12 @@ textarea { font-size: 1em; }
 }
 
 ul {
-
-    margin-left: 1.5em;    
-
+    margin-left: 1.5em;
     li li {
         margin-left: 1em;
 
-        &:last-child {
-            margin-bottom: 1em;
-        }
-    }    
+        &:last-child { margin-bottom: 1em; }
+    }
 }
 
 
@@ -224,8 +221,7 @@ ul {
 	basic layout
 */
 
-aside {    
-	
+aside {    	
     display: block;    
     left: -500px;        
     overflow-y: auto;
@@ -233,7 +229,7 @@ aside {
     position: absolute;    
     top: 5em;    
     width: 500px;
-    z-index: 2;
+    z-index: 1;
     @include vendor(transition, left $menuSlideDuration ease-in-out);
 }
 
@@ -242,36 +238,43 @@ body, html {
 }
 
 body {
+    background-color: black;
     overflow-y: scroll;
 }
 
 #center {	
     display: block;
     overflow: hidden;
-    position: relative;
-    //margin-bottom: -1000em;
-    min-height: 100%;
-    //padding-bottom: 1000em;
-}
-
-#container {	
-    display: block;        
-    float: none;
-    min-height: 100%;
     position: relative;    
-    padding-bottom: 3em;    
 }
 
-footer, nav {	
+#container {	    
     display: block;    
-    height: 3em;    
-    position: relative;
-    width: 100%;
+    min-height: 100%;
+    padding-top: 3em;
+    position: relative;    
+    z-index: 0;    
 }
 
-footer {	
-	bottom: 0;
-    position: absolute;    
+nav {	
+    display: block;    
+    position: absolute;
+    height: 3em;        
+    width: 100%;
+    z-index: 2;
+    top: 0;
+}
+
+footer {
+    border-top: 1px solid black;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 2em;
+    padding-top: 0.5em;
+    margin: 0 auto;    
+    font-size: 0.75em;
+    max-width: 480px;
+    min-width: 200px;
 }
 
 main {	
@@ -287,30 +290,14 @@ main {
 	logic
 */
 
-article {
-	input[name="addCommentary"]:checked ~ .commentaryForm { display: block; }
-    input[name="addCommentary"] + p { margin-top: 2em; }
-    input[name="addCommentary"] ~ p label[name="showCommentaryForm"] { display: inline-block; }
-    input[name="addCommentary"] ~ p label[name="hideCommentaryForm"] { display: none; }
-    input[name="addCommentary"]:checked ~ p label[name="showCommentaryForm"] { display: none; }
-    input[name="addCommentary"]:checked ~ p label[name="hideCommentaryForm"] { display: inline-block; }
-}
-
 #menuTrigger:checked ~ aside { left: 0; }
 
-/*#menuTrigger:checked ~ #center:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;	
-}*/
-
-#menuTrigger:checked ~ #center,
-#menuTrigger:checked ~ header { 
+/*#menuTrigger:checked ~ #container #center,
+#menuTrigger:checked ~ #container header { 
     opacity: 0.1; 
+}*/
+#menuTrigger:checked ~ #container {
+    opacity: 0.25;
 }
 
 #menuTrigger:checked ~ nav #menuButton {
@@ -318,7 +305,7 @@ article {
     color: $colTextDark;
 }
 
-nav {
+nav {    
 	input[name="navigation"]:checked + a .menuItem {
 		background-color: $colLight;
 		color: $colTextDark;
@@ -335,11 +322,6 @@ article {
 
     &:last-child { margin-bottom: 0; }
 
-    &.teaser:not(:last-child) {
-        border-bottom: 1px dotted $colDark;
-        padding-bottom: 2em;
-    }    
-
     .meta {
         display: block; 
         margin-bottom: 2em;
@@ -350,88 +332,27 @@ article {
         li, ul { display: inline; }
         li:not(:last-child):after { content: ","; }        
     }
-
-    p:first-child {
-        font-weight: bold;
-    }
 }
 
 aside {
 	background-color: $colLight;
     border: 1px solid $colDark;
     border-left: none;    
-    color: $colTextDark;    
-
-    a {
-        border-bottom: 1px dotted $colMiddle;
-        color: $colMiddle;        
-
-        &:hover { border-bottom: 1px solid $colMiddle; }
-    }
-
-    .headline {
-        display: block;
-        padding-left: 7em;
-    }
+    color: $colTextDark;       
+    line-height: 1.5em;
 
     img { width: 75px; }
-
-    input[type="checkbox"] ~ label:after {
-        content: "\f431";
-        font-family: Genericons;        
-        margin-left: 0.5em;
-    }
-
-    input[type="checkbox"] ~ ul { 
-        height: 0;
-        overflow: hidden;        
-    }
-
-    input[type="checkbox"]:checked ~ label:after {
-        content: "\f432";
-        font-family: Genericons;        
-        margin-left: 0.5em;
-    }
-
-    input[type="checkbox"]:checked ~ ul { height: auto; }
-
-    label {
-    	border: none;
-        color: $colTextDark;
-        display: inline-block;
-
-        &:hover { border: none; }
-    }
-
-    li.year { 
-        margin-bottom: 1em;
-
-        &:last-child { margin-bottom: 0; }
-    }
 }
 
 #center {	
-	@include vendor(transition, opacity $menuSlideDuration ease-in-out);
+    background-color: $colBackground;
 }
 
 #container {
 	background-color: $colBackground;
     line-height: 1.5em;
+    @include vendor(transition, opacity $menuSlideDuration ease-in-out);
     
-}
-
-footer, nav {
-	background-color: $colMiddle;
-    border-bottom: 1px solid $colDark;
-    border-top: 1px solid $colDark;
-    color: $colTextLight;
-    font-weight: bold;
-    line-height: 3em;
-}
-
-footer {
-	padding-right: 1em;
-	text-align: right;
 }
 
 header {   
@@ -518,8 +439,13 @@ main {
 }
 
 nav {  
-    overflow: hidden;
-    position: relative;
+    background-color: $colMiddle;
+    border-bottom: 1px solid $colDark;
+    border-top: 1px solid $colDark;
+    color: $colTextLight;
+    font-weight: bold;
+    line-height: 3em;
+    overflow: hidden;    
 
     .menuItem {
         color: $colTextLight;
@@ -527,13 +453,30 @@ nav {
         display: block;        
         height: 100%;
         margin: 0;
-        padding: 0 1em;
+        padding: 0 0.75em;
         text-align: center;
 
         &:hover {
             background-color: $colLight;
             color: $colTextDark;            
-        }        
+        }             
+    }
+
+    .menuItem:hover + .hint {
+        display: block;
+    }
+
+    .hint {        
+        background-color: $colLight;
+        border: 1px solid $colDark;
+        color: $colTextDark;
+        font-weight: bold;
+        display: none;        
+        line-height: 1.5em;
+        padding: 0 0.5em;
+        position: absolute;
+        top: 3.2em;
+        z-index: 5;
     }
 
     .big {
@@ -554,9 +497,9 @@ nav {
         left: -500px;
     }
 
-    #container, footer, main, nav {
-        min-width: 305px;
-    }
+    #container, nav, main {
+        min-width: 320px;
+    }    
 
     header {
         .dummy {

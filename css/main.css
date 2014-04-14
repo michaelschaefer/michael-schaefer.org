@@ -108,6 +108,9 @@ input, select {
 .left {
   float: left; }
 
+.narrow {
+  padding-left: 4em !important; }
+
 .normal {
   font-weight: normal !important; }
 
@@ -125,7 +128,7 @@ input, select {
 
 .underline {
   border-bottom: 1px dotted #3e3e3b;
-  padding-bottom: 2em;
+  padding-bottom: 1.5em;
   margin-bottom: 1em; }
 
 /*
@@ -198,21 +201,8 @@ img.left {
   margin-right: 1em;
   margin-bottom: 0.5em; }
 
-input {
-  background: none;
-  font-size: 1em;
-  margin: 0;
-  outline: none;
-  padding: 0;
-  vertical-align: baseline; }
-
 input[type="radio"], input[type="checkbox"] {
   display: none; }
-
-input[type="text"], textarea {
-  background-color: ivory;
-  border: 1px solid #3e3e3b;
-  padding: 0.2em; }
 
 p {
   margin-bottom: 1em; }
@@ -220,8 +210,15 @@ p {
 p:last-child {
   margin-bottom: 0; }
 
-textarea {
-  font-size: 1em; }
+span.symbolizedText {
+  display: block; }
+  span.symbolizedText:after {
+    clear: both;
+    content: "";
+    display: block; }
+  span.symbolizedText span:nth-child(2) {
+    display: block;
+    padding-left: 1.5em; }
 
 .noBullet {
   list-style: none;
@@ -245,7 +242,7 @@ aside {
   position: absolute;
   top: 5em;
   width: 500px;
-  z-index: 2;
+  z-index: 1;
   -ms-transition: left 1s ease-in-out;
   -moz-transition: left 1s ease-in-out;
   -o-transition: left 1s ease-in-out;
@@ -256,30 +253,39 @@ body, html {
   height: 100%; }
 
 body {
+  background-color: black;
   overflow-y: scroll; }
 
 #center {
   display: block;
   overflow: hidden;
-  position: relative;
-  min-height: 100%; }
+  position: relative; }
 
 #container {
   display: block;
-  float: none;
   min-height: 100%;
+  padding-top: 3em;
   position: relative;
-  padding-bottom: 3em; }
+  z-index: 0; }
 
-footer, nav {
+nav {
   display: block;
+  position: absolute;
   height: 3em;
-  position: relative;
-  width: 100%; }
+  width: 100%;
+  z-index: 2;
+  top: 0; }
 
 footer {
-  bottom: 0;
-  position: absolute; }
+  border-top: 1px solid black;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 2em;
+  padding-top: 0.5em;
+  margin: 0 auto;
+  font-size: 0.75em;
+  max-width: 480px;
+  min-width: 200px; }
 
 main {
   display: block;
@@ -291,34 +297,15 @@ main {
 /*
 	logic
 */
-article input[name="addCommentary"]:checked ~ .commentaryForm {
-  display: block; }
-article input[name="addCommentary"] + p {
-  margin-top: 2em; }
-article input[name="addCommentary"] ~ p label[name="showCommentaryForm"] {
-  display: inline-block; }
-article input[name="addCommentary"] ~ p label[name="hideCommentaryForm"] {
-  display: none; }
-article input[name="addCommentary"]:checked ~ p label[name="showCommentaryForm"] {
-  display: none; }
-article input[name="addCommentary"]:checked ~ p label[name="hideCommentaryForm"] {
-  display: inline-block; }
-
 #menuTrigger:checked ~ aside {
   left: 0; }
 
-/*#menuTrigger:checked ~ #center:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;	
+/*#menuTrigger:checked ~ #container #center,
+#menuTrigger:checked ~ #container header { 
+    opacity: 0.1; 
 }*/
-#menuTrigger:checked ~ #center,
-#menuTrigger:checked ~ header {
-  opacity: 0.1; }
+#menuTrigger:checked ~ #container {
+  opacity: 0.25; }
 
 #menuTrigger:checked ~ nav #menuButton {
   background-color: #d6dbd6;
@@ -335,9 +322,6 @@ article {
   margin-bottom: 2em; }
   article:last-child {
     margin-bottom: 0; }
-  article.teaser:not(:last-child) {
-    border-bottom: 1px dotted #3e3e3b;
-    padding-bottom: 2em; }
   article .meta {
     display: block;
     margin-bottom: 2em;
@@ -348,70 +332,27 @@ article {
       display: inline; }
     article .meta li:not(:last-child):after {
       content: ","; }
-  article p:first-child {
-    font-weight: bold; }
 
 aside {
   background-color: #d6dbd6;
   border: 1px solid #3e3e3b;
   border-left: none;
-  color: black; }
-  aside a {
-    border-bottom: 1px dotted lightslategrey;
-    color: lightslategrey; }
-    aside a:hover {
-      border-bottom: 1px solid lightslategrey; }
-  aside .headline {
-    display: block;
-    padding-left: 7em; }
+  color: black;
+  line-height: 1.5em; }
   aside img {
     width: 75px; }
-  aside input[type="checkbox"] ~ label:after {
-    content: "\f431";
-    font-family: Genericons;
-    margin-left: 0.5em; }
-  aside input[type="checkbox"] ~ ul {
-    height: 0;
-    overflow: hidden; }
-  aside input[type="checkbox"]:checked ~ label:after {
-    content: "\f432";
-    font-family: Genericons;
-    margin-left: 0.5em; }
-  aside input[type="checkbox"]:checked ~ ul {
-    height: auto; }
-  aside label {
-    border: none;
-    color: black;
-    display: inline-block; }
-    aside label:hover {
-      border: none; }
-  aside li.year {
-    margin-bottom: 1em; }
-    aside li.year:last-child {
-      margin-bottom: 0; }
 
 #center {
+  background-color: ivory; }
+
+#container {
+  background-color: ivory;
+  line-height: 1.5em;
   -ms-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out; }
-
-#container {
-  background-color: ivory;
-  line-height: 1.5em; }
-
-footer, nav {
-  background-color: lightslategrey;
-  border-bottom: 1px solid #3e3e3b;
-  border-top: 1px solid #3e3e3b;
-  color: white;
-  font-weight: bold;
-  line-height: 3em; }
-
-footer {
-  padding-right: 1em;
-  text-align: right; }
 
 header {
   background-color: #d6dbd6;
@@ -481,19 +422,37 @@ main .navigation {
     left: 6em; }
 
 nav {
-  overflow: hidden;
-  position: relative; }
+  background-color: lightslategrey;
+  border-bottom: 1px solid #3e3e3b;
+  border-top: 1px solid #3e3e3b;
+  color: white;
+  font-weight: bold;
+  line-height: 3em;
+  overflow: hidden; }
   nav .menuItem {
     color: white;
     cursor: pointer;
     display: block;
     height: 100%;
     margin: 0;
-    padding: 0 1em;
+    padding: 0 0.75em;
     text-align: center; }
     nav .menuItem:hover {
       background-color: #d6dbd6;
       color: black; }
+  nav .menuItem:hover + .hint {
+    display: block; }
+  nav .hint {
+    background-color: #d6dbd6;
+    border: 1px solid #3e3e3b;
+    color: black;
+    font-weight: bold;
+    display: none;
+    line-height: 1.5em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: 3.2em;
+    z-index: 5; }
   nav .big {
     font-size: 2em;
     padding: 0; }
@@ -507,8 +466,8 @@ nav {
     width: 95%;
     left: -500px; }
 
-  #container, footer, main, nav {
-    min-width: 305px; }
+  #container, nav, main {
+    min-width: 320px; }
 
   header .dummy {
     max-width: 960px;
