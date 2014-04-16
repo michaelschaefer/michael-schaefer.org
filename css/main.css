@@ -318,26 +318,37 @@ nav input[name="navigation"]:checked + a .menuItem {
 /*
 	styling
 */
-.album a {
-  border: none;
-  position: relative;
-  margin-right: 2em;
-  margin-bottom: 2em;
-  float: left;
-  opacity: 0.75;
-  top: 0;
-  -ms-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-.album a:hover {
-  top: -1em;
-  opacity: 1; }
-.album:after {
-  clear: both;
-  content: "";
-  display: block; }
+.album {
+  border-collapse: separate;
+  display: table;
+  width: 100%; }
+  .album .row {
+    display: table-row;
+    width: 100%; }
+    .album .row .cell {
+      display: table-cell;
+      padding: 3%;
+      vertical-align: top; }
+  .album a {
+    border: none; }
+    .album a img {
+      box-shadow: 0 0 1em black;
+      border: none;
+      display: block;
+      opacity: 0.5;
+      width: 100%;
+      -ms-transition: 0.5s ease-in-out;
+      -moz-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      -webkit-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out; }
+      .album a img:hover {
+        opacity: 1;
+        -ms-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
+        -o-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1); }
 
 article {
   margin-bottom: 2em; }

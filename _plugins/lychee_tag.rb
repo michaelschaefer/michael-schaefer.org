@@ -49,6 +49,7 @@ module Jekyll
       @config['album_title_tag'] ||= 'h1'
       @config['link_big_to']     ||= 'lychee'
       @config['url']             ||= 'http://electerious.com/lychee_demo'
+      @config['columns']         ||= 3
 
       # construct class wide usable variables
       @thumb_url = @config['url'] + "/uploads/thumb/"
@@ -66,16 +67,33 @@ module Jekyll
 
       album = get_album(@album_id)
       html = "<#{@config['album_title_tag']}>#{album['title']}</#{@config['album_title_tag']}>\n"
+      html << "<div class=\"album\">\n"
       album_content = album['content']
+
+      count = 1
+      html << "\n<div class=\"row\">\n"
+
       album_content.each do |photo_id, photo_data|
         big_href = case @config['link_big_to']
           when "img" then @big_url + get_photo(@album_id, photo_id)['url']
           when "lychee" then @config['url'] + "#" + @album_id + "/" + photo_id
           else "#"
         end
-        html << "<a href=\"#{big_href}\" title=\"#{photo_data['title']}\"><img src=\"#{@thumb_url}#{photo_data['thumbUrl']}\"/></a>\n"
+        # html << "<a href=\"#{big_href}\" title=\"#{photo_data['title']}\"><img src=\"#{@thumb_url}#{photo_data['thumbUrl']}\"/></a>"
+        html << "<div class=\"cell\"><a href=\"#{big_href}\"><img src=\"#{@thumb_url}#{photo_data['thumbUrl']}\"/></a></div>\n"
+        if (count % @config['columns'] == 0)
+          html << "</div>\n\n<div class=\"row\">\n"
+        end
+        count += 1
       end
-      return html
+
+      if (count % 3 == 0)
+        html << "<div class=\"cell\"><div class=\"cell\">"
+      elsif (count % 3 == 2)
+        html << "<div class=\"cell\">"
+      end
+
+      return (html << "\n</div>")
     end
 
     # Lychee API mapping

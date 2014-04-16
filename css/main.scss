@@ -317,30 +317,42 @@ nav {
 	styling
 */
 
-.album {
-    a {    
-        border: none;
-        position: relative;
-        margin-right: 2em;
-        margin-bottom: 2em;
-        float: left;
-        opacity: 0.75;
-        top: 0;
 
-        @include vendor(transition, all 0.5s ease-in-out);
-    } 
+.album {        
+    border-collapse: separate;
+    display: table;    
+    width: 100%;        
 
-    a:hover {
-        top: -1em;
-        opacity: 1;
-    }   
+    .row {        
+        display: table-row;        
+        width: 100%;
 
-    &:after {
-        clear: both;
-        content: "";
-        display: block;        
+        .cell {            
+            display: table-cell;
+            padding: 3%;
+            vertical-align: top;         
+        }        
+    }
+
+    a {
+        border: none;        
+
+        img {
+            box-shadow: 0 0 1em black;
+            border: none;
+            display: block;                
+            opacity: 0.5;            
+            width: 100%;
+            @include vendor(transition, 0.5s ease-in-out);
+
+            &:hover {
+                opacity: 1;                 
+                @include vendor(transform, scale(1.1, 1.1));
+            }
+        }
     }
 }
+
 
 article {
     margin-bottom: 2em;
