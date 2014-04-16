@@ -318,6 +318,27 @@ nav input[name="navigation"]:checked + a .menuItem {
 /*
 	styling
 */
+.album a {
+  border: none;
+  position: relative;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  float: left;
+  opacity: 0.75;
+  top: 0;
+  -ms-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+.album a:hover {
+  top: -1em;
+  opacity: 1; }
+.album:after {
+  clear: both;
+  content: "";
+  display: block; }
+
 article {
   margin-bottom: 2em; }
   article:last-child {
