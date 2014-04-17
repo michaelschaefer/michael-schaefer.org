@@ -38,10 +38,7 @@ require 'uri'
 module Jekyll
   class LycheeAlbumTag < Liquid::Tag
     def initialize(tag_name, config, token)
-      super
-
-      # params coming from the liquid tag
-      @params = config.strip
+      super      
 
       # get config from _config.yml
       @config = Jekyll.configuration({})['lychee'] || {}
@@ -50,12 +47,17 @@ module Jekyll
       @config['link_big_to']     ||= 'lychee'
       @config['url']             ||= 'http://electerious.com/lychee_demo'
       @config['columns']         ||= 3
+      @config['separator']       ||= '|'
+
+      # params coming from the liquid tag
+      @params = config.strip.split(@config['separator'])
 
       # construct class wide usable variables
       @thumb_url = @config['url'] + "/uploads/thumb/"
       @big_url = @config['url'] + "/uploads/big/"
       @album_id = @params[0]
-    end
+      @album_description = @params[1]
+    end 
 
     def render(context)
       # initialize session with Lychee
@@ -66,9 +68,14 @@ module Jekyll
       @request['Cookie'] = init_lychee_session
 
       album = get_album(@album_id)
-      html = "<#{@config['album_title_tag']}>#{album['title']}</#{@config['album_title_tag']}>\n"
-      html << "<div class=\"album\">\n"
       album_content = album['content']
+
+      # write header tag and description
+      html = "<#{@config['album_title_tag']}>#{album['title']}</#{@config['album_title_tag']}>\n"
+      if @album_description != nil
+        html << "<p>\n\t#{@album_description}\n</p>\n"      
+      end
+      html << "<div class=\"album\">\n"      
 
       count = 1
       html << "\n<div class=\"row\">\n"
