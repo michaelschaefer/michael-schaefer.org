@@ -233,6 +233,7 @@ ul {
 	basic layout
 */
 aside {
+  bottom: 0;
   display: block;
   left: -500px;
   overflow-y: auto;
