@@ -8,6 +8,6 @@ ftp_host: "m-schaefer.info"
 ftp_dir: "/blog"
 ftp_passive: false
 lychee:
-  url: "http://localhost/lychee/"
+  url: "http://www.michael-schaefer.org/lychee/"
   album_title_tag: "h1"
   link_big_to: "lychee"
