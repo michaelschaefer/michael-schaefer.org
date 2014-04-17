@@ -27,7 +27,7 @@
 </head>
 
 <body>
-
+  
   <input type="checkbox" id="menuTrigger" />    
 
   <nav>
@@ -50,11 +50,16 @@
       </main>
 
       <footer>
-        &copy; 2014 Michael Schaefer
+        &copy; 2014 Michael Schaefer<br/>
+        {% if locale == "de" %}
+        <a href="/impressum/">Impressum</a>
+        {% else %}
+        <a href="/en/imprint/">Imprint</a>
+        {% endif %}
       </footer>
     </div>    
 
-  </div>    
+  </div> 
 
 </body>
 </html>
