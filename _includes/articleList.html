@@ -5,6 +5,10 @@
 
 {% if include.type == "archive" %}
 
+{% if site.categories[locale] == nil %}
+	<p><em>{{ site.data.i18n[locale].noArticles }}</em></p>
+{% else %}
+
 <ul class="noBullet">
 {% assign oldYear = "" %}
 {% for post in site.categories[locale] %}
@@ -31,16 +35,20 @@
 
 {% endfor %}
 </ul>
+{% endif %}
 
 {% elsif include.type == "recent" %}
 
-{% for post in site.categories[locale] limit: 3 %}
-
-{% if locale == "de" %}
-	{% assign date = post.date | date: '%d.%m.%Y' %}
+{% if site.categories[locale] == nil %}
+	<em>{{ site.data.i18n[locale].noArticles }}</em>
 {% else %}
+	{% for post in site.categories[locale] limit: 3 %}
+
+	{% if locale == "de" %}
+	{% assign date = post.date | date: '%d.%m.%Y' %}
+	{% else %}
 	{% assign date = post.date | date: '%d/%m/%Y' %}
-{% endif %}
+	{% endif %}
 
 <div class="articleList">
 	<span class="left">{{ date }}:</span>
@@ -58,6 +66,6 @@
 	</span>	
 </div>
 
-{% endfor %}
-
+	{% endfor %}
+	{% endif %}
 {% endif %}

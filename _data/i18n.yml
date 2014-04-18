@@ -42,7 +42,9 @@ de:
     text: "deutsch"
     url: "/"
   menuTooltip: "Men&uuml;"
+  noArticles: "Keine Artikel vorhanden"
   noDescription: "Kein Beschreibungstext vorhanden"
+  noTags: "Keine Tags vorhanden"
 
 en:
   navigation:
@@ -88,4 +90,6 @@ en:
     text: "english"
     url: "/en/"
   menuTooltip: "Menu"
+  noArticles: "No articles available"
   noDescription: "No description text available"
+  noTags: "No tags available"

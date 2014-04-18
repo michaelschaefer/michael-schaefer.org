@@ -29,16 +29,9 @@
 {% assign tagCounts = tagCounts | split:',' %}
 
 
-{% if include.type == "short" %}
 
-{% capture tagString %}
-{% for tag in tagWords %}
-	{% assign count = tagCounts[forloop.index] %}
-	{% if count != "0" %},&nbsp;<a href="{{ subdir }}/tags/#{{ tag | cgi_escape }}">{{ tag }}</a>&nbsp;<span class="super">({{ count }})</span>{% endif %}
-{% endfor %}
-{% endcapture %}
-{{ tagString | remove_first: "," }}
-
+{% if tagWords.size == 0 %}
+	<p><em>{{ site.data.i18n[locale].noTags }}</em></p>
 {% else %}
 
 <p>	
