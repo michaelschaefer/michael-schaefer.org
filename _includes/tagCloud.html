@@ -48,7 +48,7 @@
 	{% if count != "0" %}<a href="#{{ tag | cgi_escape }}">{{ tag }}</a>&nbsp;<span class="super">({{ count }})</span>&nbsp;{% endif %}
 	{% endfor %}	
 	{% endcapture %}
-	{{ tagString | remove_last: "," }}
+	{{ tagString }}
 </p>
 
 <ul class="noBullet">

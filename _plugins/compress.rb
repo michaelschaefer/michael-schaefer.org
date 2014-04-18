@@ -29,29 +29,8 @@ module Jekyll
 
   module Compressor
     
-  	def compress_html(content)
-  		lines = content.gsub(/(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!\/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))/ix, "\n").split("\n")
-  		content = ""
-  		indentationLevel = 0
-  		lines.each do |line|
-  			if line[0] == '<'
-  				if line[1] == '/'
-  					indentationLevel -= 1
-  				else
-  					if line.index("><") == nil or line.index("/>") == nil
-  						indentationLevel += 1
-  					end  					
-  				end
-  			else  				
-  				indentationLevel += 1
-  			end
-
-  			for ss in 0...indentationLevel
-  				content << "\t"
-  			end
-  			content << line << "\n"
-  		end
-  		return content
+  	def compress_html(content)      
+      return content.gsub(/(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!\/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))/ix, "")
   	end
 
     # Really writing process

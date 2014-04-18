@@ -30,10 +30,10 @@
   {% for item in site.authorized_locales %}
   {% assign text = site.data.i18n[item].aside[1].text %}
   {% if item == locale %}
-  {{ text }} ({{ site.data.i18n[item].aside[1].selected }}){% unless forloop.last %}, {% endunless %}
+  {{ text }} ({{ site.data.i18n[item].aside[1].selected }}){% unless forloop.last %},&nbsp;{% endunless %}
   {% else %}
   {% assign url = site.data.i18n[item].aside[1].url %}	
-  <a href="{{ url }}">{{ text }}</a>{% unless forloop.last %}, {% endunless %}
+  <a href="{{ url }}">{{ text }}</a>{% unless forloop.last %},&nbsp;{% endunless %}
   {% endif %}	
   {% endfor %}
 </p>
