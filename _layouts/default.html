@@ -9,10 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
-    {{ site.name }} 
-    {% if page.title %}
-    || {{ page.title }}
-    {% endif %}
+    {{ site.name }}{% if page.title %}&nbsp;|| {{ page.title }}{% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">  
 
@@ -26,38 +23,29 @@
 
 </head>
 
-<body>
-  
-  <input type="checkbox" id="menuTrigger" />    
+<body>    
 
-  <nav>
-    {% include navigation.html %}
-  </nav>
+  <input type="checkbox" id="header_switcher" />
+  <header>       
+    <img src="/media/photo/03.jpg" />    
+    <label for="header_switcher">
+      <div></div>
+    </label>    
+  </header>   
 
-  <aside>
-    {% include aside.html %}
-  </aside>
+  <div id="container">                
 
-  <div id="container">            
+    <nav>
+      {% include navigation.html %}
+    </nav>    
 
-    <header>   
-      {% include header.html %}	
-    </header>   
+    <main>
+      {{ content }}
+    </main>
 
-    <div id="center">
-      <main>
-        {{ content }}
-      </main>
-
-      <footer>
-        &copy; 2014 Michael Schaefer<br/>
-        {% if locale == "de" %}
-        <a href="/impressum/">Impressum</a>
-        {% else %}
-        <a href="/en/imprint/">Imprint</a>
-        {% endif %}
-      </footer>
-    </div>    
+    <footer>
+      &copy; 2014 Michael Schaefer<br/>
+    </footer>
 
   </div> 
 

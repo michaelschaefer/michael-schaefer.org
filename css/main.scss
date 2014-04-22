@@ -67,8 +67,6 @@ $colDark: #3e3e3b; //#60605a;
 $colTextLight: white;
 $colTextDark: black;
 
-$menuSlideDuration: 1s;
-
 
 /*
 	generic classes
@@ -103,453 +101,197 @@ $menuSlideDuration: 1s;
 }
 
 
-/*
-	general styling
-*/
-
 * {
 	@include vendor(box-sizing, border-box);	
 	font-family: Quicksand, sans-serif;
 	word-wrap: break-word;
 }
 
-a, label, input[type="submit"] {
-    border: none;
+a {
     border-bottom: 1px dotted $colMiddle;
-    cursor: pointer;
     color: $colMiddle;
     font-weight: bold;
     text-decoration: none;
 
-    &:hover {
-        border-bottom: 1px solid $colMiddle;
+    &:hover { border-bottom: 1px solid $colMiddle; }
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-color: $colBackground;
+    font-size: 12pt;
+    min-width: 300px;
+    overflow-y: scroll;    
+    width: 100%;
+}
+
+.contact {
+    display: block;
+    width: 75%;    
+    margin: 0 auto;
+
+    img, object {        
+        width: 100%;
     }
 }
 
-a.anchor {
-    color: $colTextDark;
-    cursor: default;
-    border: none;
-    font-weight: normal;
+#container {    
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
 }
 
-code {
-    background-color: $colLight;
-    border: 1px solid $colDark;
-    font-family: monospace;
-    padding: 0.25em;
-}
-
-div.articleList {
-    margin-bottom: 1em;
-
-    .headline {
-        display: block;
-        padding-left: 7em;
-    }
-
-    &:after {
-        clear: both;
-        content: "";
-        display: block;
-    }     
-
-    &:last-child { margin-bottom: 0; }
-}
-
-em { 
+em {
     font-style: normal;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-h1, h2 { display: block; }
+footer {
+    border-top: 1px solid $colDark;
+    display: block;
+    font-size: 0.83em;
+    margin: 2.4em 2.4em;
+    padding-top: 1.2em;
+    text-align: center;    
+}
 
 h1 {
-    font-size: 2em;
-    line-height: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-h2 { margin-bottom: 1em; }
-
-img {
     display: block;
-    border: 1px solid $colDark;    
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.67em;
+    margin-top: 1.33em;
 }
 
-img.left { 
-    float: left; 
+h1:first-child { margin-top: 0; }
+
+h2 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+header {    
+    border-bottom: 1px solid $colDark;    
+    position: relative;
+    top: 0;
+    @include vendor(transition, all 0.5s);
+    width: 100%;    
+
+    div {
+        background-color: $colBackground;        
+        border: 1px solid $colDark;
+        border-radius: 3em;
+        bottom: -1.5em;
+        cursor: pointer;
+        display: block;        
+        font-family: Genericons;        
+        height: 3em;
+        left: 50%;
+        line-height: 4.25em;                
+        margin-left: -1.5em;
+        opacity: 0.5;
+        position: absolute;        
+        text-align: center;
+        
+        width: 3em;
+
+        &:after { content: "\f432"; }
+
+        &:hover { box-shadow: 0 0 10px $colDark; }
+    }    
+
+    img {
+        display: block;
+        height: 100%;
+        opacity: 0.75;
+        width: 100%;
+    }        
+}
+
+#header_switcher:checked + header {
+    margin-top: -25%;
+    padding-top: 1.5em;
+}
+
+#header_switcher:checked + header > label > div:after { content: "\f431"; }    
+
+img.left {
+    display: block;
+    float: left;
     margin-right: 1em;
     margin-bottom: 0.5em;
 }
 
-input[type="radio"], input[type="checkbox"] { display: none; }
-
-p { margin-bottom: 1em; }
-p:last-child { margin-bottom: 0; }
-
-span.symbolizedText {     
-    display: block;    
-    &:after {
-        clear: both;
-        content: "";
-        display: block;        
-    }
-
-    span:nth-child(2) {
-        display: block;
-        padding-left: 1.5em;
-    }
-}
-
-.noBullet { 
-    list-style: none; 
-    margin: 0;
-}
-
-ul {
-    margin-left: 1.5em;
-    li li {
-        margin-left: 1em;
-    }
-}
-
-
-/*
-	basic layout
-*/
-
-aside {
-    bottom: 0;
-    display: block;    
-    left: -500px;        
-    overflow-y: auto;
-    padding: 1em;    
-    position: fixed;        
-    top: 5em;    
-    width: 500px;
-    z-index: 1;
-    @include vendor(transition, left $menuSlideDuration ease-in-out);
-}
-
-body, html {	
-	height: 100%;	
-}
-
-body {    
-    background-color: black;
-    overflow-y: scroll;    
-    position: relative;
-}
-
-#center {	
-    display: block;
-    overflow: hidden;
-    position: relative;    
-}
-
-#container {	    
-    display: block;    
-    min-height: 100%;
-    padding-top: 3em;
-    position: relative;    
-    z-index: 0;    
-}
-
-footer {        
-    margin: 0 auto;        
-    max-width: 480px;
-    min-width: 200px;
-    padding-bottom: 1.5rem;
-    padding-top: 1.5rem;    
-    width: 50%;    
-}
-
-nav {	
-    display: block;    
-    position: fixed;
-    height: 3em;        
-    width: 100%;
-    z-index: 2;
-    top: 0;
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
 }
 
 main {
-	display: block;	
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 2em;
-    width: 960px;
+    padding: 0 2em;
 }
 
+nav {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding: 0 2em;
 
-/*
-	logic
-*/
-
-#menuTrigger:checked ~ aside { left: 0; }
-
-#menuTrigger:checked ~ #container {
-    opacity: 0.25;
-}
-
-#menuTrigger:checked ~ nav #menuButton {
-    background-color: $colLight;
-    color: $colTextDark;
-}
-
-nav {    
-	input[name="navigation"]:checked + a .menuItem {
-		background-color: $colLight;
-		color: $colTextDark;
-	}
-}
-
-
-/*
-	styling
-*/
-
-
-.album {        
-    border-collapse: separate;
-    display: table;    
-    width: 100%;        
-
-    .row {        
-        display: table-row;        
-        width: 100%;
-
-        .cell {            
-            display: table-cell;
-            padding: 3%;
-            vertical-align: top;         
-        }        
-    }
-
-    a {
-        border: none;        
-
-        img {
-            box-shadow: 0 0 1em black;
-            border: none;
-            display: block;                
-            opacity: 0.5;            
-            width: 100%;
-            @include vendor(transition, 0.5s ease-in-out);
-
-            &:hover {
-                opacity: 1;                 
-                @include vendor(transform, scale(1.1, 1.1));
-            }
-        }
-    }
-}
-
-
-article {
-    margin-bottom: 2em;
-
-    &:last-child { margin-bottom: 0; }
-
-    .meta {
-        display: block; 
-        margin-bottom: 2em;
-        width: 100%;        
-
-        .date { margin-right: 1em; }        
-
-        li, ul { display: inline; }
-        li:not(:last-child):after { content: ","; }        
-    }
-}
-
-aside {
-	background-color: $colLight;
-    border: 1px solid $colDark;
-    border-left: none;    
-    color: $colTextDark;       
-    line-height: 1.5em;
-
-    img { width: 75px; }
-}
-
-#center {	
-    background-color: $colBackground;
-}
-
-#container {
-	background-color: $colBackground;
-    line-height: 1.5em;
-    @include vendor(transition, opacity $menuSlideDuration ease-in-out);
-    
-}
-
-footer {
-    border-top: 1px solid black;
-    text-align: center;
-    font-size: 0.8333em;
-}
-
-header {   
-    background-color: $colLight;
-    border-bottom: 1px solid $colDark;    
-    overflow: hidden;    
-    position: relative;
-    @include vendor(transition, opacity $menuSlideDuration ease-in-out);
-    width: 100%;
-
-    .dummy {            
-        display: block;                
-        margin: 0 auto;
-        width: 960px;     
-
-        .wrapper {
-            display: block;
-            height: 0;
-            position: relative;
-            padding-top: 25%;  
-
-            img {
-                border: none;
-                position: absolute;                                
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }          
-
-            .content {
-                display: block;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                width: 100%;
-            }
-
-            .left {                    
-                left: -100%;
-                z-index: 0;                
-            }
-
-            .middle {                
-                left: 0;
-                z-index: 1;                
-            }
-
-            .right {
-                left: 100%;
-                z-index: 0;
-            }
-        }        
-    }   
-}
-
-main {	
-    .contact {            
-        display: block;
-        margin: 0 auto;        
-        text-align: center;
-        width: 75%;
-
-        img { 
-            border: none;
-            max-width: 100%;
-        }        
-    }
-    
-    .navigation {
+    a {     
+        border: none;
         color: $colMiddle;
-        font-family: Genericons;
-        font-size: 1em;
-        margin-left: 2em;        
-        position: absolute;
-        top: 0.5em;
-        
+        display: block;
+        float: left;        
+        font-size: 1.5em;        
+        font-weight: normal;
+        margin-right: 0.67em;
+        margin-bottom: 0.67em;        
 
-        &:nth-child(1) { left: 0em; }
-        &:nth-child(2) { left: 2em; }
-        &:nth-child(3) { left: 4em; }
-        &:nth-child(4) { left: 6em; }
-    }
-}
+        &:after {
+            content: ">";
+            opacity: 0.25;
+        }
 
-nav {  
-    background-color: $colMiddle;
-    border-bottom: 1px solid $colDark;
-    border-top: 1px solid $colDark;
-    color: $colTextLight;
-    font-weight: bold;
-    line-height: 3em;
-    overflow: hidden;    
-
-    .menuItem {
-        color: $colTextLight;
-        cursor: pointer;
-        display: block;        
-        height: 100%;
-        margin: 0;
-        padding: 0 0.75em;
-        text-align: center;
+        &:before {
+            content: "<";
+            opacity: 0.25;
+        }
 
         &:hover {
-            background-color: $colLight;
-            color: $colTextDark;            
-        }             
-    }
-
-    .menuItem:hover + .hint {
-        display: block;
-    }
-
-    .hint {        
-        background-color: $colLight;
-        border: 1px solid $colDark;
-        color: $colTextDark;
-        font-weight: bold;
-        display: none;        
-        line-height: 1.5em;
-        padding: 0 0.5em;
-        position: absolute;
-        top: 3.2em;
-        z-index: 5;
-    }
-
-    .big {
-        font-size: 2em;      
-        padding: 0;
-    }
-}
-
-
-/*
-	responsive design
-*/
-
-@media (max-width: 1024px) {
-    aside {        
-        max-width: 500px;        
-        width: 95%;
-        left: -500px;
-    }
-
-    body, #container, nav, main {
-        min-width: 320px;
-    }
-
-    header {
-        .dummy {
-            max-width: 960px;
-            width: 100% !important;
+            border: none;
         }
     }
 
-    main {        
-        width: 100%;   
+    a:hover:after,
+    input[id^="entry"]:checked + a:after { opacity: 1; }
+
+    a:hover:before,
+    input[id^="entry"]:checked + a:before { opacity: 1; }
+
+    input[id^="entry"]:checked + a { color: $colDark; }
+
+    &:after {
+        clear: both;        
+        content: "";
+        display: block;
     }
 }
 
-@media (max-width: 350px) {
-    aside, nav { position: absolute; }
+p {
+    line-height: 1.5em;
+    margin-bottom: 0.67em;
 }
 
+ul {
+    margin-left: 1.5em;    
+    margin-bottom: 1em;
+
+    li {
+        line-height: 1.5em;
+        margin-bottom: 0.5em;
+        &:last-child { margin-bottom: 0; }
+    }
+}

@@ -3,10 +3,6 @@
 {% assign locale = site.default_locale %}
 {% endunless %}
 
-<label for="menuTrigger" title="{{ site.data.i18n[locale].menuTooltip }}">
-  <span id="menuButton" class="menuItem symbol left">&#xf419;</span>  
-</label>
-
 {% for item in site.data.i18n[locale].navigation %}
 
 {% if page.type == item.type %}
@@ -15,9 +11,5 @@
 <input type="radio" name="navigation" id="entry{{ forloop.index }}" />
 {% endif %}
 
-<a href="{{ item.url }}" title="{{ item.tooltip }}">
-	<span class="menuItem left">
-		<span class="symbol big normal">{{ item.text }}</span>
-	</span>		
-</a>
+<a href="{{ item.url }}">{{ item.tooltip }}</a>
 {% endfor %}
