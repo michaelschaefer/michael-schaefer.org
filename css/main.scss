@@ -177,11 +177,11 @@ h2 {
 header {    
     border-bottom: 1px solid $colDark;    
     position: relative;
-    top: 0;
+    top: 0;    
     @include vendor(transition, all 0.5s);
     width: 100%;    
 
-    div {
+    .circle {
         background-color: $colBackground;        
         border: 1px solid $colDark;
         border-radius: 3em;
@@ -196,13 +196,29 @@ header {
         opacity: 0.5;
         position: absolute;        
         text-align: center;
-        
         width: 3em;
 
-        &:after { content: "\f432"; }
+        &:hover { 
+            box-shadow: 0 0 10px $colDark; 
+            opacity: 1;
+        }
+    }
 
-        &:hover { box-shadow: 0 0 10px $colDark; }
-    }    
+    .link {
+        color: $colTextDark;
+        font-weight: normal;
+        line-height: 4em;
+    }
+
+    .selected { opacity: 1; }
+
+    #de { margin-left: -6em; }  
+
+    #en { margin-left: 3em; }
+
+    #hide_show {
+        &:after { content: "\f432"; }
+    }
 
     img {
         display: block;
@@ -217,7 +233,7 @@ header {
     padding-top: 1.5em;
 }
 
-#header_switcher:checked + header > label > div:after { content: "\f431"; }    
+#header_switcher:checked + header #hide_show:after { content: "\f431"; }    
 
 img.left {
     display: block;
@@ -282,7 +298,7 @@ nav {
 
 p {
     line-height: 1.5em;
-    margin-bottom: 0.67em;
+    margin-bottom: 1em;
 }
 
 ul {

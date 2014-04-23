@@ -21,16 +21,36 @@
   <!-- syntax highlighting CSS -->
   <link rel="stylesheet" href="/css/syntax.css">
 
+  <script type="text/javascript">
+    window.onunload = function() {
+      var tag = document.getElementById("header_switcher");
+      if (tag.checked != undefined) {
+        window.name = tag.checked;
+      } else {        
+        window.name = ""
+      }            
+    }
+  
+    window.onload = function() {
+      var hide = false;
+      if (window.name == "true") {
+        hide = true;
+      }
+
+      var tag = document.getElementById("header_switcher");
+      if (hide == true) {
+        tag.checked = true;
+      }
+    }
+  </script>
+
 </head>
 
-<body>    
+<body>
 
   <input type="checkbox" id="header_switcher" />
   <header>       
-    <img src="/media/photo/03.jpg" />    
-    <label for="header_switcher">
-      <div></div>
-    </label>    
+    {% include header.html %}
   </header>   
 
   <div id="container">                

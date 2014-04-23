@@ -207,7 +207,7 @@ header {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: 100%; }
-  header div {
+  header .circle {
     background-color: ivory;
     border: 1px solid #3e3e3b;
     border-radius: 3em;
@@ -223,10 +223,21 @@ header {
     position: absolute;
     text-align: center;
     width: 3em; }
-    header div:after {
-      content: "\f432"; }
-    header div:hover {
-      box-shadow: 0 0 10px #3e3e3b; }
+    header .circle:hover {
+      box-shadow: 0 0 10px #3e3e3b;
+      opacity: 1; }
+  header .link {
+    color: black;
+    font-weight: normal;
+    line-height: 4em; }
+  header .selected {
+    opacity: 1; }
+  header #de {
+    margin-left: -6em; }
+  header #en {
+    margin-left: 3em; }
+  header #hide_show:after {
+    content: "\f432"; }
   header img {
     display: block;
     height: 100%;
@@ -237,7 +248,7 @@ header {
   margin-top: -25%;
   padding-top: 1.5em; }
 
-#header_switcher:checked + header > label > div:after {
+#header_switcher:checked + header #hide_show:after {
   content: "\f431"; }
 
 img.left {
@@ -289,7 +300,7 @@ nav {
 
 p {
   line-height: 1.5em;
-  margin-bottom: 0.67em; }
+  margin-bottom: 1em; }
 
 ul {
   margin-left: 1.5em;
