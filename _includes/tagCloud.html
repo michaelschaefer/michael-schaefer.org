@@ -15,7 +15,7 @@
 {% assign tagWords = tagNames | split:',' | sort %}
 
 
-{% assign tagCounts = "dummy," %}
+{% assign tagCounts = "0," %}
 {% for tag in tagWords %}
 	{% assign item = site.tags[tag] %}
 	{% assign itemCount = 0 %}
@@ -28,12 +28,16 @@
 {% endfor %}
 {% assign tagCounts = tagCounts | split:',' %}
 
+{% assign has_tags = "false" %}
+{% for tag in tagCounts %}
+{% if tag != "0" %}
+{% assign has_tags = "true" %}
+{% endif %}
+{% endfor %}
 
-
-{% if tagWords.size == 0 %}
+{% if has_tags == "false" %}	
 	<p><em>{{ site.data.i18n[locale].no_tags_at_all }}</em></p>
 {% else %}
-
 <p>	
 	{% capture tagString %}
 	{% for tag in tagWords %}
