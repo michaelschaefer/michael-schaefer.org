@@ -1,29 +1,28 @@
 .highlight  { 
 	background-color: #d6dbd6; 
 	border: 1px solid #789;
-	overflow-x: auto;
+	overflow-x: auto;	
 	margin-bottom: 1em;
+	padding-left: 0.5em;
 }
 
-.highlight code {
+.highlight * {
 	border: none;
-	font-family: Quicksand, sans-serif;
+	font-family: monospace;
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.5em;
 	padding: 0;
 }
 
-.highlight span {
-	display: inline-block;
-	font-family: monospace;
-}
-
-.highlight .lineno {
-	
-	display: inline-block;
-	font-family: Quicksand, sans-serif;	
-	margin-right: 0.5em;
+.highlight .lineno {	
+	background-color: #789;
+	color: white;
+	display: block;
+	float: left;	
+	margin-left: -0.5em;
 	padding-right: 0.5em;
-	text-align: right;
-	width: 2.5em;
+	padding-left: 0.5em;
 }
 
 .highlight .c { color: #999988; font-style: italic } /* Comment */

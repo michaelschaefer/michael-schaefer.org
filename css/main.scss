@@ -63,9 +63,10 @@ input,select{vertical-align:middle}
 $colBackground: ivory;
 $colLight: #d6dbd6; //#dde1e6; //#c9d9e8;
 $colMiddle: #789; //#789;
-$colDark: #3e3e3b; //#60605a;
+$colDark: black; //#3e3e3b; //#60605a;
 $colTextLight: white;
 $colTextDark: black;
+$logoHeight: 20%;
 
 
 /*
@@ -79,7 +80,7 @@ $colTextDark: black;
 
 .disabled { opacity: 0.25; }
 .left { float: left; }
-.narrow { padding-left: 4em !important; }
+.narrow { margin-left: 5em !important; }
 .normal { font-weight: normal !important; }
 .right { float: right; }
 
@@ -114,6 +115,12 @@ a {
     text-decoration: none;
 
     &:hover { border-bottom: 1px solid $colMiddle; }
+}
+
+a.anchor {
+    border: none;
+    color: $colTextDark;
+    font-weight: bold;
 }
 
 body, html {
@@ -174,12 +181,27 @@ h2 {
     margin-bottom: 1em;
 }
 
-header {    
-    border-bottom: 1px solid $colDark;    
+header {        
+    border-bottom: 1px solid $colDark;            
+    background-color: $colDark;
     position: relative;
-    top: 0;    
+    top: -1px;    
     @include vendor(transition, all 0.5s);
-    width: 100%;    
+    width: 100%;
+    padding-top: $logoHeight;            
+
+    span {  
+        background-image: url("/media/photo/04.jpg");      
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;        
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;        
+    }
 
     .circle {
         background-color: $colBackground;        
@@ -206,11 +228,12 @@ header {
 
     .link {
         color: $colTextDark;
+        font-family: Quicksand;
         font-weight: normal;
         line-height: 4em;
     }
 
-    .selected { opacity: 1; }
+    .selected { font-weight: bold; opacity: 1; }
 
     #de { margin-left: -6em; }  
 
@@ -229,8 +252,7 @@ header {
 }
 
 #header_switcher:checked + header {
-    margin-top: -25%;
-    padding-top: 1.5em;
+    margin-top: -$logoHeight;    
 }
 
 #header_switcher:checked + header #hide_show:after { content: "\f431"; }    
@@ -309,5 +331,15 @@ ul {
         line-height: 1.5em;
         margin-bottom: 0.5em;
         &:last-child { margin-bottom: 0; }
+    }
+}
+
+ul.no_bullet {
+    list-style: none;
+    margin-left: 0;
+
+    .headline {       
+        display: block;
+        margin-left: 7em;
     }
 }

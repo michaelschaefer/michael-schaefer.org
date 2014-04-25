@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-date:   2014-04-23 15:17:15
-categories: jekyll update
+date:   2013-04-23 15:17:15
+tags: jekyll introduction
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
@@ -10,17 +10,12 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight C++ linenos %}
-int main(int argc, char** argv)
-{
-    bool* array = new bool[10]
-    for (int i = 0; i < 10; ++i)
-    {
-        array[i] = true;
-    }
-
-    return 0;
-}
+{% highlight ruby linenos %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
