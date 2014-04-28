@@ -78,7 +78,9 @@ $logoHeight: 20%;
 	@include vendor(box-shadow, 0 0 10px $colDark);
 }
 
+.bold { font-weight: bold; }
 .disabled { opacity: 0.25; }
+.huge { font-size: 3em; }
 .left { float: left; }
 .narrow { margin-left: 5em !important; }
 .normal { font-weight: normal !important; }
@@ -190,7 +192,7 @@ header {
     width: 100%;
     padding-top: $logoHeight;            
 
-    span {  
+    #header_image {  
         background-image: url("/media/photo/04.jpg");      
         background-position: center;
         background-repeat: no-repeat;
@@ -200,7 +202,44 @@ header {
         top: 0;
         bottom: 0;
         left: 0;
-        right: 0;        
+        right: 0;                
+    }
+
+    #next, #previous {                
+        bottom: 0;
+        color: white;
+        cursor: pointer;
+        display: block;                
+        min-width: 50px;            
+        opacity: 0.25;
+        position: absolute;        
+        width: 5%;
+        top: 0;                
+        @include vendor(transition, opacity 0.5s);
+
+        &:hover {
+            opacity: 0.75;
+        }        
+    }
+
+    #next { 
+        right: 0;
+        text-align: left; 
+    }
+
+    #previous { 
+        left: 0;
+        text-align: right; 
+    }
+
+    .centered {            
+        line-height: 1em;
+        margin-top: -0.5em;
+        padding: 0;
+        position: absolute;            
+        
+        top: 50%;            
+        width: 100%;
     }
 
     .circle {

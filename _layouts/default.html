@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="/css/syntax.css">
 
   <script type="text/javascript">
+    var nPhotos = 5;
+
     window.onunload = function() {
       var tag = document.getElementById("header_switcher");
       if (tag.checked != undefined) {
@@ -41,6 +43,21 @@
       if (hide == true) {
         tag.checked = true;
       }
+    }
+
+    function switch_image(direction) {      
+      var banner = document.getElementById("header_image");
+      var style = banner.currentStyle || window.getComputedStyle(banner, false);
+      var bgUrl = style.backgroundImage;
+      var number = Math.floor(bgUrl.substring(bgUrl.lastIndexOf("/")+1, bgUrl.lastIndexOf(".")));
+
+      if (direction == 1) {
+        number = (number == nPhotos) ? 1 : number + 1;
+      } else {
+        number = (number == 1) ? nPhotos : number - 1;
+      }
+
+      banner.style.backgroundImage = "url(\"/media/photo/0" + number + ".jpg\")";
     }
   </script>
 
