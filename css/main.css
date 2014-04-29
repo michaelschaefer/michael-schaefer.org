@@ -209,58 +209,61 @@ h2 {
   margin-bottom: 1em; }
 
 header {
-  border-bottom: 1px solid black;
-  background-color: black;
+  padding-top: 20%;
   position: relative;
-  top: -1px;
+  top: -2px;
   -ms-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  width: 100%;
-  padding-top: 20%; }
-  header #header_image {
-    background-image: url("/media/photo/04.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  header #next, header #previous {
+  width: 100%; }
+  header .description {
+    background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
     color: white;
-    cursor: pointer;
-    display: block;
-    min-width: 50px;
-    opacity: 0.25;
-    position: absolute;
-    width: 5%;
-    top: 0;
-    -ms-transition: opacity 0.5s;
-    -moz-transition: opacity 0.5s;
-    -o-transition: opacity 0.5s;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s; }
-    header #next:hover, header #previous:hover {
-      opacity: 0.75; }
-  header #next {
-    right: 0;
-    text-align: left; }
-  header #previous {
+    font-size: 0.833em;
+    font-weight: bold;
     left: 0;
-    text-align: right; }
-  header .centered {
-    line-height: 1em;
-    margin-top: -0.5em;
-    padding: 0;
+    padding: 0.25em;
+    position: absolute; }
+  header table {
+    border-bottom: 1px solid black;
     position: absolute;
-    top: 50%;
+    top: 0;
     width: 100%; }
+    header table td {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding-top: 10%; }
+    header table #a {
+      background-image: url("/media/banner/01.jpg");
+      border-bottom: 1px solid black;
+      width: 16%; }
+    header table #b {
+      background-image: url("/media/banner/02.jpg");
+      width: 16%; }
+    header table #c {
+      background-image: url("/media/banner/03.jpg");
+      border-left: 1px solid black;
+      width: 18%; }
+    header table #d {
+      background-image: url("/media/banner/04.jpg");
+      border-left: 1px solid black;
+      width: 32%; }
+    header table #e {
+      background-image: url("/media/banner/05.jpg");
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      width: 18%; }
+    header table #f {
+      background-image: url("/media/banner/06.jpg");
+      border-bottom: 1px solid black;
+      width: 16%; }
+    header table #g {
+      background-image: url("/media/banner/07.jpg");
+      width: 16%; }
   header .circle {
     background-color: ivory;
     border: 1px solid black;
@@ -294,11 +297,6 @@ header {
     margin-left: 3em; }
   header #hide_show:after {
     content: "\f432"; }
-  header img {
-    display: block;
-    height: 100%;
-    opacity: 0.75;
-    width: 100%; }
 
 #header_switcher:checked + header {
   margin-top: -20%; }

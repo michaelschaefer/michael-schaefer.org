@@ -184,62 +184,76 @@ h2 {
 }
 
 header {        
-    border-bottom: 1px solid $colDark;            
-    background-color: $colDark;
+    padding-top: $logoHeight;
     position: relative;
-    top: -1px;    
+    top: -2px;    
     @include vendor(transition, all 0.5s);
-    width: 100%;
-    padding-top: $logoHeight;            
+    width: 100%;   
 
-    #header_image {  
-        background-image: url("/media/photo/04.jpg");      
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: block;        
+    .description {
+        background-color: rgba(0,0,0,0.5);
+        bottom: 0;
+        color: $colTextLight;
+        font-size: 0.833em;
+        font-weight: bold;
+        left: 0;
+        padding: 0.25em;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;                
-    }
+    }    
 
-    #next, #previous {                
-        bottom: 0;
-        color: white;
-        cursor: pointer;
-        display: block;                
-        min-width: 50px;            
-        opacity: 0.25;
+    table {        
+        border-bottom: 1px solid $colDark;        
         position: absolute;        
-        width: 5%;
-        top: 0;                
-        @include vendor(transition, opacity 0.5s);
+        top: 0;        
+        width: 100%;        
 
-        &:hover {
-            opacity: 0.75;
+        td {                                     
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: $logoHeight / 2;
+        }
+
+        #a { 
+            background-image: url("/media/banner/01.jpg"); 
+            border-bottom: 1px solid $colDark;            
+            width: 16%;
+        }   
+
+        #b { 
+            background-image: url("/media/banner/02.jpg"); 
+            width: 16%;
+        }
+
+        #c {             
+            background-image: url("/media/banner/03.jpg"); 
+            border-left: 1px solid $colDark;
+            width: 18%;
+        }
+
+        #d { 
+            background-image: url("/media/banner/04.jpg"); 
+            border-left: 1px solid $colDark;
+            width: 32%;
+        }
+
+        #e { 
+            background-image: url("/media/banner/05.jpg");
+            border-left: 1px solid $colDark;
+            border-right: 1px solid $colDark;
+            width: 18%;
+        }
+
+        #f { 
+            background-image: url("/media/banner/06.jpg"); 
+            border-bottom: 1px solid $colDark;
+            width: 16%;
+        }
+
+        #g { 
+            background-image: url("/media/banner/07.jpg"); 
+            width: 16%;
         }        
-    }
-
-    #next { 
-        right: 0;
-        text-align: left; 
-    }
-
-    #previous { 
-        left: 0;
-        text-align: right; 
-    }
-
-    .centered {            
-        line-height: 1em;
-        margin-top: -0.5em;
-        padding: 0;
-        position: absolute;            
-        
-        top: 50%;            
-        width: 100%;
     }
 
     .circle {
@@ -281,13 +295,6 @@ header {
     #hide_show {
         &:after { content: "\f432"; }
     }
-
-    img {
-        display: block;
-        height: 100%;
-        opacity: 0.75;
-        width: 100%;
-    }        
 }
 
 #header_switcher:checked + header {
