@@ -64,6 +64,7 @@ $colBackground: ivory;
 $colLight: #d6dbd6; //#dde1e6; //#c9d9e8;
 $colMiddle: #789; //#789;
 $colDark: black; //#3e3e3b; //#60605a;
+$colDarkTransparent: rgba(0, 0, 0, 0.5);
 $colTextLight: white;
 $colTextDark: black;
 $logoHeight: 20%;
@@ -191,13 +192,14 @@ header {
     width: 100%;   
 
     .description {
-        background-color: rgba(0,0,0,0.5);
-        bottom: 0;
+        background-color: $colDarkTransparent;
+        top: 0em;
         color: $colTextLight;
-        font-size: 0.833em;
+        font-size: 0.667em;
         font-weight: bold;
-        left: 0;
-        padding: 0.25em;
+        left: 0;                
+        padding: 0.5em;
+        padding-top: 0.667em;
         position: absolute;
     }    
 

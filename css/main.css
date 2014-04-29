@@ -220,12 +220,13 @@ header {
   width: 100%; }
   header .description {
     background-color: rgba(0, 0, 0, 0.5);
-    bottom: 0;
+    top: 0em;
     color: white;
-    font-size: 0.833em;
+    font-size: 0.667em;
     font-weight: bold;
     left: 0;
-    padding: 0.25em;
+    padding: 0.5em;
+    padding-top: 0.667em;
     position: absolute; }
   header table {
     border-bottom: 1px solid black;
