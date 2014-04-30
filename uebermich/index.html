@@ -4,7 +4,26 @@ title: Über mich
 type: about
 ---
 
-<img class="aperture left" src="/media/portrait_square.png" />
+{% assign data = site.data.i18n["de"].short_profile %}
+
+<aside class="left">	
+	<br/>
+	<p class="center">	
+		<img class="aperture" src="/media/portrait_square.png" />
+	</p>
+	<h2>{{ data.headline }}</h2>
+	<p>
+		{{ data.description }}
+	</p>
+	<p>	
+		<ul class="no_bullet">
+			{% for item in data.links %}
+			<li><span class="symbol">{{ item.symbol }}</span><a href="{{ item.url }}">{{ item.text }}</a></li>
+			{% endfor %}		
+		</ul>
+	</p>
+</aside>
+
 <p>							
   Sch&ouml;n, dass du den Weg auf <a href="?page=imprint">meine</a> Seite gefunden hast! Auf diesem kleinen Blog ver&ouml;ffentliche ich regelm&auml;&szlig;g unregelm&auml;&szlig;ig Artikel. Die Themen varriieren dabei stark nach meinen Interessen. Doch zun&auml;chst m&ouml;chte ich ein paar Informationen &uuml;ber mich selbst geben.
 </p>

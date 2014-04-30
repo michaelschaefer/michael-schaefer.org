@@ -91,6 +91,7 @@ input, select {
 	generic classes
 */
 .aperture {
+  border: 1px solid black;
   -ms-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -104,6 +105,9 @@ input, select {
 
 .bold {
   font-weight: bold; }
+
+.center {
+  text-align: center; }
 
 .disabled {
   opacity: 0.25; }
@@ -159,6 +163,22 @@ a.anchor {
   color: black;
   font-weight: bold; }
 
+aside {
+  background-color: #d6dbd6;
+  -ms-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  -o-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+  border: 1px solid black;
+  display: block;
+  padding: 0.5em 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  margin-right: 1.5em;
+  width: 100%;
+  max-width: 300px; }
+
 body, html {
   height: 100%; }
 
@@ -212,22 +232,12 @@ header {
   padding-top: 20%;
   position: relative;
   top: -2px;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -ms-transition: none 0.5s;
+  -moz-transition: none 0.5s;
+  -o-transition: none 0.5s;
+  -webkit-transition: none 0.5s;
+  transition: none 0.5s;
   width: 100%; }
-  header .description {
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0em;
-    color: white;
-    font-size: 0.667em;
-    font-weight: bold;
-    left: 0;
-    padding: 0.5em;
-    padding-top: 0.667em;
-    position: absolute; }
   header table {
     border-bottom: 1px solid black;
     position: absolute;
@@ -266,10 +276,19 @@ header {
       background-image: url("/media/banner/07.jpg");
       width: 16%; }
   header .circle {
-    background-color: ivory;
+    background-color: #d6dbd6;
     border: 1px solid black;
+    -ms-border-radius: 3em;
+    -moz-border-radius: 3em;
+    -o-border-radius: 3em;
+    -webkit-border-radius: 3em;
     border-radius: 3em;
-    bottom: -1.5em;
+    -ms-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    -o-box-shadow: 0 0 5px black;
+    -webkit-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    top: -1.5em;
     cursor: pointer;
     display: block;
     font-family: Genericons;
@@ -277,11 +296,15 @@ header {
     left: 50%;
     line-height: 4.25em;
     margin-left: -1.5em;
-    opacity: 0.5;
+    opacity: 0.75;
     position: absolute;
     text-align: center;
     width: 3em; }
     header .circle:hover {
+      -ms-box-shadow: 0 0 10px black;
+      -moz-box-shadow: 0 0 10px black;
+      -o-box-shadow: 0 0 10px black;
+      -webkit-box-shadow: 0 0 10px black;
       box-shadow: 0 0 10px black;
       opacity: 1; }
   header .link {
@@ -301,6 +324,9 @@ header {
 
 #header_switcher:checked + header {
   margin-top: -20%; }
+  #header_switcher:checked + header .circle {
+    top: inherit;
+    bottom: -1.5em; }
 
 #header_switcher:checked + header #hide_show:after {
   content: "\f431"; }

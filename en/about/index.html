@@ -4,7 +4,26 @@ title: About me
 type: about
 ---
 
-<img class="aperture left" src="/media/portrait_square.png" />
+{% assign data = site.data.i18n["en"].short_profile %}
+
+<aside class="left">	
+	<br/>
+	<p class="center">	
+		<img class="aperture" src="/media/portrait_square.png" />
+	</p>
+	<h2>{{ data.headline }}</h2>
+	<p>
+		{{ data.description }}
+	</p>
+	<p>	
+		<ul class="no_bullet">
+			{% for item in data.links %}
+			<li><span class="symbol">{{ item.symbol }}</span><a href="{{ item.url }}">{{ item.text }}</a></li>
+			{% endfor %}		
+		</ul>
+	</p>
+</aside>
+
 <p>		
 	Great that you found your way to my website! I use this little blog to publish articles on a regularly unregular basis. Topics vary strongly according to my interests. But let me give you a few information about me.
 </p>
