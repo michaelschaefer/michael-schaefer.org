@@ -28,7 +28,39 @@ type: mainpage
 </p>
 
 
-<h1>Recent articles</h1>
+<h1><a class="anchor" name="article_list">Article list</a></h1>
+{% if paginator.posts == nil %}
+	<em>{{ site.data.i18n["en"].no_articles }}</em>
+{% else %}
 
-{% include articleList.html type="recent" %}
+	{% if paginator.previous_page %}
+	<p>
+		<a href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}#article_list">more recent articles</a>
+	</p>
+	{% endif %}
 
+	<ul class="no_bullet">
+		{% for post in paginator.posts %}
+		<li>
+			<span class="left">{{ post.date | date: "%d/%m/%Y" }}:</span>
+			<span class="headline">
+				<a href="{{ post.url }}">{{ post.title }}</a>			
+				<p>
+					{% if post.description %}
+					{{ post.description }}
+					{% else %}
+					{{ site.data.i18n["en"].no_description }}
+					{% endif %}
+				</p>			
+			</span>
+		</li>
+		{% endfor %}
+	</ul>
+
+	{% if paginator.next_page %}
+	<p>
+		<a href="/en/page{{ paginator.next_page }}/#article_list">older articles</a>
+	</p>
+	{% endif %}
+
+{% endif %}

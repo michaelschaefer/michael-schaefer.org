@@ -1,7 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 /*
 	font import
 */
+/*@import url(http://fonts.googleapis.com/css?family=Gudea:400,700);
+$fontName: "Gudea";*/
 /*
 	css reset
 */
@@ -147,7 +149,7 @@ input, select {
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Quicksand, sans-serif;
+  font-family: "Inconsolata", sans-serif;
   word-wrap: break-word; }
 
 a {
@@ -309,7 +311,7 @@ header {
       opacity: 1; }
   header .link {
     color: black;
-    font-family: Quicksand;
+    font-family: "Inconsolata";
     font-weight: normal;
     line-height: 4em; }
   header .selected {

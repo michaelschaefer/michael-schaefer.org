@@ -2,7 +2,11 @@
 	font import
 */
 
-@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+$fontName: "Inconsolata";
+
+/*@import url(http://fonts.googleapis.com/css?family=Gudea:400,700);
+$fontName: "Gudea";*/
 
 
 /*
@@ -109,7 +113,7 @@ $logoHeight: 20%;
 
 * {
 	@include vendor(box-sizing, border-box);	
-	font-family: Quicksand, sans-serif;
+	font-family: $fontName, sans-serif;
 	word-wrap: break-word;
 }
 
@@ -288,7 +292,7 @@ header {
 
     .link {
         color: $colTextDark;
-        font-family: Quicksand;
+        font-family: $fontName;
         font-weight: normal;
         line-height: 4em;
     }
