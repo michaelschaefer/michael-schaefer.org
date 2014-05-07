@@ -1,13 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
-/*
-	font import
+/* 
+	html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com 
 */
-/*@import url(http://fonts.googleapis.com/css?family=Gudea:400,700);
-$fontName: "Gudea";*/
-/*
-	css reset
-*/
-/* html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -72,13 +65,32 @@ hr {
 input, select {
   vertical-align: middle; }
 
-/* 
-    external fonts
+/*
+	webfonts
+*/
+/*@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+$fontName: "Inconsolata";*/
+/*
+	local fonts
 */
 @font-face {
   font-family: 'Genericons';
   src: url("../media/font/genericons-regular-webfont.eot");
   src: url("../media/font/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../media/font/genericons-regular-webfont.woff") format("woff"), url("../media/font/genericons-regular-webfont.ttf") format("truetype"), url("../media/font/genericons-regular-webfont.svg#genericonsregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../media/font/raleway-bold.eot");
+  src: url("../media/font/raleway-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/raleway-bold.woff") format("woff"), url("../media/font/raleway-bold.ttf") format("truetype"), url("../media/font/raleway-bold.svg#ralewaybold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../media/font/raleway-light.eot");
+  src: url("../media/font/raleway-light.eot?#iefix") format("embedded-opentype"), url("../media/font/raleway-light.woff") format("woff"), url("../media/font/raleway-light.ttf") format("truetype"), url("../media/font/raleway-light.svg#ralewaylight") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -88,9 +100,8 @@ input, select {
 /*
     color definitions
 */
-/* base color variables */
 /*
-	generic classes
+	other variables
 */
 .aperture {
   border: 1px solid black;
@@ -138,20 +149,6 @@ input, select {
   padding-right: 0.5em;
   vertical-align: bottom; }
 
-.underline {
-  border-bottom: 1px dotted black;
-  padding-bottom: 1.5em;
-  margin-bottom: 1em; }
-
-* {
-  -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Inconsolata", sans-serif;
-  word-wrap: break-word; }
-
 a {
   border-bottom: 1px dotted lightslategrey;
   color: lightslategrey;
@@ -165,55 +162,9 @@ a.anchor {
   color: black;
   font-weight: bold; }
 
-aside {
-  background-color: #d6dbd6;
-  -ms-box-shadow: 0 0 10px black;
-  -moz-box-shadow: 0 0 10px black;
-  -o-box-shadow: 0 0 10px black;
-  -webkit-box-shadow: 0 0 10px black;
-  box-shadow: 0 0 10px black;
-  border: 1px solid black;
-  display: block;
-  padding: 0.5em 1em;
-  margin-top: 0.25em;
-  margin-bottom: 0.5em;
-  margin-right: 1.5em;
-  width: 100%;
-  max-width: 300px; }
-
-body, html {
-  height: 100%; }
-
-body {
-  background-color: ivory;
-  font-size: 12pt;
-  min-width: 300px;
-  overflow-y: scroll;
-  width: 100%; }
-
-.contact {
-  display: block;
-  width: 75%;
-  margin: 0 auto; }
-  .contact img, .contact object {
-    width: 100%; }
-
-#container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 960px; }
-
 em {
   font-style: normal;
   font-weight: bold; }
-
-footer {
-  border-top: 1px solid black;
-  display: block;
-  font-size: 0.83em;
-  margin: 2.4em 2.4em;
-  padding-top: 1.2em;
-  text-align: center; }
 
 h1 {
   display: block;
@@ -229,6 +180,97 @@ h2 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1em; }
+
+img.left {
+  display: block;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.5em; }
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none; }
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 1em; }
+
+small {
+  font-size: 0.83em; }
+
+ul {
+  margin-left: 1.5em;
+  margin-bottom: 1em; }
+  ul li {
+    line-height: 1.5em;
+    margin-bottom: 0.5em; }
+    ul li:last-child {
+      margin-bottom: 0; }
+
+ul.no_bullet {
+  list-style: none;
+  margin-left: 0; }
+  ul.no_bullet .headline {
+    display: block;
+    margin-left: 7em; }
+
+/*
+    ===============================
+    basic layout and style settings
+    ===============================
+*/
+* {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  word-wrap: break-word; }
+
+body, html {
+  height: 100%; }
+
+body {
+  background-color: ivory;
+  font-size: 12pt;
+  min-width: 300px;
+  overflow-y: scroll;
+  width: 100%; }
+
+#container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px; }
+
+/*
+    =============================
+    customization of section tags
+    =============================
+*/
+aside {
+  background-color: #d6dbd6;
+  -ms-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  -o-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+  border: 1px solid black;
+  display: block;
+  padding: 0.5em 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  margin-right: 1.5em;
+  width: 100%;
+  max-width: 320px; }
+
+footer {
+  border-top: 1px solid black;
+  display: block;
+  margin: 2em 2em;
+  padding-top: 1em;
+  text-align: center; }
 
 header {
   padding-top: 20%;
@@ -311,7 +353,7 @@ header {
       opacity: 1; }
   header .link {
     color: black;
-    font-family: "Inconsolata";
+    font-family: "Raleway";
     font-weight: normal;
     line-height: 4em; }
   header .selected {
@@ -333,23 +375,11 @@ header {
 #header_switcher:checked + header #hide_show:after {
   content: "\f431"; }
 
-img.left {
-  display: block;
-  float: left;
-  margin-right: 1em;
-  margin-bottom: 0.5em; }
-
-input[type="radio"],
-input[type="checkbox"] {
-  display: none; }
-
 main {
-  padding: 0 2em; }
+  margin: 0 2em; }
 
 nav {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  padding: 0 2em; }
+  margin: 2em 2em 1em; }
   nav a {
     border: none;
     color: lightslategrey;
@@ -379,23 +409,3 @@ nav {
     clear: both;
     content: "";
     display: block; }
-
-p {
-  line-height: 1.5em;
-  margin-bottom: 1em; }
-
-ul {
-  margin-left: 1.5em;
-  margin-bottom: 1em; }
-  ul li {
-    line-height: 1.5em;
-    margin-bottom: 0.5em; }
-    ul li:last-child {
-      margin-bottom: 0; }
-
-ul.no_bullet {
-  list-style: none;
-  margin-left: 0; }
-  ul.no_bullet .headline {
-    display: block;
-    margin-left: 7em; }

@@ -1,0 +1,48 @@
+.aperture { 
+    border: 1px solid $colDark;
+	@include vendor(border-radius, 50%);
+	@include vendor(box-shadow, 0 0 10px $colDark);
+}
+
+.bold { 
+	font-weight: bold; 
+}
+
+.center { 
+	text-align: center; 
+}
+
+.disabled { 
+	opacity: 0.25; 
+}
+
+.huge { 
+	font-size: 3em; 
+}
+
+.left { 
+	float: left; 
+}
+
+.narrow { 
+	margin-left: 5em !important; 
+}
+
+.normal { 
+	font-weight: normal !important; 
+}
+
+.right { 
+	float: right; 
+}
+
+.super {
+    font-size: 0.75em;
+    vertical-align: super;
+}
+
+.symbol {            
+    font-family: Genericons;
+    padding-right: 0.5em;
+    vertical-align: bottom;
+}

@@ -1,148 +1,21 @@
-/*
-	font import
-*/
-
-@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
-$fontName: "Inconsolata";
-
-/*@import url(http://fonts.googleapis.com/css?family=Gudea:400,700);
-$fontName: "Gudea";*/
+@import "_reset.scss";
+@import "_font.scss";
+@import "_variables.scss";
+@import "_classes.scss";
+@import "_tags.scss";
 
 
 /*
-	css reset
+    ===============================
+    basic layout and style settings
+    ===============================
 */
-
-/* html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com */
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-body{line-height:1}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-nav ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:none}
-a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
-ins{background-color:#ff9;color:#000;text-decoration:none}
-mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
-del{text-decoration:line-through}
-abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
-table{border-collapse:collapse;border-spacing:0}
-hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
-input,select{vertical-align:middle}
-
-
-/* 
-    external fonts
-*/
-
-@font-face {
-    font-family: 'Genericons';
-    src: url('../media/font/genericons-regular-webfont.eot');
-    src: url('../media/font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../media/font/genericons-regular-webfont.woff') format('woff'),
-         url('../media/font/genericons-regular-webfont.ttf') format('truetype'),
-         url('../media/font/genericons-regular-webfont.svg#genericonsregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/*
-    mixins
-*/
-
-@mixin vendor($property, $value) {	
-	-ms-#{$property}: $value;
-	-moz-#{$property}: $value;
-	-o-#{$property}: $value;
-	-webkit-#{$property}: $value;
-	#{$property}: $value;
-}
-
-
-/*
-    color definitions
-*/
-
-/* base color variables */
-$colBackground: ivory;
-$colLight: #d6dbd6; //#dde1e6; //#c9d9e8;
-$colMiddle: #789; //#789;
-$colDark: black; //#3e3e3b; //#60605a;
-$colDarkTransparent: rgba(0, 0, 0, 0.5);
-$colTextLight: white;
-$colTextDark: black;
-$logoHeight: 20%;
-
-
-/*
-	generic classes
-*/
-
-.aperture { 
-    border: 1px solid $colDark;
-	@include vendor(border-radius, 50%);
-	@include vendor(box-shadow, 0 0 10px $colDark);
-}
-
-.bold { font-weight: bold; }
-.center { text-align: center; }
-.disabled { opacity: 0.25; }
-.huge { font-size: 3em; }
-.left { float: left; }
-.narrow { margin-left: 5em !important; }
-.normal { font-weight: normal !important; }
-.right { float: right; }
-
-.super {
-    font-size: 0.75em;
-    vertical-align: super;
-}
-
-.symbol {            
-    font-family: Genericons;
-    padding-right: 0.5em;
-    vertical-align: bottom;
-}
-
-.underline {
-    border-bottom: 1px dotted $colDark;
-    padding-bottom: 1.5em;
-    margin-bottom: 1em;
-}
-
 
 * {
 	@include vendor(box-sizing, border-box);	
-	font-family: $fontName, sans-serif;
+	font-family: $fontName, sans-serif;    
+    font-weight: normal;
 	word-wrap: break-word;
-}
-
-a {
-    border-bottom: 1px dotted $colMiddle;
-    color: $colMiddle;
-    font-weight: bold;
-    text-decoration: none;
-
-    &:hover { border-bottom: 1px solid $colMiddle; }
-}
-
-a.anchor {    
-    border: none;
-    color: $colTextDark;
-    font-weight: bold;
-}
-
-aside {
-    background-color: $colLight;
-    @include vendor(box-shadow, 0 0 10px $colDark);
-    border: 1px solid $colDark;
-    display: block;    
-    padding: 0.5em 1em;
-    margin-top: 0.25em;
-    margin-bottom: 0.5em;
-    margin-right: 1.5em;    
-    width: 100%;
-    max-width: 300px;    
 }
 
 body, html {
@@ -157,50 +30,38 @@ body {
     width: 100%;
 }
 
-.contact {
-    display: block;
-    width: 75%;    
-    margin: 0 auto;
-
-    img, object {        
-        width: 100%;
-    }
-}
-
 #container {    
     margin: 0 auto;
     width: 100%;
     max-width: 960px;
 }
 
-em {
-    font-style: normal;
-    font-weight: bold;
+
+/*
+    =============================
+    customization of section tags
+    =============================
+*/
+
+aside {
+    background-color: $colLight;
+    @include vendor(box-shadow, 0 0 10px $colDark);
+    border: 1px solid $colDark;
+    display: block;    
+    padding: 0.5em 1em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+    margin-right: 1.5em;    
+    width: 100%;
+    max-width: 320px;    
 }
 
 footer {
     border-top: 1px solid $colDark;
-    display: block;
-    font-size: 0.83em;
-    margin: 2.4em 2.4em;
-    padding-top: 1.2em;
+    display: block;    
+    margin: 2em 2em;
+    padding-top: 1em;
     text-align: center;    
-}
-
-h1 {
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 0.67em;
-    margin-top: 1.33em;
-}
-
-h1:first-child { margin-top: 0; }
-
-h2 {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 1em;
 }
 
 header {        
@@ -270,7 +131,6 @@ header {
         border: 1px solid $colDark;
         @include vendor(border-radius, 3em);
         @include vendor(box-shadow, 0 0 5px $colDark);
-        //bottom: -1.5em;
         top: -1.5em;
         cursor: pointer;
         display: block;        
@@ -319,26 +179,12 @@ header {
 
 #header_switcher:checked + header #hide_show:after { content: "\f431"; }    
 
-img.left {
-    display: block;
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    display: none;
-}
-
-main {
-    padding: 0 2em;
+main {  
+    margin: 0 2em;
 }
 
 nav {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    padding: 0 2em;
+    margin: 2em 2em 1em;    
 
     a {     
         border: none;
@@ -380,30 +226,5 @@ nav {
     }
 }
 
-p {
-    line-height: 1.5em;
-    margin-bottom: 1em;
-}
-
-ul {
-    margin-left: 1.5em;    
-    margin-bottom: 1em;
-
-    li {
-        line-height: 1.5em;
-        margin-bottom: 0.5em;
-        &:last-child { margin-bottom: 0; }
-    }
-}
-
-ul.no_bullet {
-    list-style: none;
-    margin-left: 0;
-
-    .headline {       
-        display: block;
-        margin-left: 7em;
-    }
-}
 
 
