@@ -7,7 +7,7 @@ authorized_locales: ["de", "en"]
 paginate: 2
 paginate_per_category: true
 default_category: "de"
-ftp_host: "m-schaefer.info"
+ftp_host: "michael-schaefer.org"
 ftp_dir: "/blog"
 ftp_passive: false
 lychee:
