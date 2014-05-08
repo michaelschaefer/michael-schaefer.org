@@ -7,15 +7,15 @@ a {
     &:hover { border-bottom: 1px solid $colMiddle; }
 }
 
-a.anchor {    
-    border: none;
-    color: $colTextDark;
-    font-weight: bold;
+address {
+	font-style: normal;
+	line-height: 1.5em;
+    margin-bottom: 1em;
 }
 
 em {
-    font-style: normal;
-    font-weight: bold;
+    font-style: italic;
+    font-weight: normal;
 }
 
 h1 {

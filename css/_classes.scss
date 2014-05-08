@@ -1,3 +1,11 @@
+.anchor {    
+    border: none;
+    color: $colTextDark;
+    font-weight: bold;
+
+    &:hover { border: none; }
+}
+
 .aperture { 
     border: 1px solid $colDark;
 	@include vendor(border-radius, 50%);

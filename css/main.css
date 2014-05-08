@@ -68,8 +68,6 @@ input, select {
 /*
 	webfonts
 */
-/*@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
-$fontName: "Inconsolata";*/
 /*
 	local fonts
 */
@@ -81,16 +79,9 @@ $fontName: "Inconsolata";*/
   font-style: normal; }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url("../media/font/raleway-bold.eot");
-  src: url("../media/font/raleway-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/raleway-bold.woff") format("woff"), url("../media/font/raleway-bold.ttf") format("truetype"), url("../media/font/raleway-bold.svg#ralewaybold") format("svg");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Raleway';
-  src: url("../media/font/raleway-light.eot");
-  src: url("../media/font/raleway-light.eot?#iefix") format("embedded-opentype"), url("../media/font/raleway-light.woff") format("woff"), url("../media/font/raleway-light.ttf") format("truetype"), url("../media/font/raleway-light.svg#ralewaylight") format("svg");
+  font-family: "Inconsolata";
+  src: url("../media/font/inconsolata.eot");
+  src: url("../media/font/inconsolata.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata.woff") format("woff"), url("../media/font/inconsolata.ttf") format("truetype"), url("../media/font/inconsolata.svg#inconsolatamedium") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -103,6 +94,13 @@ $fontName: "Inconsolata";*/
 /*
 	other variables
 */
+.anchor {
+  border: none;
+  color: black;
+  font-weight: bold; }
+  .anchor:hover {
+    border: none; }
+
 .aperture {
   border: 1px solid black;
   -ms-border-radius: 50%;
@@ -157,14 +155,14 @@ a {
   a:hover {
     border-bottom: 1px solid lightslategrey; }
 
-a.anchor {
-  border: none;
-  color: black;
-  font-weight: bold; }
+address {
+  font-style: normal;
+  line-height: 1.5em;
+  margin-bottom: 1em; }
 
 em {
-  font-style: normal;
-  font-weight: bold; }
+  font-style: italic;
+  font-weight: normal; }
 
 h1 {
   display: block;
@@ -225,7 +223,7 @@ ul.no_bullet {
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  font-family: "Inconsolata", sans-serif;
   font-weight: normal;
   word-wrap: break-word; }
 
@@ -260,10 +258,10 @@ aside {
   display: block;
   padding: 0.5em 1em;
   margin-top: 0.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   margin-right: 1.5em;
   width: 100%;
-  max-width: 320px; }
+  max-width: 300px; }
 
 footer {
   border-top: 1px solid black;
@@ -353,7 +351,7 @@ header {
       opacity: 1; }
   header .link {
     color: black;
-    font-family: "Raleway";
+    font-family: "Inconsolata";
     font-weight: normal;
     line-height: 4em; }
   header .selected {

@@ -2,8 +2,7 @@
 	webfonts
 */
 
-/*@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
-$fontName: "Inconsolata";*/
+//@import url(http://fonts.googleapis.com/css?family=Inconsolata:400);
 
 
 /*
@@ -23,29 +22,14 @@ $fontName: "Inconsolata";*/
 }
 
 
-// Raleway bold
+// Inconsolata
 @font-face {
-    font-family: 'Raleway';
-    src: url('../media/font/raleway-bold.eot');
-    src: url('../media/font/raleway-bold.eot?#iefix') format('embedded-opentype'),
-         url('../media/font/raleway-bold.woff') format('woff'),
-         url('../media/font/raleway-bold.ttf') format('truetype'),
-         url('../media/font/raleway-bold.svg#ralewaybold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-}
-
-// Raleway light
-@font-face {
-    font-family: 'Raleway';
-    src: url('../media/font/raleway-light.eot');
-    src: url('../media/font/raleway-light.eot?#iefix') format('embedded-opentype'),
-         url('../media/font/raleway-light.woff') format('woff'),
-         url('../media/font/raleway-light.ttf') format('truetype'),
-         url('../media/font/raleway-light.svg#ralewaylight') format('svg');
+    font-family: "Inconsolata";
+    src: url("../media/font/inconsolata.eot");
+    src: url("../media/font/inconsolata.eot?#iefix") format('embedded-opentype'),
+         url("../media/font/inconsolata.woff") format('woff'),
+         url("../media/font/inconsolata.ttf") format('truetype'),
+         url("../media/font/inconsolata.svg#inconsolatamedium") format('svg');
     font-weight: normal;
     font-style: normal;
 }
-
-
-
