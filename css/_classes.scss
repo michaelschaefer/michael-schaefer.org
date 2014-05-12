@@ -20,6 +20,14 @@
 	text-align: center; 
 }
 
+.deprecated_browser {
+    background-color: white;
+    border: 2px solid red;
+    padding: 0.25em;
+    position: fixed;
+    z-index: 2;
+}
+
 .disabled { 
 	opacity: 0.25; 
 }

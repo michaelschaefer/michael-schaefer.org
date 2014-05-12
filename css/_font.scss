@@ -2,8 +2,6 @@
 	webfonts
 */
 
-//@import url(http://fonts.googleapis.com/css?family=Inconsolata:400);
-
 
 /*
 	local fonts
@@ -24,12 +22,23 @@
 
 // Inconsolata
 @font-face {
-    font-family: "Inconsolata";
-    src: url("../media/font/inconsolata.eot");
-    src: url("../media/font/inconsolata.eot?#iefix") format('embedded-opentype'),
-         url("../media/font/inconsolata.woff") format('woff'),
-         url("../media/font/inconsolata.ttf") format('truetype'),
-         url("../media/font/inconsolata.svg#inconsolatamedium") format('svg');
+    font-family: "fInconsolata";
+    src: url("../media/font/inconsolata-regular.eot");
+    src: url("../media/font/inconsolata-regular.eot?#iefix") format('embedded-opentype'),
+         url("../media/font/inconsolata-regular.woff") format('woff'),
+         url("../media/font/inconsolata-regular.ttf") format('truetype'),
+         url("../media/font/inconsolata-regular.svg#inconsolataregular") format('svg');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "fInconsolata";
+    src: url("../media/font/inconsolata-bold.eot");
+    src: url("../media/font/inconsolata-bold.eot?#iefix") format('embedded-opentype'),
+         url("../media/font/inconsolata-bold.woff") format('woff'),
+         url("../media/font/inconsolata-bold.ttf") format('truetype'),
+         url("../media/font/inconsolata-bold.svg#inconsolatabold") format('svg');
+    font-weight: bold;
     font-style: normal;
 }

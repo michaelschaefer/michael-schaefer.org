@@ -1,7 +1,7 @@
 /* 
 	html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com 
 */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -13,7 +13,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 body {
   line-height: 1; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
   display: block; }
 
 nav ul {
@@ -79,10 +79,17 @@ input, select {
   font-style: normal; }
 
 @font-face {
-  font-family: "Inconsolata";
-  src: url("../media/font/inconsolata.eot");
-  src: url("../media/font/inconsolata.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata.woff") format("woff"), url("../media/font/inconsolata.ttf") format("truetype"), url("../media/font/inconsolata.svg#inconsolatamedium") format("svg");
+  font-family: "fInconsolata";
+  src: url("../media/font/inconsolata-regular.eot");
+  src: url("../media/font/inconsolata-regular.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata-regular.woff") format("woff"), url("../media/font/inconsolata-regular.ttf") format("truetype"), url("../media/font/inconsolata-regular.svg#inconsolataregular") format("svg");
   font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "fInconsolata";
+  src: url("../media/font/inconsolata-bold.eot");
+  src: url("../media/font/inconsolata-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata-bold.woff") format("woff"), url("../media/font/inconsolata-bold.ttf") format("truetype"), url("../media/font/inconsolata-bold.svg#inconsolatabold") format("svg");
+  font-weight: bold;
   font-style: normal; }
 
 /*
@@ -119,6 +126,13 @@ input, select {
 
 .center {
   text-align: center; }
+
+.deprecated_browser {
+  background-color: white;
+  border: 2px solid red;
+  padding: 0.25em;
+  position: fixed;
+  z-index: 2; }
 
 .disabled {
   opacity: 0.25; }
@@ -185,10 +199,6 @@ img.left {
   margin-right: 1em;
   margin-bottom: 0.5em; }
 
-input[type="radio"],
-input[type="checkbox"] {
-  display: none; }
-
 p {
   line-height: 1.5em;
   margin-bottom: 1em; }
@@ -223,7 +233,7 @@ ul.no_bullet {
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "fInconsolata", sans-serif;
   font-weight: normal;
   word-wrap: break-word; }
 
@@ -232,6 +242,7 @@ body, html {
 
 body {
   background-color: ivory;
+  display: block;
   font-size: 12pt;
   min-width: 300px;
   overflow-y: scroll;
@@ -265,12 +276,13 @@ aside {
 
 footer {
   border-top: 1px solid black;
-  display: block;
-  margin: 2em 2em;
+  margin: 2em 2em 0em;
+  padding-bottom: 2em;
   padding-top: 1em;
   text-align: center; }
 
 header {
+  background-color: black;
   padding-top: 20%;
   position: relative;
   top: -2px;
@@ -280,12 +292,15 @@ header {
   -webkit-transition: none 0.5s;
   transition: none 0.5s;
   width: 100%; }
+  header input {
+    display: none; }
   header table {
     border-bottom: 1px solid black;
     position: absolute;
     top: 0;
     width: 100%; }
     header table td {
+      background-color: black;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -351,7 +366,7 @@ header {
       opacity: 1; }
   header .link {
     color: black;
-    font-family: "Inconsolata";
+    font-family: "fInconsolata";
     font-weight: normal;
     line-height: 4em; }
   header .selected {
@@ -363,6 +378,9 @@ header {
     margin-left: 3em; }
   header #hide_show:after {
     content: "\f432"; }
+
+#header_switcher {
+  display: none; }
 
 #header_switcher:checked + header {
   margin-top: -20%; }
@@ -401,6 +419,8 @@ nav {
   nav a:hover:before,
   nav input[id^="entry"]:checked + a:before {
     opacity: 1; }
+  nav input {
+    display: none; }
   nav input[id^="entry"]:checked + a {
     color: black; }
   nav:after {
