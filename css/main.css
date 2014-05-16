@@ -220,7 +220,7 @@ main img {
   margin: 2em auto;
   max-width: 100%; }
 main table {
-  margin: 0 auto 1em;
+  margin: 2em auto 2em;
   text-align: center; }
   main table td, main table th {
     border: 2px solid ivory;

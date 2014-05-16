@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
-    {{ site.name }}{% if page.title %}&nbsp;|| {{ page.title }}{% endif %}
+    {{ site.name }}{% if page.title %}&nbsp;||&nbsp;{% if page.type == nil %}{{ site.data.i18n[locale].type_article }}&nbsp;{% endif %}{{ page.title }}{% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">  
 

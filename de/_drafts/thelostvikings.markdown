@@ -1,17 +1,26 @@
 ---
 layout: post
 title: The Lost Vikings
-date: 2014-05-15 17:35:46
-tags: TheLostVikings Computerspiele
+date: 2014-05-16 12:33:06
+description: Ich habe das Lieblings-Computerspiel aus meiner Jugend wiedergefunden und konnte es nun nach langer Zeit endlich erfolgreich durchspielen.
+tags: [The Lost Vikings, Computerspiele]
 ---
 
-F&uuml;r meinen ersten Blog-Eintrag habe ich mir ein klein wenig was Besonderes ausgesucht. Vor einiger Zeit f&uuml;hlte ich mich wie aus dem Nichts in meine Jugend zur&uuml;ckversetzt. Der Grund war, dass Blizzard mein absolutes Lieblings-Computerspiel von vor inzwischen fast 20 Jahren kostenlos zug&auml;nglich gemacht hat: The Lost Vikings! Auf Blizzards Plattform battle.net l&auml;sst sich die englischsprachige Version [kostenlos herunterladen][battlenet]. 
+F&uuml;r meinen ersten Blog-Eintrag habe ich mir ein klein wenig was Besonderes ausgesucht. Vor einiger Zeit f&uuml;hlte ich mich wie aus dem Nichts in meine Jugend zur&uuml;ckversetzt. Der Grund war, dass Blizzard mein absolutes Lieblings-Computerspiel von vor inzwischen fast 20 Jahren kostenlos zug&auml;nglich gemacht hat: The Lost Vikings! Auf Blizzards Plattform battle.net l&auml;sst sich die englischsprachige Version [herunterladen][battlenet]. 
 
 ![][thelostvikings_logo]
 
-F&uuml;r alle, die das Spiel nicht kennen hier eine kurze Einf&uuml;hrung.
+## Eine kurze Einf&uuml;hrung
 
-Zur Ver&ouml;ffentlichung hat Blizzard das Spiel schon in eine Dosbox gepackt und das ganze so vorkonfiguriert, dass es auch auf aktuellen Systemen direkt gestartet werden kann. Unter Windows f&uuml;hrt man einfach die im Hauptverzeichnis enthaltene .exe aus. Unter Linux kann man entweder die gleiche .exe mit `wine The\ Lost\ Vikings.exe` ausf&uuml;hren oder - falls man Dosbox schon auf dem System installiert hat - einfach im Hauptverzeichnis per Konsole den Befehl `dosbox` ausf&uuml;hren.
+Die Rahmenhandlung des Spiels ist schnell erz&auml;hlt: Die drei Vikinger Erik, Baleog und Olaf werden von dem b&ouml;sen Alien Tomator aus ihrem Dorf entf&uuml;hrt. Dieser m&ouml;chte die drei f&uuml;r seinen Zoo haben. Durch einen Kurzschluss werden die Vikinger jedoch nicht am geplanten Ort sondern direkt in Tomators Schiff materialisiert. Von dort aus beginnen sie nun ihre Flucht nach Hause.
+
+Soweit zur Hintergrundgeschichte. Im Spiel an sich steuert man die drei Vikinger unabh&auml;ngig voneinander. Jeder der drei hat dabei unterschiedliche F&auml;higkeiten: Erik kann springen und schnell laufen, Baleog besitzt ein Schwert und einen Bogen und Olaf kann mit seinem Schild Gegner abblocken und Abh&auml;nge sicher hinuntersegeln. In jedem Level gilt es nun, die verschiedenen F&auml;higkeiten zu benutzen um diverse R&auml;tsel zu l&ouml;sen. Am Ende m&uuml;ssen alle drei lebend den Ausgang erreichen.
+
+## Installation
+
+Zur erneuten Ver&ouml;ffentlichung hat Blizzard das Spiel schon zusammen mit einer Dosbox verpackt und das ganze so vorkonfiguriert, dass es auch auf aktuellen Systemen direkt gestartet werden kann. Unter Windows f&uuml;hrt man dazu einfach die im Hauptverzeichnis enthaltene Datei `The Lost Vikings.exe` aus. Unter Linux gibt es zwei M&ouml;glichkeiten: Hat man `wine` installiert, so kann man die gleiche Datei mittels `wine The\ Lost\ Vikings.exe` ausf&uuml;hren. Oder man hat Dosbox auf dem System installiert. Dann kann man einfach im Hauptverzeichnis per Konsole den Befehl `dosbox` ausf&uuml;hren. Das Spiel wird dann automatisch gestartet.
+
+## Durchgespielt!
 
 Ich habe nat&uuml;rlich sofort damit begonnen, das Spiel erneut durchzuspielen. Wobei man sagen muss, dass &quot;erneut&quot; hier wohl das falsche Wort: Ich meine mich zu erinnern, dass ich das allerletzte Level damals nicht geschafft habe. Diesmal habe ich sie aber alle geschafft. Quasi als &quot;Beweis&quot; folgt hier daher ein Screenshot direkt vom Ende (man kann erkennen, dass es sich um einen aktuellen Screenshot handeln muss, denn die Grafikfehler der Art wie man sie direkt &uuml;ber den Vikingern sieht sind meiner Erinnerung nach im Originalspiel nicht vorhanden gewesen). 
 
@@ -93,8 +102,6 @@ F&uuml;r alle, die das Spiel auch wieder angefangen haben und an der einen oder 
 	</tr>
 	
 </table>
-
-Viel Spa&szlig; beim Spielen!
 
 [battlenet]: https://us.battle.net/account/download/?show=classic
 [thelostvikings_logo]: /media/images/thelostvikings-logo.png
