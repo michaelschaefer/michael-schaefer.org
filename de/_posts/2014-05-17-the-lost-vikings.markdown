@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Lost Vikings
-date: 2014-05-16 12:33:06
+date: 2014-05-17 15:36:34
 description: Ich habe das Lieblings-Computerspiel aus meiner Jugend wiedergefunden und konnte es nun nach langer Zeit endlich erfolgreich durchspielen.
 tags: [The Lost Vikings, Computerspiele]
 ---
@@ -12,13 +12,13 @@ F&uuml;r meinen ersten Blog-Eintrag habe ich mir ein klein wenig was Besonderes 
 
 ## Eine kurze Einf&uuml;hrung
 
-Die Rahmenhandlung des Spiels ist schnell erz&auml;hlt: Die drei Vikinger Erik, Baleog und Olaf werden von dem b&ouml;sen Alien Tomator aus ihrem Dorf entf&uuml;hrt. Dieser m&ouml;chte die drei f&uuml;r seinen Zoo haben. Durch einen Kurzschluss werden die Vikinger jedoch nicht am geplanten Ort sondern direkt in Tomators Schiff materialisiert. Von dort aus beginnen sie nun ihre Flucht nach Hause.
+Die Rahmenhandlung des Spiels ist schnell erz&auml;hlt: Die drei Vikinger Erik, Baleog und Olaf werden von dem b&ouml;sen Alien Tomator aus ihrem Dorf entf&uuml;hrt. Dieser m&ouml;chte die drei f&uuml;r seinen exotischen Zoo haben. Durch einen Kurzschluss werden die Vikinger jedoch nicht am geplanten Ort sondern direkt in Tomators Schiff materialisiert. Von dort aus beginnen sie nun ihre Flucht nach Hause.
 
 Soweit zur Hintergrundgeschichte. Im Spiel an sich steuert man die drei Vikinger unabh&auml;ngig voneinander. Jeder der drei hat dabei unterschiedliche F&auml;higkeiten: Erik kann springen und schnell laufen, Baleog besitzt ein Schwert und einen Bogen und Olaf kann mit seinem Schild Gegner abblocken und Abh&auml;nge sicher hinuntersegeln. In jedem Level gilt es nun, die verschiedenen F&auml;higkeiten zu benutzen um diverse R&auml;tsel zu l&ouml;sen. Am Ende m&uuml;ssen alle drei lebend den Ausgang erreichen.
 
 ## Installation
 
-Zur erneuten Ver&ouml;ffentlichung hat Blizzard das Spiel schon zusammen mit einer Dosbox verpackt und das ganze so vorkonfiguriert, dass es auch auf aktuellen Systemen direkt gestartet werden kann. Unter Windows f&uuml;hrt man dazu einfach die im Hauptverzeichnis enthaltene Datei `The Lost Vikings.exe` aus. Unter Linux gibt es zwei M&ouml;glichkeiten: Hat man `wine` installiert, so kann man die gleiche Datei mittels `wine The\ Lost\ Vikings.exe` ausf&uuml;hren. Oder man hat Dosbox auf dem System installiert. Dann kann man einfach im Hauptverzeichnis per Konsole den Befehl `dosbox` ausf&uuml;hren. Das Spiel wird dann automatisch gestartet.
+Zur erneuten Ver&ouml;ffentlichung hat Blizzard das Spiel mit einer Dosbox zusammen gepackt und so vorkonfiguriert, dass es auch auf aktuellen Computern direkt gestartet werden kann. Einmal heruntergeladen und entpackt kann man unter Windows einfach die Datei `The Lost Vikings.exe` im Hauptverzeichnis ausf&uuml;hren. Wer Linux benutzt hat zwei M&ouml;glichkeiten: Wenn auf dem System `wine` installiert ist, kann man die gleiche Datei mit dem Befehl `wine The\ Lost\ Vikings.exe` starten. Wenn statt dessen Dosbox selbst bereits auf dem System installiert ist, muss man im Hauptverzeichnis einfach `dosbox` eingeben. Dann startet das Spiel automatisch (beide Varianten gehen davon aus, dass die entsprechenden Befehle in einem Terminal ausgef&uuml;hrt werden).
 
 ## Durchgespielt!
 

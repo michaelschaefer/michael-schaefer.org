@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Lost Vikings
-date: 2014-05-16 12:33:06
+date: 2014-05-17 15:36:46
 description: Recently I rediscovered the favorite computer game from my youth. Finally, after a long time I was able to beat it to the end.
 tags: [The Lost Vikings, computer games]
 ---
@@ -18,7 +18,7 @@ That much for the story. In the game you control each of the vikings separately.
 
 ## Installation
 
-For republication, Blizzard has equipped the game with a Dosbox and reconfigured it such that can be run directly even on modern computers. Once downloaded and extracted, under Windows you can start it immediately by executing the file `The Lost Vikings.exe` in the main folder. If you use Linux there are two possibilities: If `wine` is installed you can start the same file via the command `wine The\ Lost\ Vikings.exe`. If instead you save Dosbox installed already on your system, just enter `dosbox` in the main folder. This will start the game automatically (note that both ways are meant to be done in a terminal).
+For republication, Blizzard has equipped the game with a Dosbox and reconfigured it such that can be run directly even on modern computers. Once downloaded and extracted, under Windows you can start it immediately by executing the file `The Lost Vikings.exe` in the main folder. If you use Linux there are two possibilities: If `wine` is installed you can start the same file via the command `wine The\ Lost\ Vikings.exe`. If instead you have Dosbox installed already on your system, just enter `dosbox` in the main folder. This will start the game automatically (note that both ways are meant to be done in a terminal).
 
 ## (Finally) played through!
 
