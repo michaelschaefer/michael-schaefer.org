@@ -1,0 +1,32 @@
+---
+layout: none
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<rss version="2.0">
+
+	<channel>
+
+		<title>www.michael-schaefer.org | english RSS feed</title>
+		<link>http://www.michael-schaefer.org/en/</link>
+		<description>
+			Mathematician and scientific assistent at Münster University. Follows computer and science related stuff, enjoys cooking and playing the piano. Uses Sublime Text 3 and Emacs.
+		</description>
+		<language>en-us</language>
+		<copyright>Copyright 2014, Michael Schaefer</copyright>
+		<managingEditor>mail@michael-schaefer.org (Michael Schaefer)</managingEditor>
+
+		{% for post in site.categories.en limit:5 %}		
+		<item>
+			<title>{{ post.title }}</title>
+			<link>{{ site.url }}{{ post.url }}</link>
+			<description>{{ post.description | xml_escape }}</description>
+			<pubDate>{{ post.date }}</pubDate>
+			<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+		</item>
+		{% endfor %}
+
+	</channel>
+
+</rss>

@@ -1,6 +1,7 @@
 exclude: [CNAME, deploy, michael-schaefer.org.sublime-project, michael-schaefer.org.sublime-workspace]
 
 name: www.michael-schaefer.org
+url: http://www.michael-schaefer.org
 default_locale: "de"
 authorized_locales: ["de", "en"]
 

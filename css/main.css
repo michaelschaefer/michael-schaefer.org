@@ -169,6 +169,11 @@ a {
   a:hover {
     border-bottom: 1px solid lightslategrey; }
 
+a[href^="http"]:after {
+  content: "\f442";
+  font-family: Genericons;
+  vertical-align: bottom; }
+
 address {
   font-style: normal;
   line-height: 1.5em;
@@ -299,6 +304,8 @@ aside {
   margin-right: 1.5em;
   width: 100%;
   max-width: 300px; }
+  aside img {
+    margin: 0 auto; }
 
 footer {
   border-top: 1px solid black;

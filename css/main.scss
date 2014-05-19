@@ -54,7 +54,11 @@ aside {
     margin-bottom: 1em;
     margin-right: 1.5em;    
     width: 100%;
-    max-width: 300px;    
+    max-width: 300px; 
+
+    img {
+        margin: 0 auto;
+    }   
 }
 
 footer {      

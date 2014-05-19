@@ -1,0 +1,32 @@
+---
+layout: none
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<rss version="2.0" >
+
+	<channel>
+
+		<title>www.michael-schaefer.org | deutscher RSS-Feed</title>
+		<link>http://www.michael-schaefer.org</link>
+		<description>
+			Diplom-Mathematiker und wissenschaftlicher Mitarbeiter an der Universität Münster. Verfolgt Computer- und naturwissenschaftliche Themen, kocht gerne, spielt Klavier. Benutzt Sublime Text 3 und Emacs.
+		</description>
+		<language>de-de</language>
+		<copyright>Copyright 2014, Michael Schaefer</copyright>
+		<managingEditor>mail@michael-schaefer.org (Michael Schaefer)</managingEditor>
+
+		{% for post in site.categories.de limit:5 %}		
+		<item>
+			<title>{{ post.title }}</title>
+			<link>{{ site.url }}{{ post.url }}</link>
+			<description>{{ post.description | xml_escape }}</description>
+			<pubDate>{{ post.date }}</pubDate>
+			<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+		</item>
+		{% endfor %}
+
+	</channel>
+
+</rss>

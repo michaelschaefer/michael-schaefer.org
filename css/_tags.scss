@@ -2,9 +2,15 @@ a {
     border-bottom: 1px dotted $colMiddle;
     color: $colMiddle;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none;    
 
     &:hover { border-bottom: 1px solid $colMiddle; }
+}
+
+a[href^="http"]:after {
+	content: "\f442";
+	font-family: Genericons;
+	vertical-align: bottom;
 }
 
 address {
