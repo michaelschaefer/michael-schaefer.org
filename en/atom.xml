@@ -1,0 +1,30 @@
+---
+layout: none
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>www.michael-schaefer.org | english Atom feed</title>
+	<link href="http://www.michael-schaefer.org/en/atom.xml" rel="self" />
+	<link href="http://www.michael-schaefer.org/en/" rel="alternate" />
+	<id>http://www.michael-schaefer.org</id>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<author>
+		<name>Michael Schaefer</name>
+		<email>mail@michael-schaefer.org</email>
+		<uri>http://www.michael-schaefer.org/en/about/</uri>
+	</author>
+	<rights>Copyright 2014 Michael Schaefer</rights>		
+
+	{% for post in site.categories.en limit:5 %}		
+	<entry>
+		<id>{{ site.url }}{{ post.url }}</id>
+		<title>{{ post.title }}</title>
+		<updated>{{ post.date | date_to_xmlschema }}</updated>
+		<link href="{{ site.url }}{{ post.url }}" rel="alternate" />
+		<summary>{{ post.description | xml_escape }}</summary>
+	</entry>
+	{% endfor %}
+
+</feed>
