@@ -64,6 +64,10 @@ main {
 		padding: 0 0.2em;
 	}
 
+	.highlight code {
+		background-color: transparent;
+	}
+
 	img {
 		@include vendor(box-shadow, 0 0 1em $colDark);
 		display: block;
@@ -95,7 +99,8 @@ main {
 
 }
 
-ul {
+ol, ul {
+	list-style-position: inside;
     margin-left: 1.5em;    
     margin-bottom: 1em;
 
