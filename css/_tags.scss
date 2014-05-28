@@ -47,6 +47,13 @@ img.left {
     margin-bottom: 0.5em;
 }
 
+object {
+	@include vendor(box-shadow, 0 0 1em $colDark);
+	display: block;	
+	margin: 2em auto;
+	max-width: 100%;
+}
+
 p {
     line-height: 1.5em;
     margin-bottom: 1em;
