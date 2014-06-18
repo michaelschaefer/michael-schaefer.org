@@ -287,14 +287,7 @@ body {
   background-color: ivory;
   display: block;
   font-size: 12pt;
-  min-width: 300px;
-  overflow-y: scroll;
   width: 100%; }
-
-#container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 960px; }
 
 /*
     =============================
@@ -318,13 +311,6 @@ aside {
   max-width: 300px; }
   aside img {
     margin: 0 auto; }
-
-footer {
-  border-top: 1px solid black;
-  margin: 2em 2em 0em;
-  padding-bottom: 2em;
-  padding-top: 1em;
-  text-align: center; }
 
 header {
   background-color: black;
@@ -440,7 +426,12 @@ main {
   margin: 0 2em; }
 
 nav {
-  margin: 2em 2em 1em; }
+  background-color: lightslategrey;
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: fixed;
+  width: 100%; }
   nav a {
     border: none;
     color: lightslategrey;
@@ -468,6 +459,19 @@ nav {
     display: none; }
   nav input[id^="entry"]:checked + a {
     color: black; }
+  nav span.nav_item {
+    background-color: lightslategrey;
+    border-bottom: 1px solid lightslategrey;
+    border-top: 1px solid lightslategrey;
+    color: white;
+    display: inline-block;
+    float: left;
+    padding: 0.5em;
+    text-align: center;
+    width: 20%; }
+    nav span.nav_item:hover {
+      background-color: ivory;
+      color: black; }
   nav:after {
     clear: both;
     content: "";

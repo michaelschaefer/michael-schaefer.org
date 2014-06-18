@@ -58,27 +58,25 @@
   </div>  
   <![endif]-->
 
-  <input type="checkbox" id="header_switcher" />
-  <header>       
-    {% include header.html %}
-  </header>   
-
-
-  <div id="container">                
-
-    <nav>
-      {% include navigation.html %}
-    </nav>    
+  <div style="position: fixed; bottom: 0em; left: 0; right: 0; top: 0; overflow-y: scroll;">
+    <input type="checkbox" id="header_switcher" />
+    <header>       
+      {% include header.html %}
+    </header>     
 
     <main>
       {{ content }}
     </main>
+  </div>
 
-    <footer>
-      <small>&copy; 2014 Michael Schaefer</small>
-    </footer>
-
-  </div> 
+  <nav>
+    <!-- {% include navigation.html %} -->
+    <span class="nav_item">Hauptseite</span>
+    <span class="nav_item">Archiv</span>
+    <span class="nav_item">Tags</span>
+    <span class="nav_item">Über mich</span>
+    <span class="nav_item">Impressum</span>
+  </nav>    
 
   </body>
 </html>

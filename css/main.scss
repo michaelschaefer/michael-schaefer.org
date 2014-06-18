@@ -25,16 +25,8 @@ body, html {
 body {
     background-color: $colBackground;
     display: block;
-    font-size: 12pt;
-    min-width: 300px;
-    overflow-y: scroll;    
+    font-size: 12pt;    
     width: 100%;
-}
-
-#container {        
-    margin: 0 auto;
-    width: 100%;
-    max-width: 960px;
 }
 
 
@@ -59,14 +51,6 @@ aside {
     img {
         margin: 0 auto;
     }   
-}
-
-footer {      
-    border-top: 1px solid $colDark;    
-    margin: 2em 2em 0em;;    
-    padding-bottom: 2em;
-    padding-top: 1em;    
-    text-align: center;    
 }
 
 header {     
@@ -195,7 +179,12 @@ main {
 }
 
 nav {
-    margin: 2em 2em 1em;
+    background-color: $colMiddle;    
+    bottom: 0;
+    display: block;
+    left: 0;    
+    position: fixed;
+    width: 100%;
 
     a {     
         border: none;
@@ -231,6 +220,23 @@ nav {
     input { display: none; }
 
     input[id^="entry"]:checked + a { color: $colDark; }
+
+    span.nav_item {
+        background-color: $colMiddle;
+        border-bottom: 1px solid $colMiddle;
+        border-top: 1px solid $colMiddle;
+        color: $colTextLight;
+        display: inline-block;
+        float: left;
+        padding: 0.5em;
+        text-align: center;
+        width: 20%;
+
+        &:hover {
+            background-color: $colBackground;
+            color: $colTextDark;
+        }
+    }
 
     &:after {
         clear: both;        
