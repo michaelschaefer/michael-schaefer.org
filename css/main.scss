@@ -26,6 +26,7 @@ body {
     background-color: $colBackground;
     display: block;
     font-size: 12pt;    
+    overflow-y: scroll;
     width: 100%;
 }
 
@@ -53,11 +54,20 @@ aside {
     }   
 }
 
+
+footer {
+    border-top: 1px solid $colDark;
+    margin: 2em 2em 0em;
+    padding-bottom: 2em;
+    padding-top: 1em;
+    text-align: center; 
+}
+
+
 header {     
-    background-color: $colDark;   
+    background-color: $colDark;       
     padding-top: $logoHeight;
     position: relative;
-    top: -2px;    
     @include vendor(transition, none 0.5s);
     width: 100%;  
 
@@ -119,123 +129,136 @@ header {
         }        
     }
 
-    .circle {
-        background-color: $colLight;
-        border: 1px solid $colDark;
-        @include vendor(border-radius, 3em);
-        @include vendor(box-shadow, 0 0 5px $colDark);
-        top: -1.5em;
-        cursor: pointer;
-        display: block;        
-        font-family: Genericons;        
-        height: 3em;
-        left: 50%;
-        line-height: 4.25em;                
-        margin-left: -1.5em;
-        opacity: 0.75;
-        position: absolute;
-        text-align: center;
-        width: 3em;
-
-        &:hover { 
-            @include vendor(box-shadow, 0 0 10px $colDark); 
-            opacity: 1;
-        }
-    }
-
-    .link {
-        color: $colTextDark;
-        font-family: $fontName;
-        font-weight: normal;
-        line-height: 4em;
-    }
-
-    .selected { font-weight: bold; opacity: 1; }
-
     #de { margin-left: -6em; }  
 
     #en { margin-left: 3em; }
-
-    #hide_show {
-        &:after { content: "\f432"; }
-    }
 }
 
-#header_switcher { display: none; }
+#header_switch { display: none; }
 
-#header_switcher:checked + header {
+#header_switch:checked + header {
     margin-top: -$logoHeight;
-
-    .circle {
-        top: inherit;
-        bottom: -1.5em;
-    }    
+    top: -5px;
 }
 
-#header_switcher:checked + header #hide_show:after { content: "\f431"; }    
+#header_switch:checked + header + nav {
+    border-top: none;
+}
+
+#container {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 960px; 
+}
 
 main {        
-    margin: 0 2em;
+    margin: 2em;    
+    margin-bottom: 3em;
 }
 
 nav {
-    background-color: $colMiddle;    
-    bottom: 0;
-    display: block;
-    left: 0;    
-    position: fixed;
+    background-color: $colMiddle;            
+    border-bottom: 1px solid $colDark;
+    border-top: 1px solid $colDark;
+    display: block;            
+    
+    position: relative;
     width: 100%;
 
-    a {     
-        border: none;
-        color: $colMiddle;
-        display: block;
-        float: left;        
-        font-size: 1.5em;        
-        font-weight: normal;
-        margin-right: 0.67em;
-        margin-bottom: 0.67em;        
+    input { display: none; } 
 
-        &:after {
-            content: ">";
-            opacity: 0.25;
-        }
+    input[id^="entry"]:checked + label span,
+    input[id="menu_switch"]:checked + label span {
+        background-color: $colLight;
+        color: $colTextDark;
+    }
+
+    input[id="menu_switch"]:checked + label + #menu {
+        border-bottom: 1px solid $colDark;
+        display: block;
+        left: 0;
+        position: absolute;
+        top: 5em;
+        z-index: 11;
 
         &:before {
-            content: "<";
-            opacity: 0.25;
+            content: "";
+            display: block;
+            height: 2px;
         }
 
-        &:hover {
-            border: none;
+        span.nav_item {
+            border-right: 1px solid $colDark;
+            display: block;
+            float: none !important;
         }
     }
 
-    a:hover:after,
-    input[id^="entry"]:checked + a:after { opacity: 1; }
+    input[id="settings_switch"]:checked + label span {
+        background-color: $colLight;        
+        color: $colTextDark;
+    }
 
-    a:hover:before,
-    input[id^="entry"]:checked + a:before { opacity: 1; }
+    input[id="settings_switch"]:checked + label + #settings_menu {
+        display: block;
+    }
 
-    input { display: none; }
+    #menu_button {
+        display: none;
+    }    
 
-    input[id^="entry"]:checked + a { color: $colDark; }
+    #settings_menu {        
+        border-bottom: 1px solid $colDark;
+        display: none;        
+        position: absolute;
+        right: 0;        
+        top: 5em;
+        width: 10em;        
+        z-index: 10;
+
+        &:before {
+            content: "";
+            display: block;
+            height: 2px;
+        }
+    }
 
     span.nav_item {
-        background-color: $colMiddle;
-        border-bottom: 1px solid $colMiddle;
-        border-top: 1px solid $colMiddle;
+        background-color: $colMiddle;        
         color: $colTextLight;
+        cursor: pointer;
         display: inline-block;
         float: left;
-        padding: 0.5em;
-        text-align: center;
-        width: 20%;
+        height: 2.5em;
+        line-height: 2.5em;                
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: center;        
 
         &:hover {
-            background-color: $colBackground;
+            background-color: $colLight;
             color: $colTextDark;
         }
+    }    
+
+    span.settings {                
+        cursor: pointer;
+        float: right !important;
+        font-family: Genericons;                        
+    }
+
+    span.stretch {
+        border-left: 1px solid $colDark;
+        width: 100% !important;        
+    }
+
+    &:before {
+        background-color: $colBackground;
+        border-bottom: 1px solid $colDark;
+        content: "";
+        display: block;
+        height: 2.5em;
     }
 
     &:after {
@@ -243,6 +266,17 @@ nav {
         content: "";
         display: block;
     }
+}
+
+
+@media (max-width: 540px) {    
+    #menu_button {
+        display: block !important;
+    }
+
+    #menu {
+        display: none;
+    }   
 }
 
 

@@ -1,22 +1,3 @@
-{% assign de_url = "/" %}
-{% for item in site.data.i18n["de"].navigation %}
-  {% if item.type == page.type %}
-  {% assign de_url = item.url %}
-  {% endif %}
-{% endfor %}
-
-{% assign en_url = "/en/" %}
-{% for item in site.data.i18n["en"].navigation %}
-  {% if item.type == page.type %}
-  {% assign en_url = item.url %}
-  {% endif %}
-{% endfor %}
-
-{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
-{% unless site.authorized_locales contains locale %}
-{% assign locale = site.default_locale %}
-{% endunless %}
-
 <table>
   <tr>
     <td id="a"></td>
@@ -31,9 +12,3 @@
     <td id="g"></td>
   </tr>
 </table>
-
-<label for="header_switcher">
-  <div class="circle" id="hide_show"></div>
-</label>
-<a href="{{ de_url }}"><div class="circle link{% if locale == "de" %} selected{% endif %}" id="de">de</div></a>
-<a href="{{ en_url }}"><div class="circle link{% if locale == "en" %} selected{% endif %}" id="en">en</div></a>

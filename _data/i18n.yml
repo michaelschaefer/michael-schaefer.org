@@ -14,7 +14,7 @@ de:
     url: "/uebermich/"
   - text: "Impressum"
     type: "imprint"
-    url: "/impressum/"
+    url: "/impressum/"  
   short_profile:
     headline: "Kurzprofil"
     description: "Diplom-Mathematiker und wissenschaftlicher Mitarbeiter an der Universit&auml;t M&uuml;nster. Verfolgt Computer- und naturwissenschaftliche Themen, kocht gerne, spielt Klavier. Benutzt Sublime Text 3 und Emacs."

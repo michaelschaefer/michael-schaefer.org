@@ -3,13 +3,46 @@
 {% assign locale = site.default_locale %}
 {% endunless %}
 
+
+<input type="checkbox" id="menu_switch">
+<label for="menu_switch"><span class="nav_item symbol" id="menu_button">&#xf419;</span></label>
+
+<div id="menu">
 {% for item in site.data.i18n[locale].navigation %}
-
-{% if page.type == item.type %}
-<input type="radio" name="navigation" id="entry{{ forloop.index }}" checked="checked" />
-{% else %}
-<input type="radio" name="navigation" id="entry{{ forloop.index }}" />
-{% endif %}
-
-<a href="{{ item.url }}">{{ item.text }}</a>
+	{% if page.type == item.type %}
+		<input type="radio" name="navigation" id="entry{{ forloop.index }}" checked="checked" />
+	{% else %}
+		<input type="radio" name="navigation" id="entry{{ forloop.index }}" />
+	{% endif %}
+	<label for="entry{{ forloop.index }}"><a href="{{ item.url }}"><span class="nav_item">{{ item.text }}</span></a></label>
 {% endfor %}
+</div>
+
+
+{% assign de_url = "/" %}
+{% for item in site.data.i18n["de"].navigation %}
+	{% if item.type == page.type %}
+		{% assign de_url = item.url %}
+	{% endif %}
+{% endfor %}
+
+{% assign en_url = "/en/" %}
+{% for item in site.data.i18n["en"].navigation %}
+	{% if item.type == page.type %}
+		{% assign en_url = item.url %}
+	{% endif %}
+{% endfor %}
+
+
+<!-- settings menu -->
+<input type="checkbox" id="settings_switch">
+<label for="settings_switch"><span class="nav_item settings">&#xf445;</span></label>
+<div id="settings_menu">	
+	<a href="{{ de_url }}"><span class="nav_item stretch">deutsch</span></a>
+	<a href="{{ en_url }}"><span class="nav_item stretch">english</span></a>
+	{% if locale == "de" %}
+	<label for="header_switch"><span class="nav_item stretch">Logo umschalten</span></label>	
+	{% elsif locale == "en" %}
+	<label for="header_switch"><span class="nav_item stretch">toggle logo</span></label>	
+	{% endif %}
+</div>

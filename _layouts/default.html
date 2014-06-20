@@ -27,7 +27,7 @@
 
   <script type="text/javascript">
     window.onunload = function() {
-      var tag = document.getElementById("header_switcher");
+      var tag = document.getElementById("header_switch");
       if (tag.checked != undefined) {
         window.name = tag.checked;
       } else {        
@@ -41,10 +41,15 @@
         hide = true;
       }
 
-      var tag = document.getElementById("header_switcher");
+      var tag = document.getElementById("header_switch");
       if (hide == true) {
         tag.checked = true;
       }
+    }
+
+    function hide_settings() {
+      var tag = document.getElementById("settings_switch");
+      tag.checked = false;
     }
   </script>
 
@@ -56,27 +61,30 @@
   <div class="deprecated_browser">
     Achtung: Sie benutzen eine veraltete Version des Internet Explorer.<br/>Die Seite wird mit hoher Wahrscheinlichkeit nicht fehlerfrei dargestellt!  
   </div>  
-  <![endif]-->
-
-  <div style="position: fixed; bottom: 0em; left: 0; right: 0; top: 0; overflow-y: scroll;">
-    <input type="checkbox" id="header_switcher" />
-    <header>       
-      {% include header.html %}
-    </header>     
-
-    <main>
-      {{ content }}
-    </main>
-  </div>
+  <![endif]-->  
+  
+  <a class="anchor" name="top"></a>
+  <input type="checkbox" id="header_switch" onclick="hide_settings()" />
+  <header>       
+    {% include header.html %}
+  </header>  
 
   <nav>
-    <!-- {% include navigation.html %} -->
-    <span class="nav_item">Hauptseite</span>
-    <span class="nav_item">Archiv</span>
-    <span class="nav_item">Tags</span>
-    <span class="nav_item">Über mich</span>
-    <span class="nav_item">Impressum</span>
+    {% include navigation.html %}    
   </nav>    
 
-  </body>
+  <div id="container">    
+    <main>
+      {{ content }}      
+    </main>  
+
+    <footer>
+      <small>&copy; 2014 Michael Schaefer</small>
+      <div style="position: absolute; bottom: 5em; right: 2em;">
+        <a href="#top"><small><span class="symbol">&#xf435;</span>{% if locale == "de" %}nach oben{% else %}to the top{% endif %}</small></a>
+      </div>
+    </footer>
+  </div>
+
+</body>
 </html>
