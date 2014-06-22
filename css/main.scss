@@ -27,7 +27,8 @@ body {
     display: block;
     font-size: 12pt;    
     overflow-y: scroll;
-    width: 100%;
+    width: 100%;    
+    min-width: 300px;    
 }
 
 
@@ -56,40 +57,73 @@ aside {
 
 
 footer {
-    border-top: 1px solid $colDark;
-    margin: 2em 2em 0em;
-    padding-bottom: 2em;
-    padding-top: 1em;
-    text-align: center; 
+    color: $colTextLight;    
+    line-height: 2.5em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    max-width: 960px;
+    padding-left: 2em;
+    padding-right: 2em;    
+    width: 100%;    
+
+    span.nav_item {
+        background-color: $colMiddle;        
+        border-left: 1px solid $colBackground;
+        border-right: 1px solid $colBackground;
+        color: $colTextLight;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;        
+        height: 2.5em;
+        line-height: 2.5em;                
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: center;        
+
+        &:hover {
+            background-color: $colLight !important;
+            color: $colTextDark;
+        }                
+    }
+
+    span.symbol {
+        padding-right: 0 !important;
+    }
+
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
 }
 
 
 header {     
-    background-color: $colDark;       
+    //background-color: $colDark;    
     padding-top: $logoHeight;
     position: relative;
+    top: -1px;
     @include vendor(transition, none 0.5s);
     width: 100%;  
 
     input { display: none; } 
 
     table {        
-        border-bottom: 1px solid $colDark;        
+        //border-bottom: 1px solid $colDark;        
         position: absolute;        
         top: 0;        
         width: 100%;        
 
-        td {           
-            background-color: $colDark;
+        td {            
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             padding-top: $logoHeight / 2;
-        }
+        }        
 
         #a { 
             background-image: url("/media/banner/01.jpg"); 
-            border-bottom: 1px solid $colDark;            
+            //border-bottom: 1px solid $colDark;            
             width: 16%;
         }   
 
@@ -100,26 +134,26 @@ header {
 
         #c {             
             background-image: url("/media/banner/03.jpg"); 
-            border-left: 1px solid $colDark;
+            //border-left: 1px solid $colDark;
             width: 18%;
         }
 
         #d { 
             background-image: url("/media/banner/04.jpg"); 
-            border-left: 1px solid $colDark;
+            //border-left: 1px solid $colDark;
             width: 32%;
         }
 
         #e { 
             background-image: url("/media/banner/05.jpg");
-            border-left: 1px solid $colDark;
-            border-right: 1px solid $colDark;
+            //border-left: 1px solid $colDark;
+            //border-right: 1px solid $colDark;
             width: 18%;
         }
 
         #f { 
             background-image: url("/media/banner/06.jpg"); 
-            border-bottom: 1px solid $colDark;
+            //border-bottom: 1px solid $colDark;
             width: 16%;
         }
 
@@ -138,33 +172,27 @@ header {
 
 #header_switch:checked + header {
     margin-top: -$logoHeight;
-    top: -5px;
 }
 
 #header_switch:checked + header + nav {
     border-top: none;
 }
 
-#container {
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-  max-width: 960px; 
-}
-
-main {        
+main {    
     margin: 2em;    
-    margin-bottom: 3em;
 }
 
-nav {
-    background-color: $colMiddle;            
-    border-bottom: 1px solid $colDark;
-    border-top: 1px solid $colDark;
-    display: block;            
-    
+nav {    
+    background-color: $colMiddle;         
+    //border-bottom: 1px solid $colDark;    
+    display: block;                
     position: relative;
+
+    margin: 0 auto;
     width: 100%;
+    max-width: 960px;
+    padding-left: 2em;
+    padding-right: 2em;
 
     input { display: none; } 
 
@@ -175,21 +203,23 @@ nav {
     }
 
     input[id="menu_switch"]:checked + label + #menu {
-        border-bottom: 1px solid $colDark;
+        //border-bottom: 1px solid $colDark;
+        border-top: 1px solid $colBackground;
         display: block;
-        left: 0;
+        left: 2em;
         position: absolute;
-        top: 5em;
+        top: 2.5em;
         z-index: 11;
 
-        &:before {
+        /*&:before {
             content: "";
             display: block;
             height: 2px;
-        }
+        }*/
 
         span.nav_item {
-            border-right: 1px solid $colDark;
+            //border-right: 1px solid $colDark;
+            border-bottom: 1px solid $colBackground;
             display: block;
             float: none !important;
         }
@@ -202,6 +232,13 @@ nav {
 
     input[id="settings_switch"]:checked + label + #settings_menu {
         display: block;
+
+        span.nav_item {
+            //border-left: 1px solid $colDark;
+            border-bottom: 1px solid $colBackground;
+            display: block;
+            float: none !important;
+        }
     }
 
     #menu_button {
@@ -209,26 +246,28 @@ nav {
     }    
 
     #settings_menu {        
-        border-bottom: 1px solid $colDark;
+        //border-bottom: 1px solid $colDark;
+        border-top: 1px solid $colBackground;
         display: none;        
         position: absolute;
-        right: 0;        
-        top: 5em;
-        width: 10em;        
+        right: 2em;        
+        top: 2.5em;        
         z-index: 10;
 
-        &:before {
+        /*&:before {
             content: "";
             display: block;
             height: 2px;
-        }
+        }*/
     }
 
     span.nav_item {
         background-color: $colMiddle;        
+        border-left: 1px solid $colBackground;
         color: $colTextLight;
         cursor: pointer;
         display: inline-block;
+        font-weight: bold;
         float: left;
         height: 2.5em;
         line-height: 2.5em;                
@@ -237,29 +276,27 @@ nav {
         text-align: center;        
 
         &:hover {
-            background-color: $colLight;
+            background-color: $colLight !important;
             color: $colTextDark;
-        }
+        }        
     }    
 
-    span.settings {                
+    label[for^="entry"]:last-child span.nav_item,
+    label[for^="menu_switch"] span.nav_item,
+    label[for^="settings_switch"] span.nav_item {
+        border-right: 1px solid $colBackground;
+    }
+
+    /*span.settings {                
         cursor: pointer;
         float: right !important;
         font-family: Genericons;                        
-    }
+    }*/
 
-    span.stretch {
+    /*span.stretch {
         border-left: 1px solid $colDark;
         width: 100% !important;        
-    }
-
-    &:before {
-        background-color: $colBackground;
-        border-bottom: 1px solid $colDark;
-        content: "";
-        display: block;
-        height: 2.5em;
-    }
+    }*/    
 
     &:after {
         clear: both;        
@@ -269,7 +306,7 @@ nav {
 }
 
 
-@media (max-width: 540px) {    
+@media (max-width: 640px) {    
     #menu_button {
         display: block !important;
     }

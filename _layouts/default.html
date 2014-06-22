@@ -67,22 +67,25 @@
   <input type="checkbox" id="header_switch" onclick="hide_settings()" />
   <header>       
     {% include header.html %}
-  </header>  
+  </header> 
 
-  <nav>
-    {% include navigation.html %}    
-  </nav>    
+  <div class="spacer" ></div>
 
-  <div id="container">    
+  <div class="stripe">
+    <nav>
+      {% include navigation.html %}    
+    </nav>   
+  </div>
+
+  <div class="centerer">    
     <main>
       {{ content }}      
-    </main>  
+    </main>    
+  </div>
 
-    <footer>
-      <small>&copy; 2014 Michael Schaefer</small>
-      <div style="position: absolute; bottom: 5em; right: 2em;">
-        <a href="#top"><small><span class="symbol">&#xf435;</span>{% if locale == "de" %}nach oben{% else %}to the top{% endif %}</small></a>
-      </div>
+  <div class="stripe">
+    <footer>      
+      {% include footer.html %}
     </footer>
   </div>
 

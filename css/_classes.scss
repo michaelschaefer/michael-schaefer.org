@@ -20,6 +20,13 @@
 	text-align: center; 
 }
 
+.centerer {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 960px; 
+}
+
 .deprecated_browser {
     background-color: white;
     border: 2px solid red;
@@ -36,6 +43,10 @@
 	font-size: 3em; 
 }
 
+.indent {
+    margin-left: 2em;
+}
+
 .left { 
 	float: left; 
 }
@@ -49,7 +60,19 @@
 }
 
 .right { 
-	float: right; 
+	float: right !important; 
+}
+
+.spacer {
+    display: block;
+    width: 100%;
+    height: 1em;
+}
+
+.stripe {
+    background-color: $colMiddle;
+    display: block;
+    width: 100%;
 }
 
 .super {
@@ -61,4 +84,13 @@
     font-family: Genericons;
     padding-right: 0.5em;
     vertical-align: bottom;
+}
+
+.white_link {
+    border-bottom: 1px dotted $colTextLight;
+    color: $colTextLight;    
+
+    &:hover {
+        border-bottom: 1px solid $colTextLight;
+    }
 }

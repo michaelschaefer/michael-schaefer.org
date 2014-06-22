@@ -36,13 +36,13 @@
 
 <!-- settings menu -->
 <input type="checkbox" id="settings_switch">
-<label for="settings_switch"><span class="nav_item settings">&#xf445;</span></label>
+<label for="settings_switch"><span class="nav_item right symbol">&#xf445;</span></label>
 <div id="settings_menu">	
-	<a href="{{ de_url }}"><span class="nav_item stretch">deutsch</span></a>
-	<a href="{{ en_url }}"><span class="nav_item stretch">english</span></a>
+	<a href="{{ de_url }}"><span class="nav_item">deutsch</span></a>
+	<a href="{{ en_url }}"><span class="nav_item">english</span></a>
 	{% if locale == "de" %}
-	<label for="header_switch"><span class="nav_item stretch">Logo umschalten</span></label>	
+	<label for="header_switch"><span class="nav_item">Logo an/aus</span></label>	
 	{% elsif locale == "en" %}
-	<label for="header_switch"><span class="nav_item stretch">toggle logo</span></label>	
+	<label for="header_switch"><span class="nav_item">logo on/off</span></label>	
 	{% endif %}
 </div>

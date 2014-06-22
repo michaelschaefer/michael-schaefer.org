@@ -44,17 +44,15 @@ type: mainpage
 	<ul class="no_bullet">
 		{% for post in paginator.posts %}
 		<li>
-			<span class="left">{{ post.date | date: "%d.%m.%Y" }}:</span>
-			<span class="headline">
-				<a href="{{ post.url }}">{{ post.title }}</a>			
-				<p>
-					{% if post.description %}
-					{{ post.description }}
-					{% else %}
-					{{ site.data.i18n["de"].no_description }}
-					{% endif %}
-				</p>			
-			</span>
+			<span class="bold">{{ post.date | date: "%d.%m.%Y" }}:</span>
+			<p class="indent">
+				<a href="{{ post.url }}">{{ post.title }}</a><br/>
+				{% if post.description %}
+				{{ post.description }}
+				{% else %}
+				{{ site.data.i18n["de"].no_description }}
+				{% endif %}				
+			</p>			
 		</li>
 		{% endfor %}
 	</ul>

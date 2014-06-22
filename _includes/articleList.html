@@ -21,13 +21,14 @@
 
 {% assign year = post.date | date: '%Y' %}
 {% if year != oldYear %}
-{% unless forloop.first %}</ul>{% endunless %}<li><em>{{ year }}</em><ul class="no_bullet">
+{% unless forloop.first %}</ul>{% endunless %}<li><h2>{{ year }}</h2><ul class="no_bullet">
 {% endif %}
 <li>
-	<span class="left">{{ date }}:</span>
-	<span class="headline narrow">
+	<span class="bold">{{ date }}:</span>
+	<!--<span class="headline narrow">-->
+	<p class="indent">
 		<a href="{{ post.url }}">{{ post.title }}</a>    
-	</span>
+	</p>
 </li>
 {% assign oldYear = year %}
 

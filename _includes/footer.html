@@ -1,0 +1,19 @@
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+{% unless site.authorized_locales contains locale %}
+{% assign locale = site.default_locale %}
+{% endunless %}
+
+{% if locale == "de" %}
+	{% assign toTheTop = "nach oben" %}
+	{% assign imprint = "/impressum/" %}
+{% else %}
+	{% assign toTheTop = "to the top" %}
+	{% assign imprint = "/en/imprint/" %}
+{% endif %}
+
+<small class="bold">&copy; 2014 Michael Schaefer</small>
+<a href="#top">
+	<span class="nav_item right">        
+		<span class="symbol">&#xf435;</span>		
+	</span>
+</a>

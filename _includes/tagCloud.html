@@ -64,9 +64,8 @@
 			{% else %}
 			{% assign date = post.date | date: '%d/%m/%Y' %}
 			{% endif %}				
-			<li>				
-				<span class="left">{{ date }}:</span>
-				<span class="headline"><a href="{{ post.url }}">{{ post.title }}</a></span>
+			<li class="indent">												
+				<a href="{{ post.url }}">{{ post.title }}</a> ({{ date }})
 			</li>
 			{% endif %}
 			{% endfor %}
