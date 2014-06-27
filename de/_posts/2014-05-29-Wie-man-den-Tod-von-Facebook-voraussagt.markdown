@@ -17,8 +17,8 @@ Dem Modell liegen zwei wichtige Annahmen zu Grunde: Die Krankheit ist nicht t&ou
 Ich m&ouml;chte dies nun kurz in mathematischer Fachsprache ausdr&uuml;cken. Die oberen Ideen lassen sich in einem sogenannten System gew&ouml;hnlicher Differentialgleichungen zusammenfassen. Grob gesprochen ist eine Differentialgleichung eine Gleichung, in der Ableitungen einer Funktion (das ist ihre &Auml;nderungsrate, d.h. ob sie steigt oder f&auml;llt) mit der Funktion selbst (und evtl. weiteren Funktionen) in Beziehung gesetzt werden. F&uuml;r das SIR-Modell gibt es drei Funktionen, n&auml;mlich *S(t)*, *I(t)* und *R(t)*, wobei *t* die Zeit bezeichnet. Das Modell besteht nun aus den folgenden drei Gleichungen:
 
 (1) *S'(t) = -c I(t) S(t)*<br/>
-(2) *I'(t) = &amp;nbsp;c I(t) S(t) - w I(t)*<br/>
-(3) *R'(t) = &amp;nbsp;w I(t)*
+(2) *I'(t) = &nbsp;c I(t) S(t) - w I(t)*<br/>
+(3) *R'(t) = &nbsp;w I(t)*
 
 Zus&auml;tzlich zu den Gleichungen muss man noch sogenannte Anfangswerte vorgeben, d.h. man spezifiziert, welche Werte die Funktionen zur Zeit *t* = 0 annehmen sollen.
 
