@@ -8,29 +8,25 @@ type: mainpage
 	Great that you found your way to <a href="/en/about/">my</a> website! I use this little blog to publish articles on a regularly unregular basis. Topics vary strongly according to my interests. This mainpage always includes a list of the most recently published articles. That way you can see quickly if there is something new. The ones who want to stay tuned even faster and more uncomplicated can use one of the following feeds: <a href="/en/rss.xml">RSS</a>, <a href="/en/atom.xml">Atom</a>.
 </p>
 <p>
-	A note about the handling: With the three half circle shaped buttons at the very top you can switch the language (left and right) and hide resp. show the banner (middle).
+	A note about the handling: With the far-right button in the navigation bar you activate a menu that allows for switching the language between german and english; in addition you can hide resp. show the banner.
 </p>
 
 <h2>Notes</h2>
-<p>	
-	<ul>
-		<li>
-			I use <a href="http://www.disqus.com">disqus</a> as commentary platform. To prevent you from the necessity of creating an account there, I exclicitely allow to comment as a guest (thus without registration). <noscript>For disqus to work, Javascript must be activated!</noscript>
-		</li>
-		<noscript>
-			<li>
-				In order to make the above picture hidden throughout the entire visit , Javascript must be activated. Otherwise you have to hide it again every time you follow a link.
-			</li>
-		</noscript>
-	</ul>
-</p>
+<ul>
+	<li>
+		I use <a href="http://www.disqus.com">disqus</a> as commentary platform. To prevent you from the necessity of creating an account there, I exclicitely allow to comment as a guest (thus without registration). <noscript>For disqus to work, Javascript must be activated!</noscript>
+	</li>		
+	<li id="noscript">
+		In order to make the banner hidden throughout the entire visit, Javascript must be activated. Otherwise you have to hide it again every time you follow a link.
+	</li>		
+</ul>
 
 <p>
 	Have fun on my website!
 </p>
 
 
-<h1><a class="anchor" name="article_list">Article list</a></h1>
+<h1>Article list</h1>
 {% if paginator.posts == nil %}
 	<em>{{ site.data.i18n["en"].no_articles }}</em>
 {% else %}
@@ -44,17 +40,15 @@ type: mainpage
 	<ul class="no_bullet">
 		{% for post in paginator.posts %}
 		<li>
-			<span class="left">{{ post.date | date: "%d/%m/%Y" }}:</span>
-			<span class="headline">
-				<a href="{{ post.url }}">{{ post.title }}</a>			
-				<p>
-					{% if post.description %}
-					{{ post.description }}
-					{% else %}
-					{{ site.data.i18n["en"].no_description }}
-					{% endif %}
-				</p>			
-			</span>
+			<span class="bold">{{ post.date | date: "%d/%m/%Y" }}:</span>
+			<p class="indent">
+				<a href="{{ post.url }}">{{ post.title }}</a><br/>
+				{% if post.description %}
+				{{ post.description }}
+				{% else %}
+				{{ site.data.i18n["en"].no_description }}
+				{% endif %}				
+			</p>			
 		</li>
 		{% endfor %}
 	</ul>

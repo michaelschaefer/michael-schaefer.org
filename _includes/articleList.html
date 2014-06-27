@@ -21,7 +21,7 @@
 
 {% assign year = post.date | date: '%Y' %}
 {% if year != oldYear %}
-{% unless forloop.first %}</ul>{% endunless %}<li><h2>{{ year }}</h2><ul class="no_bullet">
+{% unless forloop.first %}</ul></li>{% endunless %}<li><h2>{{ year }}</h2><ul class="no_bullet">
 {% endif %}
 <li>
 	<span class="bold">{{ date }}:</span>
@@ -33,7 +33,7 @@
 {% assign oldYear = year %}
 
 {% endfor %}
-</ul>
+</ul></li></ul>
 {% endif %}
 
 {% elsif include.type == "recent" %}

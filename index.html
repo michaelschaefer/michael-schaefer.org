@@ -8,29 +8,25 @@ type: mainpage
 	Sch&ouml;n, dass du den Weg auf <a href="/uebermich/">meine</a> Seite gefunden hast! Auf diesem kleinen Blog ver&ouml;ffentliche ich regelm&auml;&szlig;ig unregelm&auml;&szlig;ig Artikel zu diversen Themen, die stark nach meinen Interessen variieren. Auf dieser Hauptseite findet sich immer eine &Uuml;bersicht mit den letzten ver&ouml;ffentlichten Artikeln. So kann man schnell sehen, ob es etwas Neues gibt. Wer noch schneller und unkomplizierter auf dem Laufenden bleiben will kann auch einen der folgenden Feeds benutzen: <a href="/rss.xml">RSS</a>, <a href="/atom.xml">Atom</a>.
 </p>
 <p>
-	Zur Bedienung: Mit den drei halbkreisf&ouml;rmigen Kn&ouml;pfen ganz oben kann man die Sprache umstellen (au&szlig;en) und das Banner verstecken bzw. wieder anzeigen (mitte).	
+	Zur Bedienung: Mit dem Knopf rechts au&szlig;en in der Navigationsleiste gelangt man an ein Men&uuml; in dem sich die Sprache zwischen deutsch und englisch umstellen l&auml;sst; au&szlig;erdem kann man das Banner verstecken bzw. wieder anzeigen.
 </p>
 
 <h2>Hinweise</h2>
-<p>	
-	<ul>
-		<li>
-			Ich benutze <a href="http://www.disqus.com">disqus</a> als Kommentarplattform. Damit sich dort niemand anmelden muss habe ich es explizit erlaubt, auch als Gast (also ohne Anmeldung) kommentieren zu d&uuml;rfen. <noscript>Javascript muss aktiviert sein, damit disqus funktioniert!</noscript>
-		</li>
-		<noscript>
-			<li>
-				Damit das obige Bild w&auml;hrend des gesamten Besuches auf dieser Seite versteckt bleibt muss Javascript aktiviert sein. Ansonsten muss es immer wieder neu versteckt werden.
-			</li>
-		</noscript>
-	</ul>
-</p>
+<ul>
+	<li>
+		Ich benutze <a href="http://www.disqus.com">disqus</a> als Kommentarplattform. Damit sich dort niemand anmelden muss habe ich es explizit erlaubt, auch als Gast (also ohne Anmeldung) kommentieren zu d&uuml;rfen. <noscript>Javascript muss aktiviert sein, damit disqus funktioniert!</noscript>
+	</li>		
+	<li id="noscript">			
+		Damit das Banner w&auml;hrend des gesamten Besuches auf dieser Seite versteckt bleibt muss Javascript aktiviert sein. Ansonsten muss es immer wieder neu versteckt werden.
+	</li>
+</ul>
 
 <p>
 	Viel Spa&szlig; auf meiner Seite!
 </p>
 
 
-<h1><a class="anchor" name="article_list">Artikel-Liste</a></h1>
+<h1>Artikel-Liste</h1>
 {% if paginator.posts == nil %}
 	<em>{{ site.data.i18n["de"].no_articles }}</em>
 {% else %}

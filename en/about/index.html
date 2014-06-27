@@ -9,19 +9,17 @@ type: about
 <aside class="left">	
 	<br/>
 	<p class="center">	
-		<img class="aperture" src="/media/portrait_square.png" />
+		<img alt="Portrait of Michael Schaefer" class="aperture" src="/media/portrait_square.png" />
 	</p>
 	<h2>{{ data.headline }}</h2>
 	<p>
 		{{ data.description }}
 	</p>
-	<p>	
-		<ul class="no_bullet">
-			{% for item in data.links %}
-			<li><span class="symbol">{{ item.symbol }}</span><a href="{{ item.url }}">{{ item.text }}</a></li>
-			{% endfor %}		
-		</ul>
-	</p>
+	<ul class="no_bullet">
+		{% for item in data.links %}
+		<li><span class="symbol">{{ item.symbol }}</span><a href="{{ item.url }}">{{ item.text }}</a></li>
+		{% endfor %}		
+	</ul>
 </aside>
 
 <p>		
@@ -44,14 +42,14 @@ type: about
 <h2>Links</h2>
 <p>
 	Some selected links about me or projects of mine:
-	<ul>
-		<li>
-			<a href="http://wwwmath.uni-muenster.de/u/michael.schaefer">wwwmath.uni-muenster.de/u/michael.schaefer</a><br/>
-			(University website with information about my research)
-		</li>
-		<li>
-			<a href="http://github.com/michaelschaefer">github.com/michaelschaefer</a><br/>
-			(GitHub account with some of my software projects)
-		</li>
-	</ul>
 </p>
+<ul>
+	<li>
+		<a href="http://wwwmath.uni-muenster.de/u/michael.schaefer">wwwmath.uni-muenster.de/u/michael.schaefer</a><br/>
+		(University website with information about my research)
+	</li>
+	<li>
+		<a href="http://github.com/michaelschaefer">github.com/michaelschaefer</a><br/>
+		(GitHub account with some of my software projects)
+	</li>
+</ul>

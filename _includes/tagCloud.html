@@ -42,7 +42,7 @@
 	{% capture tagString %}
 	{% for tag in tagWords %}
 	{% assign count = tagCounts[forloop.index] %}
-	{% if count != "0" %}<a href="#{{ tag | cgi_escape }}">{{ tag }}</a><span class="super">({{ count }})</span>&nbsp;{% endif %}
+	{% if count != "0" %}<a href="#tag_{{ tag | cgi_escape }}">{{ tag }}</a><span class="super">({{ count }})</span>&nbsp;{% endif %}
 	{% endfor %}	
 	{% endcapture %}
 	{{ tagString }}
@@ -51,7 +51,7 @@
 <ul class="no_bullet">
 {% for tag in tagWords %}	
 	{% if tagCounts[forloop.index] != "0" %}
-	<li><a class="anchor" name="{{ tag | cgi_escape }}"><em>{{ tag }}:</em></a>
+	<li><a class="anchor" id="tag_{{ tag | cgi_escape }}"><em>{{ tag }}:</em></a>
 		<ul class="no_bullet">
 			{% assign tagStruct = tagList[tag] %}
 			{% for post in tagStruct %}
