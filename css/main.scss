@@ -40,8 +40,8 @@ body {
 
 aside {
     background-color: $colLight;
-    @include vendor(box-shadow, 0 0 10px $colDark);
-    border: 1px solid $colDark;
+    //@include vendor(box-shadow, 0 0 10px $colDark);
+    //border: 1px solid $colDark;
     display: block;    
     padding: 0.5em 1em;
     margin-top: 0.25em;
@@ -202,26 +202,24 @@ nav {
         color: $colTextDark;
     }
 
-    input[id="menu_switch"]:checked + label + #menu {
-        //border-bottom: 1px solid $colDark;
-        border-top: 1px solid $colBackground;
+    input[id="menu_switch"]:checked + label + #menu {        
+        background-color: $colBackgroundTransparent;
+        border-top: 1px solid transparent;
         display: block;
         left: 2em;
         position: absolute;
         top: 2.5em;
-        z-index: 11;
+        z-index: 11;        
 
-        /*&:before {
-            content: "";
-            display: block;
-            height: 2px;
-        }*/
+        label:last-child span.nav_item {
+            margin-bottom: 0;
+        }
 
         span.nav_item {
-            //border-right: 1px solid $colDark;
-            border-bottom: 1px solid $colBackground;
+            border: none;            
             display: block;
             float: none !important;
+            margin-bottom: 1px;            
         }
     }
 
@@ -231,34 +229,29 @@ nav {
     }
 
     input[id="settings_switch"]:checked + label + #settings_menu {
-        display: block;
-
-        span.nav_item {
-            //border-left: 1px solid $colDark;
-            border-bottom: 1px solid $colBackground;
-            display: block;
-            float: none !important;
-        }
+        display: block;        
     }
 
     #menu_button {
         display: none;
     }    
 
-    #settings_menu {        
-        //border-bottom: 1px solid $colDark;
-        border-top: 1px solid $colBackground;
+    #settings_menu {                
+        background-color: $colBackgroundTransparent;
+        border-top: 1px solid transparent;
         display: none;        
         position: absolute;
         right: 2em;        
         top: 2.5em;        
         z-index: 10;
 
-        /*&:before {
-            content: "";
+        span.nav_item {
+            background-color: $colMiddle;
+            border: none;
             display: block;
-            height: 2px;
-        }*/
+            float: none !important;
+            margin-bottom: 1px;
+        }
     }
 
     span.nav_item {
@@ -286,17 +279,6 @@ nav {
     label[for^="settings_switch"] span.nav_item {
         border-right: 1px solid $colBackground;
     }
-
-    /*span.settings {                
-        cursor: pointer;
-        float: right !important;
-        font-family: Genericons;                        
-    }*/
-
-    /*span.stretch {
-        border-left: 1px solid $colDark;
-        width: 100% !important;        
-    }*/    
 
     &:after {
         clear: both;        

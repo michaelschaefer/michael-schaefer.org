@@ -109,17 +109,11 @@ input, select {
     border: none; }
 
 .aperture {
-  border: 1px solid black;
   -ms-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -ms-box-shadow: 0 0 10px black;
-  -moz-box-shadow: 0 0 10px black;
-  -o-box-shadow: 0 0 10px black;
-  -webkit-box-shadow: 0 0 10px black;
-  box-shadow: 0 0 10px black; }
+  border-radius: 50%; }
 
 .bold {
   font-weight: bold; }
@@ -132,13 +126,6 @@ input, select {
   position: relative;
   width: 100%;
   max-width: 960px; }
-
-.deprecated_browser {
-  background-color: white;
-  border: 2px solid red;
-  padding: 0.25em;
-  position: fixed;
-  z-index: 2; }
 
 .disabled {
   opacity: 0.25; }
@@ -223,6 +210,11 @@ h2 {
   font-weight: bold;
   margin-bottom: 1em; }
 
+img {
+  display: block;
+  margin: 2em auto;
+  max-width: 100%; }
+
 img.left {
   display: block;
   float: left;
@@ -252,15 +244,6 @@ main code {
   padding: 0 0.2em; }
 main .highlight code {
   background-color: transparent; }
-main img {
-  -ms-box-shadow: 0 0 1em black;
-  -moz-box-shadow: 0 0 1em black;
-  -o-box-shadow: 0 0 1em black;
-  -webkit-box-shadow: 0 0 1em black;
-  box-shadow: 0 0 1em black;
-  display: block;
-  margin: 2em auto;
-  max-width: 100%; }
 main table {
   margin: 2em auto 2em;
   text-align: center; }
@@ -323,12 +306,6 @@ body {
 */
 aside {
   background-color: #d6dbd6;
-  -ms-box-shadow: 0 0 10px black;
-  -moz-box-shadow: 0 0 10px black;
-  -o-box-shadow: 0 0 10px black;
-  -webkit-box-shadow: 0 0 10px black;
-  box-shadow: 0 0 10px black;
-  border: 1px solid black;
   display: block;
   padding: 0.5em 1em;
   margin-top: 0.25em;
@@ -438,16 +415,7 @@ nav {
   width: 100%;
   max-width: 960px;
   padding-left: 2em;
-  padding-right: 2em;
-  /*span.settings {                
-      cursor: pointer;
-      float: right !important;
-      font-family: Genericons;                        
-  }*/
-  /*span.stretch {
-      border-left: 1px solid $colDark;
-      width: 100% !important;        
-  }*/ }
+  padding-right: 2em; }
   nav input {
     display: none; }
   nav input[id^="entry"]:checked + label span,
@@ -455,44 +423,41 @@ nav {
     background-color: #d6dbd6;
     color: black; }
   nav input[id="menu_switch"]:checked + label + #menu {
-    border-top: 1px solid ivory;
+    background-color: rgba(255, 255, 240, 0.75);
+    border-top: 1px solid transparent;
     display: block;
     left: 2em;
     position: absolute;
     top: 2.5em;
-    z-index: 11;
-    /*&:before {
-        content: "";
-        display: block;
-        height: 2px;
-    }*/ }
+    z-index: 11; }
+    nav input[id="menu_switch"]:checked + label + #menu label:last-child span.nav_item {
+      margin-bottom: 0; }
     nav input[id="menu_switch"]:checked + label + #menu span.nav_item {
-      border-bottom: 1px solid ivory;
+      border: none;
       display: block;
-      float: none !important; }
+      float: none !important;
+      margin-bottom: 1px; }
   nav input[id="settings_switch"]:checked + label span {
     background-color: #d6dbd6;
     color: black; }
   nav input[id="settings_switch"]:checked + label + #settings_menu {
     display: block; }
-    nav input[id="settings_switch"]:checked + label + #settings_menu span.nav_item {
-      border-bottom: 1px solid ivory;
-      display: block;
-      float: none !important; }
   nav #menu_button {
     display: none; }
   nav #settings_menu {
-    border-top: 1px solid ivory;
+    background-color: rgba(255, 255, 240, 0.75);
+    border-top: 1px solid transparent;
     display: none;
     position: absolute;
     right: 2em;
     top: 2.5em;
-    z-index: 10;
-    /*&:before {
-        content: "";
-        display: block;
-        height: 2px;
-    }*/ }
+    z-index: 10; }
+    nav #settings_menu span.nav_item {
+      background-color: lightslategrey;
+      border: none;
+      display: block;
+      float: none !important;
+      margin-bottom: 1px; }
   nav span.nav_item {
     background-color: lightslategrey;
     border-left: 1px solid ivory;

@@ -6,10 +6,8 @@
     &:hover { border: none; }
 }
 
-.aperture { 
-    border: 1px solid $colDark;
-	@include vendor(border-radius, 50%);
-	@include vendor(box-shadow, 0 0 10px $colDark);
+.aperture {     
+	@include vendor(border-radius, 50%);	
 }
 
 .bold { 
@@ -25,14 +23,6 @@
   position: relative;
   width: 100%;
   max-width: 960px; 
-}
-
-.deprecated_browser {
-    background-color: white;
-    border: 2px solid red;
-    padding: 0.25em;
-    position: fixed;
-    z-index: 2;
 }
 
 .disabled { 
