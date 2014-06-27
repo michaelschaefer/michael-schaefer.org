@@ -27,7 +27,7 @@
 
   <script type="text/javascript">
     window.onunload = function() {
-      var tag = document.getElementById("header_switch");
+      var tag = document.getElementById("header_switch");      
       if (tag.checked != undefined) {
         window.name = tag.checked;
       } else {        
@@ -35,9 +35,12 @@
       }            
     }
   
-    window.onload = function() {
+    window.onload = function() {      
       var tag = document.getElementById("noscript");
-      tag.style.display = "none";
+      if (tag === null) {
+      } else {
+        tag.style.display = "none";
+      }
 
       var hide = false;
       if (window.name == "true") {
@@ -45,7 +48,7 @@
       }
 
       tag = document.getElementById("header_switch");
-      if (hide == true) {
+      if (hide === true) {
         tag.checked = true;
       }
     }
