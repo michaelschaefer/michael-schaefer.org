@@ -1,0 +1,20 @@
+{% assign data = site.data.i18n["de"].short_profile %}
+
+<img alt="Portrait von Michael Schaefer" class="aperture" src="/media/portrait_square.png" />
+<h2>{{ data.headline }}</h2>
+<p>
+	{{ data.description }}
+</p>
+<ul class="noBullet">
+	{% for item in data.links %}
+	<li>
+		<span class="symbol">{{ item.symbol }}</span>
+		<a href="{{ item.url }}">{{ item.text }}</a>
+	</li>
+	{% endfor %}		
+</ul>
+
+<h2>Tags</h2>
+<p>
+	{% include tagCloud.html %}
+</p>
