@@ -1,9 +1,8 @@
 @import "_reset.scss";
-@import "_font.scss";
 @import "_variables.scss";
-@import "_classes.scss";
 @import "_tags.scss";
-
+@import "_classes.scss";
+@import "_font.scss";
 
 /*
     ===============================
@@ -15,6 +14,8 @@
 	@include vendor(box-sizing, border-box);	
 	font-family: $fontName, sans-serif;    
     font-weight: normal;
+    margin: 0;
+    padding: 0;
 	word-wrap: break-word;
 }
 
@@ -24,280 +25,88 @@ body, html {
 
 body {
     background-color: $colBackground;
+    color: $colTextDark;
     display: block;
-    font-size: 11pt;    
+    font-size: 12pt;        
     overflow-y: scroll;
     width: 100%;    
-    min-width: 300px;    
 }
 
 
 /*
-    =============================
-    customization of section tags
-    =============================
+    ==========
+    basic tags
+    ==========
 */
 
-aside {
-    background-color: $colLight;
-    //@include vendor(box-shadow, 0 0 10px $colDark);
-    //border: 1px solid $colDark;
-    display: block;    
-    padding: 0.5em 1em;
-    margin-top: 0.25em;
-    margin-bottom: 1em;
-    margin-right: 1.5em;    
-    width: 100%;
-    max-width: 300px; 
-
-    img {
-        margin: 0 auto;
-    }   
+#container {
+    background-color: transparent;
+    display: block;
+    line-height: 1.2em;        
+    margin: 0 auto;
+    margin-bottom: 2em;    
+    min-width: $widthAbsolute;
+    width: $widthRelative;        
+    padding-bottom: 6em;
 }
 
+#container:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+aside {    
+    border-left: 2em solid $colBackground;
+    background-color: $colForeground;
+    float: right;
+    padding: $padding;
+    width: 40%;
+}
 
 footer {
-    color: $colTextLight;    
-    line-height: 2.5em;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    max-width: 960px;
-    padding-left: 2em;
-    padding-right: 2em;    
-    width: 100%;    
+    background-color: $colHeaderBackground;
+    color: $colTextLight;
+    display: block;
+    font-size: 1em;
+    line-height: 6em;    
+    margin-top: -6em;    
+}
 
-    span.nav_item {
-        background-color: $colMiddle;        
-        border-left: 1px solid $colBackground;
-        border-right: 1px solid $colBackground;
+header {
+    background-color: $colHeaderBackground;
+    color: $colTextLight;
+    display: block;
+    font-size: 2em;
+    line-height: 3em;
+    margin-bottom: 1em;        
+}
+
+main {
+    background-color: $colForeground;        
+    display: inline-block;    
+    padding: $padding;
+    width: 60%;
+}
+
+nav {
+    float: right;
+    font-size: 0.5em;
+
+    a {
+        border-bottom: 1px dotted $colTextLight;
         color: $colTextLight;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: bold;        
-        height: 2.5em;
-        line-height: 2.5em;                
-        padding-left: 1em;
-        padding-right: 1em;
-        text-align: center;        
-
-        &:hover {
-            background-color: $colLight !important;
-            color: $colTextDark;
-        }                
+        margin-left: 1em;
+        text-decoration: none;
     }
 
-    span.symbol {
-        padding-right: 0 !important;
-    }
-
-    &:after {
-        clear: both;
-        content: "";
-        display: block;
+    a:hover {
+        border-bottom: 1px solid $colTextLight;
     }
 }
-
-
-header {     
-    //background-color: $colDark;    
-    padding-top: $logoHeight;
-    position: relative;
-    top: -1px;
-    @include vendor(transition, none 0.5s);
-    width: 100%;  
-
-    input { display: none; } 
-
-    table {        
-        //border-bottom: 1px solid $colDark;        
-        position: absolute;        
-        top: 0;        
-        width: 100%;        
-
-        td {            
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            padding-top: $logoHeight / 2;
-        }        
-
-        #a { 
-            background-image: url("/media/banner/01.jpg"); 
-            //border-bottom: 1px solid $colDark;            
-            width: 16%;
-        }   
-
-        #b { 
-            background-image: url("/media/banner/02.jpg"); 
-            width: 16%;
-        }
-
-        #c {             
-            background-image: url("/media/banner/03.jpg"); 
-            //border-left: 1px solid $colDark;
-            width: 18%;
-        }
-
-        #d { 
-            background-image: url("/media/banner/04.jpg"); 
-            //border-left: 1px solid $colDark;
-            width: 32%;
-        }
-
-        #e { 
-            background-image: url("/media/banner/05.jpg");
-            //border-left: 1px solid $colDark;
-            //border-right: 1px solid $colDark;
-            width: 18%;
-        }
-
-        #f { 
-            background-image: url("/media/banner/06.jpg"); 
-            //border-bottom: 1px solid $colDark;
-            width: 16%;
-        }
-
-        #g { 
-            background-image: url("/media/banner/07.jpg"); 
-            width: 16%;
-        }        
-    }
-
-    #de { margin-left: -6em; }  
-
-    #en { margin-left: 3em; }
-}
-
-#header_switch { display: none; }
-
-#header_switch:checked + header {
-    margin-top: -$logoHeight;
-}
-
-#header_switch:checked + header + nav {
-    border-top: none;
-}
-
-main {    
-    margin: 2em;    
-}
-
-nav {    
-    background-color: $colMiddle;         
-    //border-bottom: 1px solid $colDark;    
-    display: block;                
-    position: relative;
-
-    margin: 0 auto;
-    width: 100%;
-    max-width: 960px;
-    padding-left: 2em;
-    padding-right: 2em;
-
-    input { display: none; } 
-
-    input[id^="entry"]:checked + label span,
-    input[id="menu_switch"]:checked + label span {
-        background-color: $colLight;
-        color: $colTextDark;
-    }
-
-    input[id="menu_switch"]:checked + label + #menu {        
-        background-color: $colBackgroundTransparent;
-        border-top: 1px solid transparent;
-        display: block;
-        left: 2em;
-        position: absolute;
-        top: 2.5em;
-        z-index: 11;        
-
-        label:last-child span.nav_item {
-            margin-bottom: 0;
-        }
-
-        span.nav_item {
-            border: none;            
-            display: block;
-            float: none !important;
-            margin-bottom: 1px;            
-        }
-    }
-
-    input[id="settings_switch"]:checked + label span {
-        background-color: $colLight;        
-        color: $colTextDark;
-    }
-
-    input[id="settings_switch"]:checked + label + #settings_menu {
-        display: block;        
-    }
-
-    #menu_button {
-        display: none;
-    }    
-
-    #settings_menu {                
-        background-color: $colBackgroundTransparent;
-        border-top: 1px solid transparent;
-        display: none;        
-        position: absolute;
-        right: 2em;        
-        top: 2.5em;        
-        z-index: 10;
-
-        span.nav_item {
-            background-color: $colMiddle;
-            border: none;
-            display: block;
-            float: none !important;
-            margin-bottom: 1px;
-        }
-    }
-
-    span.nav_item {
-        background-color: $colMiddle;        
-        border-left: 1px solid $colBackground;
-        color: $colTextLight;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: bold;
-        float: left;
-        height: 2.5em;
-        line-height: 2.5em;                
-        padding-left: 1em;
-        padding-right: 1em;
-        text-align: center;        
-
-        &:hover {
-            background-color: $colLight !important;
-            color: $colTextDark;
-        }        
-    }    
-
-    label[for^="entry"]:last-child span.nav_item,
-    label[for^="menu_switch"] span.nav_item,
-    label[for^="settings_switch"] span.nav_item {
-        border-right: 1px solid $colBackground;
-    }
-
-    &:after {
-        clear: both;        
-        content: "";
-        display: block;
-    }
-}
-
-
-@media (max-width: 640px) {    
-    #menu_button {
-        display: block !important;
-    }
-
-    #menu {
-        display: none;
-    }   
-}
-
-
 
 

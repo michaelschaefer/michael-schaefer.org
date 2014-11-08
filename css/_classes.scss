@@ -1,86 +1,19 @@
-.anchor {    
-    border: none;
-    color: $colTextDark;
-    font-weight: bold;
-
-    &:hover { border: none; }
+.aperture {
+	border: 1px solid $colTextDark;
+	@include vendor(border-radius, 50%);
 }
 
-.aperture {     
-	@include vendor(border-radius, 50%);	
+.centerInLayout {
+	margin: 0 auto;
+	min-width: $widthAbsolute;
+	width: $widthRelative;
 }
 
-.bold { 
-	font-weight: bold; 
+.right {
+	text-align: right;
 }
 
-.center { 
-	text-align: center; 
-}
-
-.centerer {
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-  max-width: 960px; 
-}
-
-.disabled { 
-	opacity: 0.25; 
-}
-
-.huge { 
-	font-size: 3em; 
-}
-
-.indent {
-    margin-left: 2em;
-}
-
-.left { 
-	float: left; 
-}
-
-.narrow { 
-	margin-left: 5em !important; 
-}
-
-.normal { 
-	font-weight: normal !important; 
-}
-
-.right { 
-	float: right !important; 
-}
-
-.spacer {
-    display: block;
-    width: 100%;
-    height: 1em;
-}
-
-.stripe {
-    background-color: $colMiddle;
-    display: block;
-    width: 100%;
-}
-
-.super {
-    font-size: 0.75em;
-    vertical-align: super;
-}
-
-.symbol {            
-    font-family: Genericons;
-    padding-right: 0.5em;
-    vertical-align: middle;
-}
-
-.white_link {
-    border-bottom: 1px dotted $colTextLight;
-    color: $colTextLight;    
-
-    &:hover {
-        border-bottom: 1px solid $colTextLight;
-    }
+.symbol {
+	font-family: "Genericons";
+	vertical-align: middle;
 }

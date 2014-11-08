@@ -1,126 +1,84 @@
-a {
-    border-bottom: 1px dotted $colMiddle;
-    color: $colMiddle;
-    font-weight: bold;
-    text-decoration: none;    
+#homeLink {
+	color: $colTextLight;
+	border: none;
+}
 
-    &:hover { border-bottom: 1px solid $colMiddle; }
+a {
+	border-bottom: 1px dotted $colLink;
+	color: $colLink;
+	text-decoration: none;
 }
 
 a[href^="http"]:after {
 	content: "\f442";
-	font-family: Genericons;
+	font-family: "Genericons";
 	vertical-align: bottom;
+}
+
+a:hover {
+	border-bottom: 1px solid $colLink;
+}
+
+a.tag {
+	background-color: $colBackground;
+	border: none;
+	color: $colTextLight;
+	display: inline-block;
+	float: left;
+	font-size: 0.75em;
+	margin-bottom: 0.25em;
+	margin-left: 0em;
+	margin-right: 0.25em;
+	padding: 0.25em 0.5em;
 }
 
 address {
 	font-style: normal;
-	line-height: 1.5em;
-    margin-bottom: 1em;
 }
 
 em {
-    font-style: normal;
-    font-weight: bold;
+	font-weight: bold;
+	font-style: normal;
 }
 
 h1 {
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 0.67em;
-    margin-top: 1.33em;
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 0.75em;
+	margin-top: 1.5em;
 }
-
-h1:first-child { margin-top: 0; }
 
 h2 {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 1em;
-}
-
-img {	
 	display: block;
-	margin: 2em auto;
-	max-width: 100%;		
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 0.75em;
+	margin-top: 1.5em;
 }
 
-img.left {
-    display: block;
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
-}
+h1:first-child, h2:first-child { margin-top: 0em; }
 
-object {
-	@include vendor(box-shadow, 0 0 1em $colDark);
-	display: block;	
-	margin: 2em auto;
+img {
+	display: block;
+	margin: 1em auto;
 	max-width: 100%;
 }
 
 p {
-    line-height: 1.5em;
-    margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
-small {
-	font-size: 0.833em;
-}
+ul {
+	margin-left: 1em;
+	margin-top: 0.75em;
 
-main {
-	code {
-		background-color: #eef;
-		border: 1px solid $colDark;		
-		padding: 0 0.2em;
+	li {
+		line-height: 1.5em;
 	}
-
-	.highlight code {
-		background-color: transparent;
-	}
-
-	table {
-		margin: 2em auto 2em;
-		text-align: center;
-
-		td, th {
-			border: 2px solid $colBackground;
-			padding: 0.5em;			
-		}
-
-		th {
-			font-weight: bold;		
-		}
-
-		tr:nth-child(even) {
-			background-color: $colLight;
-		}
-
-		tr:nth-child(odd) {
-			background-color: $colMiddle;
-		}
-	}
-
 }
 
-ol, ul {	
-    margin-left: 1.5em;    
-    margin-bottom: 1em;    
-
-    li {
-        line-height: 1.5em;
-        margin-bottom: 0.5em;
-        &:last-child { margin-bottom: 0; }
-    }
-}
-
-ul.no_bullet {
-    list-style: none;
-    margin-left: 0;
-
-    .headline {       
-        display: block;
-        margin-left: 7em;
-    }
+ul.noBullet {
+	list-style: none;
+	margin-left: 0em;
 }

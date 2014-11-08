@@ -23,71 +23,43 @@
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <script type="text/javascript">
-    window.onunload = function() {
-      var tag = document.getElementById("header_switch");      
-      if (tag.checked != undefined) {
-        window.name = tag.checked;
-      } else {        
-        window.name = ""
-      }            
-    }
-  
-    window.onload = function() {      
-      var tag = document.getElementById("noscript");
-      if (tag === null) {
-      } else {
-        tag.style.display = "none";
-      }
-
-      var hide = false;
-      if (window.name == "true") {
-        hide = true;
-      }
-
-      tag = document.getElementById("header_switch");
-      if (hide === true) {
-        tag.checked = true;
-      }
-    }
-
-    function hide_settings() {
-      var tag = document.getElementById("settings_switch");
-      tag.checked = false;
-    }
-  </script>
-
+  <![endif]-->  
 </head>
 
-<body> 
-  
-  <a class="anchor" id="top"></a>
-  <input type="checkbox" id="header_switch" onclick="hide_settings()" />
-  <header>       
-    {% include header.html %}
-  </header> 
+<body>
 
-  <div class="spacer" ></div>
+<div id="wrap">     
+  <header>    
+    <div class="centerInLayout">
+    <a id="homeLink" href="/">www.michael-schaefer.org</a>
+      <nav>
+        {% if locale == "de" %}
+        <a href="/en/">English version</a>
+        {% else %}
+        <a href="/">Deutsche Version</a>
+        {% endif %}
+        <a href="{{ site.data.i18n[locale].navigation[3].url }}">{{ site.data.i18n[locale].navigation[3].text }}</a>
+        <a href="{{ site.data.i18n[locale].navigation[4].url }}">{{ site.data.i18n[locale].navigation[4].text }}</a>
+      </nav>
+    </div>
+  </header>   
 
-  <div class="stripe">
-    <nav>
-      {% include navigation.html %}    
-    </nav>   
-  </div>
-
-  <div class="centerer">    
+  <div id="container" class="centerInLayout">
     <main>
-      {{ content }}      
+      {{ content }}
     </main>    
-  </div>
 
-  <div class="stripe">
-    <footer>      
-      {% include footer.html %}
-    </footer>
+    <aside>
+      {% include aside.html %}
+    </aside>           
+  </div>    
+</div>
+
+<footer>
+  <div class="centerInLayout right">      
+    &copy; 2014 Michael Schaefer
   </div>
+</footer>
 
 </body>
 </html>
