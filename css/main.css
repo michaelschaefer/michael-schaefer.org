@@ -89,8 +89,9 @@ $colTextDark: black;*/
   border: none; }
 
 a {
-  border-bottom: 1px dotted lightslategrey;
-  color: lightslategrey;
+  border-bottom: 1px dotted #777777;
+  color: #777777;
+  font-weight: bold;
   text-decoration: none; }
 
 a[href^="http"]:after {
@@ -99,7 +100,7 @@ a[href^="http"]:after {
   vertical-align: bottom; }
 
 a:hover {
-  border-bottom: 1px solid lightslategrey; }
+  border-bottom: 1px solid #777777; }
 
 a.tag {
   background-color: #aaaaaa;
@@ -112,6 +113,8 @@ a.tag {
   margin-left: 0em;
   margin-right: 0.25em;
   padding: 0.25em 0.5em; }
+  a.tag:hover {
+    background-color: #777777; }
 
 address {
   font-style: normal; }
@@ -145,11 +148,123 @@ img {
 p {
   margin-bottom: 1em; }
 
+table {
+  margin: 2em auto 2em;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0em; }
+  table td, table th {
+    border: 2px solid ivory;
+    padding: 0.5em; }
+  table th {
+    font-weight: bold; }
+  table tr:nth-child(even) {
+    background-color: #dddddd; }
+  table tr:nth-child(odd) {
+    background-color: #aaaaaa; }
+
 ul {
-  margin-left: 1em;
-  margin-top: 0.75em; }
+  margin-left: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em; }
   ul li {
     line-height: 1.5em; }
+
+#dropDown {
+  position: relative;
+  	/*ul {
+  		background-color: $colForeground;
+  		border: 1px solid black;
+  		list-style: none;
+  		margin-left: 0em;
+  		margin-top: 0em;
+  		max-height: 10em;
+  		overflow-y: scroll;
+  		position: absolute;
+  		width: 100%;
+  
+  		a {
+  			border: none;
+  			color: $colTextDark;
+  			font-weight: normal;
+  		}
+  
+  		label, li {
+  			cursor: pointer;
+  		}
+  
+  		li {
+  			display: block;
+  			padding: 0.125em;
+  			padding: 0em 0.5em;
+  			width: 100%;
+  		}	
+  
+  		li:first-child:after {
+  			content: "\f431";
+  			float: right;
+  			font-family: "Genericons";
+  			vertical-align: bottom;
+  		}
+  
+  		li:hover {
+  
+  		}
+  
+  		#dropDownSwitch {
+  			display: none;
+  		}
+  
+  		#dropDownSwitch ~ li {
+  			display: none;
+  		}	
+  
+  		#dropDownSwitch:checked ~ li {
+  			display: block;		
+  
+  			&:hover {
+  				background-color: $colBackground;
+  			}
+  		}
+  
+  		#dropDownSwitch:checked + li {
+  			border-top: 1px dotted black;
+  		}
+  	}*/ }
+  #dropDown #dropDownSwitch + ul {
+    display: none; }
+  #dropDown #dropDownSwitch:checked + ul {
+    display: block; }
+  #dropDown a {
+    border: none;
+    color: black;
+    font-weight: normal; }
+  #dropDown input {
+    display: none; }
+  #dropDown label {
+    border: 1px solid black;
+    cursor: pointer;
+    display: block;
+    padding: 0em 0.25em;
+    width: 100%; }
+    #dropDown label span {
+      float: right; }
+  #dropDown li {
+    cursor: pointer;
+    display: block;
+    padding: 0em 0.25em; }
+    #dropDown li:hover {
+      background-color: #aaaaaa; }
+  #dropDown ul {
+    background-color: ivory;
+    border: 1px solid black;
+    list-style: none;
+    margin: 0em;
+    margin-top: 0.125em;
+    max-height: 7.5em;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%; }
 
 ul.noBullet {
   list-style: none;
@@ -173,6 +288,7 @@ ul.noBullet {
 
 .symbol {
   font-family: "Genericons";
+  margin-right: 0.25em;
   vertical-align: middle; }
 
 /*
@@ -252,7 +368,7 @@ body {
 #container {
   background-color: transparent;
   display: block;
-  line-height: 1.2em;
+  line-height: 1.5em;
   margin: 0 auto;
   margin-bottom: 2em;
   min-width: 960px;
@@ -267,6 +383,11 @@ body {
 #wrap {
   min-height: 100%; }
 
+article {
+  background-color: ivory;
+  margin-bottom: 2em;
+  padding: 2em; }
+
 aside {
   border-left: 2em solid #aaaaaa;
   background-color: ivory;
@@ -275,7 +396,7 @@ aside {
   width: 40%; }
 
 footer {
-  background-color: #666666;
+  background-color: #777777;
   color: white;
   display: block;
   font-size: 1em;
@@ -283,7 +404,7 @@ footer {
   margin-top: -6em; }
 
 header {
-  background-color: #666666;
+  background-color: #777777;
   color: white;
   display: block;
   font-size: 2em;
@@ -291,9 +412,8 @@ header {
   margin-bottom: 1em; }
 
 main {
-  background-color: ivory;
   display: inline-block;
-  padding: 2em;
+  padding: 0;
   width: 60%; }
 
 nav {
@@ -306,3 +426,10 @@ nav {
     text-decoration: none; }
   nav a:hover {
     border-bottom: 1px solid white; }
+
+section {
+  background-color: ivory;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1.33em;
+  padding: 1.33em; }

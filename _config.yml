@@ -9,16 +9,7 @@ markdown: redcarpet
 pygments: true
 
 permalink: /:categories/:year/:month/:title
-paginate: 5
+paginate: 1
 paginate_path: "/page:num"
 paginate_per_category: true
 default_category: "de"
-
-ftp_host: "michael-schaefer.org"
-ftp_dir: "/blog"
-ftp_passive: false
-
-lychee:
-  url: "http://www.michael-schaefer.org/lychee/"
-  album_title_tag: "h1"
-  link_big_to: "lychee"

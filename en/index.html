@@ -4,59 +4,28 @@ title: Mainpage
 type: mainpage
 ---
 
-<p>
-	Great that you found your way to my website! I use this little blog to publish articles on a regularly unregular basis. Topics vary strongly according to my interests. This mainpage always includes a list of the most recently published articles. That way you can see quickly if there is something new. The ones who want to stay tuned even faster and more uncomplicated can use one of the following feeds: <a href="/en/rss.xml">RSS</a>, <a href="/en/atom.xml">Atom</a>.
-</p>
-<p>
-	A note about the handling: With the far-right button in the navigation bar you activate a menu that allows for switching the language between german and english; in addition you can hide resp. show the banner.
-</p>
+<section>Recent articles</section>
 
-<h2>Notes</h2>
-<ul>
-	<li>
-		I use <a href="http://www.disqus.com">disqus</a> as commentary platform. To prevent you from the necessity of creating an account there, I exclicitely allow to comment as a guest (thus without registration). <noscript>For disqus to work, Javascript must be activated!</noscript>
-	</li>		
-	<li class="noscript">
-		In order to make the banner hidden throughout the entire visit, Javascript must be activated. Otherwise you have to hide it again every time you follow a link. Furthermore, an activated NoScript addon prevents the site from loading the main and especially a symbol font. Affected users will experience missing symbols and a browser-dependent default font.
-	</li>	
-</ul>
-
-<p>
-	Have fun on my website!
-</p>
-
-
-<h1>Article list</h1>
 {% if paginator.posts == nil %}
-	<em>{{ site.data.i18n["en"].no_articles }}</em>
-{% else %}
+	<article>
+		<em>{{ site.data.i18n['en']['strings'].no_articles }}</em>
+	</article>
+{% else %}		
+	{% for post in paginator.posts %}	    
+	    {% include shortPost.html post=post %}
+	{% endfor %}
 
-	{% if paginator.previous_page %}
-	<p>
-		<a href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}#article_list">more recent articles</a>
-	</p>
-	{% endif %}
+	<article>
+		{% if paginator.next_page %}
+		<a href="/en/page{{ paginator.next_page }}/">older articles</a>
+		{% else %}
+		&nbsp;
+		{% endif %}
 
-	<ul class="no_bullet">
-		{% for post in paginator.posts %}
-		<li>
-			<span class="bold">{{ post.date | date: "%d/%m/%Y" }}:</span>
-			<p class="indent">
-				<a href="{{ post.url }}">{{ post.title }}</a><br/>
-				{% if post.description %}
-				{{ post.description }}
-				{% else %}
-				{{ site.data.i18n["en"].no_description }}
-				{% endif %}				
-			</p>			
-		</li>
-		{% endfor %}
-	</ul>
-
-	{% if paginator.next_page %}
-	<p>
-		<a href="/en/page{{ paginator.next_page }}/#article_list">older articles</a>
-	</p>
-	{% endif %}
+		{% if paginator.previous_page %}
+		<a style="float: right;" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">more recent articles</a>
+		{% endif %}
+	</article>
 
 {% endif %}
+

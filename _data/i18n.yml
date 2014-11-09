@@ -34,12 +34,17 @@ de:
     - symbol: "&#xf413;"
       text: "RSS feed"
       url: "/rss.xml"
-  articles: "Artikel"
-  no_articles: "Keine Artikel vorhanden"
-  no_description: "Kein Beschreibungstext vorhanden"
-  no_tags_at_all: "Keine Tags vorhanden"
-  no_tags_for_article: "keine"  
-  type_article: "Artikel:"
+  strings:
+    article: "Artikel"
+    articles: "Artikel"
+    date_format: '%d.%m.%Y'
+    no_articles: "Keine Artikel vorhanden"
+    no_description: "Kein Beschreibungstext vorhanden"
+    no_tags_at_all: "Keine Tags vorhanden"
+    no_tags_for_article: "keine"  
+    readEntireArticle: "ganzen Artikel lesen"
+    select_a_month: "w&auml;hlen Sie einen Monat aus"
+    type_article: "Artikel"
 
 en:
   navigation:
@@ -77,9 +82,14 @@ en:
     - symbol: "&#xf413;"
       text: "RSS feed"
       url: "/en/rss.xml"
-  articles: "article(s)"
-  no_articles: "No articles available"
-  no_description: "No description text available"
-  no_tags_at_all: "No tags available"
-  no_tags_for_article: "none"
-  type_article: "Article:"
+  strings:
+    article: "article"
+    articles: "articles"
+    date_format: '%d/%m/%Y'
+    no_articles: "No articles available"
+    no_description: "No description text available"
+    no_tags_at_all: "No tags available"
+    no_tags_for_article: "none"
+    readEntireArticle: "read entire article"
+    select_a_month: "select a month"
+    type_article: "Article"

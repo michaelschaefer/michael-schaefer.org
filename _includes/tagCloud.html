@@ -1,8 +1,7 @@
-{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
-{% unless site.authorized_locales contains locale %}
-{% assign locale = site.default_locale %}
-{% endunless %}
+{% assign locale = include.lang %}
 
+
+{% comment %} set current subdir depending on local {% endcomment %}
 {% if locale == "de" %}
 	{% assign subdir = "" %}
 {% else %}
@@ -10,50 +9,40 @@
 {% endif %}
 
 
-{% assign tagList = site.tags %}
-{% capture tagNames %}{% for tag in tagList %}{{ tag[0] }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tagWords = tagNames | split:',' | sort %}
+{% comment %} build tag list {% endcomment %}
+{% assign tagList = "" %}
+{% for tag in site.tags %}	
+	{% assign tagName = tag | first %}
 
-
-{% assign tagCounts = "0," %}
-{% for tag in tagWords %}
-	{% assign item = site.tags[tag] %}
-	{% assign itemCount = 0 %}
-	{% for post in item %}
-		{% assign category = post.url | truncate: 3, "" | remove: "/" %}
+	{% assign tagCount = 0 %}
+	{% for post in site.tags[tagName] %}
+		{% assign category = post.url | truncate: 3, "" | remove: "/" %}		
 		{% if category == locale %}
-			{% assign itemCount = itemCount | plus: 1 %}
+			{% assign tagCount = tagCount | plus: 1 %}
 		{% endif %}
 	{% endfor %}	
-	{% assign tagCounts = tagCounts | append: itemCount %}
-	{% assign taging.name = taging.name | append: tag %}
-	{% assign taging.cnt = taging.cnt | append: itemCount %}
-	{% unless forloop.last %}{% assign tagCounts = tagCounts | append: ',' %}{% endunless %}
-{% endfor %}
-{% assign tagCounts = tagCounts | split:',' %}
 
-{% assign has_tags = "false" %}
-{% for tag in tagCounts %}
-{% if tag != "0" %}
-{% assign has_tags = "true" %}
-{% endif %}
-{% endfor %}
-
-{% if has_tags == "false" %}	
-	<p><em>{{ site.data.i18n[locale].no_tags_at_all }}</em></p>
-{% else %}
-<p>	
-	{% capture tagString %}
-	{% for tag in tagWords %}
-	{% assign count = tagCounts[forloop.index] %}
-	{% if count != "0" %}	
-	<a class="tag" title="{{ count }} {{ site.data.i18n[locale].articles }}" href="#tag_{{ tag | cgi_escape }}">
-		{{ tag }}
-	</a>
+	{% if tagCount > 0 %}
+		{% assign tmp = tag[0] | downcase %}
+		{% assign tagList = tagList | append: tmp %}
+		{% assign tagList = tagList | append: ";" %}
+		{% assign tagList = tagList | append: tag[0] %}
+		{% assign tagList = tagList | append: ";" %}
+		{% assign tagList = tagList | append: tagCount %}
+		{% unless forloop.last %}{% assign tagList = tagList | append: "," %}{% endunless %}
 	{% endif %}
-	{% endfor %}	
-	{% endcapture %}
-	{{ tagString }}
-</p>
+{% endfor %}
+{% assign tagList = tagList | split: ',' | sort %}
 
+
+{% comment %} show result {% endcomment %}
+{% if tagList.size == 0 %}
+	{{ site.data.i18n[locale]["strings"].no_tags_at_all }}
+{% else %}
+	{% assign strings = site.data.i18n[locale]["strings"] %}	
+	{% for tag in tagList %}
+		{% assign tagPair = tag | split: ';' %}
+		{% capture title %}{{ tagPair[2] }}&nbsp;{% if tagPair[2] == "1" %}{{ strings.article }}{% else %}{{ strings.articles }}{% endif %}{% endcapture %}
+		<a class="tag" title="{{ title }}" href="{{ subdir }}/tags/{{ tagPair[0] | cgi_escape }}/">{{ tagPair[0] }}</a>
+	{% endfor %}
 {% endif %}

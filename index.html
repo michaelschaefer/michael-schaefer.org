@@ -4,60 +4,27 @@ title: Hauptseite
 type: mainpage
 ---
 
-<p>
-	Sch&ouml;n, dass du den Weg auf meine Seite gefunden hast! Auf diesem kleinen Blog ver&ouml;ffentliche ich regelm&auml;&szlig;ig unregelm&auml;&szlig;ig Artikel zu diversen Themen, die stark nach meinen Interessen variieren. Auf dieser Hauptseite findet sich immer eine &Uuml;bersicht mit den letzten ver&ouml;ffentlichten Artikeln. So kann man schnell sehen, ob es etwas Neues gibt. Wer noch schneller und unkomplizierter auf dem Laufenden bleiben will kann auch einen der folgenden Feeds benutzen: <a href="/rss.xml">RSS</a>, <a href="/atom.xml">Atom</a>.
-</p>
-<p>
-	Zur Bedienung: Mit dem Knopf rechts au&szlig;en in der Navigationsleiste gelangt man an ein Men&uuml; in dem sich die Sprache zwischen deutsch und englisch umstellen l&auml;sst; au&szlig;erdem kann man das Banner verstecken bzw. wieder anzeigen.
-</p>
+<section>Aktuelle Artikel</section>
 
-<h2>Hinweise</h2>
-<ul>
-	<li>
-		Ich benutze <a href="http://www.disqus.com">disqus</a> als Kommentarplattform. Damit sich dort niemand anmelden muss habe ich es explizit erlaubt, auch als Gast (also ohne Anmeldung) kommentieren zu d&uuml;rfen. <noscript>Javascript muss aktiviert sein, damit disqus funktioniert!</noscript>
-	</li>		
-	<li id="noscript">			
-		Damit das Banner w&auml;hrend des gesamten Besuches auf dieser Seite versteckt bleibt muss Javascript aktiviert sein. Ansonsten muss es immer wieder neu versteckt werden. Weiterhin kann ein aktiviertes NoScript Addon das Nachladen der Haupt- und einer Symbolschriftart verhindern. Betroffene Benutzer bemerken fehlende Symbole und eine Browser-abhängige Standardschriftart.
-	</li>	
-</ul>
-
-<p>
-	Viel Spa&szlig; auf meiner Seite!
-</p>
-
-
-<h1>Artikel-Liste</h1>
 {% if paginator.posts == nil %}
-	<em>{{ site.data.i18n["de"].no_articles }}</em>
+	<article>
+		<em>{{ site.data.i18n["de"]["strings"].no_articles }}</em>
+	</article>
 {% else %}
+	
+	{% for post in paginator.posts %}
+		{% include shortPost.html post=post %}
+	{% endfor %}
 
-	{% if paginator.previous_page %}
-	<p>
-		<a href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}#article_list">neuere Artikel</a>
-	</p>
-	{% endif %}
+	<article>
+		{% if paginator.next_page %}
+		<a href="/page{{ paginator.next_page }}/">&auml;ltere Artikel</a>
+		{% endif %}
 
-	<ul class="no_bullet">
-		{% for post in paginator.posts %}
-		<li>
-			<span class="bold">{{ post.date | date: "%d.%m.%Y" }}:</span>
-			<p class="indent">
-				<a href="{{ post.url }}">{{ post.title }}</a><br/>
-				{% if post.description %}
-				{{ post.description }}
-				{% else %}
-				{{ site.data.i18n["de"].no_description }}
-				{% endif %}				
-			</p>			
-		</li>
-		{% endfor %}
-	</ul>
-
-	{% if paginator.next_page %}
-	<p>
-		<a href="/page{{ paginator.next_page }}/#article_list">&auml;ltere Artikel</a>
-	</p>
-	{% endif %}
+		{% if paginator.previous_page %}
+		<a style="float: right" href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">neuere Artikel</a>
+		{% endif %}
+	</article>
 
 {% endif %}
 

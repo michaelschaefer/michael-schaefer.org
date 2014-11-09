@@ -17,8 +17,10 @@
 
 $colBackground: #aaa;
 $colForeground: ivory;
-$colHeaderBackground: #666;
-$colLink: #789;
+$colHeaderBackground: #777;
+$colLink: $colHeaderBackground; //#789;
+$colTableLight: #ddd;
+$colTableDark: $colBackground;
 $colTextLight: #fff;
 $colTextDark: #000;
 
@@ -27,6 +29,7 @@ $colTextDark: #000;
 */
 
 $padding: 2em;
+$sectionPadding: 1em;
 $widthRelative: 50%;
 $widthAbsolute: 960px;
 

@@ -42,7 +42,7 @@ body {
 #container {
     background-color: transparent;
     display: block;
-    line-height: 1.2em;        
+    line-height: 1.5em;        
     margin: 0 auto;
     margin-bottom: 2em;    
     min-width: $widthAbsolute;
@@ -58,6 +58,12 @@ body {
 
 #wrap {
     min-height: 100%;
+}
+
+article {
+    background-color: $colForeground;
+    margin-bottom: $padding;
+    padding: $padding;
 }
 
 aside {    
@@ -87,9 +93,8 @@ header {
 }
 
 main {
-    background-color: $colForeground;        
     display: inline-block;    
-    padding: $padding;
+    padding: 0;
     width: 60%;
 }
 
@@ -107,6 +112,14 @@ nav {
     a:hover {
         border-bottom: 1px solid $colTextLight;
     }
+}
+
+section {
+    background-color: $colForeground;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1.33em;
+    padding: 1.33em;    
 }
 
 
