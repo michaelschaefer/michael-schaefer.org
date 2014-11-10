@@ -75,18 +75,13 @@ input, select {
 /*
 	sizes
 */
-/*$colBackgroundTransparent: rgba(255, 255, 240, 0.75);
-$colLight: #d6dbd6; //#dde1e6; //#c9d9e8;
-$colMiddle: #789; //#789;
-$colDark: black; //#3e3e3b; //#60605a;
-$colTextLight: white;
-$colTextDark: black;*/
 /*
 	other variables
 */
 #homeLink {
   color: white;
-  border: none; }
+  border: none;
+  margin-left: 1.33333em; }
 
 a {
   border-bottom: 1px dotted #777777;
@@ -107,12 +102,9 @@ a.tag {
   border: none;
   color: white;
   display: inline-block;
-  float: left;
   font-size: 0.75em;
-  margin-bottom: 0.25em;
-  margin-left: 0em;
-  margin-right: 0.25em;
-  padding: 0.25em 0.5em; }
+  margin: 0em 0.25em 0.25em 0em;
+  padding: 0.25em 0.75em; }
   a.tag:hover {
     background-color: #777777; }
 
@@ -142,11 +134,15 @@ h1:first-child, h2:first-child {
 
 img {
   display: block;
-  margin: 1em auto;
-  max-width: 100%; }
+  margin: 0em auto;
+  max-width: 100%;
+  width: 75%; }
 
 p {
   margin-bottom: 1em; }
+
+p:last-child {
+  margin-bottom: 0em; }
 
 table {
   margin: 2em auto 2em;
@@ -167,70 +163,9 @@ ul {
   margin-left: 1.5em;
   margin-top: 0.75em;
   margin-bottom: 0.75em; }
-  ul li {
-    line-height: 1.5em; }
 
 #dropDown {
-  position: relative;
-  	/*ul {
-  		background-color: $colForeground;
-  		border: 1px solid black;
-  		list-style: none;
-  		margin-left: 0em;
-  		margin-top: 0em;
-  		max-height: 10em;
-  		overflow-y: scroll;
-  		position: absolute;
-  		width: 100%;
-  
-  		a {
-  			border: none;
-  			color: $colTextDark;
-  			font-weight: normal;
-  		}
-  
-  		label, li {
-  			cursor: pointer;
-  		}
-  
-  		li {
-  			display: block;
-  			padding: 0.125em;
-  			padding: 0em 0.5em;
-  			width: 100%;
-  		}	
-  
-  		li:first-child:after {
-  			content: "\f431";
-  			float: right;
-  			font-family: "Genericons";
-  			vertical-align: bottom;
-  		}
-  
-  		li:hover {
-  
-  		}
-  
-  		#dropDownSwitch {
-  			display: none;
-  		}
-  
-  		#dropDownSwitch ~ li {
-  			display: none;
-  		}	
-  
-  		#dropDownSwitch:checked ~ li {
-  			display: block;		
-  
-  			&:hover {
-  				background-color: $colBackground;
-  			}
-  		}
-  
-  		#dropDownSwitch:checked + li {
-  			border-top: 1px dotted black;
-  		}
-  	}*/ }
+  position: relative; }
   #dropDown #dropDownSwitch + ul {
     display: none; }
   #dropDown #dropDownSwitch:checked + ul {
@@ -249,6 +184,10 @@ ul {
     width: 100%; }
     #dropDown label span {
       float: right; }
+    #dropDown label:after {
+      content: "";
+      clear: both;
+      display: block; }
   #dropDown li {
     cursor: pointer;
     display: block;
@@ -280,7 +219,16 @@ ul.noBullet {
 
 .centerInLayout {
   margin: 0 auto;
-  min-width: 960px;
+  max-width: 100%;
+  min-width: 1200px;
+  position: relative;
+  width: 60%; }
+
+.floatRight {
+  float: right; }
+
+.halfWidth {
+  min-width: 150px;
   width: 50%; }
 
 .right {
@@ -347,7 +295,8 @@ ul.noBullet {
   font-weight: normal;
   margin: 0;
   padding: 0;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  overflow-wrap: break-word; }
 
 body, html {
   height: 100%; }
@@ -356,7 +305,7 @@ body {
   background-color: #aaaaaa;
   color: black;
   display: block;
-  font-size: 12pt;
+  font-size: 1em;
   overflow-y: scroll;
   width: 100%; }
 
@@ -365,20 +314,21 @@ body {
     basic tags
     ==========
 */
-#container {
-  background-color: transparent;
+#asideContainer {
+  background-color: ivory;
   display: block;
-  line-height: 1.5em;
-  margin: 0 auto;
-  margin-bottom: 2em;
-  min-width: 960px;
-  width: 50%;
-  padding-bottom: 6em; }
+  padding: 2em;
+  vertical-align: top; }
 
-#container:after {
-  clear: both;
-  content: "";
-  display: block; }
+#container {
+  display: table;
+  line-height: 1.5em;
+  margin-bottom: 2em;
+  padding-bottom: 6em;
+  position: relative; }
+
+#rowContainer {
+  display: table-row; }
 
 #wrap {
   min-height: 100%; }
@@ -387,49 +337,160 @@ article {
   background-color: ivory;
   margin-bottom: 2em;
   padding: 2em; }
+  article:last-child {
+    margin-bottom: 0em; }
 
 aside {
-  border-left: 2em solid #aaaaaa;
-  background-color: ivory;
-  float: right;
-  padding: 2em;
-  width: 40%; }
+  display: table-cell;
+  margin: 0;
+  padding: 0 2em 0 1em;
+  overflow: hidden;
+  vertical-align: top;
+  width: 33%; }
+  aside img {
+    max-width: 150px; }
 
 footer {
   background-color: #777777;
   color: white;
   display: block;
   font-size: 1em;
-  line-height: 6em;
-  margin-top: -6em; }
+  line-height: 4.5em;
+  margin-top: -6em;
+  padding: 0 2em; }
 
 header {
   background-color: #777777;
   color: white;
   display: block;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 3em;
-  margin-bottom: 1em; }
+  margin-bottom: 1.33333em;
+  position: relative; }
+  header:after {
+    content: "";
+    clear: both;
+    display: block; }
+  header input, header label {
+    display: none; }
+  header ul {
+    float: right;
+    font-size: 0.67em;
+    list-style: none;
+    margin: 0em;
+    margin-right: 2em; }
+    header ul a {
+      border-bottom: 1px dotted white;
+      color: white;
+      margin-left: 1em;
+      text-decoration: none; }
+    header ul a:hover {
+      border-bottom: 1px solid white; }
+    header ul input, header ul label {
+      display: none; }
+    header ul li {
+      display: inline; }
 
 main {
-  display: inline-block;
-  padding: 0;
-  width: 60%; }
-
-nav {
-  float: right;
-  font-size: 0.5em; }
-  nav a {
-    border-bottom: 1px dotted white;
-    color: white;
-    margin-left: 1em;
-    text-decoration: none; }
-  nav a:hover {
-    border-bottom: 1px solid white; }
+  display: table-cell;
+  padding: 0 1em 0 2em;
+  vertical-align: top; }
 
 section {
   background-color: ivory;
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 1.33em;
-  padding: 1.33em; }
+  margin-bottom: 1.33333em;
+  padding: 1.33333em;
+  position: relative; }
+
+/*
+    media queries
+*/
+@media all and (max-width: 1279px) {
+  .centerInLayout {
+    max-width: 1200px;
+    min-width: 0px;
+    width: 100%; } }
+/* smaller spaces and <aside> beneath <main> */
+@media all and (max-width: 799px), all and (orientation: portrait) {
+  /* use entire width of display now */
+  .centerInLayout {
+    min-width: 0px;
+    width: 100%; }
+
+  /* adjust to small space between elements */
+  #asideContainer {
+    padding: 1em; }
+
+  #container {
+    padding-bottom: 5em; }
+
+  #homeLink {
+    margin-left: 0.66667em; }
+
+  #rowContainer .spacer {
+    display: none; }
+
+  article {
+    padding: 1em; }
+
+  article, article:last-child, #container {
+    margin-bottom: 1em; }
+
+  footer {
+    margin-top: -5em; }
+
+  header {
+    padding: 0; }
+
+  header ul {
+    margin-right: 1em; }
+
+  header, section {
+    margin-bottom: 0.66667em; }
+
+  section {
+    padding: 0.66667em; }
+
+  /* place <aside> under <main> instead of beneath it */
+  #container, #rowContainer, main, aside {
+    display: block; }
+
+  main, aside {
+    padding: 0 1em;
+    width: 100%; } }
+/* move navigation into a (by default closed) menu */
+@media all and (max-width: 639px) {
+  #navSwitch:checked + div {
+    border-bottom: 1px dotted white; }
+
+  #navSwitch + div > ul {
+    display: none; }
+
+  #navSwitch:checked + div > ul {
+    display: block;
+    line-height: 1.5em;
+    margin: 0em;
+    padding: 1.5em;
+    text-align: right;
+    width: 100%; }
+    #navSwitch:checked + div > ul a {
+      margin: 0em; }
+    #navSwitch:checked + div > ul li {
+      display: block; }
+
+  label[for="navSwitch"] {
+    line-height: 2.8em;
+    cursor: pointer;
+    display: inline;
+    float: right;
+    margin-right: 1em; } }
+/* smaller font for low-resolution-devices */
+@media all and (max-width: 319px) {
+  body {
+    font-size: 0.75em; } }
+/* even smaller font for lowest-resolution devices */
+@media all and (max-width: 239px) {
+  body {
+    font-size: 0.5em; } }

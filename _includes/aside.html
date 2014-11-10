@@ -1,6 +1,6 @@
 {% assign data = site.data.i18n[include.lang].short_profile %}
 
-<img alt="Portrait von Michael Schaefer" class="aperture" src="/media/portrait_square.png" />
+<img alt="Portrait von Michael Schaefer" class="aperture halfWidth" src="/media/portrait_square.png" />
 <h2>{{ data.headline }}</h2>
 <p>
 	{{ data.description }}
@@ -22,4 +22,12 @@
 <h2>Tags</h2>
 <p>
 	{% include tagCloud.html lang=include.lang %}
+</p>
+
+<p>
+	{% if locale == 'de' %}
+	Dieser Blog wird mit <a href="http://jekyllrb.com/">Jekyll</a> generiert. Das Design ist inspiriert von <a href="http://colorlib.com/sparkling/">Sparkling</a>.
+	{% else %}
+	This blog is powered by <a href="http://jekyllrb.com/">Jekyll</a>. The design is inspired by <a href="http://colorlib.com/sparkling/">Sparkling</a>.
+	{% endif %}
 </p>

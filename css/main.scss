@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
 	word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 body, html {
@@ -27,7 +28,7 @@ body {
     background-color: $colBackground;
     color: $colTextDark;
     display: block;
-    font-size: 12pt;        
+    font-size: 1em;
     overflow-y: scroll;
     width: 100%;    
 }
@@ -39,39 +40,48 @@ body {
     ==========
 */
 
-#container {
-    background-color: transparent;
+#asideContainer {
+    background-color: $colForeground;
     display: block;
-    line-height: 1.5em;        
-    margin: 0 auto;
-    margin-bottom: 2em;    
-    min-width: $widthAbsolute;
-    width: $widthRelative;        
+    padding: $padding;    
+    vertical-align: top;
+}
+
+#container {    
+    display: table;
+    line-height: $lineHeight;
+    margin-bottom: $padding;
     padding-bottom: 6em;
+    position: relative;
 }
 
-#container:after {
-    clear: both;
-    content: "";
-    display: block;
+#rowContainer {    
+    display: table-row;        
 }
 
-#wrap {
-    min-height: 100%;
+#wrap {        
+    min-height: 100%;    
 }
 
 article {
     background-color: $colForeground;
     margin-bottom: $padding;
     padding: $padding;
+
+    &:last-child { margin-bottom: 0em; }
 }
 
 aside {    
-    border-left: 2em solid $colBackground;
-    background-color: $colForeground;
-    float: right;
-    padding: $padding;
-    width: 40%;
+    display: table-cell;        
+    margin: 0;    
+    padding: 0 $padding 0 0.5 * $padding;
+    overflow: hidden;
+    vertical-align: top;
+    width: $widthAside;    
+
+    img {
+        max-width: 150px;
+    }
 }
 
 footer {
@@ -79,47 +89,155 @@ footer {
     color: $colTextLight;
     display: block;
     font-size: 1em;
-    line-height: 6em;    
-    margin-top: -6em;    
+    line-height: $heightHeader;
+    margin-top: -6em;     
+    padding: 0 $padding;
 }
 
-header {
+header {    
     background-color: $colHeaderBackground;
     color: $colTextLight;
     display: block;
-    font-size: 2em;
-    line-height: 3em;
-    margin-bottom: 1em;        
+    font-size: 1.5em;
+    line-height: $heightHeader / 1.5;
+    margin-bottom: $padding / 1.5;
+    position: relative;
+
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    input, label { display: none; }
+
+    ul {
+        float: right;
+        font-size: 0.67em;
+        list-style: none;
+        margin: 0em;
+        margin-right: $padding;
+
+        a {
+            border-bottom: 1px dotted $colTextLight;
+            color: $colTextLight;
+            margin-left: 1em;
+            text-decoration: none;
+        }
+
+        a:hover {
+            border-bottom: 1px solid $colTextLight;
+        }
+
+        input, label { display: none; }    
+
+        li {
+            display: inline;
+        }
+    }  
 }
 
 main {
-    display: inline-block;    
-    padding: 0;
-    width: 60%;
-}
-
-nav {
-    float: right;
-    font-size: 0.5em;
-
-    a {
-        border-bottom: 1px dotted $colTextLight;
-        color: $colTextLight;
-        margin-left: 1em;
-        text-decoration: none;
-    }
-
-    a:hover {
-        border-bottom: 1px solid $colTextLight;
-    }
+    display: table-cell;    
+    padding: 0 0.5 * $padding 0 $padding;
+    vertical-align: top;
 }
 
 section {
     background-color: $colForeground;
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 1.33em;
-    padding: 1.33em;    
+    margin-bottom: $padding / 1.5;
+    padding: $padding / 1.5;    
+    position: relative;
+
+    //&:last-child: { margin-bottom: 0em; }
+}
+
+
+/*
+    media queries
+*/
+
+@media all and (min-width: 1280px) {
+    //aside { min-width: 380px; }
+}
+
+@media all and (max-width: 1279px) {
+    .centerInLayout {
+        max-width: $widthContentMin;
+        min-width: 0px;
+        width: 100%;
+    }
+}
+
+/* smaller spaces and <aside> beneath <main> */
+@media all and (max-width: 799px), all and (orientation: portrait) {    
+    /* use entire width of display now */
+    .centerInLayout { 
+        min-width: 0px;
+        width: 100%; 
+    }    
+
+    /* adjust to small space between elements */
+    #asideContainer { padding: $spaceSmall; }
+    #container { padding-bottom: 5em; }    
+    #homeLink { margin-left: $spaceSmall / 1.5; }
+    #rowContainer .spacer { display: none; }
+    article { padding: $spaceSmall; }
+    article, article:last-child, #container { margin-bottom: $spaceSmall; }    
+    footer { margin-top: -5em; }
+    header { padding: 0; }
+    header ul { margin-right: $spaceSmall; }
+    header, section { margin-bottom: $spaceSmall / 1.5; }
+    section { padding: $spaceSmall / 1.5; }
+
+    /* place <aside> under <main> instead of beneath it */
+    #container, #rowContainer, main, aside { display: block; }
+    main, aside {        
+        padding: 0 $spaceSmall;
+        width: 100%;
+    }    
+}
+
+
+/* move navigation into a (by default closed) menu */
+@media all and (max-width: 639px) {
+    #navSwitch:checked + div { border-bottom: 1px dotted $colTextLight; }
+    #navSwitch + div > ul { display: none; }
+
+    #navSwitch:checked + div > ul {                 
+        display: block;
+        line-height: $lineHeight;
+        margin: 0em;
+        padding: 1.5 * $spaceSmall;
+        text-align: right;        
+        width: 100%;
+
+        a { margin: 0em; }
+        li { display: block; }    
+    }   
+
+    label[for="navSwitch"] {
+        line-height: 2.8em;
+        cursor: pointer;
+        display: inline;        
+        float: right;        
+        margin-right: $spaceSmall;
+    }
+
+}
+
+
+/* smaller font for low-resolution-devices */
+@media all and (max-width: 319px) {
+    body { font-size: 0.75em; }
+}
+
+
+/* even smaller font for lowest-resolution devices */
+@media all and (max-width: 239px) {
+    body { font-size: 0.5em; }
 }
 
 

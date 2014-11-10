@@ -4,9 +4,20 @@
 }
 
 .centerInLayout {
-	margin: 0 auto;
-	min-width: $widthAbsolute;
-	width: $widthRelative;
+	margin: 0 auto;	
+	max-width: 100%;
+	min-width: $widthContentMin;
+	position: relative;	
+	width: $widthContent;
+}
+
+.floatRight {
+	float: right;
+}
+
+.halfWidth {
+	min-width: 150px;
+	width: 50%;
 }
 
 .right {

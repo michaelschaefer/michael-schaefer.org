@@ -4,7 +4,7 @@ title: Mainpage
 type: mainpage
 ---
 
-<section>Recent articles</section>
+<section>Latest articles</section>
 
 {% if paginator.posts == nil %}
 	<article>
@@ -23,7 +23,7 @@ type: mainpage
 		{% endif %}
 
 		{% if paginator.previous_page %}
-		<a style="float: right;" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">more recent articles</a>
+		<a class="floatRight" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">newer articles</a>
 		{% endif %}
 	</article>
 

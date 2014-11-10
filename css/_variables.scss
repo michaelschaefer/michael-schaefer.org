@@ -24,28 +24,24 @@ $colTableDark: $colBackground;
 $colTextLight: #fff;
 $colTextDark: #000;
 
+
 /*
 	sizes
 */
 
+$heightHeader: 4.5em;
+$marginDefault: 1em;
+$marginHeader: 0.75em;
+$lineHeight: 1.5em;
 $padding: 2em;
-$sectionPadding: 1em;
-$widthRelative: 50%;
-$widthAbsolute: 960px;
-
-/*$colBackgroundTransparent: rgba(255, 255, 240, 0.75);
-$colLight: #d6dbd6; //#dde1e6; //#c9d9e8;
-$colMiddle: #789; //#789;
-$colDark: black; //#3e3e3b; //#60605a;
-$colTextLight: white;
-$colTextDark: black;*/
+$spaceSmall: 1em;
+$widthAside: 33%;
+$widthContent: 60%;
+$widthContentMin: 1200px;
 
 
 /*
 	other variables
 */
 
-//$fontName: "EB Garamond";
-//$fontName: "Open Sans"; 
 $fontName: "Inconsolata";
-//$logoHeight: 20%;

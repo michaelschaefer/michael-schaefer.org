@@ -43,6 +43,6 @@
 	{% for tag in tagList %}
 		{% assign tagPair = tag | split: ';' %}
 		{% capture title %}{{ tagPair[2] }}&nbsp;{% if tagPair[2] == "1" %}{{ strings.article }}{% else %}{{ strings.articles }}{% endif %}{% endcapture %}
-		<a class="tag" title="{{ title }}" href="{{ subdir }}/tags/{{ tagPair[0] | cgi_escape }}/">{{ tagPair[0] }}</a>
+		{% if forloop.first %}{% else %}-->{% endif %}<a class="tag" title="{{ title }}" href="{{ subdir }}/tags/{{ tagPair[0] | cgi_escape }}/">{{ tagPair[0] }}</a>{% if forloop.last %}{% else %}<!--{% endif %}
 	{% endfor %}
 {% endif %}

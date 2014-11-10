@@ -1,6 +1,7 @@
 #homeLink {
 	color: $colTextLight;
 	border: none;
+	margin-left: $padding / 1.5;
 }
 
 a {
@@ -24,17 +25,14 @@ a.tag {
 	background-color: $colBackground;
 	border: none;
 	color: $colTextLight;
-	display: inline-block;
-	float: left;
+	display: inline-block;	
 	font-size: 0.75em;
-	margin-bottom: 0.25em;
-	margin-left: 0em;
-	margin-right: 0.25em;
-	padding: 0.25em 0.5em;
+	margin: 0em 0.25em 0.25em 0em;
+	padding: 0.25em 0.75em;
 
 	&:hover {
 		background-color: $colLink;
-	}
+	}	
 }
 
 address {
@@ -50,32 +48,32 @@ h1 {
 	display: block;
 	font-size: 1.5em;
 	font-weight: bold;
-	margin-bottom: 0.75em;
-	margin-top: 1.5em;
+	margin-bottom: $marginHeader;
+	margin-top: 2*$marginHeader;
 }
 
 h2 {
 	display: block;
 	font-size: 1em;
 	font-weight: bold;
-	margin-bottom: 0.75em;
-	margin-top: 1.5em;
+	margin-bottom: $marginHeader;
+	margin-top: 2*$marginHeader;
 }
 
 h1:first-child, h2:first-child { margin-top: 0em; }
 
 img {
 	display: block;
-	margin: 1em auto;
-	max-width: 100%;
+	margin: 0em auto;	
+	max-width: 100%;	
+	width: 75%;
 }
 
-p {
-	margin-bottom: 1em;
-}
+p {	margin-bottom: $marginDefault; }
+p:last-child { margin-bottom: 0em; }
 
 table {
-	margin: 2em auto 2em;
+	margin: 2*$marginDefault auto 2*$marginDefault;
 	text-align: center;
 
 	td, th {
@@ -100,13 +98,9 @@ table {
 }
 
 ul {
-	margin-left: 1.5em;
-	margin-top: 0.75em;
-	margin-bottom: 0.75em;
-
-	li {
-		line-height: 1.5em;
-	}
+	margin-left: 1.5 * $marginDefault;
+	margin-top: 0.75 * $marginDefault;
+	margin-bottom: 0.75 * $marginDefault;	
 }
 
 #dropDown {		
@@ -132,6 +126,12 @@ ul {
 
 		span {
 			float: right;
+		}
+
+		&:after {
+			content: "";
+			clear: both;
+			display: block;
 		}		
 	}
 
@@ -156,66 +156,6 @@ ul {
 		position: absolute;
 		width: 100%;		
 	}
-
-	/*ul {
-		background-color: $colForeground;
-		border: 1px solid black;
-		list-style: none;
-		margin-left: 0em;
-		margin-top: 0em;
-		max-height: 10em;
-		overflow-y: scroll;
-		position: absolute;
-		width: 100%;
-
-		a {
-			border: none;
-			color: $colTextDark;
-			font-weight: normal;
-		}
-
-		label, li {
-			cursor: pointer;
-		}
-
-		li {
-			display: block;
-			padding: 0.125em;
-			padding: 0em 0.5em;
-			width: 100%;
-		}	
-
-		li:first-child:after {
-			content: "\f431";
-			float: right;
-			font-family: "Genericons";
-			vertical-align: bottom;
-		}
-
-		li:hover {
-
-		}
-
-		#dropDownSwitch {
-			display: none;
-		}
-
-		#dropDownSwitch ~ li {
-			display: none;
-		}	
-
-		#dropDownSwitch:checked ~ li {
-			display: block;		
-
-			&:hover {
-				background-color: $colBackground;
-			}
-		}
-
-		#dropDownSwitch:checked + li {
-			border-top: 1px dotted black;
-		}
-	}*/
 }
 
 ul.noBullet {

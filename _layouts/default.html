@@ -29,34 +29,45 @@
 <body>
 
 <div id="wrap">     
-  <header>    
-    <div class="centerInLayout">    
-    <a id="homeLink" href="/{% if locale != "de" %}{{ locale }}/{% endif %}">www.michael-schaefer.org</a>
-      <nav>
+  <header>  
+    <input id="navSwitch" type="checkbox" />    
+    <div class="centerInLayout">
+      
+      <a id="homeLink" href="/{% if locale != "de" %}{{ locale }}/{% endif %}">
+        Michael Schaefer
+      </a>
+
+      <label for="navSwitch"><span class="symbol">&#xf419;</span></label>            
+      <ul>
         {% if locale == "de" %}
-        <a href="/en/">English version</a>
+        <li><a href="/en/">English version</a></li>
         {% else %}
-        <a href="/">Deutsche Version</a>
+        <li><a href="/">Deutsche Version</a></li>
         {% endif %}
-        <a href="{{ site.data.i18n[locale].navigation[3].url }}">{{ site.data.i18n[locale].navigation[3].text }}</a>
-        <a href="{{ site.data.i18n[locale].navigation[4].url }}">{{ site.data.i18n[locale].navigation[4].text }}</a>
-      </nav>
+        <li><a href="{{ site.data.i18n[locale].navigation[3].url }}">{{ site.data.i18n[locale].navigation[3].text }}</a></li>
+        <li><a href="{{ site.data.i18n[locale].navigation[4].url }}">{{ site.data.i18n[locale].navigation[4].text }}</a></li>
+      </ul>
+
     </div>
   </header>   
 
   <div id="container" class="centerInLayout">
-    <main>
-      {{ content }}
-    </main>    
+    <div id="rowContainer">
+      <main>
+        {{ content }}
+      </main>      
 
-    <aside>
-      {% include aside.html lang=locale %}
-    </aside>           
-  </div>    
+      <aside>
+        <div id="asideContainer">
+          {% include aside.html lang=locale %}
+        </div>
+      </aside>           
+    </div>  
+  </div>
 </div>
 
 <footer>
-  <div class="centerInLayout right">      
+  <div class="centerInLayout right">
     &copy; 2014 Michael Schaefer
   </div>
 </footer>
