@@ -1,31 +1,33 @@
 ---
 layout: default
 title: Mainpage
-type: mainpage
+type: static
+lang: en
 ---
 
 <section>Latest articles</section>
 
 {% if paginator.posts == nil %}
 	<article>
-		<em>{{ site.data.i18n['en']['strings'].no_articles }}</em>
+		{{ site.data.i18n['en']['main']['strings'].noArticles }}
 	</article>
-{% else %}		
-	{% for post in paginator.posts %}	    
-	    {% include shortPost.html post=post %}
+{% else %}	
+	{% for post in paginator.posts %}
+		{% include shortPost.html post=post lang='en' %}
 	{% endfor %}
 
+	{% if paginator.total_pages > 1 %}
+	{% assign data = site.data.i18n['en']['main'] %}
 	<article>
 		{% if paginator.next_page %}
-		<a href="/en/page{{ paginator.next_page }}/">older articles</a>
+		<a href="/en/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
 		{% else %}
 		&nbsp;
 		{% endif %}
 
 		{% if paginator.previous_page %}
-		<a class="floatRight" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">newer articles</a>
+		<a class="floatRight" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
 		{% endif %}
 	</article>
-
+	{% endif %}
 {% endif %}
-

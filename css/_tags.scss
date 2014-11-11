@@ -1,7 +1,15 @@
 #homeLink {
 	color: $colTextLight;
-	border: none;
-	margin-left: $padding / 1.5;
+	display: inline-block;
+	font-size: 1.5em;
+	border: none;	
+}
+
+#spacer {
+	display: block;
+	min-width: $space;
+	max-width: $space;
+	width: $space;
 }
 
 a {
@@ -112,6 +120,7 @@ ul {
 	a {
 		border: none;
 		color: $colTextDark;		
+		display: block;
 		font-weight: normal;
 	}
 

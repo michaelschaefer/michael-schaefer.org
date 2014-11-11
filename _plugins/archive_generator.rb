@@ -1,16 +1,18 @@
 module Jekyll
 
 	class ArchivePage < Page
-		def initialize(site, base, dir, year, month, postList)
+		def initialize(site, base, dir, year, month, postList, lang)
 			@site = site
 			@base = base
 			@dir = dir
 			@name = 'index.html'
 
 			self.process(@name)
-			self.read_yaml(File.join(base, '_layouts'), 'archive.html')
+			self.read_yaml(File.join(base, '_layouts'), 'listPage.html')
 			self.data['title'] = month + '/' + year
+			self.data['type'] = 'archive'
 			self.data['posts'] = postList
+			self.data['lang'] = lang
 		end
 	end	
 
@@ -52,7 +54,7 @@ module Jekyll
 						if locale == 'de'
 							dir = File.join('archiv', year, month)
 						end
-						site.pages << ArchivePage.new(site, site.source, dir, year, month, postList)
+						site.pages << ArchivePage.new(site, site.source, dir, year, month, postList, locale)
 					end
 				end
 			end			

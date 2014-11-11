@@ -1,16 +1,18 @@
 module Jekyll
 
 	class TagPage < Page
-		def initialize(site, base, dir, tag, posts)
+		def initialize(site, base, dir, tag, posts, lang)
 			@site = site
 			@base = base
 			@dir = dir
 			@name = File.join(CGI.escape(tag), 'index.html')
 
 			self.process(@name)
-			self.read_yaml(File.join(base, '_layouts'), 'tag.html')
+			self.read_yaml(File.join(base, '_layouts'), 'listPage.html')
 			self.data['title'] = tag
+			self.data['type'] = 'tag'
 			self.data['posts'] = posts			
+			self.data['lang'] = lang
 			
 		end
 	end
@@ -36,7 +38,7 @@ module Jekyll
 					if locale == 'de'
 						dir = 'tags'
 					end					
-					site.pages << TagPage.new(site, site.source, dir, tag.downcase, postList)
+					site.pages << TagPage.new(site, site.source, dir, tag.downcase, postList, locale)
 				end
 			end
 		end

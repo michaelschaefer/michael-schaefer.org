@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<section>
+	{{ site.data.i18n[page.lang][page.type].title }}: {{ page.title }}	
+</section>
+
+{% for post in page.posts %}
+	{% include shortPost.html post=post lang=page.lang %}
+{% endfor %}

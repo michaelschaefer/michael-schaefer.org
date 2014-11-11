@@ -4,6 +4,7 @@ title: The Lost Vikings
 date: 2014-05-17 15:36:46
 description: Recently I rediscovered the favorite computer game from my youth. Finally, after a long time I was able to beat it to the end.
 tags: [The Lost Vikings, computer games]
+lang: en
 ---
 
 For my very first blog entry I have come up with something somewhat special. Recently, I felt myself put back to my youth like from nowhere. The reason for that was that Blizzard had decided to re-publish my favorite computer game from 20 years ago for free: The Lost Vikings! The English version of this game can be [downloaded][battlenet] from Blizzards platform battle.net.

@@ -4,6 +4,7 @@ title: Forecasting the death of Facebook
 date: 2014-05-29 14:02:36
 description: "Will Facebook die in the next few years? Recently a mathematical paper was released stating exactly that. I will try to explain in detail how they got to that conclusion. The presentation tries to take place on a level that does not need advanced calculus."
 tags: [Facebook, epidemiology, mathematics]
+lang: en
 ---
 
 Recently there was a little mathematical paper writte by [Cannarella and Spechler (2014)][CS14] with the title "Epidemiological modelling of online social network dynamics

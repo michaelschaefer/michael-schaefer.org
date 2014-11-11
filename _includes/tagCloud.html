@@ -1,14 +1,3 @@
-{% assign locale = include.lang %}
-
-
-{% comment %} set current subdir depending on local {% endcomment %}
-{% if locale == "de" %}
-	{% assign subdir = "" %}
-{% else %}
-	{% capture subdir %}/{{ locale }}{% endcapture %}
-{% endif %}
-
-
 {% comment %} build tag list {% endcomment %}
 {% assign tagList = "" %}
 {% for tag in site.tags %}	
@@ -17,7 +6,7 @@
 	{% assign tagCount = 0 %}
 	{% for post in site.tags[tagName] %}
 		{% assign category = post.url | truncate: 3, "" | remove: "/" %}		
-		{% if category == locale %}
+		{% if category == include.lang %}
 			{% assign tagCount = tagCount | plus: 1 %}
 		{% endif %}
 	{% endfor %}	
@@ -36,13 +25,13 @@
 
 
 {% comment %} show result {% endcomment %}
+{% assign data = site.data.i18n[include.lang]['tag'] %}
 {% if tagList.size == 0 %}
-	{{ site.data.i18n[locale]["strings"].no_tags_at_all }}
-{% else %}
-	{% assign strings = site.data.i18n[locale]["strings"] %}	
+	{{ data.empty }}
+{% else %}	
 	{% for tag in tagList %}
 		{% assign tagPair = tag | split: ';' %}
-		{% capture title %}{{ tagPair[2] }}&nbsp;{% if tagPair[2] == "1" %}{{ strings.article }}{% else %}{{ strings.articles }}{% endif %}{% endcapture %}
-		{% if forloop.first %}{% else %}-->{% endif %}<a class="tag" title="{{ title }}" href="{{ subdir }}/tags/{{ tagPair[0] | cgi_escape }}/">{{ tagPair[0] }}</a>{% if forloop.last %}{% else %}<!--{% endif %}
+		{% capture title %}{{ tagPair[2] }}&nbsp;{% if tagPair[2] == "1" %}{{ data['strings'].article }}{% else %}{{ data['strings'].articles }}{% endif %}{% endcapture %}
+		{% if forloop.first %}{% else %}-->{% endif %}<a class="tag" title="{{ title }}" href="{{ data.url }}/{{ tagPair[0] | cgi_escape }}/">{{ tagPair[0] }}</a>{% if forloop.last %}{% else %}<!--{% endif %}
 	{% endfor %}
 {% endif %}

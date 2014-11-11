@@ -1,15 +1,10 @@
-{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
-{% unless site.authorized_locales contains locale %}
-  {% assign locale = site.default_locale %}
-{% endunless %}
-
 <!DOCTYPE html>
-<html lang="{{ locale }}">
+<html lang="{{ page.lang }}">
 <head>
   <meta charset="utf-8">
   <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-  <title>
-    {{ site.name }}{% if page.title %}&nbsp;||&nbsp;{% if page.type == nil %}{{ site.data.i18n[locale]['strings'].type_article }}&nbsp;({{ page.title }}){% elsif page.type == 'tag' %}Tag ({{ page.title }}){% else %}{{ page.title }}{% endif %}{% endif %}
+  <title>    
+    {{ site.name }}&nbsp;||&nbsp;{% if page.type == 'static' %}{{ page.title }}{% else %}{{ site.data.i18n[page.lang]['sections'][page.type].title }} ({{ page.title }}){% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">  
 
@@ -28,47 +23,49 @@
 
 <body>
 
-<div id="wrap">     
+<div id="wrap">
+
   <header>  
-    <input id="navSwitch" type="checkbox" />    
     <div class="centerInLayout">
-      
-      <a id="homeLink" href="/{% if locale != "de" %}{{ locale }}/{% endif %}">
+      <input id="navSwitch" type="checkbox" />
+      <a id="homeLink" href="/{% if page.lang != "de" %}{{ page.lang }}/{% endif %}">
         Michael Schaefer
       </a>
 
       <label for="navSwitch"><span class="symbol">&#xf419;</span></label>            
       <ul>
-        {% if locale == "de" %}
+        {% if page.lang == 'de' %}
         <li><a href="/en/">English version</a></li>
         {% else %}
         <li><a href="/">Deutsche Version</a></li>
         {% endif %}
-        <li><a href="{{ site.data.i18n[locale].navigation[3].url }}">{{ site.data.i18n[locale].navigation[3].text }}</a></li>
-        <li><a href="{{ site.data.i18n[locale].navigation[4].url }}">{{ site.data.i18n[locale].navigation[4].text }}</a></li>
-      </ul>
-
-    </div>
-  </header>   
+        <li><a href="{{ site.data.i18n[page.lang]['biography'].url }}">{{ site.data.i18n[page.lang]['biography'].text }}</a></li>
+        <li><a href="{{ site.data.i18n[page.lang]['imprint'].url }}">{{ site.data.i18n[page.lang]['imprint'].text }}</a></li>
+      </ul> 
+    </div> 
+  </header>    
 
   <div id="container" class="centerInLayout">
     <div id="rowContainer">
       <main>
         {{ content }}
-      </main>      
+      </main>
+
+      <div id="spacer"></div>
 
       <aside>
         <div id="asideContainer">
-          {% include aside.html lang=locale %}
+          {% include aside.html lang=page.lang %}
         </div>
       </aside>           
     </div>  
   </div>
+
 </div>
 
-<footer>
+<footer>  
   <div class="centerInLayout right">
-    &copy; 2014 Michael Schaefer
+    <span class="bold">&copy; 2014 Michael Schaefer</span>
   </div>
 </footer>
 

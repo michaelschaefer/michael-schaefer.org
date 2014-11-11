@@ -1,24 +1,12 @@
-{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
-{% unless site.authorized_locales contains locale %}
-    {% assign locale = site.default_locale %}
-{% endunless %}
-
+{% assign data = site.data.i18n[include.lang]['post'] %}
 {% assign page = include.post %}
-
-
-{% comment %} assign subdir string for links {% endcomment %}
-{% if locale == "de" %}
-    {% assign subdir = "" %}
-{% else %}
-    {% capture subdir %}/{{ locale }}{% endcapture %}
-{% endif %}
 
 
 {% comment %} assign tag string {% endcomment %}
 {% if page.tags.size == 0 %}
-    {% assign tagList = site.data.i18n[locale].no_tags_for_article %}
+    {% assign tagList = data['strings'].noTags %}
 {% else %}
-    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ subdir }}/tags/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
+    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ data.url }}/tags/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
 {% endif %}
 
 
@@ -26,8 +14,8 @@
 <article>
     <h1>{{ page.title }}</h1>
     <p>		
-        <span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: site.data.i18n[locale]['strings'].date_format }}</span><br/>
+        <span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: data['strings'].dateFormat }}</span><br/>
         <span class="symbol">&#xf302;</span>{{ tagList | remove_first: ', ' }}
     </p>
-    {{ page.content | truncatewords: 100 }}&nbsp;<a href="{{ page.url }}">{{ site.data.i18n[locale]['strings'].readEntireArticle }}</a>    
+    {{ page.content | truncatewords: 100 }}&nbsp;<a href="{{ page.url }}">{{ data['strings'].readEntireArticle }}</a>    
 </article>  

@@ -1,10 +1,12 @@
-{% assign data = site.data.i18n[include.lang].short_profile %}
+{% assign data = site.data.i18n[include.lang]['aside'] %}
 
-<img alt="Portrait von Michael Schaefer" class="aperture halfWidth" src="/media/portrait_square.png" />
+<img alt="{{ data['strings'].imageAltText }}" class="aperture halfWidth" src="/media/portrait_square.png" />
 <h2>{{ data.headline }}</h2>
 <p>
 	{{ data.description }}
 </p>
+
+
 <ul class="noBullet">
 	{% for item in data.links %}
 	<li>
@@ -14,20 +16,23 @@
 	{% endfor %}		
 </ul>
 
-<h2>{{ site.data.i18n[include.lang]['navigation'][1].text }}</h2>
+
+<h2>{{ site.data.i18n[include.lang]['archive'].title }}</h2>
 <p>
 	{% include archive.html lang=include.lang %}
 </p>
 
-<h2>Tags</h2>
+
+{% assign strings = site.data.i18n[include.lang]['aside']['strings'] %}
+
+
+<h2>{{ strings.tagTitle }}</h2>
 <p>
 	{% include tagCloud.html lang=include.lang %}
 </p>
 
+
+<h2>{{ strings.notesTitle }}</h2>
 <p>
-	{% if locale == 'de' %}
-	Dieser Blog wird mit <a href="http://jekyllrb.com/">Jekyll</a> generiert. Das Design ist inspiriert von <a href="http://colorlib.com/sparkling/">Sparkling</a>.
-	{% else %}
-	This blog is powered by <a href="http://jekyllrb.com/">Jekyll</a>. The design is inspired by <a href="http://colorlib.com/sparkling/">Sparkling</a>.
-	{% endif %}
+	{{ strings.notesText }}	
 </p>

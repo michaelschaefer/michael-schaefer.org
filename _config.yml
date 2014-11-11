@@ -9,7 +9,7 @@ markdown: redcarpet
 pygments: true
 
 permalink: /:categories/:year/:month/:title
-paginate: 1
+paginate: 5
 paginate_path: "/page:num"
 paginate_per_category: true
 default_category: "de"

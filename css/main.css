@@ -80,8 +80,15 @@ input, select {
 */
 #homeLink {
   color: white;
-  border: none;
-  margin-left: 1.33333em; }
+  display: inline-block;
+  font-size: 1.5em;
+  border: none; }
+
+#spacer {
+  display: block;
+  min-width: 1em;
+  max-width: 1em;
+  width: 1em; }
 
 a {
   border-bottom: 1px dotted #777777;
@@ -173,6 +180,7 @@ ul {
   #dropDown a {
     border: none;
     color: black;
+    display: block;
     font-weight: normal; }
   #dropDown input {
     display: none; }
@@ -217,12 +225,16 @@ ul.noBullet {
   -webkit-border-radius: 50%;
   border-radius: 50%; }
 
+.bold {
+  font-weight: bold; }
+
 .centerInLayout {
   margin: 0 auto;
   max-width: 100%;
   min-width: 1200px;
   position: relative;
-  width: 60%; }
+  width: 60%;
+  padding: 0 1em; }
 
 .floatRight {
   float: right; }
@@ -293,8 +305,8 @@ ul.noBullet {
   box-sizing: border-box;
   font-family: "Inconsolata", sans-serif;
   font-weight: normal;
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
   word-wrap: break-word;
   overflow-wrap: break-word; }
 
@@ -317,14 +329,14 @@ body {
 #asideContainer {
   background-color: ivory;
   display: block;
-  padding: 2em;
+  padding: 1em;
   vertical-align: top; }
 
 #container {
   display: table;
   line-height: 1.5em;
-  margin-bottom: 2em;
-  padding-bottom: 6em;
+  margin-bottom: 1em;
+  padding-bottom: 5em;
   position: relative; }
 
 #rowContainer {
@@ -335,15 +347,14 @@ body {
 
 article {
   background-color: ivory;
-  margin-bottom: 2em;
-  padding: 2em; }
+  margin-bottom: 1em;
+  padding: 1em; }
   article:last-child {
     margin-bottom: 0em; }
 
 aside {
   display: table-cell;
   margin: 0;
-  padding: 0 2em 0 1em;
   overflow: hidden;
   vertical-align: top;
   width: 33%; }
@@ -356,16 +367,14 @@ footer {
   display: block;
   font-size: 1em;
   line-height: 4.5em;
-  margin-top: -6em;
-  padding: 0 2em; }
+  margin-top: -5em; }
 
 header {
   background-color: #777777;
   color: white;
   display: block;
-  font-size: 1.5em;
-  line-height: 3em;
-  margin-bottom: 1.33333em;
+  line-height: 4.5em;
+  margin-bottom: 1em;
   position: relative; }
   header:after {
     content: "";
@@ -375,34 +384,35 @@ header {
     display: none; }
   header ul {
     float: right;
-    font-size: 0.67em;
     list-style: none;
-    margin: 0em;
-    margin-right: 2em; }
+    margin: 0em; }
     header ul a {
       border-bottom: 1px dotted white;
       color: white;
-      margin-left: 1em;
       text-decoration: none; }
-    header ul a:hover {
-      border-bottom: 1px solid white; }
+      header ul a:hover {
+        border-bottom: 1px solid white; }
     header ul input, header ul label {
       display: none; }
     header ul li {
-      display: inline; }
+      display: inline;
+      margin-left: 1em; }
+      header ul li:first-child {
+        margin-left: 0em; }
 
 main {
   display: table-cell;
-  padding: 0 1em 0 2em;
   vertical-align: top; }
 
 section {
   background-color: ivory;
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 1.33333em;
-  padding: 1.33333em;
+  margin-bottom: 0.66667em;
+  padding: 0.66667em;
   position: relative; }
+  section:before {
+    content: "> "; }
 
 /*
     media queries
@@ -417,6 +427,7 @@ section {
   /* use entire width of display now */
   .centerInLayout {
     min-width: 0px;
+    padding: 0 1em;
     width: 100%; }
 
   /* adjust to small space between elements */
@@ -424,13 +435,8 @@ section {
     padding: 1em; }
 
   #container {
+    padding: 0 1em;
     padding-bottom: 5em; }
-
-  #homeLink {
-    margin-left: 0.66667em; }
-
-  #rowContainer .spacer {
-    display: none; }
 
   article {
     padding: 1em; }
@@ -442,23 +448,27 @@ section {
     margin-top: -5em; }
 
   header {
+    margin-bottom: 1em;
     padding: 0; }
 
-  header ul {
-    margin-right: 1em; }
-
-  header, section {
+  section {
     margin-bottom: 0.66667em; }
 
   section {
     padding: 0.66667em; }
 
   /* place <aside> under <main> instead of beneath it */
+  article:last-child {
+    margin-bottom: 1em; }
+
   #container, #rowContainer, main, aside {
     display: block; }
 
+  #spacer {
+    display: none; }
+
   main, aside {
-    padding: 0 1em;
+    padding: 0;
     width: 100%; } }
 /* move navigation into a (by default closed) menu */
 @media all and (max-width: 639px) {

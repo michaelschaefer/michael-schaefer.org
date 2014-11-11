@@ -14,8 +14,8 @@
 	@include vendor(box-sizing, border-box);	
 	font-family: $fontName, sans-serif;    
     font-weight: normal;
-    margin: 0;
-    padding: 0;
+    margin: 0em;
+    padding: 0em;
 	word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -43,15 +43,15 @@ body {
 #asideContainer {
     background-color: $colForeground;
     display: block;
-    padding: $padding;    
+    padding: $space;    
     vertical-align: top;
 }
 
 #container {    
     display: table;
     line-height: $lineHeight;
-    margin-bottom: $padding;
-    padding-bottom: 6em;
+    margin-bottom: $space;
+    padding-bottom: 5em;
     position: relative;
 }
 
@@ -65,8 +65,8 @@ body {
 
 article {
     background-color: $colForeground;
-    margin-bottom: $padding;
-    padding: $padding;
+    margin-bottom: $space;
+    padding: $space;
 
     &:last-child { margin-bottom: 0em; }
 }
@@ -74,7 +74,6 @@ article {
 aside {    
     display: table-cell;        
     margin: 0;    
-    padding: 0 $padding 0 0.5 * $padding;
     overflow: hidden;
     vertical-align: top;
     width: $widthAside;    
@@ -90,17 +89,15 @@ footer {
     display: block;
     font-size: 1em;
     line-height: $heightHeader;
-    margin-top: -6em;     
-    padding: 0 $padding;
+    margin-top: -5em;    
 }
 
 header {    
     background-color: $colHeaderBackground;
     color: $colTextLight;
     display: block;
-    font-size: 1.5em;
-    line-height: $heightHeader / 1.5;
-    margin-bottom: $padding / 1.5;
+    line-height: $heightHeader;
+    margin-bottom: $space;    
     position: relative;
 
     &:after {
@@ -112,34 +109,31 @@ header {
     input, label { display: none; }
 
     ul {
-        float: right;
-        font-size: 0.67em;
+        float: right;        
         list-style: none;
         margin: 0em;
-        margin-right: $padding;
 
         a {
             border-bottom: 1px dotted $colTextLight;
             color: $colTextLight;
-            margin-left: 1em;
             text-decoration: none;
-        }
 
-        a:hover {
-            border-bottom: 1px solid $colTextLight;
-        }
+            &:hover { border-bottom: 1px solid $colTextLight; }
+        }        
 
         input, label { display: none; }    
 
         li {
             display: inline;
+            margin-left: 1em;
+
+            &:first-child { margin-left: 0em; }
         }
     }  
 }
 
 main {
     display: table-cell;    
-    padding: 0 0.5 * $padding 0 $padding;
     vertical-align: top;
 }
 
@@ -147,21 +141,19 @@ section {
     background-color: $colForeground;
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: $padding / 1.5;
-    padding: $padding / 1.5;    
+    margin-bottom: $space / 1.5;
+    padding: $space / 1.5;    
     position: relative;
 
-    //&:last-child: { margin-bottom: 0em; }
+    &:before {
+        content: "> ";
+    }
 }
 
 
 /*
     media queries
 */
-
-@media all and (min-width: 1280px) {
-    //aside { min-width: 380px; }
-}
 
 @media all and (max-width: 1279px) {
     .centerInLayout {
@@ -176,26 +168,28 @@ section {
     /* use entire width of display now */
     .centerInLayout { 
         min-width: 0px;
-        width: 100%; 
+        padding: 0 $spaceSmall;
+        width: 100%;
     }    
 
     /* adjust to small space between elements */
     #asideContainer { padding: $spaceSmall; }
-    #container { padding-bottom: 5em; }    
-    #homeLink { margin-left: $spaceSmall / 1.5; }
-    #rowContainer .spacer { display: none; }
+    #container { padding: 0 $spaceSmall; padding-bottom: 5em; }
+    //#homeLink { margin-left: $spaceSmall / 1.5; }
     article { padding: $spaceSmall; }
     article, article:last-child, #container { margin-bottom: $spaceSmall; }    
     footer { margin-top: -5em; }
-    header { padding: 0; }
-    header ul { margin-right: $spaceSmall; }
-    header, section { margin-bottom: $spaceSmall / 1.5; }
+    header { margin-bottom: $spaceSmall; padding: 0; }
+    //header ul { margin-right: $spaceSmall; }    
+    section { margin-bottom: $spaceSmall / 1.5; }
     section { padding: $spaceSmall / 1.5; }
 
     /* place <aside> under <main> instead of beneath it */
+    article:last-child { margin-bottom: $spaceSmall; }
     #container, #rowContainer, main, aside { display: block; }
+    #spacer { display: none; }
     main, aside {        
-        padding: 0 $spaceSmall;
+        padding: 0;
         width: 100%;
     }    
 }

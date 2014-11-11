@@ -1,21 +1,11 @@
 de:
-  navigation:
-  - text: "Hauptseite"
-    type: "mainpage"
-    url: "/"
-  - text: "Archiv"
-    type: "archive"
-    url: "/archiv/"
-  - text: "Tags"
-    type: "tags"
-    url: "/tags/"
-  - text: "Biographie"
-    type: "about"
-    url: "/biographie/"
-  - text: "Impressum"
-    type: "imprint"
-    url: "/impressum/"  
-  short_profile:
+  archive:
+    title: 'Archiv'
+    type: 'archive'
+    url: '/archiv'    
+    strings:
+      selectAMonth: 'w&auml;hlen Sie einen Monat aus'
+  aside:
     headline: "Kurzprofil"
     description: "Diplom-Mathematiker und wissenschaftlicher Mitarbeiter an der Universit&auml;t M&uuml;nster. Verfolgt Computer- und naturwissenschaftliche Themen, kocht gerne, spielt Klavier. Benutzt Sublime Text 3 und Emacs."
     links:    
@@ -34,36 +24,47 @@ de:
     - symbol: "&#xf413;"
       text: "RSS feed"
       url: "/rss.xml"
-  strings:
-    article: "Artikel"
-    articles: "Artikel"
-    date_format: '%d.%m.%Y'
-    no_articles: "Keine Artikel vorhanden"
-    no_description: "Kein Beschreibungstext vorhanden"
-    no_tags_at_all: "Keine Tags vorhanden"
-    no_tags_for_article: "keine"  
-    readEntireArticle: "ganzen Artikel lesen"
-    select_a_month: "einen Monat ausw&auml;hlen"
-    type_article: "Artikel"
+    strings:
+      imageAltText: 'Portrait von Michael Schaefer'
+      notesText: 'Dieser Blog wird mit <a href="http://jekyllrb.com/">Jekyll</a> generiert. Das Design ist inspiriert von <a href="http://colorlib.com/sparkling/">Sparkling</a>.'
+      notesTitle: 'Hinweise'      
+      tagTitle: 'Tags'
+  biography:
+    text: 'Biographie'
+    url: '/biographie/'
+  imprint:
+    text: 'Impressum'
+    url: '/impressum/'
+  main:
+    strings:
+      newerArticles: 'neuere Artikel'
+      noArticles: 'keine Artikel vorhanden'
+      olderArticles: '&auml;ltere Artikel'
+  post:
+    title: 'Artikel'
+    type: 'post'
+    url: ''
+    strings:
+      dateFormat: '%d.%m.%Y'
+      noTags: 'keine Tags'
+      readEntireArticle: 'ganzen Artikel lesen'
+  tag:          
+    title: 'Tag'
+    type: 'tag'
+    url: '/tags'
+    strings:
+      article: 'Artikel'
+      articles: 'Artikel'
+      empty: 'Keine Tags vorhanden'
 
 en:
-  navigation:
-  - text: "Mainpage"
-    type: "mainpage"
-    url: "/en/"
-  - text: "Archive"
-    type: "archive"
-    url: "/en/archive/"
-  - text: "Tags"
-    type: "tags"
-    url: "/en/tags/"
-  - text: "Biography"    
-    type: "about"
-    url: "/en/biography/"  
-  - text: "Imprint"
-    type: "imprint"
-    url: "/en/imprint/"
-  short_profile:
+  archive:
+    title: 'Archive'
+    type: 'archive'
+    url: '/en/archive'    
+    strings:
+      selectAMonth: 'select a month'
+  aside:
     headline: "Short profile"
     description: "Mathematician and scientific assistent at M&uuml;nster University. Follows computer and science related stuff, enjoys cooking and playing the piano. Uses Sublime Text 3 and Emacs."
     links:    
@@ -82,14 +83,35 @@ en:
     - symbol: "&#xf413;"
       text: "RSS feed"
       url: "/en/rss.xml"
-  strings:
-    article: "article"
-    articles: "articles"
-    date_format: '%d/%m/%Y'
-    no_articles: "No articles available"
-    no_description: "No description text available"
-    no_tags_at_all: "No tags available"
-    no_tags_for_article: "none"
-    readEntireArticle: "read entire article"
-    select_a_month: "select a month"
-    type_article: "Article"
+    strings:
+      imageAltText: 'Portrait of Michael Schaefer'
+      notesText: 'This blog is powered by <a href="http://jekyllrb.com/">Jekyll</a>. The design is inspired from <a href="http://colorlib.com/sparkling/">Sparkling</a>.'
+      notesTitle: 'Notes'      
+      tagTitle: 'Tags'
+  biography:
+    text: 'Biography'
+    url: '/en/biography/'
+  imprint:
+    text: 'Imprint'
+    url: '/en/imprint/'
+  main:
+    strings:
+      newerArticles: 'newer articles'
+      noArticles: 'no articles available'
+      olderArticles: 'older articles'
+  post:
+    title: 'Article'
+    type: 'post'
+    url: '/en'
+    strings:
+      dateFormat: '%d/%m/%Y'
+      noTags: 'no tags'
+      readEntireArticle: 'read entire article'
+  tag:          
+    title: 'Tag'
+    type: 'tag'
+    url: '/en/tags'
+    strings:
+      article: 'article'
+      articles: 'articles'
+      empty: 'no tags available'

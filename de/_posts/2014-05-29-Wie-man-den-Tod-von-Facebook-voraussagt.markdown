@@ -4,6 +4,7 @@ title: Wie man den Tod von Facebook voraussagt
 date: 2014-05-29 14:11:53
 description: "Wird Facebook in den n&auml;chsten Jahren aussterben? Ein k&uuml;rzlich ver&ouml;ffentlichter mathematischer Artikel behauptet genau das. Ich m&ouml;chte versuchen im Detail zu erkl&auml;ren, wie man zu dieser Schlussfolgerung kommt. Dabei soll so wenig h&ouml;here Mathematik wie m&ouml;glich verwendet werden."
 tags: [Facebook, Epidemiologie, Mathematik]
+lang: de
 ---
 
 Anfang des Jahres erschien ein kleiner mathematischer Artikel von [Cannarella und Spechler (2014)][CS14] mit dem Titel &quot;Epidemiological modelling of online social network dynamics&quot;. Die Hauptaussage ihrer Arbeit ist die, dass Facebook einen rasanten Abstieg vor sich hat und sich in ein paar Jahren fast niemand mehr daf&uuml;r interessieren wird. Da diese Aussage doch recht ungew&ouml;hnlich ist habe ich den Artikel selbst gelesen und die zur Reproduktion der Ergebnisse notwendige Software programmiert. In den n&auml;chsten Abs&auml;tzen versuche ich die ganze Sache mit m&ouml;glichst wenig h&ouml;herer Mathematik zu erkl&auml;ren.
