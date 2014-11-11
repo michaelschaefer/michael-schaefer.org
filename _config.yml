@@ -6,7 +6,7 @@ default_locale: "de"
 authorized_locales: ["de", "en"]
 
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 
 ftp_host: "michael-schaefer.org"
 ftp_dir: "/blog"
