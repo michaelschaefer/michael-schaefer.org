@@ -22,13 +22,13 @@ type: static
 	{% assign data = site.data.i18n['de']['main'] %}
 	<article>
 		{% if paginator.next_page %}
-		<a href="/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
+		<a class="tag" href="/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
 		{% else %}
 		&nbsp;
 		{% endif %}
 
 		{% if paginator.previous_page %}
-		<a class="floatRight" href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
+		<a class="tag floatRight" href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
 		{% endif %}
 	</article>
 	{% endif %}

@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 /* 
 	html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com 
 */
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -81,14 +81,17 @@ input, select {
 #homeLink {
   font-size: 1.5em; }
 
-#spacer {
-  display: block;
+#spacer1, #spacer2 {
+  display: table-cell;
   min-width: 1em;
   max-width: 1em;
   width: 1em; }
 
+#spacer1 {
+  border-right: 1px solid black; }
+
 a {
-  color: #99aabb;
+  color: #9ab;
   font-weight: bold;
   text-decoration: none;
   -ms-transition: color 1s;
@@ -97,12 +100,12 @@ a {
   -webkit-transition: color 1s;
   transition: color 1s; }
   a:hover {
-    color: #aaaaaa; }
+    color: #aaa; }
 
 a.light {
-  color: white; }
+  color: #fff; }
   a.light:hover {
-    color: #99aabb; }
+    color: #9ab; }
 
 a[href^="http"]:after {
   content: "\f442";
@@ -110,11 +113,10 @@ a[href^="http"]:after {
   vertical-align: bottom; }
 
 a.tag {
-  background-color: #99aabb;
+  background-color: #9ab;
   border: none;
-  color: white;
+  color: #fff;
   display: inline-block;
-  font-size: 0.75em;
   margin: 0em 0.25em 0.25em 0em;
   padding: 0.25em 0.75em;
   -ms-transition: background-color 1s;
@@ -123,7 +125,7 @@ a.tag {
   -webkit-transition: background-color 1s;
   transition: background-color 1s; }
   a.tag:hover {
-    background-color: #aaaaaa; }
+    background-color: #aaa; }
 
 address {
   font-style: normal; }
@@ -138,6 +140,8 @@ h1 {
   font-weight: bold;
   margin-bottom: 0.75em;
   margin-top: 1.5em; }
+  h1 a {
+    color: #000; }
 
 h2 {
   display: block;
@@ -167,14 +171,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0em; }
   table td, table th {
-    border: 2px solid ivory;
+    border: 2px solid #fff;
     padding: 0.5em; }
   table th {
     font-weight: bold; }
   table tr:nth-child(even) {
-    background-color: #dddddd; }
+    background-color: #ddd; }
   table tr:nth-child(odd) {
-    background-color: #aaaaaa; }
+    background-color: #aaa; }
 
 ul {
   margin-left: 1.5em;
@@ -183,13 +187,13 @@ ul {
 
 #dropDown {
   position: relative; }
-  #dropDown #dropDownSwitch + ul {
+  #dropDown #dropDownSwitch ~ ul {
     display: none; }
-  #dropDown #dropDownSwitch:checked + ul {
+  #dropDown #dropDownSwitch:checked ~ ul {
     display: block; }
   #dropDown a {
     border: none;
-    color: black;
+    color: #000;
     display: block;
     font-weight: normal; }
   #dropDown input {
@@ -200,20 +204,26 @@ ul {
     display: block;
     padding: 0em 0.25em;
     width: 100%; }
-    #dropDown label span {
-      float: right; }
     #dropDown label:after {
-      content: "";
-      clear: both;
-      display: block; }
+      content: "\f431";
+      float: right;
+      font-family: "Genericons";
+      display: inline; }
+  #dropDown #dropDownSwitch:checked ~ label:after {
+    content: "\f432"; }
   #dropDown li {
     cursor: pointer;
     display: block;
-    padding: 0em 0.25em; }
+    padding: 0em 0.25em;
+    -ms-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s; }
     #dropDown li:hover {
-      background-color: #aaaaaa; }
+      background-color: #9ab; }
   #dropDown ul {
-    background-color: ivory;
+    background-color: #fff;
     border: 1px solid black;
     list-style: none;
     margin: 0em;
@@ -228,7 +238,7 @@ ul.noBullet {
   margin-left: 0em; }
 
 .aperture {
-  border: 1px solid black;
+  border: 1px solid #000;
   -ms-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -253,13 +263,9 @@ ul.noBullet {
 .floatRight {
   float: right; }
 
-.halfWidth {
-  min-width: 150px;
-  width: 50%; }
-
 code {
-  background-color: #dddddd;
-  border: 1px solid #aaaaaa;
+  background-color: #ddd;
+  border: 1px solid #fff;
   display: inline;
   padding: 0em 0.25em; }
 
@@ -268,11 +274,17 @@ code.hasJax {
   border: none;
   padding: 0em; }
 
+.left {
+  text-align: left; }
+
 .lightLink {
-  border-color: white;
-  color: white; }
+  border-color: #fff;
+  color: #fff; }
   .lightLink:hover {
-    border-color: white; }
+    border-color: #fff; }
+
+.noBorder {
+  border: none !important; }
 
 .right {
   text-align: right; }
@@ -294,35 +306,30 @@ code.hasJax {
   src: url("../media/font/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../media/font/genericons-regular-webfont.woff") format("woff"), url("../media/font/genericons-regular-webfont.ttf") format("truetype"), url("../media/font/genericons-regular-webfont.svg#genericonsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: "Inconsolata";
   src: url("../media/font/inconsolata-regular.eot");
   src: url("../media/font/inconsolata-regular.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata-regular.woff") format("woff"), url("../media/font/inconsolata-regular.ttf") format("truetype"), url("../media/font/inconsolata-regular.svg#inconsolataregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: "Inconsolata";
   src: url("../media/font/inconsolata-bold.eot");
   src: url("../media/font/inconsolata-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata-bold.woff") format("woff"), url("../media/font/inconsolata-bold.ttf") format("truetype"), url("../media/font/inconsolata-bold.svg#inconsolatabold") format("svg");
   font-weight: bold;
   font-style: normal; }
-
 @font-face {
   font-family: "Open Sans";
   src: url("../media/font/opensans-regular.eot");
   src: url("../media/font/opensans-regular.eot?#iefix") format("embedded-opentype"), url("../media/font/opensans-regular.woff") format("woff"), url("../media/font/opensans-regular.ttf") format("truetype"), url("../media/font/opensans-regular.svg#open_sansregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: "Open Sans";
   src: url("../media/font/opensans-bold.eot");
   src: url("../media/font/opensans-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/opensans-bold.woff") format("woff"), url("../media/font/opensans-bold.ttf") format("truetype"), url("../media/font/opensans-bold.svg#open_sansbold") format("svg");
   font-weight: bold;
   font-style: normal; }
-
 /*
     ===============================
     basic layout and style settings
@@ -345,8 +352,8 @@ body, html {
   height: 100%; }
 
 body {
-  background-color: #aaaaaa;
-  color: black;
+  background-color: #fff;
+  color: #000;
   display: block;
   font-size: 1em;
   overflow-y: scroll;
@@ -359,7 +366,7 @@ body {
     ==========
 */
 #asideContainer {
-  background-color: ivory;
+  background-color: #fff;
   display: block;
   padding: 1em;
   vertical-align: top; }
@@ -374,11 +381,14 @@ body {
 #rowContainer {
   display: table-row; }
 
+#rowContainer > div:last-child {
+  border-right: none; }
+
 #wrap {
   min-height: 100%; }
 
 article {
-  background-color: ivory;
+  background-color: #fff;
   margin-bottom: 1em;
   padding: 1em; }
   article:last-child {
@@ -390,17 +400,19 @@ aside {
   overflow: hidden;
   vertical-align: top;
   width: 33%; }
+  aside img {
+    max-width: 15em; }
 
 footer {
-  background-color: #777777;
-  color: white;
+  background-color: #777;
+  color: #fff;
   display: block;
   line-height: 4.5em;
   margin-top: -4.5em; }
 
 header {
-  background-color: #777777;
-  color: white;
+  background-color: #777;
+  color: #fff;
   display: block;
   line-height: 4.5em;
   margin-bottom: 1em;
@@ -431,10 +443,13 @@ header {
 
 main {
   display: table-cell;
-  vertical-align: top; }
+  text-align: justify;
+  vertical-align: top;
+  /*article { border-bottom: 1px solid black; }
+  article:last-child { border: none; }*/ }
 
 section {
-  background-color: ivory;
+  background-color: #fff;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.66667em;
@@ -493,16 +508,20 @@ section {
   #container, #rowContainer, main, aside {
     display: block; }
 
-  #spacer {
+  #spacer1, #spacer2 {
     display: none; }
 
   main, aside {
     padding: 0;
-    width: 100%; } }
+    width: 100%; }
+
+  aside {
+    border-top: 1px solid black;
+    padding-top: 1em; } }
 /* move navigation into a (by default closed) menu */
 @media all and (max-width: 639px) {
   #navSwitch:checked + div {
-    border-bottom: 1px dotted white; }
+    border-bottom: 1px solid #fff; }
 
   #navSwitch + div > ul {
     display: none; }
@@ -553,3 +572,5 @@ section {
     page-break-after: auto;
     page-break-before: auto;
     page-break-inside: avoid; } }
+
+/*# sourceMappingURL=main.css.map */

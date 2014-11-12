@@ -1,8 +1,8 @@
 {% assign archiveData = site.data.i18n[language]['archive'] %}
 
 <div id="dropDown">
-<a><label for="dropDownSwitch">{{ archiveData['strings'].selectAMonth }}<span class="symbol">&#xf431;</span></label></a>
 <input type="checkbox" id="dropDownSwitch" />
+<label for="dropDownSwitch">{{ archiveData['strings'].selectAMonth }}</label>
 <ul>			
 {% assign oldValue = '' %}
 {% for post in site.posts %}

@@ -7,7 +7,7 @@ de:
       selectAMonth: 'w&auml;hlen Sie einen Monat aus'
   aside:
     headline: "Kurzprofil"
-    description: "Diplom-Mathematiker und wissenschaftlicher Mitarbeiter an der Universit&auml;t M&uuml;nster. Verfolgt Computer- und naturwissenschaftliche Themen, kocht gerne, spielt Klavier. Benutzt Sublime Text 3 und Emacs."
+    description: "Diplom-Mathematiker und wissenschaftlicher Mitarbeiter an der Universit&auml;t M&uuml;nster. Verfolgt schwerpunktm&auml;&szlig;ig Computer- und naturwissenschaftliche Themen, kocht gerne, spielt Klavier. Benutzt Sublime Text 3 und Emacs."
     links:    
     - symbol: "&#xf410;"
       text: "mail@michael-schaefer.org"
@@ -69,7 +69,7 @@ en:
       selectAMonth: 'select a month'
   aside:
     headline: "Short profile"
-    description: "Mathematician and scientific assistent at M&uuml;nster University. Follows computer and science related stuff, enjoys cooking and playing the piano. Uses Sublime Text 3 and Emacs."
+    description: "Mathematician and scientific assistent at M&uuml;nster University. Has a focus on computer and science related stuff, enjoys cooking and playing the piano. Uses Sublime Text 3 and Emacs."
     links:    
     - symbol: "&#xf410;"
       text: "mail@michael-schaefer.org"

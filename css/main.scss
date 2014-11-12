@@ -30,7 +30,7 @@ body {
     display: block;
     font-size: 1em;
     overflow-y: scroll;
-    position: relative;
+    position: relative;    
     width: 100%;    
 }
 
@@ -44,7 +44,7 @@ body {
 #asideContainer {
     background-color: $colForeground;
     display: block;
-    padding: $space;    
+    padding: $space;        
     vertical-align: top;
 }
 
@@ -59,6 +59,8 @@ body {
 #rowContainer {    
     display: table-row;        
 }
+
+#rowContainer > div:last-child { border-right: none; }
 
 #wrap {        
     min-height: 100%;    
@@ -78,6 +80,10 @@ aside {
     overflow: hidden;
     vertical-align: top;
     width: $widthAside;        
+
+    img {
+        max-width: 15em;
+    }
 }
 
 footer {
@@ -130,7 +136,11 @@ header {
 
 main {
     display: table-cell;    
-    vertical-align: top;
+    text-align: justify;
+    vertical-align: top;    
+
+    /*article { border-bottom: 1px solid black; }
+    article:last-child { border: none; }*/
 }
 
 section {
@@ -183,17 +193,22 @@ section {
     /* place <aside> under <main> instead of beneath it */
     article:last-child { margin-bottom: $spaceSmall; }
     #container, #rowContainer, main, aside { display: block; }
-    #spacer { display: none; }
+    #spacer1, #spacer2 { display: none; }
     main, aside {        
         padding: 0;
         width: 100%;
     }    
+
+    aside { 
+        border-top: 1px solid black; 
+        padding-top: $spaceSmall;
+    }
 }
 
 
 /* move navigation into a (by default closed) menu */
 @media all and (max-width: 639px) {
-    #navSwitch:checked + div { border-bottom: 1px dotted $colTextLight; }
+    #navSwitch:checked + div { border-bottom: 1px solid $colTextLight; }
     #navSwitch + div > ul { display: none; }
 
     #navSwitch:checked + div > ul {                 

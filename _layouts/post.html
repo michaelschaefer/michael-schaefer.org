@@ -24,7 +24,7 @@ type: post
 	<h1>{{ page.title }}</h1>
 	<p>		
 		<span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: postData['strings'].dateFormat }}</span><br/>
-		<span class="symbol">&#xf302;</span>{{ tagList | remove_first: ', ' }}
+		<span class="symbol">&#xf302;</span><span class="left">{{ tagList | remove_first: ', ' }}</span>
 	</p>
 	
 	{{ content }}		

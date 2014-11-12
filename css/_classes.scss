@@ -20,14 +20,7 @@
 	}
 }
 
-.floatRight {
-	float: right;
-}
-
-.halfWidth {
-	min-width: 150px;
-	width: 50%;
-}
+.floatRight { float: right; }
 
 code {
 	background-color: $colTableLight;
@@ -42,6 +35,8 @@ code.hasJax {
 	padding: 0em;	
 }
 
+.left { text-align: left; }
+
 .lightLink {
 	border-color: $colTextLight;	
 	color: $colTextLight;		
@@ -49,9 +44,9 @@ code.hasJax {
 	&:hover { border-color: $colTextLight; }
 }
 
-.right {
-	text-align: right;
-}
+.noBorder { border: none !important; }
+
+.right { text-align: right; }
 
 .symbol {
 	font-family: "Genericons";	
