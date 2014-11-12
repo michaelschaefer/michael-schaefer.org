@@ -12,6 +12,12 @@
 	position: relative;	
 	width: $widthContent;
 	padding: 0 $space;
+
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
 }
 
 .floatRight {
@@ -23,12 +29,32 @@
 	width: 50%;
 }
 
+code {
+	background-color: $colTableLight;
+	border: 1px solid $colBackground;
+	display: inline;
+	padding: 0em 0.25em;	
+}
+
+code.hasJax {	
+	background-color: transparent;	
+	border: none;
+	padding: 0em;	
+}
+
+.lightLink {
+	border-color: $colTextLight;	
+	color: $colTextLight;		
+
+	&:hover { border-color: $colTextLight; }
+}
+
 .right {
 	text-align: right;
 }
 
 .symbol {
-	font-family: "Genericons";
+	font-family: "Genericons";	
 	margin-right: 0.25em;
-	vertical-align: middle;
+	vertical-align: middle;	
 }

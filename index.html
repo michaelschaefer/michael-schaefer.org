@@ -2,8 +2,9 @@
 layout: default
 title: Hauptseite
 type: static
-lang: de
 ---
+
+{% include language.html %}
 
 <section>Aktuelle Artikel</section>
 
@@ -14,7 +15,7 @@ lang: de
 {% else %}
 	
 	{% for post in paginator.posts %}
-		{% include shortPost.html post=post lang='de' %}
+		{% include shortPost.html post=post %}
 	{% endfor %}
 
 	{% if paginator.total_pages > 1 %}

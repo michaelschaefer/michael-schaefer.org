@@ -2,10 +2,12 @@
 layout: default
 ---
 
+{% include language.html %}
+
 <section>
-	{{ site.data.i18n[page.lang][page.type].title }}: {{ page.title }}	
+	{{ site.data.i18n[language][page.type].title }}: {{ page.title }}	
 </section>
 
 {% for post in page.posts %}
-	{% include shortPost.html post=post lang=page.lang %}
+	{% include shortPost.html post=post %}
 {% endfor %}

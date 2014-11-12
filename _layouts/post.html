@@ -3,26 +3,27 @@ layout: default
 type: post
 ---
 
-{% assign data = site.data.i18n[page.lang]['post'] %}
+{% include language.html %}
+{% assign postData = site.data.i18n[language]['post'] %}
 
 
 {% comment %} assign tag string {% endcomment %}
 {% if page.tags.size == 0 %}
-    {% assign tagList = data['strings'].noTags %}
+    {% assign tagList = postData['strings'].noTags %}
 {% else %}
-    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ data.url }}/tags/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
+    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ site.data.i18n[language]['tag'].url }}/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
 {% endif %}
 
 
 {% comment %} build article {% endcomment %}
 <section>
-    {{ data.title }}
+    {{ postData.title }}
 </section>
 
 <article>
 	<h1>{{ page.title }}</h1>
 	<p>		
-		<span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: data['strings'].dateFormat }}</span><br/>
+		<span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: postData['strings'].dateFormat }}</span><br/>
 		<span class="symbol">&#xf302;</span>{{ tagList | remove_first: ', ' }}
 	</p>
 	

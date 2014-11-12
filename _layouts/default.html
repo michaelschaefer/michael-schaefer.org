@@ -1,10 +1,13 @@
+{% include language.html %}
+
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="{{ language }}">
+
 <head>
   <meta charset="utf-8">
   <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
   <title>    
-    {{ site.name }}&nbsp;||&nbsp;{% if page.type == 'static' %}{{ page.title }}{% else %}{{ site.data.i18n[page.lang]['sections'][page.type].title }} ({{ page.title }}){% endif %}
+    {{ site.name }}&nbsp;||&nbsp;{% if page.type == 'static' %}{{ page.title }}{% else %}{{ site.data.i18n[language][page.type].title }} ({{ page.title }}){% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">  
 
@@ -21,27 +24,28 @@
   <![endif]-->  
 </head>
 
-<body>
 
+<body>
+  
+<a name="top"></a>
 <div id="wrap">
 
-  <header>  
-    <div class="centerInLayout">
+  <header>      
+    <div class="centerInLayout">      
       <input id="navSwitch" type="checkbox" />
-      <a id="homeLink" href="/{% if page.lang != "de" %}{{ page.lang }}/{% endif %}">
-        Michael Schaefer
-      </a>
-
-      <label for="navSwitch"><span class="symbol">&#xf419;</span></label>            
-      <ul>
-        {% if page.lang == 'de' %}
-        <li><a href="/en/">English version</a></li>
-        {% else %}
-        <li><a href="/">Deutsche Version</a></li>
-        {% endif %}
-        <li><a href="{{ site.data.i18n[page.lang]['biography'].url }}">{{ site.data.i18n[page.lang]['biography'].text }}</a></li>
-        <li><a href="{{ site.data.i18n[page.lang]['imprint'].url }}">{{ site.data.i18n[page.lang]['imprint'].text }}</a></li>
-      </ul> 
+      <div>
+        <a id="homeLink" class="light" href="{{ site.data.i18n[language]['main'].url }}">
+          Michael Schaefer
+        </a>      
+        <label for="navSwitch"><span class="symbol">&#xf419;</span></label>                  
+        <ul>
+          {% for entry in site.data.i18n[language]['main']['otherLanguages'] %}
+          <li><a class="light" href="{{ entry.url }}">{{ entry.text }}</a></li>
+          {% endfor %}        
+          <li><a class="light" href="{{ site.data.i18n[language]['biography'].url }}">{{ site.data.i18n[language]['biography'].text }}</a></li>
+          <li><a class="light" href="{{ site.data.i18n[language]['imprint'].url }}">{{ site.data.i18n[language]['imprint'].text }}</a></li>
+        </ul>
+      </div>
     </div> 
   </header>    
 
@@ -55,7 +59,7 @@
 
       <aside>
         <div id="asideContainer">
-          {% include aside.html lang=page.lang %}
+          {% include aside.html %}
         </div>
       </aside>           
     </div>  
@@ -63,11 +67,30 @@
 
 </div>
 
-<footer>  
+<footer>
   <div class="centerInLayout right">
     <span class="bold">&copy; 2014 Michael Schaefer</span>
+    <a class="lightLink" href="#top"><span class="symbol">&#xf435;</span></a>
   </div>
 </footer>
 
 </body>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' hasJax';
+    }
+  });
+</script>
+
 </html>

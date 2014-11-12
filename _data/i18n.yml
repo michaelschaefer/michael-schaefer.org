@@ -36,6 +36,10 @@ de:
     text: 'Impressum'
     url: '/impressum/'
   main:
+    otherLanguages:
+    - text: 'english'
+      url: '/en/'
+    url: '/'
     strings:
       newerArticles: 'neuere Artikel'
       noArticles: 'keine Artikel vorhanden'
@@ -43,7 +47,6 @@ de:
   post:
     title: 'Artikel'
     type: 'post'
-    url: ''
     strings:
       dateFormat: '%d.%m.%Y'
       noTags: 'keine Tags'
@@ -95,6 +98,10 @@ en:
     text: 'Imprint'
     url: '/en/imprint/'
   main:
+    otherLanguages:
+    - text: 'deutsch'
+      url: '/'
+    url: '/en/'
     strings:
       newerArticles: 'newer articles'
       noArticles: 'no articles available'
@@ -102,7 +109,6 @@ en:
   post:
     title: 'Article'
     type: 'post'
-    url: '/en'
     strings:
       dateFormat: '%d/%m/%Y'
       noTags: 'no tags'

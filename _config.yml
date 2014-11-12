@@ -2,10 +2,10 @@ exclude: [CNAME, deploy, michael-schaefer.org.sublime-project, michael-schaefer.
 
 name: www.michael-schaefer.org
 url: http://www.michael-schaefer.org
-default_locale: "de"
-authorized_locales: ["de", "en"]
+defaultLocale: "de"
+authorizedLocales: ["de", "en"]
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 
 ftp_host: "michael-schaefer.org"

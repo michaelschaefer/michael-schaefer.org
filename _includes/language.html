@@ -1,0 +1,4 @@
+{% assign language = page.url | truncate: 3, "" | remove: '/' %}  
+{% unless site.authorizedLocales contains language %}  
+  {% assign language = site.defaultLocale %}
+{% endunless %}

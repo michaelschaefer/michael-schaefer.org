@@ -1,19 +1,19 @@
-{% assign data = site.data.i18n[include.lang]['archive'] %}
+{% assign archiveData = site.data.i18n[language]['archive'] %}
 
 <div id="dropDown">
-<label for="dropDownSwitch">{{ data['strings'].selectAMonth }}<span class="symbol">&#xf431;</span></label>
+<a><label for="dropDownSwitch">{{ archiveData['strings'].selectAMonth }}<span class="symbol">&#xf431;</span></label></a>
 <input type="checkbox" id="dropDownSwitch" />
 <ul>			
 {% assign oldValue = '' %}
 {% for post in site.posts %}
 	{% for category in post.categories %}
-		{% if category == include.lang %}
+		{% if category == language %}
 			{% assign month = post.date | date: '%m' %}
 			{% assign year = post.date | date: '%Y' %}
 			{% assign value = post.date | date: '%m / %Y' %}
 			{% if value != oldValue %}
 				{% assign oldValue = value %}
-	<li><a href="{{ data.url }}/{{ year }}/{{ month }}/">{{ value }}</a></li>	
+	<li><a href="{{ archiveData.url }}/{{ year }}/{{ month }}/">{{ value }}</a></li>	
 			{% endif %}
 		{% endif %}
 	{% endfor %}

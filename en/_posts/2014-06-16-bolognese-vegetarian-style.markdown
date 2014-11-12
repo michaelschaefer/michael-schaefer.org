@@ -4,7 +4,6 @@ title: Bolognese vegetarian style
 date: 2014-06-16 10:54:09
 description: "More and more people entirely or at least partly renounce meat for different reasons. With today's recipe I want to show that classical ones containing meat can easily be modified. I cooked it yesterday and found it very delicious."
 tags: [Bolognese, cooking, vegetarian]
-lang: en
 ---
 
 Renouncing meat entirely or to least partly comes into fashion more and more lately. That this doesn't mean we have to quit eating classical recipes containing meat I want to show today using the example of the [Ragu alle Bolognese][ragubolognese]. I own a vegetarian version of this for quite some time, but last weekend I asked myself why not to take the original one and vary it directly. Based on this the following recipe was developed.

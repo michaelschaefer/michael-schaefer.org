@@ -1,8 +1,7 @@
 #homeLink {
-	color: $colTextLight;
-	display: inline-block;
+	//color: $colTextLight;
 	font-size: 1.5em;
-	border: none;	
+	//border: none;	
 }
 
 #spacer {
@@ -13,10 +12,21 @@
 }
 
 a {
-	border-bottom: 1px dotted $colLink;
-	color: $colLink;
+	//border-bottom: 1px dotted $colLink;
+	color: $colLink;	
 	font-weight: bold;
 	text-decoration: none;
+	@include vendor(transition, color 1s);
+
+	&:hover { 
+		//border-bottom: 1px solid $colLink; 
+		color: $colLinkHover;
+	}
+}
+
+a.light {
+	color: $colLinkLight;
+	&:hover { color: $colLinkLightHover; }
 }
 
 a[href^="http"]:after {
@@ -25,21 +35,18 @@ a[href^="http"]:after {
 	vertical-align: bottom;
 }
 
-a:hover {
-	border-bottom: 1px solid $colLink;
-}
-
 a.tag {
-	background-color: $colBackground;
+	background-color: $colLink;
 	border: none;
 	color: $colTextLight;
 	display: inline-block;	
 	font-size: 0.75em;
 	margin: 0em 0.25em 0.25em 0em;
 	padding: 0.25em 0.75em;
+	@include vendor(transition, background-color 1s);	
 
 	&:hover {
-		background-color: $colLink;
+		background-color: $colLinkHover;
 	}	
 }
 
@@ -74,7 +81,7 @@ img {
 	display: block;
 	margin: 0em auto;	
 	max-width: 100%;	
-	width: 75%;
+	width: 100%;
 }
 
 p {	margin-bottom: $marginDefault; }

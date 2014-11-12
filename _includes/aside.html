@@ -1,14 +1,14 @@
-{% assign data = site.data.i18n[include.lang]['aside'] %}
+{% assign asideData = site.data.i18n[language]['aside'] %}
 
-<img alt="{{ data['strings'].imageAltText }}" class="aperture halfWidth" src="/media/portrait_square.png" />
-<h2>{{ data.headline }}</h2>
+<img alt="{{ asideData['strings'].imageAltText }}" class="aperture halfWidth" src="/media/portrait_square.png" />
+<h2>{{ asideData.headline }}</h2>
 <p>
-	{{ data.description }}
+	{{ asideData.description }}
 </p>
 
 
 <ul class="noBullet">
-	{% for item in data.links %}
+	{% for item in asideData.links %}
 	<li>
 		<span class="symbol">{{ item.symbol }}</span>
 		<a href="{{ item.url }}">{{ item.text }}</a>
@@ -17,22 +17,19 @@
 </ul>
 
 
-<h2>{{ site.data.i18n[include.lang]['archive'].title }}</h2>
+<h2>{{ site.data.i18n[language]['archive'].title }}</h2>
 <p>
-	{% include archive.html lang=include.lang %}
+	{% include archive.html %}
 </p>
 
 
-{% assign strings = site.data.i18n[include.lang]['aside']['strings'] %}
-
-
-<h2>{{ strings.tagTitle }}</h2>
+<h2>{{ asideData['strings'].tagTitle }}</h2>
 <p>
-	{% include tagCloud.html lang=include.lang %}
+	{% include tagCloud.html %}
 </p>
 
 
-<h2>{{ strings.notesTitle }}</h2>
+<h2>{{ asideData['strings'].notesTitle }}</h2>
 <p>
-	{{ strings.notesText }}	
+	{{ asideData['strings'].notesText }}	
 </p>

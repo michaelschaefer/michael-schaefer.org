@@ -1,21 +1,20 @@
-{% assign data = site.data.i18n[include.lang]['post'] %}
-{% assign page = include.post %}
-
+{% assign postData = site.data.i18n[language]['post'] %}
+{% assign post = include.post %}
 
 {% comment %} assign tag string {% endcomment %}
-{% if page.tags.size == 0 %}
-    {% assign tagList = data['strings'].noTags %}
+{% if post.tags.size == 0 %}
+    {% assign tagList = postData['strings'].noTags %}
 {% else %}
-    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ data.url }}/tags/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
+    {% capture tagList %}{% for tag in post.tags %}, <a href="{{ site.data.i18n[language]['tag'].url }}/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
 {% endif %}
 
 
 {% comment %} build article {% endcomment %}
 <article>
-    <h1>{{ page.title }}</h1>
+    <h1>{{ post.title }}</h1>
     <p>		
-        <span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: data['strings'].dateFormat }}</span><br/>
+        <span class="symbol">&#xf307;</span><span class="date">{{ post.date | date: postData['strings'].dateFormat }}</span><br/>
         <span class="symbol">&#xf302;</span>{{ tagList | remove_first: ', ' }}
     </p>
-    {{ page.content | truncatewords: 100 }}&nbsp;<a href="{{ page.url }}">{{ data['strings'].readEntireArticle }}</a>    
+    {{ post.content | truncatewords: 100 }}&nbsp;<a href="{{ post.url }}">{{ postData['strings'].readEntireArticle }}</a>    
 </article>  

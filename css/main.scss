@@ -30,6 +30,7 @@ body {
     display: block;
     font-size: 1em;
     overflow-y: scroll;
+    position: relative;
     width: 100%;    
 }
 
@@ -51,7 +52,7 @@ body {
     display: table;
     line-height: $lineHeight;
     margin-bottom: $space;
-    padding-bottom: 5em;
+    padding-bottom: $heightHeader;
     position: relative;
 }
 
@@ -66,62 +67,57 @@ body {
 article {
     background-color: $colForeground;
     margin-bottom: $space;
-    padding: $space;
+    padding: $space;    
 
     &:last-child { margin-bottom: 0em; }
 }
 
-aside {    
+aside {  
     display: table-cell;        
     margin: 0;    
     overflow: hidden;
     vertical-align: top;
-    width: $widthAside;    
-
-    img {
-        max-width: 150px;
-    }
+    width: $widthAside;        
 }
 
 footer {
     background-color: $colHeaderBackground;
     color: $colTextLight;
     display: block;
-    font-size: 1em;
     line-height: $heightHeader;
-    margin-top: -5em;    
+    margin-top: -$heightHeader;
 }
 
 header {    
     background-color: $colHeaderBackground;
     color: $colTextLight;
     display: block;
-    line-height: $heightHeader;
+    line-height: $heightHeader;    
     margin-bottom: $space;    
-    position: relative;
+    position: relative;    
+    width: 100%;    
 
-    &:after {
-        content: "";
-        clear: both;
-        display: block;
+    .centerInLayout { 
+        display: table; 
+
     }
 
-    input, label { display: none; }
+    input, label { display: none; }    
 
     ul {
+        display: inline;
         float: right;        
-        list-style: none;
+        list-style: none;        
         margin: 0em;
+        padding: 0em;
 
-        a {
+        /*a {
             border-bottom: 1px dotted $colTextLight;
             color: $colTextLight;
             text-decoration: none;
 
             &:hover { border-bottom: 1px solid $colTextLight; }
-        }        
-
-        input, label { display: none; }    
+        } */       
 
         li {
             display: inline;
@@ -204,7 +200,7 @@ section {
         display: block;
         line-height: $lineHeight;
         margin: 0em;
-        padding: 1.5 * $spaceSmall;
+        padding: 1.5 * $spaceSmall 0;
         text-align: right;        
         width: 100%;
 
@@ -212,12 +208,11 @@ section {
         li { display: block; }    
     }   
 
-    label[for="navSwitch"] {
-        line-height: 2.8em;
+    label[for="navSwitch"] {                
+        line-height: $heightHeader;
         cursor: pointer;
-        display: inline;        
+        display: block;
         float: right;        
-        margin-right: $spaceSmall;
     }
 
 }
@@ -231,7 +226,23 @@ section {
 
 /* even smaller font for lowest-resolution devices */
 @media all and (max-width: 239px) {
-    body { font-size: 0.5em; }
+    body { font-size: 0.5em; }    
+    .halfWidth { 
+        min-width: 0px;
+        width: 150px; 
+        max-width: 100%;
+    }
 }
 
 
+@media print {        
+    #disqus_thread, #spacer, header, main article:last-child, section, aside, footer { display: none; }
+    body, html { height: auto; }
+    main { margin: 0; padding: 0; }    
+    img {
+        display: block !important;
+        page-break-after: auto;
+        page-break-before: auto;
+        page-break-inside: avoid;
+    }
+}
