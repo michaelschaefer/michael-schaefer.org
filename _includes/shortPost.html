@@ -11,10 +11,10 @@
 
 {% comment %} build article {% endcomment %}
 <article>
-	<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	<h1><a class="headline" href="{{ post.url }}">{{ post.title }}</a></h1>
     <p>		
         <span class="symbol">&#xf307;</span><span class="date">{{ post.date | date: postData['strings'].dateFormat }}</span><br/>
         <span class="symbol">&#xf302;</span><span class="left">{{ tagList | remove_first: ', ' }}</span>
     </p>
-    {{ post.content | truncatewords: 100 }}&nbsp;<a class="tag floatRight" href="{{ post.url }}">{{ postData['strings'].readEntireArticle }}</a>    
+    {{ post.content | truncatewords: 50 }}&nbsp;<a class="readMore floatRight" href="{{ post.url }}">{{ postData['strings'].readEntireArticle }}</a>    
 </article>  

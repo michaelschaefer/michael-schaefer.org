@@ -5,7 +5,7 @@
 
 .bold { font-weight: bold; }
 
-.centerInLayout {
+.contentArea {
 	margin: 0 auto;	
 	max-width: 100%;
 	min-width: $widthContentMin;
@@ -20,36 +20,27 @@
 	}
 }
 
-.floatRight { float: right; }
-
-code {
-	background-color: $colTableLight;
-	border: 1px solid $colBackground;
-	display: inline;
-	padding: 0em 0.25em;	
+.floatRight { 
+	float: right;	
 }
 
-code.hasJax {	
-	background-color: transparent;	
-	border: none;
-	padding: 0em;	
-}
+.large { font-size: 1.5em !important; }
 
 .left { text-align: left; }
-
-.lightLink {
-	border-color: $colTextLight;	
-	color: $colTextLight;		
-
-	&:hover { border-color: $colTextLight; }
-}
 
 .noBorder { border: none !important; }
 
 .right { text-align: right; }
 
+.spacer {    
+    display: table-cell;
+    min-width: $space;
+    max-width: $space;
+    width: $space;      
+}
+
 .symbol {
-	font-family: "Genericons";	
+	font-family: $fontIconName;
 	margin-right: 0.25em;
 	vertical-align: middle;	
 }

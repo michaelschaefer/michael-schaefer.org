@@ -1,59 +1,135 @@
-#homeLink {
-	//color: $colTextLight;
-	font-size: 1.5em;
-	//border: none;	
+#archiveMenu {
+	position: relative;
+
+	#archiveMenuTrigger ~ #archiveMenuEntries { display: none; }
+	#archiveMenuTrigger:checked + label:after { content: "\f432"; }
+
+	#archiveMenuTrigger:checked ~ #archiveMenuEntries {
+		background-color: $colForeground;
+		border: 1px solid black;
+		display: block;
+		list-style: none;
+		margin: 0em;
+		margin-top: 0.125em;								
+		max-height: 7.5em;
+		overflow-y: scroll;
+		position: absolute;
+		width: 100%;
+
+		li {
+			cursor: pointer;
+			display: block;
+			padding: 0em 0.25em;
+			@include vendor(transition, background-color 1s);
+
+			&:hover { background-color: $colLink; }
+		}
+	}
+
+	input { display: none; }
+
+	label {
+		border: 1px solid black;				
+		cursor: pointer;
+		display: block;
+		padding: 0em 0.25em;
+		width: 100%;		
+
+		&:after {
+			content: "\f431";
+			float: right;
+			font-family: $fontIconName;
+			display: inline;
+		}		
+	}
 }
 
-#spacer1, #spacer2 {	
-	display: table-cell;
-	min-width: $space;
-	max-width: $space;
-	width: $space;		
-}
 
-#spacer1 { border-right: 1px solid black; }
+/*
+	link formatting
+*/
 
 a {
-	//border-bottom: 1px dotted $colLink;
-	color: $colLink;	
+	color: $colLink;
 	font-weight: bold;
 	text-decoration: none;
 	@include vendor(transition, color 1s);
 
-	&:hover { 
-		//border-bottom: 1px solid $colLink; 
-		color: $colLinkHover;
-	}
+	&:hover { color: $colLinkHover; }
 }
 
-a.light {
-	color: $colLinkLight;
-	&:hover { color: $colLinkLightHover; }
+a.archive {
+	color: $colTextDark;
+	font-weight: normal;	
 }
 
-a[href^="http"]:after {
+a.box {
+	background-color: $colLink;
+	color: $colTextLight;
+	display: inline-block;
+	margin: 0em 0.25em 0.25em 0em;
+	padding: 0.25em 0.75em;
+	@include vendor(transition, background-color 1s);
+
+	&:hover { background-color: $colLinkHover; }
+}
+
+a.headline { 
+	@extend a;
+	color: $colTextDark; 
+
+	&:hover { color: $colLinkHover; }
+}
+
+a.navigation {
+	@extend a;
+	color: $colTextLight;
+
+	&:hover { color: $colLinkHover; }
+}
+
+a.readMore {
+	@extend a.box;
+	margin-right: 0em;
+	margin-top: $space / 2;
+}
+
+a[href^="http://"]:after {
 	content: "\f442";
-	font-family: "Genericons";
+	font-family: $fontIconName;
 	vertical-align: bottom;
 }
 
-a.tag {
-	background-color: $colLink;
-	border: none;
-	color: $colTextLight;
-	display: inline-block;	
-	//font-size: 0.75em;
-	margin: 0em 0.25em 0.25em 0em;
-	padding: 0.25em 0.75em;
-	@include vendor(transition, background-color 1s);	
 
-	&:hover {
-		background-color: $colLinkHover;
-	}	
+/*
+	other formatting
+*/
+
+
+address { font-style: normal; }
+
+article.topBorder { 
+	border-top: 1px solid $colTextDark;
+	padding-top: $space * 1.5;
 }
 
-address {
-	font-style: normal;
+article:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+code {
+	background-color: $colTableLight;
+	border: 1px solid $colTableDark;
+	display: inline;
+	padding: 0em 0.25em;	
+
+	&.hasJax {	
+		background-color: transparent;	
+		border: none;
+		padding: 0em;	
+	}
 }
 
 em {
@@ -66,11 +142,7 @@ h1 {
 	font-size: 1.5em;
 	font-weight: bold;
 	margin-bottom: $marginHeader;
-	margin-top: 2*$marginHeader;
-
-	a {
-		color: $colTextDark;
-	}
+	margin-top: 2*$marginHeader;	
 }
 
 h2 {
@@ -94,90 +166,25 @@ p {	margin-bottom: $marginDefault; }
 p:last-child { margin-bottom: 0em; }
 
 table {
-	margin: 2*$marginDefault auto 2*$marginDefault;
+	border-collapse: collapse;
+	border-spacing: 0em;
+	margin: $marginDefault * 2 auto $marginDefault * 2;
 	text-align: center;
 
 	td, th {
-		border: 2px solid $colForeground;
+		border: 0.125em solid $colForeground;
 		padding: 0.5em;
 	}
 
-	th {
-		font-weight: bold;
-	}
-
-	tr:nth-child(even) {
-		background-color: $colTableLight;
-	}
-
-	tr:nth-child(odd) {
-		background-color: $colTableDark;
-	}
-
-	border-collapse: collapse;
-	border-spacing: 0em;
+	th { font-weight: bold; }
+	tr:nth-child(even) { background-color: $colTableLight; }
+	tr:nth-child(odd) { background-color: $colTableDark; }	
 }
 
 ul {
-	margin-left: 1.5 * $marginDefault;
-	margin-top: 0.75 * $marginDefault;
-	margin-bottom: 0.75 * $marginDefault;	
-}
-
-#dropDown {		
-	position: relative;	
-
-	#dropDownSwitch ~ ul { display: none; }
-	#dropDownSwitch:checked ~ ul { display: block; }	
-
-	a {
-		border: none;
-		color: $colTextDark;		
-		display: block;
-		font-weight: normal;
-	}
-
-	input { display: none; }
-
-	label {
-		border: 1px solid black;				
-		cursor: pointer;
-		display: block;
-		padding: 0em 0.25em;
-		width: 100%;		
-
-		&:after {
-			content: "\f431";
-			float: right;
-			font-family: "Genericons";
-			display: inline;
-		}		
-	}
-
-	#dropDownSwitch:checked ~ label:after { content: "\f432"; }
-
-	li {
-		cursor: pointer;
-		display: block;
-		padding: 0em 0.25em;
-		@include vendor(transition, background-color 1s);
-
-		&:hover {
-			background-color: $colLinkLightHover;
-		}
-	}		
-
-	ul {
-		background-color: $colForeground;
-		border: 1px solid black;
-		list-style: none;
-		margin: 0em;
-		margin-top: 0.125em;								
-		max-height: 7.5em;
-		overflow-y: scroll;
-		position: absolute;
-		width: 100%;		
-	}
+	margin-left: $marginDefault * 1.5;
+	margin-top: $marginDefault * 0.75;
+	margin-bottom: $marginDefault * 0.75;	
 }
 
 ul.noBullet {

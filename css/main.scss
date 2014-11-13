@@ -11,18 +11,16 @@
 */
 
 * {
-	@include vendor(box-sizing, border-box);	
-	font-family: $fontName, sans-serif;    
+	@include vendor(box-sizing, border-box);
+	font-family: $fontName, monospace;
     font-weight: normal;
     margin: 0em;
-    padding: 0em;
-	word-wrap: break-word;
     overflow-wrap: break-word;
+    padding: 0em;
+	word-wrap: break-word;    
 }
 
-body, html {
-    height: 100%;
-}
+body, html { height: 100%; }
 
 body {
     background-color: $colBackground;
@@ -41,14 +39,7 @@ body {
     ==========
 */
 
-#asideContainer {
-    background-color: $colForeground;
-    display: block;
-    padding: $space;        
-    vertical-align: top;
-}
-
-#container {    
+#contentTable {    
     display: table;
     line-height: $lineHeight;
     margin-bottom: $space;
@@ -56,15 +47,11 @@ body {
     position: relative;
 }
 
-#rowContainer {    
-    display: table-row;        
-}
+#contentTableRow { display: table-row; }
 
-#rowContainer > div:last-child { border-right: none; }
+#contentTableRow > div:nth-child(2) { border-right: 1px solid $colTextDark; }
 
-#wrap {        
-    min-height: 100%;    
-}
+#wrapper { min-height: 100%; }
 
 article {
     background-color: $colForeground;
@@ -76,14 +63,12 @@ article {
 
 aside {  
     display: table-cell;        
-    margin: 0;    
-    overflow: hidden;
+    margin: 0em;
+    padding: $space;
     vertical-align: top;
-    width: $widthAside;        
+    width: $widthAside;
 
-    img {
-        max-width: 15em;
-    }
+    img { max-width: 15em; }
 }
 
 footer {
@@ -94,20 +79,15 @@ footer {
     margin-top: -$heightHeader;
 }
 
-header {    
-    background-color: $colHeaderBackground;
-    color: $colTextLight;
-    display: block;
-    line-height: $heightHeader;    
+header {
+    @extend footer;
+        
     margin-bottom: $space;    
+    margin-top: 0em;
     position: relative;    
     width: 100%;    
 
-    .centerInLayout { 
-        display: table; 
-
-    }
-
+    .contentArea { display: table; }
     input, label { display: none; }    
 
     ul {
@@ -115,15 +95,6 @@ header {
         float: right;        
         list-style: none;        
         margin: 0em;
-        padding: 0em;
-
-        /*a {
-            border-bottom: 1px dotted $colTextLight;
-            color: $colTextLight;
-            text-decoration: none;
-
-            &:hover { border-bottom: 1px solid $colTextLight; }
-        } */       
 
         li {
             display: inline;
@@ -138,9 +109,6 @@ main {
     display: table-cell;    
     text-align: justify;
     vertical-align: top;    
-
-    /*article { border-bottom: 1px solid black; }
-    article:last-child { border: none; }*/
 }
 
 section {
@@ -151,9 +119,7 @@ section {
     padding: $space / 1.5;    
     position: relative;
 
-    &:before {
-        content: "> ";
-    }
+    &:before { content: "> "; }
 }
 
 
@@ -161,83 +127,79 @@ section {
     media queries
 */
 
+/* when the screen width is lower than 1280px use the entire width */
 @media all and (max-width: 1279px) {
-    .centerInLayout {
+    .contentArea {
         max-width: $widthContentMin;
         min-width: 0px;
         width: 100%;
     }
 }
 
-/* smaller spaces and <aside> beneath <main> */
-@media all and (max-width: 799px), all and (orientation: portrait) {    
-    /* use entire width of display now */
-    .centerInLayout { 
+/* 
+    when the screen width is lower than 800px or in case of a display
+    in portrait mode show <aside> below <main> 
+*/
+@media all and (max-width: 799px), all and (orientation: portrait) {        
+    /* use full width */
+    .contentArea { 
         min-width: 0px;
-        padding: 0 $spaceSmall;
+        padding: 0 $space;
         width: 100%;
     }    
 
-    /* adjust to small space between elements */
-    #asideContainer { padding: $spaceSmall; }
-    #container { padding: 0 $spaceSmall; padding-bottom: 5em; }
-    //#homeLink { margin-left: $spaceSmall / 1.5; }
-    article { padding: $spaceSmall; }
-    article, article:last-child, #container { margin-bottom: $spaceSmall; }    
-    footer { margin-top: -5em; }
-    header { margin-bottom: $spaceSmall; padding: 0; }
-    //header ul { margin-right: $spaceSmall; }    
-    section { margin-bottom: $spaceSmall / 1.5; }
-    section { padding: $spaceSmall / 1.5; }
-
-    /* place <aside> under <main> instead of beneath it */
-    article:last-child { margin-bottom: $spaceSmall; }
-    #container, #rowContainer, main, aside { display: block; }
-    #spacer1, #spacer2 { display: none; }
-    main, aside {        
-        padding: 0;
-        width: 100%;
-    }    
+    /* place <aside> under <main> */    
+    #contentTable, #contentTableRow { display: block; }
+    #spacer1, #spacer2 { display: none; }     
+    article:last-child { margin-bottom: $space; }
 
     aside { 
-        border-top: 1px solid black; 
-        padding-top: $spaceSmall;
+        border-top: 1px solid black;         
+        display: block;
+        padding: $space;
+        padding-top: $space * 2;
+        width: 100%;
     }
+    
+    main {
+        display: block;
+        padding: 0;
+        width: 100%;
+    }        
 }
 
 
 /* move navigation into a (by default closed) menu */
 @media all and (max-width: 639px) {
-    #navSwitch:checked + div { border-bottom: 1px solid $colTextLight; }
-    #navSwitch + div > ul { display: none; }
+    #menu { display: none; }
 
-    #navSwitch:checked + div > ul {                 
-        display: block;
-        line-height: $lineHeight;
-        margin: 0em;
-        padding: 1.5 * $spaceSmall 0;
-        text-align: right;        
-        width: 100%;
+    #menuTrigger:checked + div {
+        border-bottom: 1px solid $colTextLight;
 
-        a { margin: 0em; }
-        li { display: block; }    
-    }   
+        #menu {
+            display: block;
+            line-height: $lineHeight;
+            margin: 0em;
+            padding: $space * 1.5 0;
+            text-align: right;
+            width: 100%;
 
-    label[for="navSwitch"] {                
-        line-height: $heightHeader;
-        cursor: pointer;
-        display: block;
-        float: right;        
+            li { display: block; }
+        }
     }
 
+    label[for="menuTrigger"] {
+        cursor: pointer;
+        display: block;
+        float: right;
+        line-height: $heightHeader;
+    }
 }
-
 
 /* smaller font for low-resolution-devices */
 @media all and (max-width: 319px) {
     body { font-size: 0.75em; }
 }
-
 
 /* even smaller font for lowest-resolution devices */
 @media all and (max-width: 239px) {
@@ -249,15 +211,17 @@ section {
     }
 }
 
-
+/* deactivate aside, comments, footer and header for printing */
 @media print {        
-    #disqus_thread, #spacer, header, main article:last-child, section, aside, footer { display: none; }
-    body, html { height: auto; }
-    main { margin: 0; padding: 0; }    
+    #disqus_thread, #spacer, article:last-child, aside, footer, header, main section { display: none; }
+    body, html { height: auto; }    
+
     img {
         display: block !important;
         page-break-after: auto;
         page-break-before: auto;
         page-break-inside: avoid;
     }
+
+    main { margin: 0; padding: 0; }    
 }

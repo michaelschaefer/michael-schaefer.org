@@ -8,6 +8,7 @@ layout: default
 	{{ site.data.i18n[language][page.type].title }}: {{ page.title }}	
 </section>
 
-{% for post in page.posts %}
+{% assign sortedPosts = page.posts | sort: 'date' %}
+{% for post in sortedPosts reversed %}
 	{% include shortPost.html post=post %}
 {% endfor %}

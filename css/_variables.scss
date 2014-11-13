@@ -17,13 +17,15 @@
 
 $colBackground: #fff;
 $colForeground: #fff;
+
 $colHeaderBackground: #777;
-$colLink: #9ab;
-$colLinkLight: #fff;
-$colLinkLightHover: #9ab;
-$colLinkHover: #aaa;
+
+$colLink: #6c97c1;
+$colLinkHover: #bcd; //#ecab34;
+
 $colTableLight: #ddd;
 $colTableDark: #aaa;
+
 $colTextLight: #fff;
 $colTextDark: #000;
 
@@ -37,7 +39,6 @@ $marginDefault: 1em;
 $marginHeader: 0.75em;
 $lineHeight: 1.5em;
 $space: 1em;
-$spaceSmall: $space;
 $widthAside: 33%;
 $widthContent: 60%;
 $widthContentMin: 1200px;
@@ -48,3 +49,4 @@ $widthContentMin: 1200px;
 */
 
 $fontName: "Inconsolata";
+$fontIconName: "Genericons";

@@ -26,72 +26,126 @@
 
 
 <body>
-  
-<a name="top"></a>
-<div id="wrap">
 
-  <header>      
-    <div class="centerInLayout">      
-      <input id="navSwitch" type="checkbox" />
-      <div>
-        <a id="homeLink" class="light" href="{{ site.data.i18n[language]['main'].url }}">
-          Michael Schaefer
-        </a>      
-        <label for="navSwitch"><span class="symbol">&#xf419;</span></label>                  
-        <ul>
-          {% for entry in site.data.i18n[language]['main']['otherLanguages'] %}
-          <li><a class="light" href="{{ entry.url }}">{{ entry.text }}</a></li>
-          {% endfor %}        
-          <li><a class="light" href="{{ site.data.i18n[language]['biography'].url }}">{{ site.data.i18n[language]['biography'].text }}</a></li>
-          <li><a class="light" href="{{ site.data.i18n[language]['imprint'].url }}">{{ site.data.i18n[language]['imprint'].text }}</a></li>
-        </ul>
-      </div>
-    </div> 
-  </header>    
+  <a name="top"></a>
 
-  <div id="container" class="centerInLayout">
-    <div id="rowContainer">
-      <main>
-        {{ content }}
-      </main>
+  <!-- 
+  the wrapper ensures that the site's content height is at an entire screen
+  so that the footer can be places at the end of the screen even in case the
+  original content height was e.g. just half the screen's height.
+  -->
+  <div id="wrapper">
 
-      <div id="spacer1">&nbsp;</div>
-      <div id="spacer2">&nbsp;</div>
+    <!--
+    the header shall span the entire width of the screen but the actual content
+    shall not so we need another layout, here a <div> with class 'contentArea'
+    -->
+    <header>
 
-      <aside>
-        <div id="asideContainer">
-          {% include aside.html %}
+      <div class="contentArea">      
+
+        <input id="menuTrigger" type="checkbox" />
+        <div>
+
+          <!-- link to the homepage -->
+          <a class="navigation large" href="{{ site.data.i18n[language]['main'].url }}">
+            Michael Schaefer
+          </a>
+
+          <!--
+          the label is connected to the <input> tag some lines above. For the navigation
+          items we use an <ul> because when the screen width is small the horizontal
+          alignment of the items is changed to a vertical dropdown menu. The open-and-hide
+          mechanism for this menu is then triggered by the <input> tag some lines above
+          and the <label> that is connected to that.
+          -->
+          <label for="menuTrigger"><span class="symbol">&#xf419;</span></label>                  
+          <ul id="menu">
+            {% for entry in site.data.i18n[language]['main']['otherLanguages'] %}
+            <li><a class="navigation" href="{{ entry.url }}">{{ entry.text }}</a></li>
+            {% endfor %}        
+            <li><a class="navigation" href="{{ site.data.i18n[language]['biography'].url }}">{{ site.data.i18n[language]['biography'].text }}</a></li>
+            <li><a class="navigation" href="{{ site.data.i18n[language]['imprint'].url }}">{{ site.data.i18n[language]['imprint'].text }}</a></li>
+          </ul>
+
         </div>
-      </aside>           
-    </div>  
+
+      </div> 
+
+    </header>    
+
+    <!--
+    <main> (containing the websites actual content) and <aside> (holding some personal
+    information, an archive and a tag cloud) are framed by layers two <div> in order to
+    make it being displayed like a table (i.e. the first <div> has 'diplay: table', the
+    second 'display: table-row' and both <main> and <aside> have 'display: table-cell').
+    This way is (to my knowledge) the easiest one to have <main> and <aside> beneath each
+    other without the pain of floating.
+    In case the screen width is small the display properties are changed such that <main>
+    and <aside> are one below the other.
+    -->
+    <div id="contentTable" class="contentArea">
+
+      <div id="contentTableRow">
+
+        <main>
+          {{ content }}
+        </main>
+
+        <!--
+        these spacers ensure that there is a gap between <main> and <aside>. We need two of
+        them to have a thin line in the middle (achieved as border-right). Both spacers'
+        display property is set to none in case of a small screen (see above)
+        -->
+        <div class="spacer">&nbsp;</div>
+        <div class="spacer">&nbsp;</div>
+
+        <aside>
+          {% include aside.html %}
+        </aside>           
+
+      </div>  
+
+    </div>
+
   </div>
 
-</div>
+  <!--  
+  For the <footer> a similar remark as for <header> holds: Since it shall span the entire width
+  of the screen a second layer with class 'contentArea' is neccessary.
+  -->
+  <footer>
 
-<footer>
-  <div class="centerInLayout right">
-    <span class="bold">&copy; 2014 Michael Schaefer</span>
-    <a class="lightLink" href="#top"><span class="symbol">&#xf435;</span></a>
-  </div>
-</footer>
+    <div class="contentArea right">
+
+      <span class="bold">&copy; 2014 Michael Schaefer</span>
+      <a class="navigation" href="#top"><span class="symbol">&#xf435;</span></a>
+
+    </div>
+
+  </footer>
 
 </body>
 
+<!--
+MathJax support. The script tags are positioned below the <body> to make the website's content
+be loaded first and do the MathJax conversion afterwards.
+-->
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  });
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' hasJax';
-    }
-  });
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' hasJax';
+  }
+});
 </script>
 
 </html>

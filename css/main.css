@@ -1,8 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 /* 
 	html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com 
 */
-@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, time, mark, audio, video {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, header, hgroup, main, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,7 +14,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 body {
   line-height: 1; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, header, hgroup, main, menu, nav, section {
   display: block; }
 
 nav ul {
@@ -26,7 +26,7 @@ blockquote, q {
 blockquote:before, blockquote:after, q:before, q:after {
   content: none; }
 
-a {
+a, a.headline, a.navigation {
   margin: 0;
   padding: 0;
   font-size: 100%;
@@ -78,20 +78,53 @@ input, select {
 /*
 	other variables
 */
-#homeLink {
-  font-size: 1.5em; }
+#archiveMenu {
+  position: relative; }
+  #archiveMenu #archiveMenuTrigger ~ #archiveMenuEntries {
+    display: none; }
+  #archiveMenu #archiveMenuTrigger:checked + label:after {
+    content: "\f432"; }
+  #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries {
+    background-color: white;
+    border: 1px solid black;
+    display: block;
+    list-style: none;
+    margin: 0em;
+    margin-top: 0.125em;
+    max-height: 7.5em;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%; }
+    #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li {
+      cursor: pointer;
+      display: block;
+      padding: 0em 0.25em;
+      -ms-transition: background-color 1s;
+      -moz-transition: background-color 1s;
+      -o-transition: background-color 1s;
+      -webkit-transition: background-color 1s;
+      transition: background-color 1s; }
+      #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li:hover {
+        background-color: #6c97c1; }
+  #archiveMenu input {
+    display: none; }
+  #archiveMenu label {
+    border: 1px solid black;
+    cursor: pointer;
+    display: block;
+    padding: 0em 0.25em;
+    width: 100%; }
+    #archiveMenu label:after {
+      content: "\f431";
+      float: right;
+      font-family: "Genericons";
+      display: inline; }
 
-#spacer1, #spacer2 {
-  display: table-cell;
-  min-width: 1em;
-  max-width: 1em;
-  width: 1em; }
-
-#spacer1 {
-  border-right: 1px solid black; }
-
-a {
-  color: #9ab;
+/*
+	link formatting
+*/
+a, a.headline, a.navigation {
+  color: #6c97c1;
   font-weight: bold;
   text-decoration: none;
   -ms-transition: color 1s;
@@ -100,22 +133,15 @@ a {
   -webkit-transition: color 1s;
   transition: color 1s; }
   a:hover {
-    color: #aaa; }
+    color: #bbccdd; }
 
-a.light {
-  color: #fff; }
-  a.light:hover {
-    color: #9ab; }
+a.archive {
+  color: black;
+  font-weight: normal; }
 
-a[href^="http"]:after {
-  content: "\f442";
-  font-family: "Genericons";
-  vertical-align: bottom; }
-
-a.tag {
-  background-color: #9ab;
-  border: none;
-  color: #fff;
+a.box, a.readMore {
+  background-color: #6c97c1;
+  color: white;
   display: inline-block;
   margin: 0em 0.25em 0.25em 0em;
   padding: 0.25em 0.75em;
@@ -124,11 +150,52 @@ a.tag {
   -o-transition: background-color 1s;
   -webkit-transition: background-color 1s;
   transition: background-color 1s; }
-  a.tag:hover {
-    background-color: #aaa; }
+  a.box:hover, a.readMore:hover {
+    background-color: #bbccdd; }
 
+a.headline {
+  color: black; }
+  a.headline:hover {
+    color: #bbccdd; }
+
+a.navigation {
+  color: white; }
+  a.navigation:hover {
+    color: #bbccdd; }
+
+a.readMore {
+  margin-right: 0em;
+  margin-top: 0.5em; }
+
+a[href^="http://"]:after {
+  content: "\f442";
+  font-family: "Genericons";
+  vertical-align: bottom; }
+
+/*
+	other formatting
+*/
 address {
   font-style: normal; }
+
+article.topBorder {
+  border-top: 1px solid black;
+  padding-top: 1.5em; }
+
+article:after {
+  clear: both;
+  content: "";
+  display: block; }
+
+code {
+  background-color: #dddddd;
+  border: 1px solid #aaaaaa;
+  display: inline;
+  padding: 0em 0.25em; }
+  code.hasJax {
+    background-color: transparent;
+    border: none;
+    padding: 0em; }
 
 em {
   font-weight: bold;
@@ -140,8 +207,6 @@ h1 {
   font-weight: bold;
   margin-bottom: 0.75em;
   margin-top: 1.5em; }
-  h1 a {
-    color: #000; }
 
 h2 {
   display: block;
@@ -166,79 +231,31 @@ p:last-child {
   margin-bottom: 0em; }
 
 table {
-  margin: 2em auto 2em;
-  text-align: center;
   border-collapse: collapse;
-  border-spacing: 0em; }
+  border-spacing: 0em;
+  margin: 2em auto 2em;
+  text-align: center; }
   table td, table th {
-    border: 2px solid #fff;
+    border: 0.125em solid white;
     padding: 0.5em; }
   table th {
     font-weight: bold; }
   table tr:nth-child(even) {
-    background-color: #ddd; }
+    background-color: #dddddd; }
   table tr:nth-child(odd) {
-    background-color: #aaa; }
+    background-color: #aaaaaa; }
 
 ul {
   margin-left: 1.5em;
   margin-top: 0.75em;
   margin-bottom: 0.75em; }
 
-#dropDown {
-  position: relative; }
-  #dropDown #dropDownSwitch ~ ul {
-    display: none; }
-  #dropDown #dropDownSwitch:checked ~ ul {
-    display: block; }
-  #dropDown a {
-    border: none;
-    color: #000;
-    display: block;
-    font-weight: normal; }
-  #dropDown input {
-    display: none; }
-  #dropDown label {
-    border: 1px solid black;
-    cursor: pointer;
-    display: block;
-    padding: 0em 0.25em;
-    width: 100%; }
-    #dropDown label:after {
-      content: "\f431";
-      float: right;
-      font-family: "Genericons";
-      display: inline; }
-  #dropDown #dropDownSwitch:checked ~ label:after {
-    content: "\f432"; }
-  #dropDown li {
-    cursor: pointer;
-    display: block;
-    padding: 0em 0.25em;
-    -ms-transition: background-color 1s;
-    -moz-transition: background-color 1s;
-    -o-transition: background-color 1s;
-    -webkit-transition: background-color 1s;
-    transition: background-color 1s; }
-    #dropDown li:hover {
-      background-color: #9ab; }
-  #dropDown ul {
-    background-color: #fff;
-    border: 1px solid black;
-    list-style: none;
-    margin: 0em;
-    margin-top: 0.125em;
-    max-height: 7.5em;
-    overflow-y: scroll;
-    position: absolute;
-    width: 100%; }
-
 ul.noBullet {
   list-style: none;
   margin-left: 0em; }
 
 .aperture {
-  border: 1px solid #000;
+  border: 1px solid black;
   -ms-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -248,14 +265,14 @@ ul.noBullet {
 .bold {
   font-weight: bold; }
 
-.centerInLayout {
+.contentArea {
   margin: 0 auto;
   max-width: 100%;
   min-width: 1200px;
   position: relative;
   width: 60%;
   padding: 0 1em; }
-  .centerInLayout:after {
+  .contentArea:after {
     content: "";
     clear: both;
     display: block; }
@@ -263,31 +280,23 @@ ul.noBullet {
 .floatRight {
   float: right; }
 
-code {
-  background-color: #ddd;
-  border: 1px solid #fff;
-  display: inline;
-  padding: 0em 0.25em; }
-
-code.hasJax {
-  background-color: transparent;
-  border: none;
-  padding: 0em; }
+.large {
+  font-size: 1.5em !important; }
 
 .left {
   text-align: left; }
-
-.lightLink {
-  border-color: #fff;
-  color: #fff; }
-  .lightLink:hover {
-    border-color: #fff; }
 
 .noBorder {
   border: none !important; }
 
 .right {
   text-align: right; }
+
+.spacer {
+  display: table-cell;
+  min-width: 1em;
+  max-width: 1em;
+  width: 1em; }
 
 .symbol {
   font-family: "Genericons";
@@ -300,36 +309,30 @@ code.hasJax {
 /*
 	local fonts
 */
+/* Genericons */
 @font-face {
   font-family: 'Genericons';
   src: url("../media/font/genericons-regular-webfont.eot");
   src: url("../media/font/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../media/font/genericons-regular-webfont.woff") format("woff"), url("../media/font/genericons-regular-webfont.ttf") format("truetype"), url("../media/font/genericons-regular-webfont.svg#genericonsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+/* Inconsolata regular */
 @font-face {
   font-family: "Inconsolata";
   src: url("../media/font/inconsolata-regular.eot");
   src: url("../media/font/inconsolata-regular.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata-regular.woff") format("woff"), url("../media/font/inconsolata-regular.ttf") format("truetype"), url("../media/font/inconsolata-regular.svg#inconsolataregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+/* Inconsolata bold */
 @font-face {
   font-family: "Inconsolata";
   src: url("../media/font/inconsolata-bold.eot");
   src: url("../media/font/inconsolata-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/inconsolata-bold.woff") format("woff"), url("../media/font/inconsolata-bold.ttf") format("truetype"), url("../media/font/inconsolata-bold.svg#inconsolatabold") format("svg");
   font-weight: bold;
   font-style: normal; }
-@font-face {
-  font-family: "Open Sans";
-  src: url("../media/font/opensans-regular.eot");
-  src: url("../media/font/opensans-regular.eot?#iefix") format("embedded-opentype"), url("../media/font/opensans-regular.woff") format("woff"), url("../media/font/opensans-regular.ttf") format("truetype"), url("../media/font/opensans-regular.svg#open_sansregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Open Sans";
-  src: url("../media/font/opensans-bold.eot");
-  src: url("../media/font/opensans-bold.eot?#iefix") format("embedded-opentype"), url("../media/font/opensans-bold.woff") format("woff"), url("../media/font/opensans-bold.ttf") format("truetype"), url("../media/font/opensans-bold.svg#open_sansbold") format("svg");
-  font-weight: bold;
-  font-style: normal; }
+
 /*
     ===============================
     basic layout and style settings
@@ -341,19 +344,19 @@ code.hasJax {
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-weight: normal;
   margin: 0em;
+  overflow-wrap: break-word;
   padding: 0em;
-  word-wrap: break-word;
-  overflow-wrap: break-word; }
+  word-wrap: break-word; }
 
 body, html {
   height: 100%; }
 
 body {
-  background-color: #fff;
-  color: #000;
+  background-color: white;
+  color: black;
   display: block;
   font-size: 1em;
   overflow-y: scroll;
@@ -365,30 +368,24 @@ body {
     basic tags
     ==========
 */
-#asideContainer {
-  background-color: #fff;
-  display: block;
-  padding: 1em;
-  vertical-align: top; }
-
-#container {
+#contentTable {
   display: table;
   line-height: 1.5em;
   margin-bottom: 1em;
   padding-bottom: 4.5em;
   position: relative; }
 
-#rowContainer {
+#contentTableRow {
   display: table-row; }
 
-#rowContainer > div:last-child {
-  border-right: none; }
+#contentTableRow > div:nth-child(2) {
+  border-right: 1px solid black; }
 
-#wrap {
+#wrapper {
   min-height: 100%; }
 
 article {
-  background-color: #fff;
+  background-color: white;
   margin-bottom: 1em;
   padding: 1em; }
   article:last-child {
@@ -396,29 +393,26 @@ article {
 
 aside {
   display: table-cell;
-  margin: 0;
-  overflow: hidden;
+  margin: 0em;
+  padding: 1em;
   vertical-align: top;
   width: 33%; }
   aside img {
     max-width: 15em; }
 
-footer {
-  background-color: #777;
-  color: #fff;
+footer, header {
+  background-color: #777777;
+  color: white;
   display: block;
   line-height: 4.5em;
   margin-top: -4.5em; }
 
 header {
-  background-color: #777;
-  color: #fff;
-  display: block;
-  line-height: 4.5em;
   margin-bottom: 1em;
+  margin-top: 0em;
   position: relative;
   width: 100%; }
-  header .centerInLayout {
+  header .contentArea {
     display: table; }
   header input, header label {
     display: none; }
@@ -426,15 +420,7 @@ header {
     display: inline;
     float: right;
     list-style: none;
-    margin: 0em;
-    padding: 0em;
-        /*a {
-            border-bottom: 1px dotted $colTextLight;
-            color: $colTextLight;
-            text-decoration: none;
-
-            &:hover { border-bottom: 1px solid $colTextLight; }
-        } */ }
+    margin: 0em; }
     header ul li {
       display: inline;
       margin-left: 1em; }
@@ -444,12 +430,10 @@ header {
 main {
   display: table-cell;
   text-align: justify;
-  vertical-align: top;
-  /*article { border-bottom: 1px solid black; }
-  article:last-child { border: none; }*/ }
+  vertical-align: top; }
 
 section {
-  background-color: #fff;
+  background-color: white;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.66667em;
@@ -461,88 +445,66 @@ section {
 /*
     media queries
 */
+/* when the screen width is lower than 1280px use the entire width */
 @media all and (max-width: 1279px) {
-  .centerInLayout {
+  .contentArea {
     max-width: 1200px;
     min-width: 0px;
     width: 100%; } }
-/* smaller spaces and <aside> beneath <main> */
+/* 
+    when the screen width is lower than 800px or in case of a display
+    in portrait mode show <aside> below <main> 
+*/
 @media all and (max-width: 799px), all and (orientation: portrait) {
-  /* use entire width of display now */
-  .centerInLayout {
+  /* use full width */
+  .contentArea {
     min-width: 0px;
     padding: 0 1em;
     width: 100%; }
 
-  /* adjust to small space between elements */
-  #asideContainer {
-    padding: 1em; }
-
-  #container {
-    padding: 0 1em;
-    padding-bottom: 5em; }
-
-  article {
-    padding: 1em; }
-
-  article, article:last-child, #container {
-    margin-bottom: 1em; }
-
-  footer {
-    margin-top: -5em; }
-
-  header {
-    margin-bottom: 1em;
-    padding: 0; }
-
-  section {
-    margin-bottom: 0.66667em; }
-
-  section {
-    padding: 0.66667em; }
-
-  /* place <aside> under <main> instead of beneath it */
-  article:last-child {
-    margin-bottom: 1em; }
-
-  #container, #rowContainer, main, aside {
+  /* place <aside> under <main> */
+  #contentTable, #contentTableRow {
     display: block; }
 
   #spacer1, #spacer2 {
     display: none; }
 
-  main, aside {
-    padding: 0;
-    width: 100%; }
+  article:last-child {
+    margin-bottom: 1em; }
 
   aside {
     border-top: 1px solid black;
-    padding-top: 1em; } }
+    display: block;
+    padding: 1em;
+    padding-top: 2em;
+    width: 100%; }
+
+  main {
+    display: block;
+    padding: 0;
+    width: 100%; } }
 /* move navigation into a (by default closed) menu */
 @media all and (max-width: 639px) {
-  #navSwitch:checked + div {
-    border-bottom: 1px solid #fff; }
-
-  #navSwitch + div > ul {
+  #menu {
     display: none; }
 
-  #navSwitch:checked + div > ul {
-    display: block;
-    line-height: 1.5em;
-    margin: 0em;
-    padding: 1.5em 0;
-    text-align: right;
-    width: 100%; }
-    #navSwitch:checked + div > ul a {
-      margin: 0em; }
-    #navSwitch:checked + div > ul li {
-      display: block; }
+  #menuTrigger:checked + div {
+    border-bottom: 1px solid white; }
+    #menuTrigger:checked + div #menu {
+      display: block;
+      line-height: 1.5em;
+      margin: 0em;
+      padding: 1.5em 0;
+      text-align: right;
+      width: 100%; }
+      #menuTrigger:checked + div #menu li {
+        display: block; }
 
-  label[for="navSwitch"] {
-    line-height: 4.5em;
+  label[for="menuTrigger"] {
     cursor: pointer;
     display: block;
-    float: right; } }
+    float: right;
+    line-height: 4.5em; } }
 /* smaller font for low-resolution-devices */
 @media all and (max-width: 319px) {
   body {
@@ -556,21 +518,20 @@ section {
     min-width: 0px;
     width: 150px;
     max-width: 100%; } }
+/* deactivate aside, comments, footer and header for printing */
 @media print {
-  #disqus_thread, #spacer, header, main article:last-child, section, aside, footer {
+  #disqus_thread, #spacer, article:last-child, aside, footer, header, header, main section {
     display: none; }
 
   body, html {
     height: auto; }
 
-  main {
-    margin: 0;
-    padding: 0; }
-
   img {
     display: block !important;
     page-break-after: auto;
     page-break-before: auto;
-    page-break-inside: avoid; } }
+    page-break-inside: avoid; }
 
-/*# sourceMappingURL=main.css.map */
+  main {
+    margin: 0;
+    padding: 0; } }

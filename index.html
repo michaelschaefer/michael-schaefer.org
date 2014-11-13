@@ -20,15 +20,15 @@ type: static
 
 	{% if paginator.total_pages > 1 %}
 	{% assign data = site.data.i18n['de']['main'] %}
-	<article>
+	<article class="topBorder">
 		{% if paginator.next_page %}
-		<a class="tag" href="/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
+		<a class="readMore" href="/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
 		{% else %}
 		&nbsp;
 		{% endif %}
 
 		{% if paginator.previous_page %}
-		<a class="tag floatRight" href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
+		<a class="readMore floatRight" href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
 		{% endif %}
 	</article>
 	{% endif %}
