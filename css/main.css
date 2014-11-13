@@ -466,7 +466,7 @@ section {
   #contentTable, #contentTableRow {
     display: block; }
 
-  #spacer1, #spacer2 {
+  .spacer {
     display: none; }
 
   article:last-child {

@@ -81,7 +81,7 @@ footer {
 
 header {
     @extend footer;
-        
+
     margin-bottom: $space;    
     margin-top: 0em;
     position: relative;    
@@ -150,7 +150,7 @@ section {
 
     /* place <aside> under <main> */    
     #contentTable, #contentTableRow { display: block; }
-    #spacer1, #spacer2 { display: none; }     
+    .spacer { display: none; }     
     article:last-child { margin-bottom: $space; }
 
     aside { 
