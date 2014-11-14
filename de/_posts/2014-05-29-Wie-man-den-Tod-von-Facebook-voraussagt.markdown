@@ -2,7 +2,6 @@
 layout: post
 title: Wie man den Tod von Facebook voraussagt
 date: 2014-05-29 14:11:53
-description: "Wird Facebook in den n&auml;chsten Jahren aussterben? Ein k&uuml;rzlich ver&ouml;ffentlichter mathematischer Artikel behauptet genau das. Ich m&ouml;chte versuchen im Detail zu erkl&auml;ren, wie man zu dieser Schlussfolgerung kommt. Dabei soll so wenig h&ouml;here Mathematik wie m&ouml;glich verwendet werden."
 tags: [Facebook, Epidemiologie, Mathematik]
 ---
 
@@ -59,7 +58,7 @@ Wie soll man mit solchen Ergebnissen umgehen? Auf den ersten Blick sieht so etwa
 
 
 [CS14]: http://arxiv.org/pdf/1401.4208v1.pdf
-[facebook]: /media/images/facebook.png
+[facebook]: /media/images/facebook.svg
 [github-social]: https://github.com/michaelschaefer/social-network-modelling
 [googletrends]: http://trends.google.com/trends/
-[myspace]: /media/images/myspace.png
+[myspace]: /media/images/myspace.svg

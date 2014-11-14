@@ -15,19 +15,19 @@
     color definitions
 */
 
-$colBackground: #fff;
-$colForeground: #fff;
+$colBackground: white;
+$colForeground: $colBackground;
 
-$colHeaderBackground: #777;
+$colHeaderBackground: #404040;
 
-$colLink: #6c97c1;
-$colLinkHover: #bcd; //#ecab34;
+$colTableLight: #ccc;
+$colTableDark: #808080;
 
-$colTableLight: #ddd;
-$colTableDark: #aaa;
+$colTextLight: white;
+$colTextDark: black;
 
-$colTextLight: #fff;
-$colTextDark: #000;
+$colLink: #789;
+$colLinkHover: $colTableLight;
 
 
 /*

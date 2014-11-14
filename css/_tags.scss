@@ -22,7 +22,12 @@
 			padding: 0em 0.25em;
 			@include vendor(transition, background-color 1s);
 
-			&:hover { background-color: $colLink; }
+			&:hover { background-color: $colTableLight; }
+
+			a { 
+				display: block;
+				text-decoration: none; 
+			}
 		}
 	}
 
@@ -53,9 +58,8 @@ a {
 	color: $colLink;
 	font-weight: bold;
 	text-decoration: none;
-	@include vendor(transition, color 1s);
 
-	&:hover { color: $colLinkHover; }
+	&:hover { text-decoration: underline; }
 }
 
 a.archive {
@@ -69,29 +73,23 @@ a.box {
 	display: inline-block;
 	margin: 0em 0.25em 0.25em 0em;
 	padding: 0.25em 0.75em;
+	text-decoration: none;
 	@include vendor(transition, background-color 1s);
 
 	&:hover { background-color: $colLinkHover; }
 }
 
-a.headline { 
-	@extend a;
-	color: $colTextDark; 
-
-	&:hover { color: $colLinkHover; }
+a.headline { 	
+	color: $colTextDark; 	
 }
 
 a.navigation {
-	@extend a;
-	color: $colTextLight;
-
-	&:hover { color: $colLinkHover; }
+	color: $colTextLight;	
 }
 
 a.readMore {
 	@extend a.box;
-	margin-right: 0em;
-	margin-top: $space / 2;
+	margin-right: 0em;	
 }
 
 a[href^="http://"]:after {
@@ -164,6 +162,11 @@ img {
 
 p {	margin-bottom: $marginDefault; }
 p:last-child { margin-bottom: 0em; }
+
+section h1 {
+	display: inline;
+	font-size: 1em;
+}
 
 table {
 	border-collapse: collapse;

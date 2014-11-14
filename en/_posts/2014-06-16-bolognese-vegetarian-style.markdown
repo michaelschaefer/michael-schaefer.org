@@ -2,7 +2,6 @@
 layout: post
 title: Bolognese vegetarian style
 date: 2014-06-16 10:54:09
-description: "More and more people entirely or at least partly renounce meat for different reasons. With today's recipe I want to show that classical ones containing meat can easily be modified. I cooked it yesterday and found it very delicious."
 tags: [Bolognese, cooking, vegetarian]
 ---
 

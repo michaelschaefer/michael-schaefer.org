@@ -5,7 +5,7 @@ layout: default
 {% include language.html %}
 
 <section>
-	{{ site.data.i18n[language][page.type].title }}: {{ page.title }}	
+	<h1>{{ site.data.i18n[language][page.type].title }}: {{ page.title }}</h1>
 </section>
 
 {% assign sortedPosts = page.posts | sort: 'date' %}

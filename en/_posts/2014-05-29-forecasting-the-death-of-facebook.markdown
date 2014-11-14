@@ -2,7 +2,6 @@
 layout: post
 title: Forecasting the death of Facebook
 date: 2014-05-29 14:02:36
-description: "Will Facebook die in the next few years? Recently a mathematical paper was released stating exactly that. I will try to explain in detail how they got to that conclusion. The presentation tries to take place on a level that does not need advanced calculus."
 tags: [Facebook, epidemiology, mathematics]
 ---
 
@@ -55,4 +54,4 @@ So how to deal with such results? At the first glance this looks pretty convinci
 [facebook]: /media/images/facebook.png
 [github-social]: https://github.com/michaelschaefer/social-network-modelling
 [googletrends]: http://trends.google.com/trends/
-[myspace]: /media/images/myspace.png
+[myspace]: /media/images/myspace.svg

@@ -1,9 +1,9 @@
 {% assign archiveData = site.data.i18n[language]['archive'] %}
 
-<div id="archiveMenu">
+<div id="archiveMenu">	
 	<input type="checkbox" id="archiveMenuTrigger" />
 	<label for="archiveMenuTrigger">{{ archiveData['strings'].selectAMonth }}</label>
-	<ul id="archiveMenuEntries">
+	<ul id="archiveMenuEntries">		
 		{% assign oldValue = '' %}
 		{% for post in site.posts %}
 			{% for category in post.categories %}
@@ -17,6 +17,6 @@
 					{% endif %}
 				{% endif %}
 			{% endfor %}
-		{% endfor %}	
-	</ul>
+		{% endfor %}		
+	</ul>	
 </div>

@@ -2,7 +2,6 @@
 layout: post
 title: The Lost Vikings
 date: 2014-05-17 15:36:34
-description: Ich habe das Lieblings-Computerspiel aus meiner Jugend wiedergefunden und konnte es nun nach langer Zeit endlich erfolgreich durchspielen.
 tags: [The Lost Vikings, Computerspiele]
 ---
 

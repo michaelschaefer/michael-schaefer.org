@@ -27,8 +27,6 @@
 
 <body>
 
-  <a name="top"></a>
-
   <!-- 
   the wrapper ensures that the site's content height is at an entire screen
   so that the footer can be places at the end of the screen even in case the
@@ -49,7 +47,7 @@
 
           <!-- link to the homepage -->
           <a class="navigation large" href="{{ site.data.i18n[language]['main'].url }}">
-            Michael Schaefer
+            www.michael-schaefer.org
           </a>
 
           <!--
@@ -119,33 +117,33 @@
     <div class="contentArea right">
 
       <span class="bold">&copy; 2014 Michael Schaefer</span>
-      <a class="navigation" href="#top"><span class="symbol">&#xf435;</span></a>
+      <a class="navigation" href="#wrapper"><span class="symbol">&#xf435;</span></a>
 
     </div>
 
   </footer>
 
-</body>
+  <!--
+  MathJax support. The script tags are positioned at the end of <body> to make the website's content
+  be loaded first and do the MathJax conversion afterwards.
+  -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' hasJax';
+    }
+  });
+  </script>
 
-<!--
-MathJax support. The script tags are positioned below the <body> to make the website's content
-be loaded first and do the MathJax conversion afterwards.
--->
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
-});
-MathJax.Hub.Queue(function() {
-  var all = MathJax.Hub.getAllJax(), i;
-  for(i=0; i < all.length; i += 1) {
-    all[i].SourceElement().parentNode.className += ' hasJax';
-  }
-});
-</script>
+</body>
 
 </html>

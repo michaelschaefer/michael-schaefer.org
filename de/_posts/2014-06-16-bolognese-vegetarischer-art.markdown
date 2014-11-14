@@ -2,7 +2,6 @@
 layout: post
 title: Bolognese vegetarischer Art
 date: 2014-06-16 10:11:02
-description: "Immer mehr Leute verzichten (aus unterschiedlichen Gr&uuml;nden) ganz oder teilweise auf Fleisch. Dass man dabei klassische fleischhaltige Gerichte prima abwandeln kann m&ouml;chte ich mit dem heutigen Rezept zeigen, das ich gestern gekocht und f&uuml;r sehr lecker befunden habe."
 tags: [Bolognese, Kochen, vegetarisch]
 ---
 
