@@ -15,7 +15,7 @@
     color definitions
 */
 
-$colBackground: white;
+$colBackground: #f3f3f3;
 $colForeground: $colBackground;
 
 $colHeaderBackground: #404040;
@@ -23,8 +23,8 @@ $colHeaderBackground: #404040;
 $colTableLight: #ccc;
 $colTableDark: #808080;
 
-$colTextLight: white;
-$colTextDark: black;
+$colTextLight: $colBackground;
+$colTextDark: #0c0c0c;
 
 $colLink: #789;
 $colLinkHover: $colTableLight;
