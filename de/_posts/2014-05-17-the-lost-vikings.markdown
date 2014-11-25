@@ -2,7 +2,7 @@
 layout: post
 title: The Lost Vikings
 date: 2014-05-17 15:36:34
-tags: [The Lost Vikings, Computerspiele]
+tags: [the lost vikings, computerspiele]
 ---
 
 F&uuml;r meinen ersten Blog-Eintrag habe ich mir ein klein wenig was Besonderes ausgesucht. Vor einiger Zeit f&uuml;hlte ich mich wie aus dem Nichts in meine Jugend zur&uuml;ckversetzt. Der Grund war, dass Blizzard mein absolutes Lieblings-Computerspiel von vor inzwischen fast 20 Jahren kostenlos zug&auml;nglich gemacht hat: The Lost Vikings! Auf Blizzards Plattform battle.net l&auml;sst sich die englischsprachige Version [herunterladen][battlenet]. 

@@ -2,7 +2,7 @@
 layout: post
 title: Bolognese vegetarischer Art
 date: 2014-06-16 10:11:02
-tags: [Bolognese, Kochen, vegetarisch]
+tags: [bolognese, kochen, vegetarisch]
 ---
 
 Der g&auml;nzliche Verzicht oder zumindest das eingeschr&auml;nkte Verwenden von Fleisch in der Ern&auml;hrung kommt aus unterschiedlichen Gr&uuml;nden in letzter Zeit verst&auml;rkt in Mode. Dass man dabei auf klassische Fleischgerichte nicht verzichten muss m&ouml;chte ich heute am Beispiel des [Ragu alla Bolognese][ragubolognese] zeigen. Ich besitze schon l&auml;nger ein entsprechendes vegetarisches Rezept doch vergangenes Wochenende habe ich mich gefragt, warum ich eigentlich noch nie ein klassisches Rezept direkt abgewandelt habe. Aus diesem Grund ist das im folgenden beschriebene neue Rezept entstanden.
