@@ -2,7 +2,7 @@
 
 <div id="archiveMenu">	
 	<input type="checkbox" id="archiveMenuTrigger" />
-	<label for="archiveMenuTrigger">{{ archiveData['strings'].selectAMonth }}</label>
+	<label for="archiveMenuTrigger"><a class="archive">{{ archiveData['strings'].selectAMonth }}</a></label>
 	<ul id="archiveMenuEntries">		
 		{% assign oldValue = '' %}
 		{% for post in site.posts %}
