@@ -3,21 +3,21 @@
 <!DOCTYPE html>
 <html lang="{{ language }}">
 
-<head>
-  <meta charset="utf-8">
-  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+<head>    
   <title>    
     {{ site.name }}&nbsp;||&nbsp;{% if page.type == 'static' %}{{ page.title }}{% else %}{{ site.data.i18n[language][page.type].title }} ({{ page.title }}){% endif %}
   </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
 
   <link rel="shortcut icon" href="/media/favicon.ico" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css" />
 
   <!-- syntax highlighting CSS -->
-  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/syntax.css" />
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -57,7 +57,7 @@
           mechanism for this menu is then triggered by the <input> tag some lines above
           and the <label> that is connected to that.
           -->
-          <label for="menuTrigger"><span class="symbol">&#xf419;</span></label>                  
+          <label for="menuTrigger"><span class="symbol"></span></label>                  
           <ul id="menu">
             {% for entry in site.data.i18n[language]['main']['otherLanguages'] %}
             <li><a class="navigation" href="{{ entry.url }}">{{ entry.text }}</a></li>
@@ -117,7 +117,7 @@
     <div class="contentArea right">
 
       <span class="bold">&copy; 2014 Michael Schaefer</span>
-      <a class="navigation" href="#wrapper"><span class="symbol">&#xf435;</span></a>
+      <a class="navigation" href="#wrapper"><span class="symbol"></span></a>
 
     </div>
 

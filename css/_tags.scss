@@ -2,7 +2,7 @@
 	position: relative;
 
 	#archiveMenuTrigger ~ #archiveMenuEntries { display: none; }
-	#archiveMenuTrigger:checked + label:after { content: "\f432"; }
+	#archiveMenuTrigger:checked + label:after { content: ""; }
 
 	#archiveMenuTrigger:checked ~ #archiveMenuEntries {
 		background-color: $colForeground;
@@ -41,7 +41,7 @@
 		width: 100%;		
 
 		&:after {
-			content: "\f431";
+			content: "";
 			float: right;
 			font-family: $fontIconName;
 			display: inline;
@@ -64,7 +64,9 @@ a {
 
 a.archive {
 	color: $colTextDark;
-	font-weight: normal;	
+	font-weight: normal;
+
+	&:hover { text-decoration: none; }	
 }
 
 a.box {
@@ -93,7 +95,7 @@ a.readMore {
 }
 
 a[href^="http://"]:after {
-	content: "\f442";
+	content: "";
 	font-family: $fontIconName;
 	vertical-align: bottom;
 }

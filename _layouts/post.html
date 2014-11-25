@@ -23,8 +23,8 @@ type: post
 <article>
 	<h1>{{ page.title }}</h1>
 	<p>		
-		<span class="symbol">&#xf307;</span><span class="date">{{ page.date | date: postData['strings'].dateFormat }}</span><br/>
-		<span class="symbol">&#xf302;</span><span class="left">{{ tagList | remove_first: ', ' }}</span>
+		<span class="symbol"></span><span class="date">{{ page.date | date: postData['strings'].dateFormat }}</span><br/>
+		<span class="symbol"></span><span class="left">{{ tagList | remove_first: ', ' }}</span>
 	</p>
 	
 	{{ content }}		

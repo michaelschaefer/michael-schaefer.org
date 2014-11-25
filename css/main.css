@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 /* 
 	html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com 
@@ -83,7 +84,7 @@ input, select {
   #archiveMenu #archiveMenuTrigger ~ #archiveMenuEntries {
     display: none; }
   #archiveMenu #archiveMenuTrigger:checked + label:after {
-    content: "\f432"; }
+    content: ""; }
   #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries {
     background-color: #f3f3f3;
     border: 1px solid black;
@@ -118,7 +119,7 @@ input, select {
     padding: 0em 0.25em;
     width: 100%; }
     #archiveMenu label:after {
-      content: "\f431";
+      content: "";
       float: right;
       font-family: "Genericons";
       display: inline; }
@@ -136,6 +137,8 @@ a {
 a.archive {
   color: #0c0c0c;
   font-weight: normal; }
+  a.archive:hover {
+    text-decoration: none; }
 
 a.box, a.readMore {
   background-color: lightslategrey;
@@ -162,7 +165,7 @@ a.readMore {
   margin-right: 0em; }
 
 a[href^="http://"]:after {
-  content: "\f442";
+  content: "";
   font-family: "Genericons";
   vertical-align: bottom; }
 
