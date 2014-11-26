@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Das Problem mit den Damen
-date: 2014-11-25 14:42:00
+date: 2014-11-26 16:27:00
 tags: [c++, schach]
 ---
 
@@ -15,15 +15,15 @@ Der einfachste Ansatz ist, einfach systematisch alle Möglichkeiten auszuprobier
 
 Ein wesentlich effizienterer und zugleich nicht viel komplizierterer Algorithmus ist das sogenannte [Backtracking][backtracking]. Vereinfacht ausgedrückt geht man dabei so vor, dass man so lange Damen auf dem Brett verteilt bis ein Konflikt auftritt, das heißt, dass eine Dame eine andere schlagen kann. Passiert dies, so geht man zum letzten konfliktfreien Zustand zurück und konstruiert von dort ausgehend eine andere Lösung. Wir wollen das Verfahren einmal exemplarisch auf dem Brett der Größe 4 durchführen.
 
-![][example]
+<object data="/media/images/chess-backtrace.svg"><img src="/media/images/chess-backtrace.png" /></object>
 
-*Bild (a)*: Man beginnt damit, eine Dame im oberen linken Feld zu positionieren. Die von dieser Dame bedrohten Felder werden grau hervorgehoben, hier lassen sich also keine weiteren Damen platzieren. *Bild (b)*: Das erste freie Feld für die zweite Dame ist daher das dritte in der zweiten Reihe. Setzt man sie dort hin, sind nun bis auf eines alle Felder bedroht. Diese Positionierung kann also nicht zu einer gültigen Lösung führen, da ja noch zwei Damen auf das Feld müssen. *Bild (c)*: Wir starten also wieder mit der letzten konfliktfreien Konfiguration aus (a). Hellrot markiert ist das Feld, welches vorhin zu einem Problem führte. *Bild (d)*: Als ersten freies Feld für die zweite Dame finden wir das letzte in der zweiten Reihe. Markiert man auch hier wieder in grau die bedrohten Feld so erkennt man, dass auch diese Konfiguration nicht zu einer Lösung führen kann: Die zwei noch fehlenden Damen können nur so auf das Brett gestellt werden, dass sie sich gegenseitig bedrohen. *Bild (e)*: Da es offenbar zu keiner Lösung führt wenn man die erste Dame oben links platziert, stellen wir sie nun auf das zweite Feld der ersten Reihe. *Bild (f) - (g)*: Das Besetzen des jeweils nächsten freien Feldes führt nun zu einer gültigen Lösung. Führt man dieses Verfahren weiter, so kann man Schritt für Schritt alle gültigen Lösungen finden.
+*Bild (a)*: Man beginnt damit, eine Dame im oberen linken Feld zu positionieren. Die von dieser Dame bedrohten Felder werden grau hervorgehoben, hier lassen sich also keine weiteren Damen platzieren. *Bild (b)*: Das erste freie Feld für die zweite Dame ist daher das dritte in der zweiten Reihe. Setzt man sie dort hin, sind nun bis auf eines alle Felder bedroht. Diese Positionierung kann also nicht zu einer gültigen Lösung führen, da ja noch zwei Damen auf das Feld müssen. *Bild (c)*: Wir starten also wieder mit der letzten konfliktfreien Konfiguration aus (a). Hellrot markiert ist das Feld, welches vorhin zu einem Problem führte. *Bild (d)*: Als ersten freies Feld für die zweite Dame finden wir das letzte in der zweiten Reihe. Markiert man auch hier wieder in grau die bedrohten Feld so erkennt man, dass auch diese Konfiguration nicht zu einer Lösung führen kann: Die zwei noch fehlenden Damen können nur so auf das Brett gestellt werden, dass sie sich gegenseitig bedrohen. *Bild (e)*: Da es offenbar zu keiner Lösung führt wenn man die erste Dame oben links platziert, stellen wir sie nun auf das zweite Feld der ersten Reihe. *Bild (f) - (h)*: Das Besetzen des jeweils nächsten freien Feldes führt nun zu einer gültigen Lösung. Führt man dieses Verfahren weiter, so kann man Schritt für Schritt alle gültigen Lösungen finden.
 
 ## Programmierung
 
 Für kleine Programme dieser Art verwende ich gerne [Python][python], habe mich aus Performance-Gründen aber diesmal für C++ entschieden. Wer sich den Code anschauen möchte kann das gerne tun: [nqueens.cc][nqueens.cc]. Da die Rechenzeit mit steigender Brettgröße recht schnell ansteigt erlaubt das Programm paralleles Rechnen, das heißt es kann die Berechnungen auf mehrere Prozessoren verteilen, wodurch man schneller zum gewünschten Ergebnis kommt. Damit das funktioniert, muss man eine Bibliothek installiert haben, die das Interface [MPI][mpi] implementiert. Ich verwende dazu [Open MPI][openmpi]. Unter Linux lässt sich das Programm dann mit den folgenden Befehlen kompilieren und ausführen:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 mpic++ -O3 -o nqueens nqueens.cc
 mpirun -n p ./nqueens n
 {% endhighlight %}
@@ -32,9 +32,11 @@ Dabei ist p durch die Anzahl der zu benutzenden Prozessoren und n durch die gew�
 
 ## Ergebnisse
 
-Die Anzahl der Lösungen sind für Bretter bis zur Größe 26 x 26 bekannt und können im oben bereits verlinkten Wikipedia-Artikel nachgelesen werden. Ich möchte statt dessen zeigen, dass sich die Parallelisierung dieses Problems tatsächlich lohnt. Dazu habe ich das Programm auf einem Mehrkern-Rechner für die Brettgröße 16 auf ein bis 12 Prozessoren laufen lassen.
+Die Anzahl der Lösungen sind für Bretter bis zur Größe 26 x 26 bekannt und können im oben bereits verlinkten Wikipedia-Artikel nachgelesen werden. Ich möchte statt dessen zeigen, dass sich die Parallelisierung dieses Problems tatsächlich lohnt. Dazu habe ich das Programm auf einem Mehrkern-Rechner für die Brettgrößen 14, 15 und 16 auf bis 16 Prozessoren laufen lassen. Um ein Gefühl für die Komplexität des Problems zu bekommen sei angemerkt, dass die Berechnung mit einem einzigen Prozessor auf dem Brett der Größe 16 etwa 8 Minuten benötigt hat.
 
-In dem Diagramm ist der sogenannte Speed-up aufgetragen. Er berechnet sich so: Bezeichnen wir mit `$t_n$` die Laufzeit des Programms unter Verwendung von `$n$` Prozessoren, so ist der Speed-up `$s_n$` definiert als `$s_n := \frac{t_1}{t_n}$`. Für den Speed-up gilt im Optimalfall `$s_n = n$`, was bedeutet, dass das Programm etwa bei 4 Prozessoren genau ein Viertel der Rechenzeit wie bei einem Prozessor benötigt. In der Praxis erreicht man diese Werte selten bis nie. Das gilt auch für mein Programm. Man sieht aber, dass es mit 12 Prozessoren immerhin mehr als 8 mal so schnell rechnet wie auf einem.
+<object data="/media/images/chess-speedup.svg"><img src="/media/images/chess-speedup.png" /></object>
+
+In dem Diagramm ist der Beschleunigungsfaktor `$s_n$` aufgetragen, der wie folgt berechnet wird: Bezeichnen wir mit `$t_n$` die Laufzeit des Programms unter Verwendung von `$n$` Prozessoren, so ist `$s_n$` definiert als `$s_n := \frac{t_1}{t_n}$`. Im Optimalfall gilt `$s_n = n$` was bedeutet, dass das Programm etwa bei 2 Prozessoren genau die Hälfte der Rechenzeit wie bei einem Prozessor benötigt. In der Praxis erreicht man diese Werte selten bis nie. Das gilt auch für mein Programm. Man sieht aber, dass es mit 16 Prozessoren immerhin mehr als 12 mal so schnell rechnet wie auf einem. Weiterhin fällt auf, dass die Parallelisierung mit steigender Komplexität des Problems besser funktioniert, da die Kurven mit steigendem `$n$` schneller wachsen.
 
 
 [backtracking]: http://de.wikipedia.org/wiki/Backtracking

@@ -155,12 +155,14 @@ h2 {
 
 h1:first-child, h2:first-child { margin-top: 0em; }
 
-img {
+img, object {
 	display: block;
-	margin: 0em auto;	
-	max-width: 100%;	
-	width: 100%;
+	margin: $lineHeight auto;
+	max-width: 100%;
+	width: 80%;
 }
+
+object img { width: 100%; }
 
 p {	margin-bottom: $marginDefault; }
 p:last-child { margin-bottom: 0em; }
@@ -168,6 +170,11 @@ p:last-child { margin-bottom: 0em; }
 section h1 {
 	display: inline;
 	font-size: 1em;
+}
+
+sup {
+	position: relative;
+	top: -0.25em;
 }
 
 table {

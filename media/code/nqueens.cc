@@ -9,6 +9,10 @@ using std::endl;
 using std::flush;
 
 
+/*
+  A super queen is a normal queen that in addition
+  is allowed to move like a knight
+ */
 bool SUPERQUEEN = false;
 
 
@@ -86,10 +90,17 @@ bool findSolution(int* queens, int N, int n = 0) {
 
 
 int countSolutions(int* queens, int N, int n = 0) {
-  int count = 0;
+  int count = 0;  
   for (int i = 0; i < N; ++i) {
-    // print progress
-    if (n == 0) cout << (100 * i / N) << "% done\r" << flush;
+    if (n == 0) 
+      // print progress
+      cout << (100 * i / N) << "% done\r" << flush;
+    else {
+      // check for direct collision with upper row
+      int dx = queens[n-1] - i;
+      if (dx > -2 && dx < 2)
+      continue;
+    }
 
     queens[n] = i;
 

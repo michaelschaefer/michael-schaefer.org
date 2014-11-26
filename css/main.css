@@ -215,10 +215,13 @@ h2 {
 h1:first-child, h2:first-child {
   margin-top: 0em; }
 
-img {
+img, object {
   display: block;
-  margin: 0em auto;
+  margin: 1.5em auto;
   max-width: 100%;
+  width: 80%; }
+
+object img {
   width: 100%; }
 
 p {
@@ -230,6 +233,10 @@ p:last-child {
 section h1 {
   display: inline;
   font-size: 1em; }
+
+sup {
+  position: relative;
+  top: -0.25em; }
 
 table {
   border-collapse: collapse;
@@ -280,6 +287,9 @@ ul.noBullet {
 
 .floatRight {
   float: right; }
+
+.footnotes {
+  margin-left: 1.5em; }
 
 .large {
   font-size: 1.5em !important; }
