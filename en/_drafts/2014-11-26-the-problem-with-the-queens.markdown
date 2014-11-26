@@ -32,11 +32,11 @@ Here, p is to be replaced by the number of processors to use for parallelization
 
 ## Results
 
-The number of solutions are known for boards up to size 26 x 26 and can be checked in the Wikipedia article I already linked. Instead, I want to show that parallelization indeed pays off for this problem. Therefore I ran the program on a multi-processor computer for board sizes 14, 15 and 16 on up to 16 processors. To get a feeling of the complexity please note that on a single core the calculation on the board of size 16 took about 8 minutes on a recent computer.
+The number of solutions are known for boards up to size 26 x 26 and can be checked in the Wikipedia article I already linked. Instead, I want to show that parallelization indeed pays off for this problem. Therefore I ran the program on a multi-processor computer for board sizes 14 to 17 on up to 17 processors. To get a feeling of the complexity please note that on a single core the calculation on the board of size 17 took about 64 minutes on a recent computer.
 
 <object data="/media/images/chess-speedup.svg"><img src="/media/images/chess-speedup.png" /></object>
 
-The diagram shows the speed-up factor `$s_n$` that is calculated as follows: If we denote by `$t_n$` the runtime of the program using `$n$` processors, then `$s_n$`is defined as `$s_n := \frac{t_1}{t_n}$`. In a perfect world we would have `$s_n = n$` meaning that for example the runtime halves itself when the program runs on two instead of one processor. However, the world is not perfect and thus these ratios are not obtained in practice. But in our case we see that the speed-up for 16 processors is at least 12, which is not bad. Furthermore we see that the parallelization works better with increasing complexity of the problem since the curves grow faster for bigger `$n$`.
+The diagram shows the speed-up factor `$s_n$` that is calculated as follows: If we denote by `$t_n$` the runtime of the program using `$n$` processors, then `$s_n$`is defined as `$s_n := \frac{t_1}{t_n}$`. In a perfect world we would have `$s_n = n$` meaning that for example the runtime halves itself when the program runs on two instead of one processor. However, the world is not perfect and thus these ratios are not obtained in practice. But in our case we see that the speed-up for 17 processors is at least 14, which is not bad. Furthermore we see that the parallelization works better with increasing complexity of the problem since the curves grow faster for bigger `$n$`.
 
 
 [backtracking]: http://en.wikipedia.org/wiki/Backtracking
