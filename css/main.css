@@ -351,7 +351,7 @@ body {
   background-color: #f3f3f3;
   color: #0c0c0c;
   display: block;
-  font-size: 1em;
+  font-size: 16px;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
@@ -380,6 +380,7 @@ body {
 
 article {
   background-color: #f3f3f3;
+  display: block;
   margin-bottom: 1em;
   padding: 1em; }
   article:last-child {

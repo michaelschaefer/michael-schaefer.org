@@ -14,6 +14,7 @@
   background-color: none;
   border: none;
   font-family: "Inconsolata";
+  font-size: 16px;
   overflow-x: auto;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -26,6 +27,7 @@
   background-color: none;
   border: none;
   font-family: inherit;
+  font-size: inherit;
   max-width: 10em;
   padding: 0; }
 
@@ -35,6 +37,7 @@
   color: #0c0c0c;
   display: inline-block;
   font-family: inherit;
+  font-size: inherit;
   margin-left: -0.5em;
   padding-right: 0.5em;
   padding-left: 0.5em; }
