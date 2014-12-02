@@ -222,9 +222,6 @@ img, object {
   max-width: 100%;
   width: 80%; }
 
-object img {
-  width: 100%; }
-
 p {
   margin-bottom: 1em; }
 
@@ -355,6 +352,7 @@ body {
   color: #0c0c0c;
   display: block;
   font-size: 1em;
+  overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
   width: 100%; }
@@ -394,7 +392,7 @@ aside {
   vertical-align: top;
   width: 33%; }
   aside img {
-    max-width: 15em; }
+    max-width: 10em; }
 
 footer, header {
   background-color: #404040;
@@ -472,7 +470,7 @@ section {
     border-top: 1px solid black;
     display: block;
     padding: 1em;
-    padding-top: 2em;
+    padding-top: 1em;
     width: 100%; }
 
   main {
@@ -495,6 +493,9 @@ section {
       width: 100%; }
       #menuTrigger:checked + div #menu li {
         display: block; }
+
+  object {
+    width: 100%; }
 
   label[for="menuTrigger"] {
     cursor: pointer;

@@ -12,27 +12,29 @@
 */
 .highlight {
   background-color: none;
+  border: none;
+  font-family: "Inconsolata";
   overflow-x: auto;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-  padding-left: 1em; }
-  .highlight code {
+  padding-left: 1em;
+  width: auto; }
+  .highlight code, .highlight pre {
     background-color: #f3f3f3; }
 
 .highlight * {
+  background-color: none;
   border: none;
-  font-family: "Inconsolata";
-  font-weight: normal;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-family: inherit;
+  max-width: 10em;
   padding: 0; }
 
 .highlight .lineno {
   background-color: none;
   border-right: 0.25em solid lightslategrey;
   color: #0c0c0c;
-  display: block;
-  float: left;
+  display: inline-block;
+  font-family: inherit;
   margin-left: -0.5em;
   padding-right: 0.5em;
   padding-left: 0.5em; }
