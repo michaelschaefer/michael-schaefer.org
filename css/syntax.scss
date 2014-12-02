@@ -1,35 +1,33 @@
 @import "_variables.scss";
 
-.highlight {
-	background-color: none;
-	border: none;
-	font-family: $fontMonospaceName;
-	font-size: 16px;
-	overflow-x: auto;
+div.highlight {
+	background-color: none;	
+	display: block;
+	overflow-x: auto !important;
 	margin-top: $lineHeight;
 	margin-bottom: $lineHeight;
-	padding-left: 1em;
-	width: auto;
+	padding-left: 1em;			
+	position: relative;
+	width: 100%;	
 
-	code, pre {
+	code, pre {		
+		display: block;
 		background-color: $colBackground;
+		border: none;		
+		width: 100%;			
 	}
 }
-.highlight * {
-	background-color: none;
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	max-width: 10em;
+
+div.highlight * {	
+	font: 1em $fontMonospaceName;
+	line-height: $lineHeight;
 	padding: 0;
+	word-wrap: normal !important;
 }
-.highlight .lineno {
-	background-color: none;
-	border-right: 0.25em solid $colLink;
-	color: $colTextDark;
-	display: inline-block;
-	font-family: inherit;
-	font-size: inherit;
+
+div.highlight .lineno {	
+	border-right: 0.25em solid $colLink;	
+	display: inline-block;	
 	margin-left: -0.5em;
 	padding-right: 0.5em;
 	padding-left: 0.5em;

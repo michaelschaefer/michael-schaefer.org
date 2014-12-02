@@ -160,7 +160,8 @@ a.headline {
   color: #0c0c0c; }
 
 a.navigation {
-  color: #f3f3f3; }
+  color: #f3f3f3;
+  vertical-align: baseline; }
 
 a.readMore {
   margin-right: 0em; }
@@ -221,6 +222,9 @@ img, object {
   margin: 1.5em auto;
   max-width: 100%;
   width: 80%; }
+
+object img {
+  width: 100%; }
 
 p {
   margin-bottom: 1em; }
@@ -352,7 +356,6 @@ body {
   color: #0c0c0c;
   display: block;
   font-size: 16px;
-  overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
   width: 100%; }
@@ -363,17 +366,12 @@ body {
     ==========
 */
 #contentTable {
-  display: table;
+  display: block;
   line-height: 1.5em;
+  height: auto;
   margin-bottom: 1em;
-  padding-bottom: 4.5em;
-  position: relative; }
-
-#contentTableRow {
-  display: table-row; }
-
-#contentTableRow > div:nth-child(2) {
-  border-right: 1px solid #0c0c0c; }
+  overflow: hidden;
+  padding-bottom: 4.5em; }
 
 #wrapper {
   min-height: 100%; }
@@ -386,13 +384,29 @@ article {
   article:last-child {
     margin-bottom: 0em; }
 
+main {
+  border-right: 1px solid black;
+  padding-right: 1em;
+  text-align: justify;
+  width: auto;
+  overflow: hidden; }
+
 aside {
-  display: table-cell;
-  margin: 0em;
+  border-left: 1px solid black;
+  float: right;
   padding: 1em;
-  vertical-align: top;
-  width: 33%; }
+  padding-left: 2em;
+  position: relative;
+  left: -1px;
+  width: 40%; }
+  aside:after {
+    clear: both;
+    content: "";
+    display: block; }
+  aside.forPortraitMode {
+    display: none; }
   aside img {
+    margin-top: 0em;
     max-width: 10em; }
 
 footer, header {
@@ -421,11 +435,6 @@ header {
       margin-left: 1em; }
       header ul li:first-child {
         margin-left: 0em; }
-
-main {
-  display: table-cell;
-  text-align: justify;
-  vertical-align: top; }
 
 section {
   background-color: #f3f3f3;
@@ -458,24 +467,21 @@ section {
     width: 100%; }
 
   /* place <aside> under <main> */
-  #contentTable, #contentTableRow {
-    display: block; }
-
-  .spacer {
-    display: none; }
-
   article:last-child {
     margin-bottom: 1em; }
 
   aside {
-    border-top: 1px solid black;
-    display: block;
-    padding: 1em;
-    padding-top: 1em;
-    width: 100%; }
+    border: none;
+    display: none; }
+    aside.forPortraitMode {
+      border-top: 1px solid black;
+      display: block;
+      padding: 1em;
+      padding-top: 2em;
+      width: 100%; }
 
   main {
-    display: block;
+    border: none;
     padding: 0;
     width: 100%; } }
 /* move navigation into a (by default closed) menu */

@@ -28,7 +28,7 @@
 <body>
 
   <!-- 
-  the wrapper ensures that the site's content height is at an entire screen
+  the wrapper ensures that the site's content height is at least an entire screen
   so that the footer can be places at the end of the screen even in case the
   original content height was e.g. just half the screen's height.
   -->
@@ -84,25 +84,17 @@
     -->
     <div id="contentTable" class="contentArea">
 
-      <div id="contentTableRow">
+      <aside>
+        {% include aside.html %}
+      </aside>           
 
-        <main>
-          {{ content }}
-        </main>
+      <main>
+        {{ content }}
+      </main>      
 
-        <!--
-        these spacers ensure that there is a gap between <main> and <aside>. We need two of
-        them to have a thin line in the middle (achieved as border-right). Both spacers'
-        display property is set to none in case of a small screen (see above)
-        -->
-        <div class="spacer">&nbsp;</div>
-        <div class="spacer">&nbsp;</div>
-
-        <aside>
-          {% include aside.html %}
-        </aside>           
-
-      </div>  
+      <aside class="forPortraitMode">
+        {% include aside.html %}
+      </aside>           
 
     </div>
 

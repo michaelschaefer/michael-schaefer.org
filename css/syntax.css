@@ -10,34 +10,30 @@
 /*
 	other variables
 */
-.highlight {
+div.highlight {
   background-color: none;
-  border: none;
-  font-family: "Inconsolata";
-  font-size: 16px;
-  overflow-x: auto;
+  display: block;
+  overflow-x: auto !important;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   padding-left: 1em;
-  width: auto; }
-  .highlight code, .highlight pre {
-    background-color: #f3f3f3; }
+  position: relative;
+  width: 100%; }
+  div.highlight code, div.highlight pre {
+    display: block;
+    background-color: #f3f3f3;
+    border: none;
+    width: 100%; }
 
-.highlight * {
-  background-color: none;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  max-width: 10em;
-  padding: 0; }
+div.highlight * {
+  font: 1em "Inconsolata";
+  line-height: 1.5em;
+  padding: 0;
+  word-wrap: normal !important; }
 
-.highlight .lineno {
-  background-color: none;
+div.highlight .lineno {
   border-right: 0.25em solid lightslategrey;
-  color: #0c0c0c;
   display: inline-block;
-  font-family: inherit;
-  font-size: inherit;
   margin-left: -0.5em;
   padding-right: 0.5em;
   padding-left: 0.5em; }

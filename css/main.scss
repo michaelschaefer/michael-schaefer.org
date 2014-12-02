@@ -27,7 +27,6 @@ body {
     color: $colTextDark;
     display: block;
     font-size: 16px;
-    overflow-x: hidden;
     overflow-y: scroll;
     position: relative;    
     width: 100%;    
@@ -41,36 +40,62 @@ body {
 */
 
 #contentTable {    
-    display: table;
+    display: block;
     line-height: $lineHeight;
+    height: auto;
+    //margin: 0 auto;
     margin-bottom: $space;
+    //max-width: 100%;
+    //min-width: $widthContentMin;
+    overflow: hidden;
+    //padding: 0 $space;  
     padding-bottom: $heightHeader;
-    position: relative;
+    //position: relative;     
+    //width: $widthContent;         
 }
-
-#contentTableRow { display: table-row; }
-
-#contentTableRow > div:nth-child(2) { border-right: 1px solid $colTextDark; }
 
 #wrapper { min-height: 100%; }
 
 article {
     background-color: $colForeground;
-    display: block;
+    display: block;    
     margin-bottom: $space;
     padding: $space;
-
     &:last-child { margin-bottom: 0em; }
 }
 
-aside {  
-    display: table-cell;        
-    margin: 0em;    
+
+main {
+    border-right: 1px solid black;
+    padding-right: $space;
+    text-align: justify;
+    width: auto;
+    overflow: hidden;    
+}
+
+aside {    
+    border-left: 1px solid black;      
+    float: right;
     padding: $space;
-    vertical-align: top;
+    padding-left: 2*$space;
+    position: relative;
+    left: -1px;
     width: $widthAside;
 
-    img { max-width: 10em; }
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+
+    &.forPortraitMode {
+        display: none;
+    }
+
+    img {
+        margin-top: 0em;
+        max-width: 10em;
+    }
 }
 
 footer {
@@ -83,34 +108,23 @@ footer {
 
 header {
     @extend footer;
-
-    margin-bottom: $space;    
+    margin-bottom: $space;
     margin-top: 0em;
-    position: relative;    
-    width: 100%;    
-
+    position: relative;
+    width: 100%;
     .contentArea { display: table; }
-    input, label { display: none; }    
-
+    input, label { display: none; }
     ul {
         display: inline;
-        float: right;        
-        list-style: none;        
+        float: right;
+        list-style: none;
         margin: 0em;
-
         li {
             display: inline;
             margin-left: 1em;
-
             &:first-child { margin-left: 0em; }
         }
-    }  
-}
-
-main {
-    display: table-cell;    
-    text-align: justify;
-    vertical-align: top;    
+    }
 }
 
 section {
@@ -118,9 +132,8 @@ section {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: $space / 1.5;
-    padding: $space / 1.5;    
+    padding: $space / 1.5;
     position: relative;
-
     &:before { content: "> "; }
 }
 
@@ -150,21 +163,24 @@ section {
         width: 100%;
     }    
 
-    /* place <aside> under <main> */    
-    #contentTable, #contentTableRow { display: block; }
-    .spacer { display: none; }     
+    /* place <aside> under <main> */        
     article:last-child { margin-bottom: $space; }
 
     aside { 
-        border-top: 1px solid black;         
-        display: block;
-        padding: $space;
-        padding-top: $space;
-        width: 100%;
+        border: none;
+        display: none;
+
+        &.forPortraitMode {
+            border-top: 1px solid black;
+            display: block;
+            padding: $space;
+            padding-top: 2*$space;
+            width: 100%;
+        }
     }
     
     main {
-        display: block;
+        border: none;        
         padding: 0;
         width: 100%;
     }        
