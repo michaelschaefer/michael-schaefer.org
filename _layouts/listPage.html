@@ -9,6 +9,8 @@ layout: default
 </section>
 
 {% assign sortedPosts = page.posts | sort: 'date' %}
+<article>
 {% for post in sortedPosts reversed %}
 	{% include shortPost.html post=post %}
 {% endfor %}
+</article>

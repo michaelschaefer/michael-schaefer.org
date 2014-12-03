@@ -1,19 +1,13 @@
 ---
-layout: default
-title: Hauptseite
+layout: staticPage
+title: Aktuelle Artikel
 type: static
 ---
 
 {% include language.html %}
 
-<section>
-	<h1>Aktuelle Artikel</h1>
-</section>
-
 {% if paginator.posts == nil %}
-	<article>
-		{{ site.data.i18n['de']['main']['strings'].noArticles }}
-	</article>
+	{{ site.data.i18n['de']['main']['strings'].noArticles }}
 {% else %}
 	
 	{% for post in paginator.posts %}
@@ -21,8 +15,7 @@ type: static
 	{% endfor %}
 
 	{% if paginator.total_pages > 1 %}
-	{% assign data = site.data.i18n['de']['main'] %}
-	<article class="topBorder">
+	{% assign data = site.data.i18n['de']['main'] %}	
 		{% if paginator.next_page %}
 		<a class="readMore" href="/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
 		{% else %}
@@ -32,7 +25,6 @@ type: static
 		{% if paginator.previous_page %}
 		<a class="readMore floatRight" href="/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
 		{% endif %}
-	</article>
 	{% endif %}
 {% endif %}
 

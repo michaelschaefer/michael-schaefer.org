@@ -1,19 +1,13 @@
 ---
-layout: default
-title: Mainpage
+layout: staticPage
+title: Latest articles
 type: static
 ---
 
 {% include language.html %}
 
-<section>
-	<h1>Latest articles</h1>
-</section>
-
 {% if paginator.posts == nil %}
-	<article>
-		{{ site.data.i18n['en']['main']['strings'].noArticles }}
-	</article>
+	{{ site.data.i18n['en']['main']['strings'].noArticles }}
 {% else %}	
 	{% for post in paginator.posts %}
 		{% include shortPost.html post=post lang='en' %}
@@ -21,16 +15,14 @@ type: static
 
 	{% if paginator.total_pages > 1 %}
 	{% assign data = site.data.i18n['en']['main'] %}
-	<article>
-		{% if paginator.next_page %}
-		<a class="readMore" href="/en/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
-		{% else %}
-		&nbsp;
-		{% endif %}
+	{% if paginator.next_page %}
+	<a class="readMore" href="/en/page{{ paginator.next_page }}/">{{ data['strings'].olderArticles }}</a>
+	{% else %}
+	&nbsp;
+	{% endif %}
 
-		{% if paginator.previous_page %}
-		<a class="readMore floatRight" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
-		{% endif %}
-	</article>
+	{% if paginator.previous_page %}
+	<a class="readMore floatRight" href="/en/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}/{% endif %}">{{ data['strings'].newerArticles }}</a>
+	{% endif %}
 	{% endif %}
 {% endif %}

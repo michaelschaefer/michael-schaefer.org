@@ -1,0 +1,10 @@
+---
+layout: staticPage
+permalink: /404.html
+title: Fehler
+type: static
+---
+
+# Error 404: Not Found
+
+Die angeforderte Seite konnte nicht gefunden werden. Vermutlich liegt ein Schreibfehler in der URL vor. Anderenfalls hat sich der eingegebene Permalink ge&auml;ndert, was aber eigentlich nicht passieren sollte.

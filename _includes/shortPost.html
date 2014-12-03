@@ -13,11 +13,9 @@
 
 
 {% comment %} build article {% endcomment %}
-<article>
-	<h1><a class="headline" href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p>		
-        <span class="symbol"></span><span class="date">{{ post.date | date: postData['strings'].dateFormat }}</span><br/>
-        <span class="symbol"></span><span class="left">{{ tagList | remove_first: ', ' }}</span>
-    </p>
-    {{ post.excerpt }}&nbsp;<a class="readMore floatRight" href="{{ post.url }}">{{ postData['strings'].readEntireArticle }}</a>
-</article>  
+<h1><a class="headline" href="{{ post.url }}">{{ post.title }}</a></h1>
+<p>		
+    <span class="symbol"></span><span class="date">{{ post.date | date: postData['strings'].dateFormat }}</span><br/>
+    <span class="symbol"></span><span class="left">{{ tagList | remove_first: ', ' }}</span>
+</p>
+{{ post.excerpt }}&nbsp;<a class="readMore floatRight" href="{{ post.url }}">{{ postData['strings'].readEntireArticle }}</a>
