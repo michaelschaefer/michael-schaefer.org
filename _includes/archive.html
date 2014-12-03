@@ -1,9 +1,14 @@
 {% assign archiveData = site.data.i18n[language]['archive'] %}
 
-<div id="archiveMenu">	
-	<input type="checkbox" id="archiveMenuTrigger" />
-	<label for="archiveMenuTrigger"><a class="archive">{{ archiveData['strings'].selectAMonth }}</a></label>
-	<ul id="archiveMenuEntries">		
+{% assign idPostFix = include.idPostFix %}
+{% if include.idPostFix == nil %}
+	{% assign idPostFix = "" %}
+{% endif %}
+
+<div id="archiveMenu{{ idPostFix }}">	
+	<input type="checkbox" id="archiveMenuTrigger{{ idPostFix }}" />
+	<label for="archiveMenuTrigger{{ idPostFix }}"><a class="archive">{{ archiveData['strings'].selectAMonth }}</a></label>
+	<ul id="archiveMenuEntries{{ idPostFix }}">		
 		{% assign oldValue = '' %}
 		{% for post in site.posts %}
 			{% for category in post.categories %}

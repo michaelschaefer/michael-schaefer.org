@@ -29,9 +29,8 @@ module Jekyll
 
   module Compressor
     
-  	def compress_html(content)      
-      return content
-      #return content.gsub(/(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!\/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))/ix, "")
+  	def compress_html(content)   
+      return content.gsub(/^\s*$/, "")      
   	end
 
     # Really writing process

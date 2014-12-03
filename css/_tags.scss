@@ -1,10 +1,13 @@
-#archiveMenu {
+#archiveMenu, #archiveMenu2 {
 	position: relative;
-
+	
 	#archiveMenuTrigger ~ #archiveMenuEntries { display: none; }
+	#archiveMenuTrigger2 ~ #archiveMenuEntries2 { display: none; }
 	#archiveMenuTrigger:checked + label:after { content: ""; }
+	#archiveMenuTrigger2:checked + label:after { content: ""; }
 
-	#archiveMenuTrigger:checked ~ #archiveMenuEntries {
+	#archiveMenuTrigger:checked ~ #archiveMenuEntries, 
+	#archiveMenuTrigger2:checked ~ #archiveMenuEntries2 {
 		background-color: $colForeground;
 		border: 1px solid black;
 		display: block;

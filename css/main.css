@@ -80,13 +80,19 @@ input, select {
 /*
 	other variables
 */
-#archiveMenu {
+#archiveMenu, #archiveMenu2 {
   position: relative; }
-  #archiveMenu #archiveMenuTrigger ~ #archiveMenuEntries {
+  #archiveMenu #archiveMenuTrigger ~ #archiveMenuEntries, #archiveMenu2 #archiveMenuTrigger ~ #archiveMenuEntries {
     display: none; }
-  #archiveMenu #archiveMenuTrigger:checked + label:after {
+  #archiveMenu #archiveMenuTrigger2 ~ #archiveMenuEntries2, #archiveMenu2 #archiveMenuTrigger2 ~ #archiveMenuEntries2 {
+    display: none; }
+  #archiveMenu #archiveMenuTrigger:checked + label:after, #archiveMenu2 #archiveMenuTrigger:checked + label:after {
     content: ""; }
-  #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries {
+  #archiveMenu #archiveMenuTrigger2:checked + label:after, #archiveMenu2 #archiveMenuTrigger2:checked + label:after {
+    content: ""; }
+  #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries,
+  #archiveMenu #archiveMenuTrigger2:checked ~ #archiveMenuEntries2, #archiveMenu2 #archiveMenuTrigger:checked ~ #archiveMenuEntries,
+  #archiveMenu2 #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 {
     background-color: #f3f3f3;
     border: 1px solid black;
     display: block;
@@ -97,7 +103,9 @@ input, select {
     overflow-y: scroll;
     position: absolute;
     width: 100%; }
-    #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li {
+    #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li,
+    #archiveMenu #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 li, #archiveMenu2 #archiveMenuTrigger:checked ~ #archiveMenuEntries li,
+    #archiveMenu2 #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 li {
       cursor: pointer;
       display: block;
       padding: 0em 0.25em;
@@ -106,20 +114,24 @@ input, select {
       -o-transition: background-color 1s;
       -webkit-transition: background-color 1s;
       transition: background-color 1s; }
-      #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li:hover {
+      #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li:hover,
+      #archiveMenu #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 li:hover, #archiveMenu2 #archiveMenuTrigger:checked ~ #archiveMenuEntries li:hover,
+      #archiveMenu2 #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 li:hover {
         background-color: #cccccc; }
-      #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li a {
+      #archiveMenu #archiveMenuTrigger:checked ~ #archiveMenuEntries li a,
+      #archiveMenu #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 li a, #archiveMenu2 #archiveMenuTrigger:checked ~ #archiveMenuEntries li a,
+      #archiveMenu2 #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 li a {
         display: block;
         text-decoration: none; }
-  #archiveMenu input {
+  #archiveMenu input, #archiveMenu2 input {
     display: none; }
-  #archiveMenu label {
+  #archiveMenu label, #archiveMenu2 label {
     border: 1px solid black;
     cursor: pointer;
     display: block;
     padding: 0em 0.25em;
     width: 100%; }
-    #archiveMenu label:after {
+    #archiveMenu label:after, #archiveMenu2 label:after {
       content: "";
       float: right;
       font-family: "Genericons";
