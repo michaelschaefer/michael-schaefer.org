@@ -22,7 +22,7 @@
 
 body, html { height: 100%; }
 
-body {
+body {    
     background-color: $colBackground;
     color: $colTextDark;
     display: block;
@@ -39,7 +39,7 @@ body {
     ==========
 */
 
-#contentTable {    
+#contentTable {        
     display: block;
     line-height: $lineHeight;
     height: auto;
