@@ -11,7 +11,7 @@ type: post
 {% if page.tags.size == 0 %}
     {% assign tagList = postData['strings'].noTags %}
 {% else %}
-    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ site.data.i18n[language]['tag'].url }}/{{ tag | downcase | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
+    {% capture tagList %}{% for tag in page.tags %}, <a href="{{ site.data.i18n[language]['tag'].url }}/{{ tag | downcase | cgi_escape | cgi_escape }}/">{{ tag | downcase }}</a>{% endfor %}{% endcapture %}
 {% endif %}
 
 
