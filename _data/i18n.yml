@@ -51,6 +51,9 @@ de:
       dateFormat: '%d.%m.%Y'
       noTags: 'keine Tags'
       readEntireArticle: 'ganzen Artikel lesen'
+  search:
+    text: 'Suche'
+    url: '/suche/'
   tag:          
     title: 'Tag'
     type: 'tag'
@@ -113,6 +116,9 @@ en:
       dateFormat: '%d/%m/%Y'
       noTags: 'no tags'
       readEntireArticle: 'read entire article'
+  search:
+    text: 'Search'
+    url: '/en/search/'
   tag:          
     title: 'Tag'
     type: 'tag'

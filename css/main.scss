@@ -188,7 +188,7 @@ section {
 
 
 /* move navigation into a (by default closed) menu */
-@media all and (max-width: 639px) {
+@media all and (max-width: 720px) {
     #menu { display: none; }
 
     #menuTrigger:checked + div {

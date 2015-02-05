@@ -166,6 +166,14 @@ img, object {
 	width: 80%;
 }
 
+input[id="searchQuery"] {
+    background-color: transparent;
+    border: 1px solid $colTextDark;
+    font-size: 1em;
+    line-height: $lineHeight;
+    padding: 0em 0.25em;
+}
+
 object img { width: 100%; }
 
 p {	margin-bottom: $marginDefault; }

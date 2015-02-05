@@ -30,7 +30,7 @@ module Jekyll
   module Compressor
     
   	def compress_html(content)   
-      return content.gsub(/^\s*$/, "")      
+      return content#.gsub(/^\s*$/, "")      
   	end
 
     # Really writing process
