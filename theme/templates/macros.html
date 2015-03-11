@@ -1,0 +1,48 @@
+{% macro header(article, title_link=false) -%}
+	<h1>
+		{% if title_link == false %}
+	 		{{ article.title }}
+		{% else %}
+			<a class="headline" href="{{ article.url }}">{{ article.title }}</a>
+		{% endif %}
+	</h1>
+	<p>
+	  	<span class="symbol"></span><span class="date">{{ article.locale_date }}</span><br/>
+	  	<span class="symbol"></span><span class="left">{% for tag in article.tags %}<a href="/{{ DEFAULT_LANG }}/{{ tag.url }}">{{ tag.name | lower }}</a>{% if loop.last == False %},&nbsp;{% endif %}{% endfor %}</span>
+	</p>
+{%- endmacro %}
+
+
+{% macro i18n() -%}
+	{{ DEFAULT_LANG | extract_string(varargs) }}
+{%- endmacro %}
+
+
+{% macro insert_article(article) -%}
+	{{ header(article) }}
+	{{ article.content }}
+{%- endmacro %}
+
+
+{% macro insert_article_list(articles) -%}
+	<dl>
+		{% for article in articles %}
+			<dt>{{ article.locale_date }}:</dt>
+			<dd><a href="/{{ DEFAULT_LANG }}/{{ article.url }}">{{ article.title }}</a></dd>
+		{% endfor %}
+	</dl>
+{%- endmacro %}
+
+
+{% macro insert_article_teaser(article) -%}
+	{{ header(article, title_link=true) }}
+	{{ article.content | extract_paragraph }}
+	<p class="readmore">&nbsp;<a class="readMore floatRight" href="{{ article.url }}">{{ i18n('article', 'read_entire') }}</a></p>
+{%- endmacro %}
+
+
+{% macro tag_cloud() -%}
+	{% for tag, articles in tags | sort %}
+		{% if not loop.first %}-->{% endif %}<a class="box" href="/{{ DEFAULT_LANG }}/{{ tag.url }}">{{ tag.name | lower }}</a>{% if not loop.last %}<!--{% endif %}
+	{% endfor %}
+{%- endmacro %}

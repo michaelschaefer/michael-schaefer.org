@@ -1,0 +1,217 @@
+#archiveMenu, #archiveMenu2 {
+	position: relative;
+	
+	#archiveMenuTrigger ~ #archiveMenuEntries { display: none; }
+	#archiveMenuTrigger2 ~ #archiveMenuEntries2 { display: none; }
+	#archiveMenuTrigger:checked + label:after { content: ""; }
+	#archiveMenuTrigger2:checked + label:after { content: ""; }
+
+	#archiveMenuTrigger:checked ~ #archiveMenuEntries, 
+	#archiveMenuTrigger2:checked ~ #archiveMenuEntries2 {
+		background-color: $colForeground;
+		border: 1px solid black;
+		display: block;
+		list-style: none;
+		margin: 0em;
+		margin-top: 0.125em;								
+		max-height: 7.5em;
+		overflow-y: scroll;
+		position: absolute;
+		width: 100%;
+
+		li {
+			cursor: pointer;
+			display: block;
+			padding: 0em 0.25em;
+			@include vendor(transition, background-color 1s);
+
+			&:hover { background-color: $colTableLight; }
+
+			a { 
+				display: block;
+				text-decoration: none; 
+			}
+		}
+	}
+
+	input { display: none; }
+
+	label {
+		border: 1px solid black;				
+		cursor: pointer;
+		display: block;
+		padding: 0em 0.25em;
+		width: 100%;		
+
+		&:after {
+			content: "";
+			float: right;
+			font-family: $fontIconName;
+			display: inline;
+		}		
+	}
+}
+
+
+/*
+	link formatting
+*/
+
+a {
+	color: $colLink;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover { text-decoration: underline; }
+}
+
+a.archive {
+	color: $colTextDark;
+	font-weight: normal;
+
+	&:hover { text-decoration: none; }	
+}
+
+a.box {
+	background-color: $colLink;
+	color: $colTextLight;
+	display: inline-block;
+	margin: 0em 0.25em 0.25em 0em;
+	padding: 0.25em 0.75em;
+	text-decoration: none;
+	@include vendor(transition, background-color 1s);
+
+	&:hover { background-color: $colLinkHover; }
+}
+
+a.headline { 	
+	color: $colTextDark; 	
+}
+
+a.navigation {
+	color: $colTextLight;	
+	vertical-align: baseline;
+}
+
+a.readMore {
+	@extend a.box;
+	margin-right: 0em;	
+}
+
+a[href^="http://"]:after {
+	content: "";
+	font-family: $fontIconName;
+	vertical-align: bottom;
+}
+
+
+/*
+	other formatting
+*/
+
+
+address { font-style: normal; }
+
+article.topBorder { 
+	border-top: 1px solid $colTextDark;
+	padding-top: $space * 1.5;
+}
+
+article:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+code {
+	background-color: $colTableLight;
+	border: 1px solid $colTableDark;
+	display: inline;
+	padding: 0em 0.25em;	
+
+	&.hasJax {	
+		background-color: transparent;	
+		border: none;
+		padding: 0em;	
+	}
+}
+
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+h1 {
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: $marginHeader;
+	margin-top: 2*$marginHeader;	
+}
+
+h2 {
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: $marginHeader;
+	margin-top: 2*$marginHeader;
+}
+
+h1:first-child, h2:first-child { margin-top: 0em; }
+
+img, object {
+	display: block;
+	margin: $lineHeight auto;
+	max-width: 100%;
+	width: 80%;
+}
+
+input[id="searchQuery"] {
+    background-color: transparent;
+    border: 1px solid $colTextDark;
+    font-size: 1em;
+    line-height: $lineHeight;
+    padding: 0em 0.25em;
+}
+
+object img { width: 100%; }
+
+p {	margin-bottom: $marginDefault; }
+p:last-child { margin-bottom: 0em; }
+
+section h1 {
+	display: inline;
+	font-size: 1em;
+}
+
+sup {
+	position: relative;
+	top: -0.25em;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0em;
+	margin: $marginDefault * 2 auto $marginDefault * 2;
+	text-align: center;
+
+	td, th {
+		border: 0.125em solid $colForeground;
+		padding: 0.5em;
+	}
+
+	th { font-weight: bold; }
+	tr:nth-child(even) { background-color: $colTableLight; }
+	tr:nth-child(odd) { background-color: $colTableDark; }	
+}
+
+ul {
+	margin-left: $marginDefault * 1.5;
+	margin-top: $marginDefault * 0.75;
+	margin-bottom: $marginDefault * 0.75;	
+}
+
+ul.noBullet {
+	list-style: none;
+	margin-left: 0em;
+}

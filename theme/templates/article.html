@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ SITENAME }} || {{ i18n('article', 'title') }} ({{ article.title }})
+{% endblock %}
+
+{% block content %}
+<section>
+  {{ i18n('article', 'title') }}
+</section>
+{% from 'macros.html' import insert_article with context %}
+<article>
+  {{ insert_article(article) }}
+</article>
+{% endblock %}

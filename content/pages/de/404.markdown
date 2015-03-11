@@ -1,0 +1,10 @@
+title: Fehler
+lang: de
+status: hidden
+slug: 404
+url:
+save_as: 404.html
+
+# Error 404: Not Found
+
+Die angeforderte Seite konnte nicht gefunden werden. Vermutlich liegt ein Schreibfehler in der URL vor. Anderenfalls hat sich der eingegebene Permalink geändert, was aber eigentlich nicht passieren sollte. Vielleicht hilft das [Archiv](/de/archiv/) weiter, den gewünschten Inhalt zu finden.

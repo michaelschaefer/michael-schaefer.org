@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ SITENAME }} || {{ i18n('article', 'latest') }}
+{% endblock %}
+
+{% block content %}
+<section>
+	{{ i18n('article', 'latest') }}
+</section>
+{% from 'macros.html' import insert_article_teaser with context %}
+<article>
+	{% for article in articles_page.object_list %}
+	  	{{ insert_article_teaser(article) }}
+	{% endfor %}
+
+	{% if articles_next_page or articles_previous_page %}
+		<p class="paginator">
+		{% if articles_next_page %}
+			<a class="readMore" href="{{ articles_next_page.url }}"><span class="symbol"></span>&nbsp;{{ i18n('article', 'older') }}</a>
+		{% endif %}
+		{% if articles_previous_page %}
+			<a class="readMore floatRight" href="{{ articles_previous_page.url }}">{{ i18n('article', 'newer') }}&nbsp;<span class="symbol"></span></a>
+		{% endif %}
+		</p>
+	{% endif %}
+</article>
+{% endblock %}

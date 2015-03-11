@@ -1,0 +1,10 @@
+title: Error
+lang: en
+status: hidden
+slug: 404
+url:
+save_as: 404.html
+
+# Error 404: Not Found
+
+The page you requested could not be found. Most likely there is a typing error in the URL. Otherwise the entered permalink has changed which is not supposed to happen. Maybe the [archive](/en/archive) can help finding the desired content.

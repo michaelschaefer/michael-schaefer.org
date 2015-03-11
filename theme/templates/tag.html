@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ SITENAME }} || {{ i18n('tag', 'title') }} ({{ tag.name | lower }})
+{% endblock %}
+
+{% block content %}
+<section>
+  {{ i18n('tag', 'title') }}: {{ tag.name | lower }}
+</section>
+
+<article>
+	{{ i18n('tag', 'text') }}
+	{% from 'macros.html' import insert_article_list with context %}
+	{{ insert_article_list(articles) }}
+</article>
+{% endblock %}

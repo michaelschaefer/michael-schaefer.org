@@ -1,0 +1,42 @@
+<img alt="{{ AUTHOR }}" class="aperture" src="/theme/images/portrait.png" />
+
+<h2>
+	{{ i18n('aside', 'profile', 'title') }}
+</h2>
+<p>
+	{{ i18n('aside', 'profile', 'text') }}
+</p>
+
+<ul class="noBullet">
+	<li>
+		<span class="symbol"></span>
+		<a href="mailto:mail@michael-schaefer.org">mail@michael-schaefer.org</a>
+	</li>
+	<li>
+		<span class="symbol"></span>
+		<a href="/files/gpg-key-michaelschaefer.asc">{{ i18n('aside', 'profile', 'gpg_text') }}</a>
+	</li>
+	<li>
+		<span class="symbol"></span>
+		<a href="http://github.com/michaelschaefer">github.com/michaelschaefer</a>
+	</li>
+	<li>
+		<span class="symbol"></span>
+		<a href="/{{ DEFAULT_LANG }}/atom.xml">atom</a>, <a href="/{{ DEFAULT_LANG }}/rss.xml">rss</a>
+	</li>
+</ul>
+
+<h2>
+	{{ i18n('tag', 'title_plural') }}
+</h2>
+<p>
+	{% from 'macros.html' import tag_cloud with context %}
+	{{ tag_cloud() }}
+</p>
+
+<h2>
+	{{ i18n('aside', 'notes', 'title') }}
+</h2>
+<p>
+	{{ i18n('aside', 'notes', 'text') }}
+</p>
