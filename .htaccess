@@ -1,6 +1,0 @@
-ErrorDocument 	404 http://www.michael-schaefer.org/404.html
-RewriteEngine 	On
-RewriteCond	%{HTTP_HOST} !^www\..* [NC]
-RewriteRule	^(.*) https://www.michael-schaefer.org/$1 [R=301,L]
-RewriteCond	%{SERVER_PORT} !443
-RewriteRule	^(.*) https://www.michael-schaefer.org/$1 [R=301,L]
