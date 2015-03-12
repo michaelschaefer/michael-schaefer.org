@@ -5,7 +5,7 @@ tags: the lost vikings, computer games
 
 For my very first blog entry I have come up with something somewhat special. Recently, I felt myself put back to my youth like from nowhere. The reason for that was that Blizzard had decided to re-publish my favorite computer game from 20 years ago for free: The Lost Vikings! The English version of this game can be [downloaded][battlenet] from Blizzards platform battle.net.
 
-![][thelostvikings_logo]
+![Startup screen of the game "The Lost Vikings"][thelostvikings_logo]
 
 ## A short introduction
 
@@ -21,7 +21,7 @@ For republication, Blizzard has equipped the game with a Dosbox and reconfigured
 
 Of course I started immediately to play the game through again. Well, &quot;again&quot; might be the wrong word because I seem to remember that back then I was never able to beat the final level. But this time I made it. As a little &quot;proof&quot;, further down you find a screenshot directly from the end of the last level (you can recognize it as an contemporary screenshot because of one of the glitches directly above the vikings that within my recollection were not there in the original game).
 
-![][thelostvikings_level1]
+![Screenshot from the end of the last level][thelostvikings_end]
 
 For everyone who has started again playing the game, too but gets caught at a certain point and wants to continue with the next level, I have collected all the passwords. They are not picked together from the internet but - as already mentioned - collected by my own hands :-)
 
@@ -102,5 +102,5 @@ For everyone who has started again playing the game, too but gets caught at a ce
 
 [battlenet]: https://us.battle.net/account/download/?show=classic
 [thelostvikings_logo]: /files/images/thelostvikings-logo.png
-[thelostvikings_level1]: /files/images/thelostvikings-end.png
+[thelostvikings_end]: /files/images/thelostvikings-end.png
 

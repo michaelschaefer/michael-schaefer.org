@@ -5,7 +5,7 @@ tags: the lost vikings, computerspiele
 
 Für meinen ersten Blog-Eintrag habe ich mir ein klein wenig was Besonderes ausgesucht. Vor einiger Zeit fühlte ich mich wie aus dem Nichts in meine Jugend zurückversetzt. Der Grund war, dass Blizzard mein absolutes Lieblings-Computerspiel von vor inzwischen fast 20 Jahren kostenlos zugänglich gemacht hat: The Lost Vikings! Auf Blizzards Plattform battle.net lässt sich die englischsprachige Version [herunterladen][battlenet]. 
 
-![][thelostvikings_logo]
+![Startbildschirm des Spiels "The Lost Vikings"][thelostvikings_logo]
 
 ## Eine kurze Einführung
 
@@ -21,7 +21,7 @@ Zur erneuten Veröffentlichung hat Blizzard das Spiel mit einer Dosbox zusammen 
 
 Ich habe natürlich sofort damit begonnen, das Spiel erneut durchzuspielen. Wobei man sagen muss, dass &quot;erneut&quot; hier wohl das falsche Wort: Ich meine mich zu erinnern, dass ich das allerletzte Level damals nicht geschafft habe. Diesmal habe ich sie aber alle geschafft. Quasi als &quot;Beweis&quot; folgt hier daher ein Screenshot direkt vom Ende (man kann erkennen, dass es sich um einen aktuellen Screenshot handeln muss, denn die Grafikfehler der Art wie man sie direkt über den Vikingern sieht sind meiner Erinnerung nach im Originalspiel nicht vorhanden gewesen). 
 
-![][thelostvikings_level1]
+![Screenshot vom Ende des letzten Levels][thelostvikings_end]
 
 Für alle, die das Spiel auch wieder angefangen haben und an der einen oder anderen Stelle hängen bleiben und einfach mit dem nächsten Level weiterspielen wollen habe ich hier noch einmal alle Passwörter zusammengetragen. Sie sind nicht aus dem Internet zusammengeklaut sondern - wie schon erwähnt - eigenhändig erspielt worden :-)
 
@@ -102,5 +102,5 @@ Für alle, die das Spiel auch wieder angefangen haben und an der einen oder ande
 
 [battlenet]: https://us.battle.net/account/download/?show=classic
 [thelostvikings_logo]: /files/images/thelostvikings-logo.png
-[thelostvikings_level1]: /files/images/thelostvikings-end.png
+[thelostvikings_end]: /files/images/thelostvikings-end.png
 

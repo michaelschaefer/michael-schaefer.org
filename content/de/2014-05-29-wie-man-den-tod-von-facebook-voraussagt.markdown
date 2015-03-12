@@ -44,11 +44,11 @@ Wir haben nun ein geeignetes Modell zur Hand. Doch mit welchen Daten sollen wir 
 
 Zuerst beschäftigen sich die Autoren mit MySpace. Das hat einen einfachen Grund: Da fast niemand mehr MySpace benutzt kann dessen Lebenszyklus als quasi vollständig betrachtet werden, was es zu einem sehr guten Testfall für das irSIR-Modell macht. Unten sieht man einen Graphen mit den Ergebnissen. Die blaue Kurve zeigt die nachbearbeiteten Daten von Google Trends. Sie sind in der Weise normalisiert, dass das absolute Maximum dem Wert 100 entspricht. Die rote Kurve ist das Simulationsergebnis der Funktion `$I(t)$` für die vom Programm zu den gegebenen Daten ermittelten optimalen Parameter. Man sieht, dass die Dynamik ziemlich gut wiedergegeben wird. Die grüne Linie markiert den Punkt, wo das Interesse an dem Netzwerk unter 20% des Maximums fällt, was die Autoren in etwa als &quot;Todeszeitpunkt&quot; interpretieren. In diesem Fall lag er bei Ende 2010.
 
-![][myspace]
+![Simulationsergebnis für MySpace][myspace]
 
 Nun zu Facebook. Dieser Fall ist interessanter, weil das Netzwerk noch lebendig ist, d.h. die blaue Datenkurve liegt über der 20%-Linie. Ich habe wieder Simulationen durchgeführt und die optimalen Parameter ermitteln lassen. Die sich ergebende am besten passende Kurve ist wieder in rot eingezeichnet. Man sieht, dass die Simulation ein rasantes Abklingen des Interesses an Facebook in den nächsten Jahren voraussagt. Im Ergebnis wird der &quot;Todeszeitpunkt&quot;, also das Fallen unter die 20%-Linie, etwa Ende 2015 stattfinden.
 
-![][facebook]
+![Simulationsergebnis für Facebook][facebook]
 
 ## Interpretation
 

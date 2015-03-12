@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Michael Schaefer'
 SITENAME = u'www.michael-schaefer.org'
-SITEURL = 'http://www.michael-schaefer.org'
+SITEURL = 'www.michael-schaefer.org'
 
 PATH = 'content'
 STATIC_PATHS = ['./files/']
@@ -132,7 +132,7 @@ PAGE_SAVE_AS = '{url}/index.html'
 
 # Plugins
 PLUGIN_PATHS = ['/home/mscha_08/local/pelican-plugins']
-PLUGINS = ['assets', 'i18n_subsites']
+PLUGINS = ['i18n_subsites']
 
 # i18n_subsites
 I18N_SUBSITES = {

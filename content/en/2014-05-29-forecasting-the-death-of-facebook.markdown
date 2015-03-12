@@ -44,11 +44,11 @@ So now we have a model at our hands. But with which data do we want to feed it? 
 
 First of all the authors considered MySpace for a simple reason: Since almost nobody is using MySpace anymore, its life cycle can be considered somewhat complete which makes it a perfect test case for the irSIR model. Below you see a graph with the results. The blue curve are the postprocessed data from Google Trends. They are normalized such that 100 stands for the overall maximum activity. The red curve is the simulation result of `$I(t)$` with the parameters chosen such that the simulation catches the data as good as possible. You see that the dynamics is caught quite well. The green line marks the points where interest in the network drops below 20% of its maximum, which the authors interpret kind of like the death of the network. In this case, MySpace is to be considered dead since last 2010.
 
-![][myspace]
+![Simulation result for MySpace][myspace]
 
 Now for Facebook. This case is more interesting since the network is still alive (the blue curve is still far above the 20% line). Again I carried out a parameter fitting and the resulting best-fit curve is printed in red. You see that the simulation predicts a rapid decent of interest in Facebook in the near future, with the result that interest in the network will drop below 20% of its maximum and thus cease to exist in late 2015.
 
-![][facebook]
+![Simulation result for Facebook][facebook]
 
 ## Conclusion
 

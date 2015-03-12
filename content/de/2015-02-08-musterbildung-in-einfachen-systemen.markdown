@@ -30,12 +30,12 @@ zusammen mit periodischen Randbedingungen. Die Parameter sind die Diffusionskons
 ## Simulationsergebnisse
 
 Da ich mit der Simulationsgeschwindigkeit des ursprünglichen Python-Programms nicht zufrieden war habe ich mich entschieden, es in C++ mit dem [Qt-Framework][qt] neuzuschreiben. Der Quellcode beider Programme findet sich auf meinem Github-Account unter [github.com/michaelschaefer/grayscott][github]. Die hier vorgestellten Ergebnisse wurden mit der C++-Version erstellt, die wie folgt aussieht:
-![][grayscottgui]
+![Screenshot der GUI des Programms "grayscott"][grayscottgui]
 In dem Programm lassen sich die relevanten Modell-Parameter und die Auflösung der Bilder variieren. Zusätzlich können Sequenzen von Einzelbildern automatisch auf Festplatte gespeichert werden, so dass man mit geeigneten Tools dann daraus Videos zusammensetzen kann. Obwohl das Verhalten des System sehr komplex auf Veränderungen der Parameter reagiert, lassen sich doch grob drei Kategorien unterscheiden die im Folgenden zusammen mit entsprechenden Simulationsergebnissen präsentiert werden. Durch Klicken auf das Bild gelangt man zum zugehörigen Video.
 
-* Bakterien-artige Muster (sogar mit Zellteilung!), die aus einzelnen, sich nicht oder kaum bewegenden Punkten bestehen *(F=0,035, k=0,065, N=512. Videogröße: 2,4MB)* [![][bacteria_img]][bacteria_vid]
-* Fingerabdruck-artige Muster, die aus vielen verschlungenen Linien bestehen *(F=0,035, k=0,06, N=512. Videogröße: 2,5MB)* [![][fingerprint_img]][fingerprint_vid]
-* chaotische Muster, in denen ständig neue Punkte entstehen und wieder verschwinden *(F=0,02, k=0,055, N=512. Videogröße: 8,9MB)* [![][unstable_img]][unstable_vid]
+* Bakterien-artige Muster (sogar mit Zellteilung!), die aus einzelnen, sich nicht oder kaum bewegenden Punkten bestehen *(F=0,035, k=0,065, N=512. Videogröße: 2,4MB)* [![Bakterien-artiges Muster][bacteria_img]][bacteria_vid]
+* Fingerabdruck-artige Muster, die aus vielen verschlungenen Linien bestehen *(F=0,035, k=0,06, N=512. Videogröße: 2,5MB)* [![Fingerabdruck-artiges Muster][fingerprint_img]][fingerprint_vid]
+* chaotische Muster, in denen ständig neue Punkte entstehen und wieder verschwinden *(F=0,02, k=0,055, N=512. Videogröße: 8,9MB)* [![chaotisches Muster][unstable_img]][unstable_vid]
 
 Als zusätzliches Gimmick habe ich eine Art Karte des Modells auf folgende Weise erstellt: Zunächst wurden zu verschiedenen Werten der beiden Parameter F und k Simulationen laufen gelassen und nach einiger Zeit für die jeweilige Dynamik (hoffentlich) repräsentative Bilder gespeichert. Am Ende wurden all diese einzelnen zu einem großen Bild, der Karte, zusammengefügt. Insgesamt wurden 81 verschiedene Werte für F und 41 für k verwendet, so dass die gesamte Karte aus 3321 verschiedenen Bildern besteht. Die Berechnungen nahmen auf einem Mehrprozessor-System einige Stunden in Anspruch. Das Resultat ist trotz JPEG-Kompression etwa 3,6MB groß, so dass ich das Bild hier nicht direkt einbinden möchte sondern lediglich [verlinke][parametermap]. Der F-Wert ist in jeder Zeile konstant, während der k-Wert entlang der Spalten gleich bleibt.
 

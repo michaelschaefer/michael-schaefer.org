@@ -30,12 +30,12 @@ together with periodic boundary conditions. The parameters are the diffusion con
 ## Simulation results
 
 Since the simulation speed of the original Python implementation was not satisfactory for me I decided to re-implement it in C++ using the [Qt framework][qt]. The source code of both programs can be found on my Github account under [github.com/michaelschaefer/grayscott][github]. The results presented here were created using the C++ version, a screenshot of which is shown here:
-![][grayscottgui]
+![Screenshot of the GUI of the program "grayscott"][grayscottgui]
 The program allows to vary the relevant model parameters as well as the resolution of the resulting images. Additionally, sequences of images can automatically be saved to disk so that they can be converted into videos by a suitable tool. Although the system dynamics reacts very sensitively to changes in the parameters we can essentially distinguish three categories each of which is presented below, together with some simulation results. By clicking the images you get to the associated video file.
 
-* bacteria-like patterns (even with cell division!) consisting of individual, stationary or barely moving points *(F=0.035, k=0.065, N=512. Video size: 2,4MB)* [![][bacteria_img]][bacteria_vid]
-* fingerprint-like patterns made of many convoluted lines *(F=0.035, k=0.06, N=512. Video size: 2.5MB)* [![][fingerprint_img]][fingerprint_vid]
-* chaotic patterns of permanently appearing and disappearing points *(F=0.02, k=0.055, N=512. Video size: 8.9MB)* [![][unstable_img]][unstable_vid]
+* bacteria-like patterns (even with cell division!) consisting of individual, stationary or barely moving points *(F=0.035, k=0.065, N=512. Video size: 2,4MB)* [![bacteria-like pattern][bacteria_img]][bacteria_vid]
+* fingerprint-like patterns made of many convoluted lines *(F=0.035, k=0.06, N=512. Video size: 2.5MB)* [![fingerprint-like pattern][fingerprint_img]][fingerprint_vid]
+* chaotic patterns of permanently appearing and disappearing points *(F=0.02, k=0.055, N=512. Video size: 8.9MB)* [![chaotic pattern][unstable_img]][unstable_vid]
 
 As an additional gimmick I have create a kind of map of this model by the following procedure: First, simulations were run for a variety of different values for the parameters F and k. After some time a (hopefully) representative image for the particular dynamics was taken. In the end, all these images were stitched together to a large image, the map. All in all, 81 different values for F and 41 for k were used so that the final map consists of 3,321 individual images. Calculations took several hours on a multi-core system. Though using JPEG compression, the image is still about 3.6MB in size, so that I decided not to integrate it directly but just placing a [link][parametermap] to it. The values of F are constant in each row while k stays the same along the columns.
 
