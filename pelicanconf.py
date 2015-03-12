@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Michael Schaefer'
 SITENAME = u'www.michael-schaefer.org'
-SITEURL = 'http://localhost:8000'
+SITEURL = 'http://www.michael-schaefer.org'
 
 PATH = 'content'
 STATIC_PATHS = ['./files/']
@@ -157,4 +157,4 @@ AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
