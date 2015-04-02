@@ -1,7 +1,7 @@
 title: The difficulty of mass screenings
 date: 2015-04-01
 lang: en
-tags: mathematics
+tags: mathematics, statistics
 
 For many diseases there are so-called screening programs where more or less big parts of the population are called to undergo certain tests with the goal to early discover these diseases. The probably best known example is the mammography screening. Especially there public critizism is frequently voiced because the number of misdiagnoses is high. In this article I want to use relatively simple mathematics to deduce an index that allows to judge the quality of such tests. As specific examples I present the already mentioned mammography as well as HIV tests.
 

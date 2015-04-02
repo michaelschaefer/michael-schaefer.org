@@ -1,7 +1,7 @@
 title: Die Problematik von Massen-Screenings
 date: 2015-04-01
 lang: de
-tags: mathematik
+tags: mathematik, statistik
 
 Für viele Krankheiten gibt es sogenannte Screening-Programme, bei denen mehr oder weniger große Teile der Bevölkerung aufgerufen sind sich speziellen Tests zu unterziehen, mit denen bestimmte Krankheiten frühzeitig erkannt werden sollen. Das wohl bekannteste und am weitesten verbreitete Beispiel ist das Mammographie-Screening. Gerade dort wird immer wieder Kritik am Nutzer des Programms laut weil insbesondere die Zahl der Fehldiagnosen hoch ist. Ich möchte in diesem Artikel mit relativ einfacher Mathematik eine Kennzahl herleiten, die eine erste Beurteilung der Qualität solcher Tests möglich macht. Als konkretes Rechenbeispiel werde ich das bereits erwähnte Mammographie-Screening sowie HIV-Tests anführen.
 
