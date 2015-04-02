@@ -15,9 +15,9 @@ Let me put this into mathematical terms. The previous ideas give raise to a syst
 
 `$$
 \begin{align}
-	S'(t) &= -c I(t) S(t) && (1) \\
-	I'(t) &= c I(t) S(t) - w(t) I(t) && (2) \\
-	R'(t) &= w I(t) && (3)
+	S'(t) &= -c I(t) S(t) \\
+	I'(t) &= c I(t) S(t) - w(t) I(t) \label{eq:I} \\
+	R'(t) &= w I(t) \label{eq:R}
 \end{align}
 $$`
 
@@ -25,12 +25,12 @@ Additionally we have to prescribe so called initial values, that is we specify w
 
 ## So what about social networks?
 
-Okay, we have now introduced (and you have hopefully understood) the SIR model. In the paper this model is related to the growth of social networks with the following analogies: `$S$` is the number of people who haven't joint a certain network yet but would in general be willing to do so, whereas `$I$` represents the registered users of it and `$R$` the ones that either turned their backs on the network or (in contrast to the `$S$` people) where not willing to create an account in the first place. With these information we could start to simulate the life cycle of social networks. However, in the paper they use a slight modification of the original model, namely the *irSIR* model (where the *ir* stands for *i*nfectious *r*ecovery). The modification affects the equations (2) and (3) that are replaced by the following ones.
+Okay, we have now introduced (and you have hopefully understood) the SIR model. In the paper this model is related to the growth of social networks with the following analogies: `$S$` is the number of people who haven't joint a certain network yet but would in general be willing to do so, whereas `$I$` represents the registered users of it and `$R$` the ones that either turned their backs on the network or (in contrast to the `$S$` people) where not willing to create an account in the first place. With these information we could start to simulate the life cycle of social networks. However, in the paper they use a slight modification of the original model, namely the *irSIR* model (where the *ir* stands for *i*nfectious *r*ecovery). The modification affects the equations `$\eqref{eq:I}$` and `$\eqref{eq:R}$` that are replaced by the following ones.
 
 `$$
 \begin{align}
-	I'(t) &= c I(t) S(t) - wI(t) R(t) && (2a) \\
-	R'(t) &= w I(t) R(t) && (3a)
+	I'(t) &= c I(t) S(t) - wI(t) R(t) \tag{2a} \\
+	R'(t) &= w I(t) R(t) \tag{3a}
 \end{align}
 $$`
 

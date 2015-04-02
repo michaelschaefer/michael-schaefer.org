@@ -11,19 +11,19 @@ Dieser Abschnitt widmet sich der Darstellung von Modellierung und Grundlagen der
 
 Das in Pearsons Paper &quot;Complex Patterns in a Simple System&quot; vorgestellte Modell basiert auf der Reaktion zweier unterschiedlicher Chemikalien, deren Konzentrationen mit `$U(t)$` und `$V(t)$` bezeichnet werden soll. Die grundlegenden chemischen Reaktionen sehen wie folgt aus:
 `$$
-	\begin{align}
+	\begin{align*}
 		U + 2V &\to 3V \\
 			V &\to P
-	\end{align}
+	\end{align*}
 $$`
 Anschaulich bedeutet dies, dass ein Teil der Substanz `$U$` mit zwei Teilen von `$V$` zu drei Teilen `$V$` reagiert, während `$V$` selbst zu einem weiteren Produkt `$P$` zerfällt. Man nennt daher `$U$` auch den Aktivator, weil dieser Stoff die Reaktion erst ermöglicht. Klar ist auch, dass `$U$` ständig nachgefüllt werden muss wenn man die Reaktion am Laufen halten möchte.
 
 Aus diesen Reaktionsgleichungen kann man nun ein mathematisches Modell für die  Konzentrationen `$U(t)$` und `$V(t)$` ableiten. Dies führt zu folgendem System von partiellen Differentialgleichungen:
 `$$
-	\begin{align}
+	\begin{align*}
 		\partial_t U(t) &= D_U \Delta U(t) - U(t) V^2(t) + F(1 - U(t)) \\
 		\partial_t V(t) &= D_V \Delta V(t) + U(t) V^2(t) - (F+k) V(t)
-	\end{align}
+	\end{align*}
 $$`
 zusammen mit periodischen Randbedingungen. Die Parameter sind die Diffusionskonstanten `$D_U, D_V$`, die Fütterungsrate `$F$` und die Reaktionsrate `$k$` der zweite Reaktion relativ zur ersten. Wie man sieht handelt es sich um ein gekoppeltes System von Reaktions-Diffusionsgleichungen. Das System ist numerisch sehr stabil, so dass ein einfaches explizites Euler-Verfahren zur Zeitdiskretisierung zusammen mit finiten Differenzen für die Ortsableitungen ausreichend sind, um die Simulationen durchzuführen. Die Verwendung von expliziten Zeitschrittverfahren hat den Vorteil, dass man keine umständlichen Ansätze zum Entkoppeln machen muss. Als Schrittweiten kann man sowohl `$\Delta t$` als auch `$\Delta h$` auf 1 setzen, als Rechengebiet verwenden wir `$[0,N]^2$` für natürliche Zahlen `$N$`, typischerweise etwa 256 oder 512. Für die Simulationen wurden die Diffusionskonstanten fixiert, während die Fütterungsrate F und die Reaktionsrate k variiert werden konnten. Für die Bilder und Videos wurde das Konzentrationsprofil `$V(t)$` benutzt.
 

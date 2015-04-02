@@ -25,6 +25,11 @@ dd {
   margin-left: 1.5em;
 }
 
+div.MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 body {
   line-height: 1; }
 

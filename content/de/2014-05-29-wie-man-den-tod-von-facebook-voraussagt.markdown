@@ -15,9 +15,9 @@ Ich möchte dies nun kurz in mathematischer Fachsprache ausdrücken. Die oberen 
 
 `$$
 \begin{align}
-	S'(t) &= -c I(t) S(t) && (1) \\
-	I'(t) &= c I(t) S(t) - w(t) I(t) && (2) \\
-	R'(t) &= w I(t) && (3)
+	S'(t) &= -c I(t) S(t) \\
+	I'(t) &= c I(t) S(t) - w(t) I(t) \label{eq:I} \\
+	R'(t) &= w I(t) \label{eq:R}
 \end{align}
 $$`
 
@@ -25,12 +25,12 @@ Zusätzlich zu den Gleichungen muss man noch sogenannte Anfangswerte vorgeben, d
 
 ## Was ist jetzt mit den sozialen Netzwerken?
 
-Wir haben jetzt das SIR-Modell eingeführt (und hoffentlich grob verstanden). Das Modell wird in dem Artikel durch folgende Analogien mit sozialen Netzwerken in Verbindung gebracht: `$S$` übernimmt die Rolle der Menschen die einem bestimmten Netzwerk noch nicht beigetreten sind, jedoch grundsätzlich dazu bereit wären. `$I$` hingegen sind die Nutzer und mit `$R$`  bezeichnen wir die Personen, die entweder aus dem Netzwerk ausgetreten sind oder (im Gegensatz zu denen in `$S$`) grundsätzlich nicht bereit sind, sich dort anzumelden. Mit diesen Informationen könnten wir eigentlich den Lebenszyklus eines sozialen Netzwerkes simulieren. In dem Artikel wird jedoch eine kleine Modifikation des ursprünglichen Modells verwendet, nämlich das *irSIR-Modell* (dabei steht das *ir* für *i*nfectious *r*ecovery). Die Modifikationen betreffen die Gleichungen (2) und (3), welche durch die folgenden ersetzt werden.
+Wir haben jetzt das SIR-Modell eingeführt (und hoffentlich grob verstanden). Das Modell wird in dem Artikel durch folgende Analogien mit sozialen Netzwerken in Verbindung gebracht: `$S$` übernimmt die Rolle der Menschen die einem bestimmten Netzwerk noch nicht beigetreten sind, jedoch grundsätzlich dazu bereit wären. `$I$` hingegen sind die Nutzer und mit `$R$`  bezeichnen wir die Personen, die entweder aus dem Netzwerk ausgetreten sind oder (im Gegensatz zu denen in `$S$`) grundsätzlich nicht bereit sind, sich dort anzumelden. Mit diesen Informationen könnten wir eigentlich den Lebenszyklus eines sozialen Netzwerkes simulieren. In dem Artikel wird jedoch eine kleine Modifikation des ursprünglichen Modells verwendet, nämlich das *irSIR-Modell* (dabei steht das *ir* für *i*nfectious *r*ecovery). Die Modifikationen betreffen die Gleichungen `$\eqref{eq:I}$` und `$\eqref{eq:R}$`, welche durch die folgenden ersetzt werden.
 
 `$$
 \begin{align}
-	I'(t) &= c I(t) S(t) - wI(t) R(t) && (2a) \\
-	R'(t) &= w I(t) R(t) && (3a)
+	I'(t) &= c I(t) S(t) - wI(t) R(t) \tag{2a} \\
+	R'(t) &= w I(t) R(t) \tag{3a}
 \end{align}
 $$`
 
