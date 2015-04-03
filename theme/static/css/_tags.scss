@@ -1,169 +1,190 @@
 #archiveMenu, #archiveMenu2 {
-	position: relative;
-	
-	#archiveMenuTrigger ~ #archiveMenuEntries { display: none; }
-	#archiveMenuTrigger2 ~ #archiveMenuEntries2 { display: none; }
-	#archiveMenuTrigger:checked + label:after { content: ""; }
-	#archiveMenuTrigger2:checked + label:after { content: ""; }
+    position: relative;
+    
+    #archiveMenuTrigger ~ #archiveMenuEntries { display: none; }
+    #archiveMenuTrigger2 ~ #archiveMenuEntries2 { display: none; }
+    #archiveMenuTrigger:checked + label:after { content: ""; }
+    #archiveMenuTrigger2:checked + label:after { content: ""; }
 
-	#archiveMenuTrigger:checked ~ #archiveMenuEntries, 
-	#archiveMenuTrigger2:checked ~ #archiveMenuEntries2 {
-		background-color: $colForeground;
-		border: 1px solid black;
-		display: block;
-		list-style: none;
-		margin: 0em;
-		margin-top: 0.125em;								
-		max-height: 7.5em;
-		overflow-y: scroll;
-		position: absolute;
-		width: 100%;
+    #archiveMenuTrigger:checked ~ #archiveMenuEntries, 
+    #archiveMenuTrigger2:checked ~ #archiveMenuEntries2 {
+        background-color: $colForeground;
+        border: 1px solid black;
+        display: block;
+        list-style: none;
+        margin: 0em;
+        margin-top: 0.125em;                                
+        max-height: 7.5em;
+        overflow-y: scroll;
+        position: absolute;
+        width: 100%;
 
-		li {
-			cursor: pointer;
-			display: block;
-			padding: 0em 0.25em;
-			@include vendor(transition, background-color 1s);
+        li {
+            cursor: pointer;
+            display: block;
+            padding: 0em 0.25em;
+            @include vendor(transition, background-color 1s);
 
-			&:hover { background-color: $colTableLight; }
+            &:hover { background-color: $colTableLight; }
 
-			a { 
-				display: block;
-				text-decoration: none; 
-			}
-		}
-	}
+            a { 
+                display: block;
+                text-decoration: none; 
+            }
+        }
+    }
 
-	input { display: none; }
+    input { display: none; }
 
-	label {
-		border: 1px solid black;				
-		cursor: pointer;
-		display: block;
-		padding: 0em 0.25em;
-		width: 100%;		
+    label {
+        border: 1px solid black;                
+        cursor: pointer;
+        display: block;
+        padding: 0em 0.25em;
+        width: 100%;        
 
-		&:after {
-			content: "";
-			float: right;
-			font-family: $fontIconName;
-			display: inline;
-		}		
-	}
+        &:after {
+            content: "";
+            float: right;
+            font-family: $fontIconName;
+            display: inline;
+        }       
+    }
 }
 
 
 /*
-	link formatting
+    link formatting
 */
 
 a {
-	color: $colLink;
-	font-weight: bold;
-	text-decoration: none;
+    color: $colLink;
+    font-weight: bold;
+    text-decoration: none;
 
-	&:hover { text-decoration: underline; }
+    &:hover { text-decoration: underline; }
 }
 
 a.archive {
-	color: $colTextDark;
-	font-weight: normal;
+    color: $colTextDark;
+    font-weight: normal;
 
-	&:hover { text-decoration: none; }	
+    &:hover { text-decoration: none; }  
 }
 
 a.box {
-	background-color: $colLink;
-	color: $colTextLight;
-	display: inline-block;
-	margin: 0em 0.25em 0.25em 0em;
-	padding: 0.25em 0.75em;
-	text-decoration: none;
-	@include vendor(transition, background-color 1s);
+    background-color: $colLink;
+    color: $colTextLight;
+    display: inline-block;
+    margin: 0em 0.25em 0.25em 0em;
+    padding: 0.25em 0.75em;
+    text-decoration: none;
+    @include vendor(transition, background-color 1s);
 
-	&:hover { background-color: $colLinkHover; }
+    &:hover { background-color: $colLinkHover; }
 }
 
-a.headline { 	
-	color: $colTextDark; 	
+a.headline {    
+    color: $colTextDark;    
 }
 
 a.navigation {
-	color: $colTextLight;	
-	vertical-align: baseline;
+    color: $colTextLight;   
+    vertical-align: baseline;
 }
 
 a.readMore {
-	@extend a.box;
-	margin-right: 0em;	
+    @extend a.box;
+    margin-right: 0em;  
 }
 
 a[href^="http://"]:after {
-	content: "";
-	font-family: $fontIconName;
-	vertical-align: bottom;
+    content: "";
+    font-family: $fontIconName;
+    vertical-align: bottom;
 }
 
 
 /*
-	other formatting
+    other formatting
 */
 
 
 address { font-style: normal; }
 
 article.topBorder { 
-	border-top: 1px solid $colTextDark;
-	padding-top: $space * 1.5;
+    border-top: 1px solid $colTextDark;
+    padding-top: $space * 1.5;
 }
 
 article:after {
-	clear: both;
-	content: "";
-	display: block;
+    clear: both;
+    content: "";
+    display: block;
 }
 
-code {
-	background-color: $colTableLight;
-	border: 1px solid $colTableDark;
-	display: inline;
-	padding: 0em 0.25em;	
+code, tt {
+    background-color: $colTableLight;
+    border: 1px solid $colTableDark;
+    display: inline;
+    padding: 0em 0.25em;    
 
-	&.hasJax {	
-		background-color: transparent;	
-		border: none;
-		padding: 0em;	
-	}
+    &.hasJax {  
+        background-color: transparent;  
+        border: none;
+        padding: 0em;   
+    }
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
+div.MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+div.section {
+    margin-top: $lineHeight;
+}
+
+dl {
+  margin-top: 0.75em;
+}
+
+dt {
+  margin-top: 0.5em;
 }
 
 em {
-	font-weight: bold;
-	font-style: normal;
+    font-weight: bold;
+    font-style: normal;
 }
 
 h1 {
-	display: block;
-	font-size: 1.5em;
-	font-weight: bold;
-	margin-bottom: $marginHeader;
-	margin-top: 2*$marginHeader;	
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: $marginHeader;
+    margin-top: 2*$marginHeader;    
 }
 
 h2 {
-	display: block;
-	font-size: 1em;
-	font-weight: bold;
-	margin-bottom: $marginHeader;
-	margin-top: 2*$marginHeader;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: $marginHeader;
+    margin-top: 2*$marginHeader;
 }
 
 h1:first-child, h2:first-child { margin-top: 0em; }
 
 img, object {
-	display: block;
-	margin: $lineHeight auto;
-	max-width: 100%;
-	width: 80%;
+    display: block;
+    margin: $lineHeight auto;
+    max-width: 100%;
+    width: 80%;
 }
 
 input[id="searchQuery"] {
@@ -176,42 +197,48 @@ input[id="searchQuery"] {
 
 object img { width: 100%; }
 
-p {	margin-bottom: $marginDefault; }
+p { margin-bottom: $marginDefault; }
 p:last-child { margin-bottom: 0em; }
 
+p.paginator {
+    border-top: 1px solid black;
+    margin-top: 2*$marginDefault;
+    padding-top: $lineHeight;
+}
+
 section h1 {
-	display: inline;
-	font-size: 1em;
+    display: inline;
+    font-size: 1em;
 }
 
 sup {
-	position: relative;
-	top: -0.25em;
+    position: relative;
+    top: -0.25em;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0em;
-	margin: $marginDefault * 2 auto $marginDefault * 2;
-	text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0em;
+    margin: $marginDefault * 2 auto $marginDefault * 2;
+    text-align: center;
 
-	td, th {
-		border: 0.125em solid $colForeground;
-		padding: 0.5em;
-	}
+    td, th {
+        border: 0.125em solid $colForeground;
+        padding: 0.5em;
+    }
 
-	th { font-weight: bold; }
-	tr:nth-child(even) { background-color: $colTableLight; }
-	tr:nth-child(odd) { background-color: $colTableDark; }	
+    th { font-weight: bold; }
+    tr:nth-of-type(even) { background-color: $colTableLight; }
+    tr:nth-of-type(odd) { background-color: $colTableDark; }  
 }
 
 ul {
-	margin-left: $marginDefault * 1.5;
-	margin-top: $marginDefault * 0.75;
-	margin-bottom: $marginDefault * 0.75;	
+    margin-left: $marginDefault * 1.5;
+    margin-top: $marginDefault * 0.75;
+    margin-bottom: $marginDefault * 0.75;   
 }
 
 ul.noBullet {
-	list-style: none;
-	margin-left: 0em;
+    list-style: none;
+    margin-left: 0em;
 }

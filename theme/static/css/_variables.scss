@@ -2,12 +2,12 @@
     mixins
 */
 
-@mixin vendor($property, $value) {	
-	-ms-#{$property}: $value;
-	-moz-#{$property}: $value;
-	-o-#{$property}: $value;
-	-webkit-#{$property}: $value;
-	#{$property}: $value;
+@mixin vendor($property, $value) {  
+    -ms-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -o-#{$property}: $value;
+    -webkit-#{$property}: $value;
+    #{$property}: $value;
 }
 
 
@@ -31,7 +31,7 @@ $colLinkHover: $colTableLight;
 
 
 /*
-	sizes
+    sizes
 */
 
 $heightHeader: 4.5em;
@@ -45,7 +45,7 @@ $widthContentMin: 1200px;
 
 
 /*
-	other variables
+    other variables
 */
 
 $fontName: "PT Serif";

@@ -1,5 +1,5 @@
 /*
-	webfonts
+    webfonts
 */
 
 @import url(//fonts.googleapis.com/css?family=Inconsolata:400,700);
@@ -7,17 +7,17 @@
 
 
 /*
-	local fonts
+    local fonts
 */
 
 /* Genericons */
 @font-face {
     font-family: 'Genericons';
-    src: url('../media/font/genericons-regular-webfont.eot');
-    src: url('../media/font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../media/font/genericons-regular-webfont.woff') format('woff'),
-         url('../media/font/genericons-regular-webfont.ttf') format('truetype'),
-         url('../media/font/genericons-regular-webfont.svg#genericonsregular') format('svg');
+    src: url('../font/genericons-regular-webfont.eot');
+    src: url('../font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/genericons-regular-webfont.woff') format('woff'),
+         url('../font/genericons-regular-webfont.ttf') format('truetype'),
+         url('../font/genericons-regular-webfont.svg#genericonsregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }

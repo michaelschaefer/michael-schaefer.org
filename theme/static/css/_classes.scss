@@ -1,31 +1,31 @@
 .aperture {
-	border: 1px solid $colTextDark;
-	@include vendor(border-radius, 50%);
+    border: none;
+    @include vendor(border-radius, 50%);
 }
 
 .bold { font-weight: bold; }
 
 .contentArea {
-	margin: 0 auto;	
-	max-width: 100%;
-	min-width: $widthContentMin;
-	position: relative;	
-	width: $widthContent;	
-	padding: 0 $space;
+    margin: 0 auto; 
+    max-width: 100%;
+    min-width: $widthContentMin;
+    position: relative; 
+    width: $widthContent;   
+    padding: 0 $space;
 
-	&:after {
-		content: "";
-		clear: both;
-		display: block;
-	}
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
 }
 
 .floatRight { 
-	float: right;	
+    float: right;   
 }
 
 .footnotes {
-	margin-left: $lineHeight;
+    margin-left: $lineHeight;
 }
 
 .large { font-size: 1.5em !important; }
@@ -44,7 +44,7 @@
 }
 
 .symbol {
-	font-family: $fontIconName;
-	margin-right: 0.25em;
-	vertical-align: middle;	
+    font-family: $fontIconName;
+    margin-right: 0.25em;
+    vertical-align: middle; 
 }
